@@ -29,5 +29,5 @@ Hiện tại đây là bản **nghiên cứu + khung thiết kế**. Chưa phả
 
 ## Việc tiếp theo
 
-Trả lời `PHONG-VAN.md`: file Tom / workspace OpenClaw (0a), nick riêng hay nick
-chủ (0b2), template cho ai (0c). Kênh zalouser và khung ít-rào đã chốt.
+Trả lời `PHONG-VAN.md`: file Tom / workspace OpenClaw (0a), template cho ai (0c).
+Nick riêng + kênh zalouser + khung ít-rào đã chốt.

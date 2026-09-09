@@ -35,8 +35,8 @@ Gợi ý tương tác **không thành nút OA**. Thành:
 | Chính thức | **Không** — mô phỏng Zalo Web | Có | Có |
 | Rủi ro nick | **Khóa / hạn chế** nếu Zalo phát hiện tự động | Token bot | Token OA |
 
-Rủi ro nick là thật. **Đừng cầm nick Zalo chính của chủ shop.** Nick riêng cho
-bot, số riêng, không gắn ngân hàng / CCCD quan trọng nếu tránh được.
+Rủi ro nick là thật. **Đã chốt: nick riêng cho bot, số riêng** — không cầm nick
+Zalo chính của chủ shop, không gắn ngân hàng / CCCD quan trọng nếu tránh được.
 
 ---
 

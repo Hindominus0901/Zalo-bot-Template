@@ -11,7 +11,7 @@ bị lướt.
 - Chỉ khóa tiền, nội bộ, bịa số liệu shop
 - AI-first — không mang chế độ `tra_cuu` 0 đồng sang
 - **Ngoài hẳn ngành:** một nhịp rồi kéo về shop
-- **Kênh:** nick Zalo cá nhân + OpenClaw `zalouser` (như Tom), không Bot Creator / OA
+- **Kênh:** nick Zalo **riêng cho bot** + OpenClaw `zalouser` (như Tom), không Bot Creator / OA, không cầm nick chính của chủ
 
 ---
 
@@ -26,8 +26,7 @@ khoản, Google Drive (chưa kết nối phiên này). Không thấy. Tom là Op
 **0b.** ~~Bot Creator vs OA~~ — **đã chốt: nick Zalo cá nhân**, cầm bởi OpenClaw
 `zalouser` như Tom. Không Bot Creator, không OA. Chi tiết `docs/02-kenh-zalouser.md`.
 
-**0b2.** Nick đó là **nick riêng cho bot** (nên thế) hay nick Zalo chính của chủ
-shop? Mặc định đề xuất: nick riêng, số riêng.
+**0b2.** ~~nick riêng vs nick chủ~~ — **đã chốt: nick riêng**, số riêng. Không cầm nick Zalo chính của chủ shop.
 
 **0c.** Đây là template để **bán / đưa cho chủ shop khác tự dựng** (giống
 `agent-cskh-zalo`), hay bản cho **một shop cụ thể** rồi mới trừu tượng hoá?
@@ -80,7 +79,7 @@ F&B…) để slot khai thác sắc, hay **generic** rồi shop tự điền slo
 
 ## Xong nhóm 0 thì được phép bắt đầu
 
-Khi có 0a (file Tom / workspace OpenClaw), 0b2 (nick riêng hay nick chủ), 0c
-(template bán hay một shop): bắt đầu dựng workspace OpenClaw + `SOUL` / skill CSKH.
+Khi có 0a (file / workspace Tom) và 0c (template bán hay một shop): bắt đầu dựng
+workspace OpenClaw + `SOUL` / skill CSKH. Nick riêng đã chốt.
 
 Nhóm 1–3 cần trước khi khoá `persona` mẫu và skill `khai-thac`.
