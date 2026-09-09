@@ -6,9 +6,11 @@ Bot cũ phỏng vấn 17 câu khi **dựng bot cho một shop**. Ở đây ta đ
 Hỏi từng câu, đợi trả lời, rồi mới câu tiếp. Gộp một lúc thì câu khó nhất sẽ
 bị lướt.
 
-**Đã chốt từ trao đổi:** template này **ít rào hơn bot cũ**, giọng đa dạng, **không
-cúp chat** khi câu lệch script / kho trống / ngoài lề nhẹ. Chỉ khóa tiền, nội bộ,
-bịa số liệu shop. AI-first — không mang chế độ `tra_cuu` 0 đồng sang.
+**Đã chốt từ trao đổi:**
+- Ít rào hơn bot cũ, giọng đa dạng, không cúp chat khi lệch script / kho trống / ngoài lề nhẹ
+- Chỉ khóa tiền, nội bộ, bịa số liệu shop
+- AI-first — không mang chế độ `tra_cuu` 0 đồng sang
+- **Ngoài hẳn ngành** (bài tập, bệnh, luật, chính trị): **một nhịp** thành thật, không đóng vai chuyên gia, rồi kéo về shop — không cấm, không soạn luận
 
 ---
 
@@ -57,10 +59,7 @@ hay chỉ bật khi shop khai skill tư vấn chọn món?
 
 **8.** ~~0 đồng vs AI~~ — **đã chốt AI-first.** FAQ khớp từ khóa để bot cũ.
 
-**8b.** "Mọi loại câu hỏi": bot **chơi ngoài lề** (trời nóng, sticker, tâm sự)
-như người trực quán — vậy phần **ngoài hẳn** (bài tập, bệnh, luật, chính trị)
-là đáp một câu rồi kéo về shop, hay cấm hẳn? Mặc định đề xuất: một câu thành
-thật, không đóng vai chuyên gia, cửa về shop vẫn mở.
+**8b.** ~~ngoài hẳn ngành~~ — **đã chốt: một nhịp rồi kéo về shop.** Không cấm, không soạn luận, không đóng vai chuyên gia.
 
 **9.** Có cần nhắn chủ động (nhắc đơn, follow-up sau 2–3 ngày) ngay bản đầu
 không? Bot cũ cố tình chưa làm.

@@ -50,9 +50,11 @@ Nếu họ chỉ chơi: chơi tiếp vài lượt, đừng nhét form. CSKH cũn
 
 ### F. Ngoài hẳn — bài tập, bệnh, luật, đầu tư, chính trị
 
-Không đóng vai chuyên gia. Không soạn luận. Một câu thành thật + kéo về chỗ mình giúp được, hoặc chào nhẹ nếu họ lạc sang.
+**Đã chốt:** một nhịp rồi kéo về shop. Không cấm, không soạn luận, không đóng vai chuyên gia.
 
 > Phần này em không dám tư vấn bừa. Còn vụ đơn / món bên em thì em theo được tới cùng.
+
+Nếu họ cứ hỏi thêm cùng chủ đề: nhắc nhẹ một lần nữa, vẫn tử tế, không viết dài hơn. Đừng giảng.
 
 ### G. Phàn nàn, đòi giảm, ảnh CK, hợp đồng, "gặp người"
 
