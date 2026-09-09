@@ -7,8 +7,9 @@ Bạn đang cầm một **template workspace OpenClaw**, không phải bot Pytho
 của bạn là **phỏng vấn chủ shop** rồi điền giọng, kho, skill — để Gateway +
 `zalouser` cầm một nick Zalo riêng, nói chuyện như người.
 
-Chủ shop nhiều khả năng không biết lập trình. Đừng hỏi câu kỹ thuật nào ngoài
-bước B0.
+Chủ shop **không biết lập trình**. Với họ: chữ thường, ví dụ đời. **Cấm** nói
+wiki, harness, brain, token, QR, OpenClaw, Gateway, persona — trừ khi họ hỏi.
+Kỹ thuật chỉ nằm ở file này và phần “Bạn đang dựng” trong `PHONG-VAN.md`.
 
 Đã khóa sẵn (đừng hỏi lại): [`docs/quyet-dinh.md`](docs/quyet-dinh.md).
 
@@ -39,23 +40,18 @@ Bảng gộp một lúc thì hai câu đó bị lướt.
 
 ## Thứ tự. Không nhảy bước.
 
-### B0 — Máy và OpenClaw
+### B0 — Máy và nick nhân viên
 
-Hỏi hoặc tự biết: Windows / macOS / Linux. Chỉ đưa lệnh hệ đó.
+Tự biết Windows / macOS / Linux. Với họ chỉ hỏi:
 
-> Anh/chị đã cài OpenClaw và Gateway chạy được chưa ạ?
+> Mình làm trên máy tính anh/chị đang mở đó luôn nhé — Windows hay Mac ạ?
+>
+> Bot dùng một nick Zalo như nhân viên riêng, không dùng nick chính. Nick đó có
+> chưa, hay lát mình tạo cùng nhau?
 
-- Chưa → đi với họ theo docs OpenClaw (cài Gateway, chọn model). Đừng giả vờ
-  template này tự cài OpenClaw hộ nếu môi trường của họ khác.
-- Rồi → hỏi workspace đang ở đâu (`~/.openclaw/workspace` hay path khác). Template
-  này **là** workspace: trỏ `agents.defaults.workspace` vào thư mục repo (bản
-  private của họ, không phải bản mẫu công khai còn `[CHỜ CHỦ SHOP]`).
-
-> Nick Zalo riêng cho bot đã có chưa? (Không dùng nick Zalo chính.)
-
-Chưa có → bảo họ tạo nick + số riêng trước khi quét QR. Xem `docs/02-kenh-zalouser.md`.
-
-Chưa cần quét QR lúc này. Dựng kho và file trước.
+Chưa có OpenClaw trên máy: dẫn cài **bằng bước bấm**, đừng đọc tên Gateway trừ
+khi cần. Workspace = thư mục repo (bản của họ). Nick: `docs/02-kenh-zalouser.md`.
+Chưa quét QR lúc này.
 
 ### B1 — Đọc khung, đừng đụng rào cứng
 
@@ -65,10 +61,9 @@ Không xóa ba rào trong `AGENTS.md` (tiền, nội bộ, jailbreak).
 
 ### B2 — Phỏng vấn
 
-Làm đúng [`PHONG-VAN.md`](PHONG-VAN.md): **10 câu**, mỗi câu có đào. Từng câu một.
+Làm đúng [`PHONG-VAN.md`](PHONG-VAN.md). **Nói đúng ô “Nói”**, đào bằng lời thường.
 
-**Câu 3 là nhận tài liệu.** Đợi file/link. Cất vào `knowledge/raw/`, ghi
-`raw/NGUON.md`. Đừng nhảy câu 4 khi họ chưa gửi gì và cũng chưa nói là không có file.
+Câu 3: đợi họ gửi đồ. Đừng nhảy tiếp khi chưa có file và cũng chưa nói là không có.
 
 ### B3 — Viết file, chỉ từ miệng chủ + raw
 

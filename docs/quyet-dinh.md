@@ -9,7 +9,7 @@ dòng này khi phỏng vấn một shop. Shop-level hỏi ở `PHONG-VAN.md`.
 - AI-first (OpenClaw + model). Không chế độ khớp từ khóa 0 đồng
 - Ngoài hẳn ngành: **một nhịp** rồi kéo về shop
 - Kênh: nick Zalo **riêng**, OpenClaw `@openclaw/zalouser`, như Tom
-- Đối tượng: **chủ shop khác tự dựng** — 10 câu phỏng vấn sâu + nhận tài liệu vào `knowledge/raw/`
+- Đối tượng: chủ shop khác, **không rành kỹ thuật** — 10 câu chữ thường, đủ brain / wiki / harness; câu 3 nhận đồ đang dùng trả khách
 - Generic: slot khai thác và wiki điền lúc phỏng vấn, không khóa một ngành
 - Máy khai thác bật mặc định khi khách phân vân
 - Nhắn chủ động follow-up: **chưa** làm ở bản đầu
