@@ -10,7 +10,7 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 ## Chủ shop / coding agent làm gì
 
 1. Đọc [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md)
-2. Phỏng vấn theo [`PHONG-VAN.md`](PHONG-VAN.md) — chữ thường với chủ shop; câu 3 xin đồ đang dùng trả khách
+2. Phỏng vấn [`PHONG-VAN.md`](PHONG-VAN.md) — câu dài về sản phẩm/dịch vụ; đào từng câu; câu 3 xin tài liệu
 3. File gốc vào `knowledge/raw/`, wiki tách theo `knowledge/CLAUDE.md`
 
 Đã khóa kênh và rào: [`docs/quyet-dinh.md`](docs/quyet-dinh.md).

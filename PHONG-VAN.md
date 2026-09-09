@@ -1,239 +1,302 @@
-# Phỏng vấn chủ shop — 10 câu dễ, lấy đủ brain / wiki / harness
+# Phỏng vấn chủ shop — 10 chủ đề, hỏi dài, đào từng câu
 
 Bước **B2** trong [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md).
 
-Chủ shop **không cần biết** brain, wiki, harness, token, QR. Họ chỉ trả lời như
-đang dặn nhân viên mới. Phần kỹ thuật (file nào, chỗ nào) chỉ dành cho bạn.
+Chủ shop không rành kỹ thuật. Họ đang **kể về sản phẩm, dịch vụ, và cách đang
+chăm khách**. Không nói wiki, harness, brain, token, QR, OpenClaw.
 
-**Nói với họ:** từng câu một, chữ thường, ví dụ đời. **Không** đọc tên file,
-không nói “điền wiki”, không hỏi OpenClaw.
+**Cách hỏi**
 
-**Lấy đủ:** miệng họ + file họ gửi. Thiếu thì `[CHỜ CHỦ SHOP]`. Không bịa giá.
+1. Mỗi chủ đề có **một câu chính — nói dài, rõ, có ví dụ**. Để họ kể thoải mái.
+2. **Không nhồi** bốn ý vào một hơi (đừng hỏi cùng lúc xưng hô + giọng + tên nick
+   + paste tin).
+3. Sau câu trả lời, **hỏi tiếp từng câu một** ở mục “Hỏi thêm”. Thiếu thì hỏi,
+   đã kể rồi thì bỏ qua, đừng hỏi lại.
+4. Số liệu sản phẩm/dịch vụ chỉ lấy từ miệng họ hoặc tài liệu họ gửi.
 
-| Câu | Họ thấy mình hỏi về | Bạn đang dựng |
+| Chủ đề | Họ đang kể | Bạn dựng |
 |---|---|---|
-| 1–2, 4, 10 | Shop, khách, giọng, câu chào | **Brain** — `persona.md` · `SOUL.md` · `IDENTITY.md` |
-| 3, 6 | Đồ đang dùng để trả khách, câu còn thiếu | **Wiki** — `raw/` + `wiki/` |
-| 5, 7–9 | Lúc nào gọi người, đơn đi sao, hỏi gì khi phân vân | **Harness** — rào, quy trình, skill khai thác, `USER.md` |
+| 1–2, 4, 10 | Sản phẩm/dịch vụ, khách, giọng, câu chào | Brain |
+| 3, 6 | Tài liệu + câu khách hỏi thêm | Wiki |
+| 5, 7–9 | Việc không được tự ý, đơn hàng, lúc phân vân | Harness |
 
 ---
 
-## Trước câu 1 — hai câu mở máy (không tính 10)
+## Trước chủ đề 1 — hai câu mở (không tính 10)
 
-Nói như vậy, đừng nói Gateway:
+Từng câu, đợi trả lời:
 
-> Mình làm trên máy tính anh/chị đang mở đó luôn nhé — Windows hay Mac ạ?
+> Mình ngồi hỏi trên máy anh/chị đang dùng luôn nhé. Máy này là Windows hay Mac ạ?
+
+> Bot sẽ nhắn khách bằng một nick Zalo như nhân viên của shop, không dùng nick
+> Zalo chính của anh/chị — để nick chính khỏi rối. Nick nhân viên đó anh/chị đã
+> có sẵn chưa, hay lát nữa mình tạo cùng nhau?
+
+---
+
+## 1. Sản phẩm, dịch vụ bên mình là gì?
+
+**Câu chính:**
+
+> Em muốn hiểu shop mình bán **sản phẩm** gì, làm **dịch vụ** gì, rõ như đang
+> giới thiệu với một người lần đầu nghe. Anh/chị kể giúp: mình bán/làm những gì,
+> cho ai dùng, khác chỗ khác ở điểm nào mà mình hay nói với khách. Cứ nói như
+> đang nhắn Zalo, không cần câu quảng cáo.
+
+**Hỏi thêm** (từng câu, chỉ cái họ chưa kể):
+
+> Trong đó, cái nào khách hỏi nhiều nhất?
 >
-> Bot sẽ dùng một nick Zalo như nhân viên riêng, không dùng nick Zalo chính của
-> anh/chị. Nick đó đã có chưa, hay lát mình tạo cùng nhau?
-
-Chưa có nick → hẹn tạo trước khi “bật cho khách nhắn”. Chưa cần quét gì lúc này.
-
----
-
-## 1. Shop mình làm gì?
-
-**Nói:**
-
-> Shop mình bán gì / làm gì ạ? Nói một câu như đang trả người lạ hỏi “bên mình
-> làm gì thế”.
-
-**Đào, vẫn chữ thường:**
-
-- Khách hay hiểu nhầm điều gì về bên mình?
-- Có hai món / hai gói hay bị lẫn không?
-- Có câu nào anh/chị hay nói với khách, mình tin thật — kiểu có số hoặc có chuyện
-  thật — kể nguyên giúp em.
-
-→ Brain: công việc + quan điểm (`persona.md`).
-
----
-
-## 2. Khách của mình, họ ngại gì?
-
-**Nói:**
-
-> Khách hay là ai ạ? Trước khi chốt, họ **ngại / sợ / phân vân** nhất chuyện gì?
-
-**Đào** — câu này mỏng thì bot sẽ chào vô hồn. Hỏi tiếp:
-
-- Lần gần nhất có người hỏi hơi lâu rồi không mua — họ vướng gì?
-- Khách cũ nhắn lại thường khác khách mới chỗ nào?
-- Họ hay gõ chữ, gửi ảnh, hay nhắn voice?
-
-→ Brain: khách + nỗi lo (câu bot hỏi khi người ta còn mơ hồ).
-
----
-
-## 3. Gửi em đồ đang dùng để trả khách
-
-**Bắt buộc. Đây là lúc lấy wiki. Đừng bỏ, đừng hẹn “để sau”.**
-
-**Nói:**
-
-> Anh/chị gửi em **mọi thứ đang dùng để trả khách** — không cần soạn lại. Kéo
-> file vào chat, chụp màn hình, hoặc dán link đều được.
+> Có sản phẩm hoặc gói dịch vụ nào khách hay **nhầm** với nhau không? Nhầm thế nào?
 >
-> Ví dụ: bảng giá, menu, ảnh sản phẩm, file Excel, tin nhắn mẫu, cách ship, đổi
-> trả, bảo hành, trang web, Drive, Notion. Có gì gửi nấy.
-
-**Sau khi nhận, hỏi thêm bằng lời thường:**
-
-- Cái nào **khách được biết**, cái nào chỉ mình xem (vốn, hoa hồng, cách xử khách
-  khó)? Không chắc thì để riêng, đừng để bot nói.
-- Cái nào **đã cũ**, sắp đổi?
-- Còn nằm ở Zalo, máy kế toán, “cái bảng em hay forward” không?
-
-**Cách làm (đừng đọc cho họ):** cất nguyên bản `knowledge/raw/`, ghi `raw/NGUON.md`,
-tách trang theo `knowledge/CLAUDE.md`. Không tự bới giá trên mạng.
-
-Họ nói không có file: “Không sao, lát em hỏi chậm hơn, anh/chị kể miệng.” Wiki sẽ
-mỏng — nói thật, đừng đẻ số.
-
----
-
-## 4. Trên Zalo mình xưng hô thế nào?
-
-**Nói:**
-
-> Lúc nhắn khách, anh/chị xưng *em* hay *mình*? Gọi người ta *anh/chị* hay *bạn*?
-> Giọng Nam, Bắc, hay bình thường? Nick nhân viên trên Zalo đặt tên gì?
+> Người ngoài hay **hiểu sai** điều gì về bên mình? Ví dụ tưởng mình làm A nhưng
+> thật ra là B.
 >
-> Paste giúp **hai ba tin anh/chị đã trả khách** — nguyên văn luôn, để em bắt
-> giọng, không phải để thuộc lòng nội dung.
+> Có câu nào anh/chị hay nói với khách, mình tin thật — có số, có chuyện thật —
+> kể nguyên giúp em?
 
-**Đào:**
-
-- Có chữ **không được nói** trong ngành không? (chê chỗ khác, hứa hết bệnh, hứa
-  số liệu…)
-- Khách hỏi “mày là bot hả” — anh/chị muốn trả thế nào? (Mặc định: nói thật,
-  ngắn, rồi hỏi lại họ cần gì.)
-
-→ Brain: `IDENTITY.md` + xưng hô / ví dụ cuối `SOUL.md`.
+→ `persona.md` công việc + quan điểm.
 
 ---
 
-## 5. Việc gì không được tự ý, lúc nào gọi anh/chị?
+## 2. Khách của sản phẩm/dịch vụ này, họ ngại gì?
 
-**Nói:**
+**Câu chính:**
 
-> Có việc gì nhân viên mới **không được tự ý nói / tự ý hứa** không ạ? Và lúc nào
-> thì phải **kêu anh/chị vào**, đừng cố trả lời?
+> Khách đang mua sản phẩm/dịch vụ của mình **thường là ai** — ví dụ mẹ bỉm, chủ
+> quán, học sinh, công ty… Họ tìm mình vì việc gì? Và **trước khi chốt**, họ
+> ngần ngại nhất chuyện gì? Tiền, chất lượng, có phù hợp không, giao có kịp
+> không, dùng có khó không — kể chuyện thật giúp, lần nào nhớ thì kể lần đó.
 
-**Đào cho ra chuyện cụ thể** (đừng nhận “cái nhạy cảm thì chuyển”):
+**Hỏi thêm:**
 
-- Giá trên bảng — nói được chứ? Xin bớt, xin tặng thêm?
-- Khách gửi ảnh chuyển khoản — **không** được bảo “đã nhận tiền”. Nhắc họ: bot
-  chỉ ghi nhận, anh/chị đối soát.
-- Hứa ngày giao, hứa kết quả, hợp đồng.
-- Khách chê, bực, doạ kiện.
-- Còn việc riêng nghề? (thuốc, tiền, trẻ nhỏ…)
-
-→ Harness: rào shop. Ba rào sẵn (tiền, nội bộ, bị dụ) không hỏi, không gỡ.
-
----
-
-## 6. Khách còn hay hỏi gì, trong đồ gửi chưa có?
-
-**Nói:**
-
-> Ngoài mấy file vừa gửi, khách **còn hay hỏi gì** — kể cả câu khó chịu, câu hỏi
-> quanh co, gõ sai chính tả.
-
-**Đào:**
-
-- Kể vài câu **như khách hay gõ** (không dấu, viết tắt cũng được).
-- Câu nào trong file đã có, câu nào **mình vẫn phải tự trả** — câu đó đáp thế nào?
-- Có câu **cố ý không trả**, kêu anh/chị luôn không?
-
-Câu 3 đã nhiều đồ thì câu 6 chỉ lấp lỗ. Câu 3 trống thì đây là FAQ bằng miệng.
-
-→ Wiki.
-
----
-
-## 7. Một đơn / một lịch thì đi như thế nào?
-
-**Nói:**
-
-> Khách nhắn xong tới lúc thành đơn (hoặc đặt lịch, thanh toán) — **đi những bước
-> nào** ạ? Bước nào nhân viên mới làm được, bước nào **anh/chị phải chốt tay**?
-
-**Đào:**
-
-- Cần hỏi món, size, địa chỉ, ngày… — hỏi lần lượt hay hỏi một lúc?
-- Còn hàng / còn chỗ — được nói chắc không, hay phải hỏi anh/chị?
-- Khi nào được nói “xong rồi / đặt thành công”? (Mặc định: nhân viên mới chỉ
-  **ghi nhận**, anh/chị xác nhận.)
-
-→ Harness: quy trình + wiki bước mua.
-
----
-
-## 8. Lúc không chắc — kêu ai, khách để số thì sao?
-
-**Nói:**
-
-> Có khách cần anh/chị vào, thì **kêu ai**? Tên, nick Zalo luôn.
+> Lần gần nhất có người hỏi hơi lâu rồi **không mua** — họ vướng gì ạ?
 >
-> Khách cho số điện thoại thì mình **xem / lưu** thế nào? Ảnh họ gửi (chuyển
-> khoản, hàng, size) — xem giúp được hay chuyển luôn cho anh/chị?
+> Khách mới và khách đã mua rồi, lúc nhắn lại, hỏi khác nhau chỗ nào?
+>
+> Họ hay gõ chữ, gửi ảnh sản phẩm, hay nhắn voice?
+>
+> Điều họ lo lúc nãy, anh/chị thường **giải thích thế nào** cho họ yên?
 
-**Đào:**
-
-- Hẹn gọi lại thì nói được **giờ nào**? (kiểu 9h–18h, không “giờ hành chính”.)
-- Có nhóm riêng để báo “có khách chờ” không?
-- Nhắn lại sau vài ngày: bản này **chưa làm** — cần thì ghi, đừng hứa có.
-
-→ Harness: `USER.md`. Không bịa id kỹ thuật.
+→ Brain: chân dung khách + nỗi lo (câu bot hay hỏi khi người ta còn phân vân).
 
 ---
 
-## 9. Khách không biết lấy gì — mình hay hỏi gì?
+## 3. Tài liệu về sản phẩm, dịch vụ, giá, chính sách
 
-**Nói:**
+**Bắt buộc. Đây là lúc lấy wiki. Không gọi là “đồ”.**
 
-> Khách bảo “không biết lấy gì”, “cái nào hợp” — **anh/chị thường hỏi họ những
-> gì** trước khi gợi ý? Tầm hai ba câu thôi, câu nào hỏi trước.
+**Câu chính:**
 
-**Đào** theo nghề họ vừa kể (đừng đọc chữ slot): tặng ai, ngân sách, size, ngày
-cần, đã dùng loại nào thấy vướng gì…
+> Giờ em cần **tài liệu về sản phẩm và dịch vụ** mà anh/chị đang dùng để trả
+> khách — để bot học đúng thứ mình đang bán, không bịa. Anh/chị gửi giúp vào
+> chat: bảng giá, catalog, menu, mô tả sản phẩm/dịch vụ, ảnh, file Excel/PDF,
+> tin nhắn mẫu, cách tính ship, đổi trả, bảo hành, gói dịch vụ, size, hướng dẫn
+> dùng, link website, Drive, Notion. Có cái nào gửi cái đó, không cần soạn lại.
+> Gửi thiếu không sao, lát em hỏi bù.
 
-- Câu nào **phải hỏi**, câu nào hỏi nếu chưa rõ.
-- Có việc phải hỏi **đúng thứ tự** không (ví dụ đo size rồi mới ra món)?
-- Việc gì làm xong phải **anh/chị xem đã** rồi mới trả khách?
+**Hỏi thêm** (sau khi đã nhận, từng câu):
 
-→ Harness: bổ sung `skills/khai-thac/SKILL.md`, không giảng máy trạng thái cho họ.
+> Trong mấy file vừa gửi, cái nào **khách được xem**, cái nào chỉ nội bộ mình
+> biết — ví dụ giá vốn, hoa hồng, cách xử khách khó? Không chắc thì nói em để
+> riêng, bot không kể cho khách.
+>
+> Có cái nào **đã cũ** hoặc sắp đổi giá / đổi gói không?
+>
+> Còn bảng sản phẩm, file dịch vụ nằm ở Zalo, máy kế toán, hay trang web nữa
+> không? Có thì gửi thêm hoặc dán link.
 
----
+**Bạn làm, không đọc cho họ:** cất `knowledge/raw/`, ghi `NGUON.md`, tách wiki
+theo `knowledge/CLAUDE.md`. Không tự vào mạng lấy giá.
 
-## 10. Khách gõ “alo” — câu đầu muốn thấy gì?
+Họ không có file:
 
-**Nói:**
-
-> Khách vào gõ *alo*, *shop ơi*, hoặc thả sticker — anh/chị muốn câu đầu **nghe
-> như thế nào**? Viết giúp một câu **đúng kiểu mình đang nhắn**, đừng câu mẫu
-> trên mạng.
-
-**Đào:**
-
-- Cuối tin đó, gợi ý họ trả lời kiểu gì cho dễ? (xem giá / để mình hỏi vài câu /
-  gặp người…) — nói như câu khách gõ được.
-- Một kiểu chào quanh năm, hay đổi theo buổi / theo chương trình?
-
-→ Brain: tin mở. Không thay bằng “em có thể hỗ trợ gì ạ”.
+> Không sao ạ. Lát mình kể miệng về giá, sản phẩm, dịch vụ, em ghi chậm hơn.
 
 ---
 
-## Xong 10 câu
+## 4. Giọng trên Zalo khi nói về sản phẩm, dịch vụ
 
-Bạn (không đọc cho họ): raw còn nguyên; wiki tách từ raw + miệng; đóng vai trả
-5 câu khách hay hỏi. Còn `[CHỜ CHỦ SHOP]` thì hỏi lại **bằng lời thường**, không
-bảo họ “điền persona”.
+Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
+
+**Câu chính:**
+
+> Lúc tư vấn sản phẩm hay dịch vụ trên Zalo, anh/chị nói chuyện **như thế nào**?
+> Xưng *em* hay *mình*? Gọi khách *anh/chị* hay *bạn*? Giọng Nam, Bắc, hay nói
+> bình thường cho mọi miền? Kể giúp cho em nghe được giọng người thật, không
+> phải giọng fanpage.
+
+**Hỏi thêm:**
+
+> Nick nhân viên trên Zalo anh/chị muốn đặt tên gì?
+>
+> Anh/chị paste giúp **một tin** mình đã trả khách — nguyên văn. (Có rồi hỏi tin
+> thứ hai, rồi thứ ba. Đừng đòi ba tin cùng lúc.)
+>
+> Trong ngành mình, có chữ nào **không được nói** với khách không? Ví dụ chê
+> chỗ khác, hứa khỏi bệnh, hứa số liệu…
+>
+> Nếu khách hỏi “có phải máy nhắn không”, anh/chị muốn trả lời ra sao?
+
+→ `IDENTITY.md` + lớp xưng hô / ví dụ `SOUL.md`.
+
+---
+
+## 5. Việc liên quan sản phẩm, dịch vụ — cái nào không được tự ý?
+
+**Câu chính:**
+
+> Khi nói về **sản phẩm, dịch vụ, giá, giao hàng**, có việc gì nhân viên mới
+> **không được tự ý nói hoặc tự ý hứa** không ạ? Em cần chuyện cụ thể: ví dụ
+> không được bớt giá, không được hứa ngày giao, không được nhận là đã nhận tiền
+> khi khách gửi ảnh chuyển khoản. Anh/chị kể những tình huống từng làm mình
+> mệt — để bot đừng lặp.
+
+**Hỏi thêm:**
+
+> Giá trên bảng — nói đúng bảng được chứ? Khách xin bớt, xin tặng thêm thì sao?
+>
+> Khách gửi ảnh chuyển khoản — bot **chỉ ghi nhận**, anh/chị đối soát. Anh/chị
+> ổn với cách đó chứ?
+>
+> Khách bực, chê sản phẩm, chê dịch vụ, doạ kiện — lúc đó kêu anh/chị luôn hay
+> bot được giải thích trước?
+>
+> Còn việc nào riêng nghề mình, bot đụng vào là nguy hiểm? (thuốc, tiền bạc,
+> trẻ nhỏ, hợp đồng…)
+>
+> Tóm lại: **lúc nào phải kêu anh/chị vào**, đừng cố trả lời?
+
+→ Harness: rào. Không gỡ ba rào sẵn (tiền, nội bộ, bị dụ).
+
+---
+
+## 6. Câu hỏi về sản phẩm, dịch vụ mà tài liệu chưa có
+
+**Câu chính:**
+
+> Ngoài những gì trong tài liệu vừa gửi, khách còn hay **hỏi về sản phẩm hoặc
+> dịch vụ** những gì nữa? Câu khó, câu hỏi vòng vo, gõ sai chính tả, hỏi so với
+> chỗ khác — kể giúp, càng gần nguyên văn khách gõ càng tốt. Câu nào tài liệu
+> chưa có, anh/chị nói em biết **mình đang trả thế nào**.
+
+**Hỏi thêm:**
+
+> Cho em thêm một câu khách hay gõ? (Lặp tới khi họ hết, hoặc khoảng 5–10 câu.)
+>
+> Câu này trong file đã có chưa, hay mình vẫn tự trả?
+>
+> Có câu hỏi về sản phẩm/dịch vụ mà **cố ý không trả**, kêu anh/chị luôn không?
+
+→ Wiki lấp lỗ.
+
+---
+
+## 7. Từ nhắn tin tới chốt sản phẩm / dịch vụ
+
+**Câu chính:**
+
+> Một khách nhắn xong, đi tới lúc **mua sản phẩm** hoặc **đặt dịch vụ** thì qua
+> những bước nào ạ? Kể từ đầu tới cuối: hỏi món, chọn gói, lấy size, lấy địa
+> chỉ, thanh toán, giao, nhận lịch… Bước nào nhân viên mới làm được một mình,
+> bước nào **anh/chị phải chốt tay** — ví dụ còn hàng, còn slot, báo giá cuối,
+> xác nhận đơn.
+
+**Hỏi thêm:**
+
+> Những thông tin cần lấy — sản phẩm nào, số lượng, size, địa chỉ, ngày dùng
+> dịch vụ — anh/chị hỏi **lần lượt** hay hỏi một lúc?
+>
+> Còn hàng, còn chỗ trống — được nói chắc trên chat không, hay phải hỏi anh/chị?
+>
+> Khi nào được nói với khách là **đã đặt xong / đã giữ chỗ**? (Mặc định: nhân
+> viên mới chỉ ghi nhận, anh/chị xác nhận rồi mới nói chắc.)
+
+→ Harness + wiki quy trình.
+
+---
+
+## 8. Không chắc về đơn / về khách — kêu ai?
+
+**Câu chính:**
+
+> Lúc không chắc — khách hỏi khó về sản phẩm, dịch vụ, tiền, khiếu nại — anh/chị
+> muốn **kêu ai vào**? Nói tên, nick Zalo người đó. Họ trực giờ nào thì bot mới
+> được hẹn “anh/chị sẽ gọi lại”, cho em giờ cụ thể, ví dụ chín giờ sáng đến sáu
+> giờ tối, không cần nói giờ hành chính.
+
+**Hỏi thêm:**
+
+> Khách cho **số điện thoại** thì anh/chị nhận thế nào, lưu ở đâu, ai được xem?
+>
+> Ảnh khách gửi — ảnh sản phẩm, ảnh khi dùng dịch vụ, ảnh chuyển khoản — bot
+> xem giúp được hay chuyển luôn cho anh/chị?
+>
+> Có nhóm Zalo riêng để báo “có khách đang chờ” không?
+>
+> Nhắn lại khách sau vài ngày: bản này **chưa làm**. Anh/chị có cần, để em ghi
+> chú, chưa hứa có ngay.
+
+→ `USER.md`.
+
+---
+
+## 9. Khách chưa chọn được sản phẩm / dịch vụ
+
+**Câu chính:**
+
+> Khách bảo không biết lấy **sản phẩm** nào, **gói dịch vụ** nào cho hợp —
+> anh/chị, lúc đang nhắn tay, **thường hỏi họ những gì** trước khi gợi ý? Kể
+> đúng câu mình hay hỏi, theo thứ tự mình hay hỏi. Ví dụ: dùng cho ai, dùng
+> việc gì, ngân sách, size, ngày cần, đã dùng loại nào, chỗ nào chưa ưng. Tầm
+> hai ba câu là vừa, để khách không thấy bị hỏi dồn.
+
+**Hỏi thêm:**
+
+> Câu nào **phải hỏi**, câu nào hỏi khi họ chưa nói rõ?
+>
+> Có việc phải hỏi **đúng thứ tự** không? Ví dụ biết size rồi mới ra sản phẩm,
+> biết nhu cầu rồi mới ra gói dịch vụ.
+>
+> Gợi ý xong, việc gì phải **anh/chị xem đã** rồi mới trả khách?
+>
+> Anh/chị hay gợi ý **một** món/gói chính, hay đưa cả danh sách cho họ tự chọn?
+
+→ `skills/khai-thac/SKILL.md` (đừng nói chữ skill với họ).
+
+---
+
+## 10. Khách mới gõ vào — câu đầu
+
+**Câu chính:**
+
+> Khách mới vào, gõ *alo*, *shop ơi*, hỏi *còn hàng không*, hoặc thả sticker —
+> anh/chị muốn **câu đầu tiên** nghe như thế nào? Viết giúp đúng kiểu mình đang
+> nhắn khi tư vấn sản phẩm dịch vụ, một câu có người, không phải câu “em có thể
+> hỗ trợ gì ạ” trên mạng. Nếu muốn câu đó xong gợi ý họ trả lời cho dễ — ví dụ
+> đang tìm sản phẩm, đang hỏi dịch vụ, hay muốn xem giá — kể luôn, bằng chữ
+> khách gõ được.
+
+**Hỏi thêm:**
+
+> Cho em nghe thêm một cách mở khác, nếu khách hỏi thẳng giá hoặc hỏi thẳng một
+> sản phẩm / một dịch vụ?
+>
+> Chào một kiểu quanh năm, hay đổi theo buổi sáng/tối, theo chương trình?
+
+→ Brain: tin mở.
+
+---
+
+## Xong
+
+Raw còn nguyên; wiki tách từ tài liệu + miệng; thử 5 câu khách hay hỏi về sản
+phẩm/dịch vụ. Còn thiếu thì hỏi lại **bằng lời thường**.
 
 ## Bẫy
 
-- **Hỏi như đang setup phần mềm.** Họ cụt hứng, trả lời cho có.
-- **Hỏi xong không đào.** Câu 2 và 3 mỏng = bot vừa vô hồn vừa thiếu đồ.
-- **Nhận file rồi hỏi lại cả bảng giá.** Đọc file, chỉ hỏi chỗ thiếu.
-- **Tự vào web shop** khi họ chưa gửi. Web cũng phải họ chỉ.
+- **Hỏi cục** — bốn ý một hơi, họ trả một ý rồi bỏ.
+- **Câu chính quá ngắn** — họ không biết kể sâu tới đâu.
+- **Nói “đồ / kho / wiki”** — họ không hiểu mình cần tài liệu sản phẩm dịch vụ.
+- **Nhận file rồi hỏi lại cả bảng giá.** Đọc file, hỏi chỗ thiếu.
+- **Tự vào web** khi họ chưa gửi link.

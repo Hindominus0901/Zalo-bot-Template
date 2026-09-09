@@ -28,8 +28,8 @@ nhét vào wiki như chính sách của shop này.
 
 ### 2. Không bỏ phỏng vấn
 
-Câu đào sâu nhất buổi thường là **câu 2** (khách lo gì) và **câu 3** (tài liệu).
-Bảng gộp một lúc thì hai câu đó bị lướt.
+Câu chính **nói dài, rõ sản phẩm/dịch vụ**. Đào thì **hỏi thêm từng câu**, đừng
+nhồi. Câu 2 (khách ngại gì) và câu 3 (tài liệu) mỏng là buổi hỏng.
 
 ### 3. Không đổi kênh
 
@@ -61,9 +61,10 @@ Không xóa ba rào trong `AGENTS.md` (tiền, nội bộ, jailbreak).
 
 ### B2 — Phỏng vấn
 
-Làm đúng [`PHONG-VAN.md`](PHONG-VAN.md). **Nói đúng ô “Nói”**, đào bằng lời thường.
+Nói đúng **câu chính** (dài, về sản phẩm/dịch vụ). Rồi **hỏi thêm từng câu**
+trong `PHONG-VAN.md`. Đừng đọc cả khối “Hỏi thêm” một lần.
 
-Câu 3: đợi họ gửi đồ. Đừng nhảy tiếp khi chưa có file và cũng chưa nói là không có.
+Câu 3: xin **tài liệu sản phẩm, dịch vụ, giá, chính sách** — không nói “đồ”.
 
 ### B3 — Viết file, chỉ từ miệng chủ + raw
 
