@@ -1,0 +1,60 @@
+# Luật kho tri thức
+
+Bot trả lời số liệu shop từ đây, không từ kiến thức chung trên mạng.
+
+```
+knowledge/
+├─ CLAUDE.md          ← file này
+├─ persona.md         ← shop này là ai, ranh giới (điền lúc phỏng vấn)
+├─ raw/               ← file gốc chủ gửi. Không sửa. Không đưa raw cho khách.
+└─ wiki/
+   ├─ public/         ← khách được nghe
+   └─ internal/       ← chỉ chủ / nhân viên; bot không nhắc sự tồn tại
+```
+
+Không có vector DB. Trang Markdown, liên kết `[[ten-trang]]`. Tên file: chữ thường,
+không dấu, gạch ngang.
+
+---
+
+## Nhận tài liệu (câu 3 phỏng vấn)
+
+1. Cất nguyên bản vào `raw/`, tên file giữ được nguồn (`bang-gia-2026-04.pdf`).
+2. Thêm một dòng `raw/NGUON.md`: ngày nhận, ai gửi, file nào công khai / nội bộ.
+3. Đọc hết. Tách thành **nhiều trang nhỏ** — mỗi trang một câu khách hay hỏi.
+4. Số liệu chỉ lấy từ file hoặc miệng chủ. File im, miệng chưa nói → `[CHỜ CHỦ SHOP]`.
+5. Giá / hoa hồng / giá vốn / kịch bản khách khó: `internal/` nếu phân vân.
+
+Ảnh menu, screenshot Zalo: để `raw/`, đọc chữ trong ảnh rồi viết wiki; đừng bảo
+khách “xem file đính kèm” nếu nick không gửi file ổn định.
+
+---
+
+## Một trang wiki
+
+```markdown
+---
+title: Phí ship nội thành
+summary: Nội thành 30k, 2 giờ; ngoại tỉnh bot không tự chốt phí.
+updated: 2026-09-09
+sources: [raw/bang-gia-2026-04.pdf]
+---
+
+# Phí ship nội thành
+
+Nội dung ngắn, đúng chữ chính sách.
+
+Liên quan: [[doi-tra]]
+```
+
+`summary` viết như đang mô tả cho người chưa mở trang. Trang > ~1400 ký tự thì tách.
+
+---
+
+## Bot dùng kho thế nào
+
+- Có trong wiki → nói đúng wiki, giọng `SOUL.md`.
+- Không có → không đẻ số. Ở lại chat, hỏi rõ, hẹn chốt / bàn giao phần số.
+  Ghi câu khách vào báo cáo thiếu trang (nếu workspace có `memory/`).
+- Kiến thức chung (phối đồ, giải thích loại hàng) được nói, **tách miệng** với
+  chính sách bên em.

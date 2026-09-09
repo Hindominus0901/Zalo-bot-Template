@@ -1,0 +1,9 @@
+.env
+openclaw.json
+**/*.key
+**/*.pem
+**/secrets*
+.DS_Store
+knowledge/raw/*
+!knowledge/raw/NGUON.md
+!knowledge/raw/.gitkeep
