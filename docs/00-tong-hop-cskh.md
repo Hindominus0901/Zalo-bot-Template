@@ -220,4 +220,4 @@ Nguồn đã đọc: README / persona / skill / `docs/01`–`04` của `agent-cs
 các bài CSKH Zalo OA (Claude.vn, Mona, Loc Nguyen Data) — dùng để đối chiếu
 năng lực, không copy kiến trúc 6 lớp vào template này.
 
-Lần sửa sau: nới rào giọng và phạm vi — xem [`01-it-rao-da-dang.md`](01-it-rao-da-dang.md).
+Đã nới rào (xem [`01-it-rao-da-dang.md`](01-it-rao-da-dang.md)). Kênh: [`02-kenh-zalouser.md`](02-kenh-zalouser.md). Phỏng vấn: [`bo-cau-hoi.md`](bo-cau-hoi.md) / [`PHONG-VAN.md`](../PHONG-VAN.md). Bật nick: [`03-bat-nick.md`](03-bat-nick.md).

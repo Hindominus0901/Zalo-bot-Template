@@ -1,6 +1,6 @@
 # Template trợ lý AI chăm sóc khách hàng trên Zalo
 
-Coding agent **phỏng vấn chủ shop (10 câu, hỏi sâu)**, nhận file/kiến thức, rồi
+Coding agent **phỏng vấn chủ shop (10 chủ đề)**, nhận tài liệu sản phẩm/dịch vụ, rồi
 điền workspace OpenClaw. Bot cầm **nick Zalo riêng**, nói như người: hỏi trước
 khi tư vấn, không cụt cỡ khi khách lệch script.
 
@@ -10,8 +10,9 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 ## Chủ shop / coding agent làm gì
 
 1. Đọc [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md)
-2. Phỏng vấn [`PHONG-VAN.md`](PHONG-VAN.md) — câu dài về sản phẩm/dịch vụ; đào từng câu; câu 3 xin tài liệu
+2. Bộ câu hỏi xem nhanh: [`docs/bo-cau-hoi.md`](docs/bo-cau-hoi.md) · kịch bản đủ: [`PHONG-VAN.md`](PHONG-VAN.md)
 3. File gốc vào `knowledge/raw/`, wiki tách theo `knowledge/CLAUDE.md`
+4. Bật nick: [`docs/03-bat-nick.md`](docs/03-bat-nick.md)
 
 Đã khóa kênh và rào: [`docs/quyet-dinh.md`](docs/quyet-dinh.md).
 
@@ -21,7 +22,7 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 |---|---|
 | Brain | `SOUL.md` · `IDENTITY.md` · `knowledge/persona.md` |
 | Wiki | `knowledge/wiki/` ← tách từ `knowledge/raw/` (câu 3) |
-| Harness | `AGENTS.md` · `skills/khai-thac/` · `skills/ban-giao/` · `USER.md` |
+| Harness | `AGENTS.md` · `skills/khai-thac/` · `skills/bao-gia/` · `skills/xu-ly-phan-nan/` · `skills/ban-giao/` · `USER.md` |
 
 Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `PHONG-VAN.md` rồi điền.
 
