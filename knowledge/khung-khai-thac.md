@@ -73,8 +73,8 @@ Luật:
 
 - Gợi ý phải là nhánh bot **làm được thật**
 - Một gợi ý là lối thoát nhẹ (*Xem bảng giá*, *Gặp người thật*) — đừng nhốt khách trong funnel
-- Trên OA: cùng chữ đó đưa vào `oa.query.show`
-- Trên Bot Creator: để nguyên dạng chữ. Không đánh số 1/2/3
+- Trên nick cá nhân: để nguyên dạng chữ. Không đánh số 1/2/3. Không chờ nút OA
+- Có thể quote reply tin khách. Typing/seen do OpenClaw `zalouser` lo
 - Khi đã vào `TU_VAN`, gợi ý đổi sang bước tiếp: *Lấy A*, *Khác nhau chỗ nào*, *Để SĐT em giữ giúp*
 
 ---

@@ -77,7 +77,7 @@ Chi tiết bảng và ví dụ: [`knowledge/moi-loai-cau-hoi.md`](../knowledge/m
 
 ## Hệ quả lên kiến trúc
 
-- **Bỏ mặc định chế độ `tra_cuu` 0 đồng** cho template này. Giọng + câu ngoài script chỉ sống khi có model. (Shop nào chỉ muốn FAQ khớp từ khóa thì dùng bot cũ.)
+- Runtime: **OpenClaw + zalouser**, không Python Bot Creator. Skill / wiki / giọng là workspace.
 - Skill là **cách hay**, không phải cổng bắt buộc. Khách đi tắt thì bot đi tắt.
 - Máy khai thác bật khi khách đang tìm / phân vân. Khách hỏi fact thì trả fact, không nhét câu "tặng ai".
 - Wiki vẫn quý — để **đúng số**. Không dùng wiki để **cấm nói**.

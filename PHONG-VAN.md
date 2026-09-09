@@ -10,7 +10,8 @@ bị lướt.
 - Ít rào hơn bot cũ, giọng đa dạng, không cúp chat khi lệch script / kho trống / ngoài lề nhẹ
 - Chỉ khóa tiền, nội bộ, bịa số liệu shop
 - AI-first — không mang chế độ `tra_cuu` 0 đồng sang
-- **Ngoài hẳn ngành** (bài tập, bệnh, luật, chính trị): **một nhịp** thành thật, không đóng vai chuyên gia, rồi kéo về shop — không cấm, không soạn luận
+- **Ngoài hẳn ngành:** một nhịp rồi kéo về shop
+- **Kênh:** nick Zalo cá nhân + OpenClaw `zalouser` (như Tom), không Bot Creator / OA
 
 ---
 
@@ -22,9 +23,11 @@ bị lướt.
 khoản, Google Drive (chưa kết nối phiên này). Không thấy. Tom là OpenClaw
 (`SOUL.md` / `IDENTITY.md`), file Drive, hay project khác?
 
-**0b.** Template này chạy trên **Zalo Bot Creator** (như bot cũ, vào được nhóm,
-chưa chắc có nút) hay **Zalo OA** (có nút, list, ZNS, không vào nhóm), hay
-thiết kế **lớp gợi ý dùng chung**, adapter sau?
+**0b.** ~~Bot Creator vs OA~~ — **đã chốt: nick Zalo cá nhân**, cầm bởi OpenClaw
+`zalouser` như Tom. Không Bot Creator, không OA. Chi tiết `docs/02-kenh-zalouser.md`.
+
+**0b2.** Nick đó là **nick riêng cho bot** (nên thế) hay nick Zalo chính của chủ
+shop? Mặc định đề xuất: nick riêng, số riêng.
 
 **0c.** Đây là template để **bán / đưa cho chủ shop khác tự dựng** (giống
 `agent-cskh-zalo`), hay bản cho **một shop cụ thể** rồi mới trừu tượng hoá?
@@ -37,8 +40,7 @@ thiết kế **lớp gợi ý dùng chung**, adapter sau?
 
 **2.** Giọng gần **Nam**, **Bắc**, hay trung tính cả nước? (Đừng trộn.)
 
-**3.** Tên hiện trên Zalo (phải có tiền tố `Bot` nếu dùng Bot Creator)? Có tên
-riêng trong câu không, hay chỉ xưng em?
+**3.** Tên nick Zalo (tên người, không cần chữ `Bot`)? Có xưng tên đó trong câu không, hay chỉ xưng em?
 
 **4.** Mức hài: thỉnh thoảng một câu nhẹ, hay rõ tính cách hơn? Có chủ đề **cấm
 đùa** ngoài tiền / hàng lỗi / khách bực không?
@@ -78,7 +80,7 @@ F&B…) để slot khai thác sắc, hay **generic** rồi shop tự điền slo
 
 ## Xong nhóm 0 thì được phép bắt đầu
 
-Khi có 0a–0c, viết được: cấu trúc thư mục template, lớp gợi ý, và (nếu có file
-Tom) trộn giọng vào `knowledge/giong-noi.md`.
+Khi có 0a (file Tom / workspace OpenClaw), 0b2 (nick riêng hay nick chủ), 0c
+(template bán hay một shop): bắt đầu dựng workspace OpenClaw + `SOUL` / skill CSKH.
 
 Nhóm 1–3 cần trước khi khoá `persona` mẫu và skill `khai-thac`.

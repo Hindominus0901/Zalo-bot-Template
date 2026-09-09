@@ -5,34 +5,24 @@ chatbot bán hàng 2025–2026. Đây là bản đồ năng lực, không phải
 
 ---
 
-## 1. Hai cửa vào Zalo — chọn sai là thiết kế sai
+## 1. Kênh đã chốt — nick cá nhân như Tom
 
-Zalo có **hai sản phẩm bot**, không phải hai gói của cùng một thứ.
+Bản này **không** dùng Bot Creator hay OA. Bot cầm một tài khoản Zalo người,
+login QR qua OpenClaw `zalouser`. Chi tiết và rủi ro nick:
+[`02-kenh-zalouser.md`](02-kenh-zalouser.md).
 
-| | **Zalo Bot Creator** | **Zalo OA** |
-|---|---|---|
-| Tạo từ | Tài khoản Zalo cá nhân, ~5 phút, không chờ duyệt | Doanh nghiệp, giấy tờ, chờ duyệt |
-| API | `bot-api.zaloplatforms.com` | `openapi.zalo.me` |
-| Chat 1-1 | Có | Có |
-| Vào **nhóm chat** | Có (Basic: 3 nhóm, beta) | Không |
-| Nút bấm, list, tin có thẻ | Tài liệu landing có nhắc; `sendMessage` hiện chỉ chắc chữ + ảnh + sticker + định dạng | Có: nút `oa.query.show` / `.hide`, list tối đa 5 mục, mở URL / gọi điện |
-| Nhắn chủ động ra SĐT (ZNS) | Không | Có, nhưng chỉ tin giao dịch đã duyệt — không phải spam số lạ |
-| Hạn mức Basic (đo từ bot thật, 2026) | 3.000 tin/tháng, 50 người | Theo gói OA, cao hơn |
-| Tắt máy | Mất tin — Zalo không gửi bù | Webhook bền hơn nếu server sống |
-| Tên bot | Bắt buộc bắt đầu bằng `Bot` | Tên OA |
+Bảng dưới chỉ để nhớ vì sao không chọn hai cửa kia.
 
-Bot cũ chọn Bot Creator vì chủ shop tự dựng được, vào được nhóm, không cần OA.
-Cái hình dung của template mới — **gợi ý tương tác / câu hỏi bấm được** — khớp
-OA hơn. Landing page Bot Creator có viết "quick reply, nút, carousel" nhưng API
-`sendMessage` công bố vẫn chỉ có chữ. **Chưa coi là có nút** cho tới khi thử thật.
+| | **Nick cá nhân (đang dùng)** | Zalo Bot Creator | Zalo OA |
+|---|---|---|---|
+| Khách thấy | Người trong danh bạ | Tên bắt đầu `Bot` | Trang OA |
+| API | `zca-js` (unofficial) | `bot-api.zaloplatforms.com` | `openapi.zalo.me` |
+| Nút / list | Không — gợi ý bằng chữ | Chưa chắc | Có |
+| Vào nhóm | Như thành viên | 3 nhóm, @mention | Không |
+| Hạn Basic | Không áp 3.000 tin / 50 user | Có | Theo gói |
+| Rủi ro | Khóa nick nếu bị coi là bot | Token | Token |
 
-Hệ quả thiết kế: viết lớp **gợi ý** độc lập với kênh. Trên Bot Creator là 2–3
-câu hỏi viết ra cuối tin. Trên OA thì cùng nội dung đó thành nút `oa.query.show`.
-Đừng gắn chết vào nút rồi mới nghĩ nội dung.
-
-Cửa sổ 24–48 giờ trên OA: trong cửa sổ sau lần khách nhắn, OA trả lời tư vấn
-thoải mái. Ngoài cửa sổ thì chỉ còn tin mẫu / ZNS đúng loại. Bot Creator không
-nhắn trước cho người chưa từng nhắn tới.
+Gợi ý tương tác: 2–3 câu gõ được + quote reply + typing/seen. Không gắn nút OA.
 
 ---
 
@@ -122,36 +112,33 @@ bot trả lời được. Đây là thứ làm bot khá lên theo tuần, không
 
 ### Khách gửi được
 
-Chữ, ảnh, sticker, vị trí (OA), voice (Bot Creator có event `message.voice.received`).
-**Bot Creator không nhận PDF/Word/Excel** — dặn chụp màn hình. Ảnh gửi dưới dạng
-link tạm, phải tải ngay trong lượt.
+Chữ, ảnh, sticker, voice, file — nick cá nhân nhận được gần như Zalo người thật.
+Ảnh/file phải xử lý ngay trong lượt (OpenClaw có hàng đợi local; socket `zca-js`
+không replay tin lúc gateway tắt).
 
-Trong nhóm (Bot Creator): bot chỉ nghe khi được @mention hoặc reply tin của nó.
-Gửi ảnh phải tag ngay trong chú thích tấm ảnh, không tag tin trước rồi gửi ảnh sau.
+Trong nhóm: mặc định chỉ nghe khi được @ hoặc khi người ta reply tin của bot.
+Cấu hình `requireMention`.
 
 ### Bot gửi được
 
-Chữ ngắn (cắt ~1400–2000 ký tự), ảnh, sticker. OA thêm: list, nút, tin giao dịch
-đã duyệt. Không bảng Markdown — Zalo hiện chữ thô. In đậm được nếu dùng
-`parse_mode` / `text_styles` (Bot Creator).
+Chữ (cắt ~2000 ký tự), ảnh, sticker, quote reply, reaction, typing/seen.
+Không nút, không list OA, không bảng Markdown. Giọng thô như nhắn tay.
 
 ### Nhịp một lượt tốt
 
-1. Hiện "đang soạn" nếu API hỗ trợ (`sendChatAction`) — đừng để khách chờ im
-2. Bắt nhịp khách: 3 chữ thì 1–2 câu; phân vân thì ở lại. Vào việc ở câu đầu, không mở bài
-3. Kết bằng **một** câu hỏi cụ thể, hoặc 2–3 gợi ý bấm/gõ được
-4. Việc nặng (đọc ảnh, tra kho) thì tách tin: tin 1 ghi nhận, tin 2 trả lời
+1. Typing + seen (zalouser lo, best-effort) — đừng để khách chờ im
+2. Bắt nhịp khách: 3 chữ thì 1–2 câu; phân vân thì ở lại. Vào việc ở câu đầu
+3. Kết bằng **một** câu hỏi cụ thể, hoặc 2–3 gợi ý gõ được
+4. Việc nặng thì tách tin: tin 1 ghi nhận, tin 2 trả lời
 
-### Gợi ý tương tác — cách làm quanh việc không có nút
+### Gợi ý tương tác — chữ, không nút
 
-Template cũ cố tình **không** dùng menu đánh số. Đúng. Cách thay:
+Nick cá nhân không có nút OA. Cách làm:
 
 > Dạ có phải anh/chị đang hỏi về **bảng giá** không ạ — hay muốn em hỏi giúp cho đúng loại?
 
-Khách sửa được trong một lượt. Khi lên OA, cùng hai nhánh đó thành hai nút
-`oa.query.show` với payload là câu khách sẽ "gửi": `Xem bảng giá` / `Để em hỏi vài câu`.
-
-Đừng gợi ý quá 3. Đừng gợi ý thứ bot không làm được.
+Khách sửa được trong một lượt. Thêm quote reply tin họ nếu đang phân vân. Đừng
+đánh số 1/2/3. Đừng gợi ý thứ bot không làm được. Tối đa 3 hướng.
 
 ---
 
@@ -179,7 +166,7 @@ Chặn code chỉ còn: không tự xác nhận tiền, không lộ `internal/`,
 3. **Chế độ 0 đồng không đọc persona / skill** — template này AI-first; FAQ khớp
    từ khóa để bot cũ lo.
 4. **Câu ngoài script / kho trống bị cúp** — xem `moi-loai-cau-hoi.md`.
-5. **Chưa nhắn chủ động**, **chưa chắc có nút** trên Bot Creator.
+5. **Runtime:** workspace OpenClaw + zalouser, chưa dựng. File Tom (SOUL) chưa có trong repo.
 
 OpenClaw đóng góp một ý tách file: `SOUL.md` = giọng và tính cách; luật vận hành
 ở chỗ khác. Template mới nên tách `giong-noi.md` khỏi `persona.md` (bối cảnh
@@ -223,8 +210,8 @@ phải "cần hỗ trợ gì thêm không ạ".
 - Bot không phải chủ shop — kể chuyện chủ thì ngôi thứ ba
 - Không đoán anh/chị từ tên mơ hồ
 - Kiến thức ngành được nói, miễn tách miệng với chính sách shop — đừng đọc số liệu shop từ kiến thức chung
-- 3.000 tin/tháng Bot Creator ≈ 300 cuộc, ~10 cuộc/ngày
-- ZNS không phải kênh nhắn lạnh
+- Gateway tắt = mất tin lúc đó (socket personal không replay)
+- Nick bot unofficial — xem cảnh báo khóa nick ở `02-kenh-zalouser.md`
 
 Nguồn đã đọc: README / persona / skill / `docs/01`–`04` của `agent-cskh-zalo`;
 [Zalo Bot sendMessage](https://docs.zaloplatforms.com/docs/BOT/apis/sendMessage);
