@@ -38,8 +38,11 @@ nhắn trước cho người chưa từng nhắn tới.
 
 ## 2. Việc CSKH thật sự làm được — tám nhóm
 
-Không phải "trả lời FAQ". Một nhân viên CSKH giỏi trên Zalo làm tám việc. Bot
-làm được phần lớn nếu có kho tri thức và biết lúc nào phải dừng.
+Không phải "trả lời FAQ". Một nhân viên CSKH giỏi trên Zalo làm tám việc — và
+còn **ở lại chat** khi khách hỏi lệch, hỏi đời, hỏi kho chưa có. Biết lúc nào
+dừng là lúc tiền / khiếu nại / quyền quyết, không phải lúc câu hơi lạ.
+
+Chỗ cố ý khác bot cũ: [`01-it-rao-da-dang.md`](01-it-rao-da-dang.md).
 
 ### A. Đón và định hướng
 
@@ -135,7 +138,7 @@ Chữ ngắn (cắt ~1400–2000 ký tự), ảnh, sticker. OA thêm: list, nút
 ### Nhịp một lượt tốt
 
 1. Hiện "đang soạn" nếu API hỗ trợ (`sendChatAction`) — đừng để khách chờ im
-2. 2–5 câu, vào việc ở câu đầu, không mở bài
+2. Bắt nhịp khách: 3 chữ thì 1–2 câu; phân vân thì ở lại. Vào việc ở câu đầu, không mở bài
 3. Kết bằng **một** câu hỏi cụ thể, hoặc 2–3 gợi ý bấm/gõ được
 4. Việc nặng (đọc ảnh, tra kho) thì tách tin: tin 1 ghi nhận, tin 2 trả lời
 
@@ -154,33 +157,29 @@ Khách sửa được trong một lượt. Khi lên OA, cùng hai nhánh đó th
 
 ## 4. Bot cũ đã có gì, template mới còn thiếu gì
 
-Bốn trụ cột của `agent-cskh-zalo` giữ nguyên — chúng đúng:
+Bốn trụ cột của `agent-cskh-zalo` **giữ chỗ sửa** — không giữ nội quy đi kèm:
 
 | Trụ | File | Trả lời |
 |---|---|---|
-| Tính cách | `knowledge/persona.md` | Bot là ai, nói thế nào, không được nói gì |
-| Kiến thức | `knowledge/wiki/` | Bot biết gì |
-| Kỹ năng | `skills/` | Bot làm thế nào |
+| Tính cách | `giong-noi.md` + `persona.md` | Bot nghe thế nào, shop này là ai |
+| Kiến thức | `knowledge/wiki/` | Số liệu shop — không phải giấy phép được nói |
+| Kỹ năng | `skills/` | Cách hay khi gặp tình huống đó, không phải cổng bắt buộc |
 | Công cụ | `tools/` | Bot làm được gì |
 
-Skill đã viết sẵn và viết rất chắc: tư vấn chọn món, lấy thông tin, báo giá,
-từ chối, phàn nàn, chuyển người, tra/tạo đơn, chăm khách cũ, tra cứu, soát kho.
+Skill cũ viết chắc, nhưng nhiều cái biến thành rào: "ngoài kho thì dừng", "đọc
+wiki rồi mới được trả lời", "ngoài phạm vi dù biết cũng im". Template này **không
+mang ba câu đó sang**. Chi tiết: [`01-it-rao-da-dang.md`](01-it-rao-da-dang.md).
 
-Ba lớp chặn không được gỡ: không trả lời khi chưa tra kho, không tự xác nhận
-tiền, không lộ `internal/`.
+Chặn code chỉ còn: không tự xác nhận tiền, không lộ `internal/`, không đổi vai.
 
 **Chỗ hổng so với ý hình dung lần này:**
 
-1. **Khai thác chưa phải máy trạng thái.** Skill bảo "hỏi 2–3 câu rồi đề xuất
-   một món", nhưng không có chỗ lưu slot, không có điều kiện "đủ bối cảnh thì
-   mới tư vấn", không có gợi ý cuối mỗi tin.
-2. **Giọng persona mẫu còn đúng mà khô.** Luật chống sáo ngữ rất tốt. Chưa có
-   lớp tính cách: hơi vui, hơi hài, luôn để ý khách — mà vẫn không thành MC.
-3. **Chế độ 0 đồng không đọc persona / skill.** `tra_cuu` chỉ khớp wiki. Máy
-   khai thác và giọng chỉ sống ở chế độ `ai`.
-4. **Chưa nhắn chủ động** (nhắc lịch, follow-up) — chủ ý, vì hạn mức và vì chưa
-   đo cửa sổ gửi trên Bot Creator.
-5. **Chưa có nút / quick reply** vì kênh cũ không có (hoặc chưa chứng minh được).
+1. **Khai thác chưa phải máy trạng thái** — và phải tắt được khi khách hỏi fact.
+2. **Giọng khô + danh sách cấm dài** — cần hướng tính cách, không cần nội quy giọng.
+3. **Chế độ 0 đồng không đọc persona / skill** — template này AI-first; FAQ khớp
+   từ khóa để bot cũ lo.
+4. **Câu ngoài script / kho trống bị cúp** — xem `moi-loai-cau-hoi.md`.
+5. **Chưa nhắn chủ động**, **chưa chắc có nút** trên Bot Creator.
 
 OpenClaw đóng góp một ý tách file: `SOUL.md` = giọng và tính cách; luật vận hành
 ở chỗ khác. Template mới nên tách `giong-noi.md` khỏi `persona.md` (bối cảnh
@@ -223,7 +222,7 @@ phải "cần hỗ trợ gì thêm không ạ".
 - Một con số sai về giá / ngày giao tốn hơn một câu "em kiểm tra lại"
 - Bot không phải chủ shop — kể chuyện chủ thì ngôi thứ ba
 - Không đoán anh/chị từ tên mơ hồ
-- Không đọc kiến thức ngành ra như chính sách của shop này
+- Kiến thức ngành được nói, miễn tách miệng với chính sách shop — đừng đọc số liệu shop từ kiến thức chung
 - 3.000 tin/tháng Bot Creator ≈ 300 cuộc, ~10 cuộc/ngày
 - ZNS không phải kênh nhắn lạnh
 
@@ -233,3 +232,5 @@ Nguồn đã đọc: README / persona / skill / `docs/01`–`04` của `agent-cs
 [OpenClaw SOUL](https://docs.openclaw.ai/concepts/soul);
 các bài CSKH Zalo OA (Claude.vn, Mona, Loc Nguyen Data) — dùng để đối chiếu
 năng lực, không copy kiến trúc 6 lớp vào template này.
+
+Lần sửa sau: nới rào giọng và phạm vi — xem [`01-it-rao-da-dang.md`](01-it-rao-da-dang.md).

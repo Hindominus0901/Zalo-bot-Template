@@ -2,7 +2,10 @@
 
 Repo này đang được dựng thành **template** để một coding agent phỏng vấn chủ
 doanh nghiệp, rồi sinh ra một bot CSKH nói tiếng Việt như người thật: hỏi trước
-khi tư vấn, quan tâm trước khi bán.
+khi tư vấn, quan tâm trước khi bán — và **không cụt cỡ khi khách hỏi lệch script**.
+
+Khác bot cũ `agent-cskh-zalo`: ít rào giọng, được nói chuyện đời, được dùng kiến
+thức chung. Chỉ khóa tiền, nội bộ, và việc bịa số liệu shop.
 
 Hiện tại đây là bản **nghiên cứu + khung thiết kế**. Chưa phải code chạy được.
 
@@ -10,9 +13,11 @@ Hiện tại đây là bản **nghiên cứu + khung thiết kế**. Chưa phả
 
 | File | Việc |
 |---|---|
-| [`docs/00-tong-hop-cskh.md`](docs/00-tong-hop-cskh.md) | Bot CSKH trên Zalo làm được gì, thao tác thế nào, cái gì đã có ở bot cũ, cái gì còn thiếu |
-| [`knowledge/khung-khai-thac.md`](knowledge/khung-khai-thac.md) | Máy trạng thái: khai thác → đủ bối cảnh → tư vấn → chốt / bàn giao |
-| [`knowledge/giong-noi.md`](knowledge/giong-noi.md) | Giọng Việt Nam, tính cách vui – hài – luôn quan tâm |
+| [`docs/01-it-rao-da-dang.md`](docs/01-it-rao-da-dang.md) | Vì sao bot cũ cứng, rào nào giữ, rào nào bỏ |
+| [`knowledge/moi-loai-cau-hoi.md`](knowledge/moi-loai-cau-hoi.md) | Mọi kiểu tin đều được đáp — FAQ, teencode, ngoài lề, kho trống |
+| [`docs/00-tong-hop-cskh.md`](docs/00-tong-hop-cskh.md) | Bot CSKH trên Zalo làm được gì, thao tác thế nào |
+| [`knowledge/khung-khai-thac.md`](knowledge/khung-khai-thac.md) | Khi khách phân vân: khai thác → tư vấn |
+| [`knowledge/giong-noi.md`](knowledge/giong-noi.md) | Giọng Việt Nam, vui – hài – để ý; hướng chứ không phải nội quy |
 | [`PHONG-VAN.md`](PHONG-VAN.md) | Câu hỏi còn thiếu trước khi viết code |
 
 ## Nguồn đang tổng hợp
@@ -23,5 +28,6 @@ Hiện tại đây là bản **nghiên cứu + khung thiết kế**. Chưa phả
 
 ## Việc tiếp theo
 
-Trả lời các câu trong `PHONG-VAN.md`. Khi đủ ý, agent sẽ bắt đầu dựng template
-(persona, skill khai thác, gợi ý tương tác, rồi mới tới code).
+Trả lời `PHONG-VAN.md` nhóm 0 (Tom, kênh Zalo, template cho ai) và câu 8b (ngoài
+hẳn ngành thì xử lý tới đâu). Khung ít-rào / mọi-câu-hỏi đã viết; khi đủ ý thì
+dựng runtime.

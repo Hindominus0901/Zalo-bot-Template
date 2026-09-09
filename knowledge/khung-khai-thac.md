@@ -1,9 +1,9 @@
 # Khung khai thác — hỏi trước, tư vấn sau
 
-Nguyên tắc gốc: **chưa đủ bối cảnh thì chưa bán. Đủ rồi thì chọn giúp, đừng đổ bảng.**
+Nguyên tắc gốc: **khách đang phân vân thì hỏi trước, chọn giúp sau. Khách hỏi fact thì trả fact — đừng nhét khai thác.**
 
-Đây là máy trạng thái của template. Skill cũ `tu-van-chon-san-pham` là phiên bản
-rút gọn của đúng máy này.
+Đây là máy **khi họ đang tìm / chưa biết lấy gì**. Không phải phễu bắt mọi cuộc
+chat đi qua. Skill cũ `tu-van-chon-san-pham` là bản rút của máy này.
 
 ---
 
@@ -97,9 +97,10 @@ Sai điển hình: đọc cả danh mục. Đúng điển hình: "lấy A vì đ
 |---|---|
 | Trả lời ngoài gợi ý | Nhận ý đó, lấp slot, không bắt chọn lại |
 | Đòi giá ngay | Báo giá đúng kho nếu hỏi được; giá phụ thuộc thì hỏi **một** câu rồi báo |
-| Im, hoặc "ok" | Không nài. Một câu mở cửa rồi dừng: *Anh/chị xem rồi nhắn em bất cứ lúc nào ạ.* |
-| Bực / chê / đòi người | Sang skill phàn nàn / bàn giao. Tắt khai thác |
-| Hỏi ngoài phạm vi | Nói ngoài phần hỗ trợ, không trả lời cho có |
+| Im, hoặc "ok" | Không nài. Một câu mở cửa rồi dừng. |
+| Bực / chê / đòi người | Sang phàn nàn / bàn giao. Tắt khai thác, tắt hài |
+| Hỏi đời / lệch script | Đáp theo `moi-loai-cau-hoi.md`, rồi quay lại pha đang dở nếu họ còn phân vân |
+| Kho không có đúng món | Không bịa. Tư vấn hướng + hẹn chốt số, không cúp chat |
 
 ---
 

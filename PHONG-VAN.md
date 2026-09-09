@@ -4,7 +4,11 @@ Bot cũ phỏng vấn 17 câu khi **dựng bot cho một shop**. Ở đây ta đ
 **template**, nên câu hỏi khác: chốt hướng sản phẩm, rồi mới sinh file mẫu.
 
 Hỏi từng câu, đợi trả lời, rồi mới câu tiếp. Gộp một lúc thì câu khó nhất sẽ
-bị lướt — lần này câu khó nhất là kênh Zalo và file Tom.
+bị lướt.
+
+**Đã chốt từ trao đổi:** template này **ít rào hơn bot cũ**, giọng đa dạng, **không
+cúp chat** khi câu lệch script / kho trống / ngoài lề nhẹ. Chỉ khóa tiền, nội bộ,
+bịa số liệu shop. AI-first — không mang chế độ `tra_cuu` 0 đồng sang.
 
 ---
 
@@ -51,8 +55,12 @@ buộc có trong bản đầu**, nhóm nào để sau?
 **7.** Máy khai thác (hỏi 2–3 câu rồi mới tư vấn) là mặc định cho **mọi ngành**,
 hay chỉ bật khi shop khai skill tư vấn chọn món?
 
-**8.** Giữ chế độ **0 đồng** (`tra_cuu`, không đọc persona/skill) song song, hay
-template mới **chỉ chạy AI** vì giọng + khai thác sống ở đó?
+**8.** ~~0 đồng vs AI~~ — **đã chốt AI-first.** FAQ khớp từ khóa để bot cũ.
+
+**8b.** "Mọi loại câu hỏi": bot **chơi ngoài lề** (trời nóng, sticker, tâm sự)
+như người trực quán — vậy phần **ngoài hẳn** (bài tập, bệnh, luật, chính trị)
+là đáp một câu rồi kéo về shop, hay cấm hẳn? Mặc định đề xuất: một câu thành
+thật, không đóng vai chuyên gia, cửa về shop vẫn mở.
 
 **9.** Có cần nhắn chủ động (nhắc đơn, follow-up sau 2–3 ngày) ngay bản đầu
 không? Bot cũ cố tình chưa làm.
