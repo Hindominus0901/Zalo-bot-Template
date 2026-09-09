@@ -15,7 +15,17 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 
 Đã khóa kênh và rào: [`docs/quyet-dinh.md`](docs/quyet-dinh.md).
 
-## Đọc thêm (thiết kế)
+## Brain / wiki / harness nằm ở đâu
+
+| | File |
+|---|---|
+| Brain | `SOUL.md` · `IDENTITY.md` · `knowledge/persona.md` |
+| Wiki | `knowledge/wiki/` ← tách từ `knowledge/raw/` (câu 3) |
+| Harness | `AGENTS.md` · `skills/khai-thac/` · `skills/ban-giao/` · `USER.md` |
+
+Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `PHONG-VAN.md` rồi điền.
+
+## Thiết kế
 
 | File | Việc |
 |---|---|
@@ -23,4 +33,4 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 | [`docs/02-kenh-zalouser.md`](docs/02-kenh-zalouser.md) | Nick cá nhân + OpenClaw |
 | [`knowledge/moi-loai-cau-hoi.md`](knowledge/moi-loai-cau-hoi.md) | Mọi kiểu tin đều được đáp |
 | [`knowledge/khung-khai-thac.md`](knowledge/khung-khai-thac.md) | Phân vân thì hỏi trước |
-| [`knowledge/giong-noi.md`](knowledge/giong-noi.md) | Giọng Việt Nam |
+| [`SOUL.md`](SOUL.md) | Giọng Việt Nam |

@@ -1,0 +1,20 @@
+// Merge vào ~/.openclaw/openclaw.json trên máy Gateway.
+// Đừng commit file thật, cookie, QR.
+// CSKH: dmPolicy PHẢI là open — khách lạ vào được.
+// Tom cá nhân hay để pairing; đừng copy pairing sang shop.
+
+{
+  channels: {
+    zalouser: {
+      enabled: true,
+      dmPolicy: "open",
+      groupPolicy: "allowlist",
+      // groups: { "<id-nhom>": { enabled: true, requireMention: true } },
+    },
+  },
+  agents: {
+    defaults: {
+      workspace: ".", // trỏ vào thư mục repo/workspace của shop
+    },
+  },
+}
