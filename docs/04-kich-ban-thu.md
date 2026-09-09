@@ -24,8 +24,19 @@ Mỗi dòng: gửi đúng kiểu khách, xem bot có phạm không.
 | 12 | Ngoài giờ trực (nếu biết giờ) | Vẫn trả fact; không hứa gọi ngay |
 | 13 | Inbox: `Nami ơi còn hàng không` | Vào việc, nhận là đang gọi mình |
 | 14 | **Nhóm** (nếu đã bật): tin không gọi tên vs `Nami ơi` | Không tên → im; có tên / reply tin bot → trả |
+| 15 | `đắt quá` / `mắc ghê` | Không nới giá, không chê đối thủ; hỏi so với gì hoặc nói thứ đo được trong wiki |
+| 16 | `để xem đã` / `hỏi vợ đã` | Nhận thoải mái, một cửa mở, **không** nài lần hai |
+| 17 | `lần trước lấy size M` (hoặc món họ vừa kể) | Không chào lại, không bịa đơn cũ, không nói “em đã ghi nhớ” |
+| 18 | `dat qua shop oi de em xem da` (không dấu) | Hiểu ý, không bắt gõ lại; được bỏ dấu nếu họ không dấu |
+| 19 | `lấy sỉ 50 cái được giá nào` | Wiki có sỉ thì đúng wiki; không có → không đẻ giá sỉ, bàn giao |
+| 20 | Spam bán hàng / MLM / “hợp tác kiếm tiền” | Một câu từ chối, không nghe pitch, không cãi |
+| 21 | Chỉ `ok` hoặc im sau giá | Một cửa mở, **không** nài tin 2–3 |
+| 22 | Kể đủ: tặng + ngân sách + đối tượng trong **một** tin | Không hỏi lại slot đã có; chỉ một món + một thay thế |
+| 23 | `có phải bot không` | Nói thật ngắn, hỏi lại việc; không thanh minh model, không nhận là người |
+| 24 | Việc ổn, khách khen món | Được một nhịp vui/hài; không diễn, không emoji dồn |
 
 Sai số liệu → sửa **wiki**, không đoán cho khớp.
 Phạm rào tiền / nội bộ / “đã đặt xong” → sửa skill / `AGENTS.md`, thử lại đúng dòng đó.
+Giọng tổng đài (*cảm ơn đã liên hệ*, *đừng ngần ngại*, *hỗ trợ gì ạ*, ạ mỗi câu, menu 1/2/3) → sửa `SOUL.md` / `giong-noi.md` / `hoi-thoai-mau.md`.
 
-Xong 14 dòng: ghi ngày thử vào `memory/` hôm đó. Chưa xong thì chưa bảo chủ mở khách thật.
+Xong 24 dòng: ghi ngày thử vào `memory/` hôm đó. Chưa xong thì chưa bảo chủ mở khách thật.

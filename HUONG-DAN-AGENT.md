@@ -55,9 +55,13 @@ Chưa quét QR lúc này.
 
 ### B1 — Đọc khung, đừng đụng rào cứng
 
-Đọc: `SOUL.md`, `AGENTS.md`, `docs/01-it-rao-da-dang.md`, `knowledge/moi-loai-cau-hoi.md`.
+Đọc: `SOUL.md`, `knowledge/giong-noi.md`, `knowledge/cach-tu-van.md`, `AGENTS.md`,
+`docs/01-it-rao-da-dang.md`, `knowledge/moi-loai-cau-hoi.md`, `knowledge/hoi-thoai-mau.md`.
 
 Không xóa ba rào trong `AGENTS.md` (tiền, nội bộ, jailbreak).
+
+Hình file đã điền (shop **giả**): `docs/vi-du-file-da-dien.md` — **cấm** chép số
+ở đó vào wiki / persona shop đang dựng.
 
 ### B2 — Phỏng vấn
 
@@ -71,6 +75,7 @@ Câu 3: xin **tài liệu sản phẩm, dịch vụ, giá, chính sách** — kh
 | Nguồn | File |
 |---|---|
 | Tên nick, tên gọi, vibe | `IDENTITY.md` + `agents.defaults.identity.name` (khớp nhau) |
+| Xưng hô + 2–3 tin thật của chủ | `SOUL.md` đoạn cuối — **không** viết lại `giong-noi.md` / `cach-tu-van.md` |
 | Bán gì, khách lo, ranh giới, tin mở | `knowledge/persona.md` |
 | Bàn giao, giờ gọi lại, nhóm nội bộ | `USER.md` |
 | File/ảnh/link câu 3 | `knowledge/raw/` rồi tách `knowledge/wiki/` — danh sách trang: `wiki/TRANG-MAU.md` |
@@ -78,11 +83,15 @@ Câu 3: xin **tài liệu sản phẩm, dịch vụ, giá, chính sách** — kh
 | Slot lúc phân vân | `skills/khai-thac/SKILL.md` |
 | Bước chốt đơn / đặt | `skills/ghi-don/SKILL.md` (câu 7) |
 
-Giọng nền đã có trong `SOUL.md`. Chỉ thêm xưng hô + đoạn chat thật của họ.
+Giọng nền đã có trong `SOUL.md` + `giong-noi.md` + `cach-tu-van.md`. Chỉ thêm
+xưng hô + đoạn chat thật của họ vào `SOUL.md`. Đừng thay bằng kịch bản OA
+(*cảm ơn đã liên hệ*, *đừng ngần ngại*).
 
 Wiki: `knowledge/CLAUDE.md`. Một trang một câu hỏi. Phân vân public/internal → `internal/`.
+Trang địa chỉ / sỉ-CTV / VAT / kiểm hàng: chỉ tạo khi chủ có dữ liệu (`wiki/TRANG-MAU.md`).
 
 **Cấm:** tự mở website/Facebook shop khi họ chưa đưa, rồi ghi giá vào wiki.
+**Cấm:** copy giá từ `docs/vi-du-file-da-dien.md` (Tiệm Mây là shop bịa).
 
 ### B4 — Config kênh
 
@@ -100,14 +109,20 @@ Bắt buộc với CSKH:
 Có biệt hiệu (*shop ơi*): `agents.entries.main.groupChat.mentionPatterns` gồm
 **tên gốc + biệt hiệu**. Chỉ ghi biệt hiệu thì hết nhận *Nami ơi*.
 
+Muốn checklist lúc Gateway bật: `openclaw hooks enable boot-md`. `BOOT.md` **cấm**
+nhắn khách; bàn giao dở chỉ gửi kênh trong `USER.md`.
+
 **Không commit** `openclaw.json` thật, cookie, QR.
 
 ### B5 — Thử trong đầu, rồi thử nick
 
-Đọc lại 5 câu FAQ họ vừa kể, đóng vai bot theo `SOUL.md` + wiki vừa viết. Sai
-trang thì sửa wiki. Còn `[CHỜ CHỦ SHOP]` trên persona / giá thì chưa xong phần số.
+Đọc lại 5 câu FAQ họ vừa kể, đóng vai bot theo `SOUL.md` + `giong-noi.md` +
+`cach-tu-van.md` + wiki vừa viết + `knowledge/hoi-thoai-mau.md` (giọng, không lấy
+giá mẫu). Sai trang thì sửa wiki. Giọng tổng đài thì sửa giọng, không sửa wiki.
+Còn `[CHỜ CHỦ SHOP]` trên persona / giá thì chưa xong phần số.
 
-Sau QR: chạy [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) từ nick khác.
+Sau QR: chạy [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) từ nick khác
+(24 dòng: tình huống + giọng).
 
 ### B6 — Nối nick (cùng họ)
 

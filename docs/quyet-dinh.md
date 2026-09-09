@@ -18,9 +18,13 @@ dòng này khi phỏng vấn một shop. Shop-level hỏi ở `PHONG-VAN.md`.
 
 ## Bản này làm / chưa làm
 
-**Làm:** giọng, wiki, khai thác, báo giá, ghi đơn (không tự chốt), theo đơn (không bịa),
-ảnh/voice, phàn nàn, bàn giao, ngoài giờ, OTP/giả chủ, vòng học `memory/` + heartbeat
-không nhắn khách, kịch bản thử 12 tin.
+**Làm:** giọng kỹ (`SOUL.md` tính cách, `giong-noi.md` ngôn từ, `cach-tu-van.md`
+cách hỏi/trả/tư vấn, `hoi-thoai-mau.md` few-shot), wiki, khai thác, báo giá, ghi
+đơn (không tự chốt), theo đơn (không bịa), ảnh/voice, phàn nàn, từ chối (không nới
+giá), khách cũ reactive, thu SĐT (memory + bàn giao, không CRM), bàn giao, ngoài
+giờ, OTP/giả chủ, tình huống Zalo (sỉ, hết hàng, spam, VAT, teencode…), `BOOT.md`
+(restart không nhắn khách), ví dụ file đã điền (shop giả), vòng học `memory/` +
+heartbeat không nhắn khách, kịch bản thử giọng + tình huống.
 
 **Chưa làm (đừng hứa):** nhắn lại khách sau vài ngày, nút OA, CRM/CSV đơn,
 tồn kho live, cổng thanh toán, lịch slot gắn lịch thật, trộn SOUL Tom.

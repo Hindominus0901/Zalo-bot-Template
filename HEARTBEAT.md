@@ -1,7 +1,7 @@
 # Nhịp nội bộ — không nhắn khách
 
 Follow-up chủ động **chưa làm**. Heartbeat không được tự nhắn khách, không được
-“chào lại” inbox im.
+“chào lại” inbox im. Gateway restart: cùng luật, xem `BOOT.md`.
 
 1. Mở `memory/YYYY-MM-DD.md` hôm nay (và hôm qua nếu cần).
 2. Có câu thiếu trang hoặc bàn giao chưa xong → gom **3–8 dòng** cho người trong

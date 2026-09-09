@@ -20,9 +20,9 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 
 | | File |
 |---|---|
-| Brain | `SOUL.md` · `IDENTITY.md` (tên **Nami**) · `knowledge/persona.md` |
+| Brain | `SOUL.md` (tính cách) · `IDENTITY.md` (tên **Nami**) · `knowledge/persona.md` · `knowledge/giong-noi.md` · `knowledge/cach-tu-van.md` |
 | Wiki | `knowledge/wiki/` ← tách từ `knowledge/raw/` (câu 3) |
-| Harness | `AGENTS.md` · `skills/` (khai thác, báo giá, ghi đơn, theo đơn, ảnh, phàn nàn, bàn giao) · `USER.md` · `HEARTBEAT.md` · `memory/` |
+| Harness | `AGENTS.md` · `BOOT.md` · `skills/` (khai thác, báo giá, ghi đơn, theo đơn, ảnh, phàn nàn, từ chối, khách cũ, thu lead, bàn giao) · `USER.md` · `HEARTBEAT.md` · `memory/` |
 
 Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `PHONG-VAN.md` rồi điền.
 
@@ -33,7 +33,11 @@ Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `P
 | [`docs/01-it-rao-da-dang.md`](docs/01-it-rao-da-dang.md) | Rào nào giữ, rào nào bỏ |
 | [`docs/02-kenh-zalouser.md`](docs/02-kenh-zalouser.md) | Nick cá nhân + OpenClaw |
 | [`knowledge/moi-loai-cau-hoi.md`](knowledge/moi-loai-cau-hoi.md) | Mọi kiểu tin đều được đáp |
-| [`knowledge/khung-khai-thac.md`](knowledge/khung-khai-thac.md) | Phân vân thì hỏi trước |
-| [`knowledge/tinh-huong.md`](knowledge/tinh-huong.md) | Ngoài giờ, ảnh, OTP, tin dồn, nhóm |
-| [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) | 12 tin thử trước khi mở khách |
-| [`SOUL.md`](SOUL.md) | Giọng Việt Nam |
+| [`knowledge/giong-noi.md`](knowledge/giong-noi.md) | Ngôn từ, nhịp Zalo, xưng hô — không giọng tổng đài |
+| [`knowledge/cach-tu-van.md`](knowledge/cach-tu-van.md) | Cách hỏi, cách trả, cách chọn giúp, cách quan tâm |
+| [`knowledge/khung-khai-thac.md`](knowledge/khung-khai-thac.md) | Máy pha: phân vân thì hỏi trước |
+| [`knowledge/tinh-huong.md`](knowledge/tinh-huong.md) | Ngoài giờ, sỉ, hết hàng, spam, VAT, teencode, im sau giá… |
+| [`knowledge/hoi-thoai-mau.md`](knowledge/hoi-thoai-mau.md) | Few-shot đúng/sai: chào, hỏi, tư vấn, hài, phàn nàn |
+| [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) | 24 tin thử: tình huống + giọng |
+| [`docs/vi-du-file-da-dien.md`](docs/vi-du-file-da-dien.md) | Shop **giả** — đừng copy số vào wiki thật |
+| [`SOUL.md`](SOUL.md) | Tính cách Nami: để ý, thành thật, vui nhẹ, hài đúng lúc |

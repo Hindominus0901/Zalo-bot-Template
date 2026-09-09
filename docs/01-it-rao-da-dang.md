@@ -48,7 +48,7 @@ Kiến thức chung (phối đồ, cách dùng loại sản phẩm, so sánh kh�
 
 ### Lớp 3 — giọng (gợi ý, không phải luật phạt)
 
-Độ dài, emoji, hạt giống *ghê / thôi / luôn*, được lan man một nhịp, được trả lời câu ngoài shop. File `giong-noi.md` là **hướng**, không phải danh sách cấm 15 dòng. Một giọng mẫu, nhiều biến thể theo khách.
+Độ dài, emoji, hạt giống *ghê / thôi / luôn*, được lan man một nhịp, được trả lời câu ngoài shop. File `giong-noi.md` là **hướng ngôn từ**; `cach-tu-van.md` là **cách hỏi/trả/chọn giúp**; `SOUL.md` là tính cách. Không phải danh sách phạt. Một giọng nền, nhiều biến thể theo khách. Đối ngược kịch bản OA (*cảm ơn đã liên hệ*, menu 1/2/3, ạ cuối mọi câu).
 
 ---
 

@@ -8,7 +8,8 @@ description: Khi khách chưa chọn được sản phẩm hoặc gói dịch v�
 Nguyên tắc: **hỏi trước, chọn giúp sau.** Khách hỏi fact thì trả fact, đừng
 nhét khai thác.
 
-Đọc `knowledge/khung-khai-thac.md`. Slot **của shop này** (điền sau phỏng vấn
+Đọc `knowledge/khung-khai-thac.md` (máy pha) và `knowledge/cach-tu-van.md` (cách
+hỏi — một câu, chữ đời, không form). Slot **của shop này** (điền sau phỏng vấn
 chủ đề 9):
 
 [CHỜ CHỦ SHOP: câu hỏi 1 — ví dụ dùng cho ai / việc gì]

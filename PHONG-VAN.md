@@ -143,7 +143,10 @@ Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
 >
 > Nếu khách hỏi “có phải máy nhắn không”, anh/chị muốn trả lời ra sao?
 
-→ `IDENTITY.md` (tên + gọi thêm) + `identity.name` / `mentionPatterns` trên config máy + lớp xưng hô `SOUL.md`.
+→ `IDENTITY.md` (tên + gọi thêm) + `identity.name` / `mentionPatterns` trên config máy + xưng hô và **tin mẫu** dán vào cuối `SOUL.md`.
+Giọng nền (hạt giống, cách hỏi, cấm tổng đài) nằm ở `knowledge/giong-noi.md` và
+`knowledge/cach-tu-van.md` — **đừng xóa / đừng thay bằng kịch bản OA**. Tin mẫu
+của chủ thắng khi lệch với ví dụ generic.
 
 ---
 

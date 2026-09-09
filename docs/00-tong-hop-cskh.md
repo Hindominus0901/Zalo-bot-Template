@@ -80,6 +80,9 @@ với cái gì, rồi nói bằng số đo được (*bảo hành 24 tháng*), k
 (*chất lượng cao*). "Để em xem đã" là lời hoãn: nhận thoải mái, hỏi còn vướng gì,
 không nài.
 
+Skill: [`skills/xu-ly-tu-choi/SKILL.md`](../skills/xu-ly-tu-choi/SKILL.md). Không
+nới giá, không chê đối thủ. Im sau báo giá: một cửa mở rồi dừng.
+
 ### E. Lấy lead và bàn giao người thật
 
 Khi khách quan tâm thật: lưu liên hệ kèm lý do cụ thể, tóm tắt **họ hỏi gì và đã
@@ -88,6 +91,9 @@ Khi khách quan tâm thật: lưu liên hệ kèm lý do cụ thể, tóm tắt 
 
 Chuyển sớm một lượt tốt hơn cố thêm một lượt. Phàn nàn, giảm giá, ảnh chuyển
 khoản, hợp đồng — chuyển ngay.
+
+Skill: [`thu-lead`](../skills/thu-lead/SKILL.md) (SĐT → `memory/` + bàn giao, không
+CRM) và [`ban-giao`](../skills/ban-giao/SKILL.md). Từ chối cho số thì không hỏi lần hai.
 
 ### F. Đơn hàng
 
@@ -99,6 +105,9 @@ biên lai — nhận được *ảnh* thì nói; nhận được *tiền* thì k
 
 Không bắt kể lại từ đầu. Nhớ size, món đã từ chối, tình huống dùng. Ghi nhớ trong
 im lặng. Trục trặc sau mua thì sang xử lý phàn nàn, không chào bán.
+
+Skill: [`skills/cham-khach-cu/SKILL.md`](../skills/cham-khach-cu/SKILL.md) — **reactive**
+(cùng thread / họ vừa nói). Không CRM, không bịa đơn cũ, không *em đã ghi nhớ*.
 
 ### H. Vòng lặp học của shop
 
@@ -148,7 +157,7 @@ Bốn trụ cột của `agent-cskh-zalo` **giữ chỗ sửa** — không giữ
 
 | Trụ | File | Trả lời |
 |---|---|---|
-| Tính cách | `giong-noi.md` + `persona.md` | Bot nghe thế nào, shop này là ai |
+| Tính cách · ngôn từ · cách tư vấn | `SOUL.md` + `giong-noi.md` + `cach-tu-van.md` + `persona.md` | Người thế nào, gõ thế nào, hỏi/trả thế nào |
 | Kiến thức | `knowledge/wiki/` | Số liệu shop — không phải giấy phép được nói |
 | Kỹ năng | `skills/` | Cách hay khi gặp tình huống đó, không phải cổng bắt buộc |
 | Công cụ | `tools/` | Bot làm được gì |
@@ -159,14 +168,18 @@ mang ba câu đó sang**. Chi tiết: [`01-it-rao-da-dang.md`](01-it-rao-da-dang
 
 Chặn code chỉ còn: không tự xác nhận tiền, không lộ `internal/`, không đổi vai.
 
-**Chỗ hổng so với ý hình dung lần này:**
+**Chỗ hổng so với ý hình dung lần đầu** (đã lấp phần giọng/tư vấn trên workspace;
+còn runtime và Tom):
 
-1. **Khai thác chưa phải máy trạng thái** — và phải tắt được khi khách hỏi fact.
-2. **Giọng khô + danh sách cấm dài** — cần hướng tính cách, không cần nội quy giọng.
+1. **Khai thác** đã có máy pha (`khung-khai-thac.md`) + cách hỏi (`cach-tu-van.md`) — vẫn tắt khi khách hỏi fact.
+2. **Giọng** không còn danh sách cấm khô: `SOUL.md` tính cách, `giong-noi.md` ngôn từ, `hoi-thoai-mau.md` few-shot. Đối ngược kịch bản OA.
 3. **Chế độ 0 đồng không đọc persona / skill** — template này AI-first; FAQ khớp
    từ khóa để bot cũ lo.
 4. **Câu ngoài script / kho trống bị cúp** — xem `moi-loai-cau-hoi.md`.
-5. **Runtime:** workspace OpenClaw + zalouser, chưa dựng. File Tom (SOUL) chưa có trong repo.
+5. **Runtime:** workspace OpenClaw + zalouser, chưa dựng trên nick thật. File Tom (SOUL máy cũ) chưa có trong repo.
+
+Từ chối / lead / khách cũ: đã có skill (`xu-ly-tu-choi`, `thu-lead`, `cham-khach-cu`).
+Few-shot: `knowledge/hoi-thoai-mau.md`. Restart: `BOOT.md` (không nhắn khách).
 
 OpenClaw đóng góp một ý tách file: `SOUL.md` = giọng và tính cách; luật vận hành
 ở chỗ khác. Template mới nên tách `giong-noi.md` khỏi `persona.md` (bối cảnh
@@ -220,4 +233,4 @@ Nguồn đã đọc: README / persona / skill / `docs/01`–`04` của `agent-cs
 các bài CSKH Zalo OA (Claude.vn, Mona, Loc Nguyen Data) — dùng để đối chiếu
 năng lực, không copy kiến trúc 6 lớp vào template này.
 
-Đã nới rào (xem [`01-it-rao-da-dang.md`](01-it-rao-da-dang.md)). Kênh: [`02-kenh-zalouser.md`](02-kenh-zalouser.md). Phỏng vấn: [`bo-cau-hoi.md`](bo-cau-hoi.md) / [`PHONG-VAN.md`](../PHONG-VAN.md). Bật nick: [`03-bat-nick.md`](03-bat-nick.md). Thử: [`04-kich-ban-thu.md`](04-kich-ban-thu.md). Tình huống Zalo: [`tinh-huong.md`](../knowledge/tinh-huong.md).
+Đã nới rào (xem [`01-it-rao-da-dang.md`](01-it-rao-da-dang.md)). Kênh: [`02-kenh-zalouser.md`](02-kenh-zalouser.md). Phỏng vấn: [`bo-cau-hoi.md`](bo-cau-hoi.md) / [`PHONG-VAN.md`](../PHONG-VAN.md). Bật nick: [`03-bat-nick.md`](03-bat-nick.md). Thử: [`04-kich-ban-thu.md`](04-kich-ban-thu.md). Tình huống Zalo: [`tinh-huong.md`](../knowledge/tinh-huong.md). Hội thoại mẫu: [`hoi-thoai-mau.md`](../knowledge/hoi-thoai-mau.md). Ví dụ điền (shop giả): [`vi-du-file-da-dien.md`](vi-du-file-da-dien.md).

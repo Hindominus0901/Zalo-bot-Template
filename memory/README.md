@@ -2,7 +2,7 @@
 
 Mỗi ngày một file: `memory/YYYY-MM-DD.md`. OpenClaw tự đọc hôm nay + hôm qua.
 
-**Ghi:** câu khách mà wiki không có số; bàn giao; việc còn mở. Nguyên văn nếu được.
+**Ghi:** câu khách mà wiki không có số; bàn giao; SĐT vừa xin (thu-lead); việc còn mở. Nguyên văn nếu được.
 **Không ghi:** số CK, CCCD, mật khẩu, cả ảnh. SĐT chỉ vài số cuối nếu cần nhận diện.
 
 File ngày bị git ignore (tránh lộ khách). Shop private muốn giữ thì `git add -f`.

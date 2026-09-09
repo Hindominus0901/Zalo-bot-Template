@@ -18,9 +18,16 @@ Mỗi trang: frontmatter như `knowledge/CLAUDE.md`. Tên file chữ thường, 
 | `public/con-hang.md` | Khi nào được nói còn / hết; mặc định: không đoán |
 | `public/gio-truc.md` | Giờ xem tin / gọi lại (trùng `USER.md`) |
 | `public/dat-lich.md` | Chỉ khi làm dịch vụ có slot |
+| `public/dia-chi.md` | Shop ở đâu, lấy trực tiếp, giờ mở cửa |
+| `public/si-ctv.md` | Giá sỉ, CTV, đại lý — chỉ khi chủ có mức/điều kiện |
+| `public/hoa-don-vat.md` | Xuất hoá đơn / VAT / cần MST |
+| `public/kiem-hang.md` | Đồng kiểm, xem hàng khi nhận, khi nào không mở hộp |
 | `internal/gia-von-hoa-hong.md` | Vốn, hoa hồng, kịch bản khách khó |
 | `internal/xu-khach-kho.md` | Việc bot không được kể |
 
 FAQ miệng câu 6: một câu một trang, hoặc gom `public/faq-….md` nếu cùng chủ đề.
 
 Còn `[CHỜ CHỦ SHOP]` trên trang = trang đó **chưa được dùng để nói số**.
+
+Hình trang + persona đã điền (shop **giả**, đừng chép số):
+[`docs/vi-du-file-da-dien.md`](../../docs/vi-du-file-da-dien.md).

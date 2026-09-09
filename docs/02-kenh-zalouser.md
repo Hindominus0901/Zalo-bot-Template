@@ -104,15 +104,15 @@ Không phải bot Python mới. Là **workspace CSKH** thả vào OpenClaw:
 
 | File template | Việc trên OpenClaw |
 |---|---|
-| `knowledge/giong-noi.md` | `SOUL.md` — giọng |
+| `SOUL.md` + `knowledge/giong-noi.md` + `cach-tu-van.md` | Tính cách, ngôn từ, cách tư vấn |
 | `persona.md` (sinh lúc phỏng vấn shop) | Bối cảnh shop + rào tiền/nội bộ |
 | `knowledge/wiki/` | Kho số liệu |
-| `skills/` | Khai thác, báo giá, ghi đơn, theo đơn, ảnh, phàn nàn, bàn giao |
+| `skills/` | Khai thác, báo giá, ghi đơn, từ chối, khách cũ, thu lead, bàn giao… |
 | `knowledge/khung-khai-thac.md` + `moi-loai-cau-hoi.md` | Nhét vào `AGENTS.md` / skill vận hành |
 | `channels.zalouser` | Nick cầm tay |
 
 Workspace Tom (nếu có `SOUL.md` / `IDENTITY.md` trên máy) **trộn giọng vào
-`giong-noi.md`** — chưa lấy được vì file không nằm trên GitHub.
+`SOUL.md`** (tính cách) — chưa lấy được vì file không nằm trên GitHub / không đọc được `C:\TOM`.
 
 ---
 

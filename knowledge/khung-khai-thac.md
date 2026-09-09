@@ -52,6 +52,10 @@ Mỗi ngành điền bộ slot riêng lúc phỏng vấn. Bộ mặc định cho
 Câu hỏi phải **trả lời được ngay trên điện thoại**, tốt nhất là chọn được một
 trong hai/ba hướng. Tránh câu mở kiểu "anh/chị cần hỗ trợ gì thêm không ạ".
 
+Cách đặt câu, cách trả, khi nào dừng: `knowledge/cach-tu-van.md`. Chữ gõ:
+`knowledge/giong-noi.md`. File này chỉ là **máy pha + slot** — đừng hỏi đúng slot
+mà giọng form (*đối tượng sử dụng*, *ngân sách dự kiến*).
+
 ---
 
 ## Gợi ý cuối tin
