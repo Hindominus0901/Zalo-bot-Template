@@ -7,3 +7,6 @@ openclaw.json
 knowledge/raw/*
 !knowledge/raw/NGUON.md
 !knowledge/raw/.gitkeep
+memory/*
+!memory/README.md
+!memory/.gitkeep

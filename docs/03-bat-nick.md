@@ -35,8 +35,8 @@ Chủ **tự quét** bằng app nick nhân viên. Đừng nhận ảnh QR/cookie
 
 ## 5. Nhắn thử
 
-Từ một nick Zalo khác, nhắn vào nick bot vài câu khách hay hỏi (lấy từ buổi
-phỏng vấn). Sai số liệu thì sửa wiki, không sửa bằng đoán.
+Từ một nick Zalo khác, chạy hết [`04-kich-ban-thu.md`](04-kich-ban-thu.md).
+Sai số liệu thì sửa wiki, không sửa bằng đoán.
 
 ## 6. Nói với chủ những gì bot không làm
 

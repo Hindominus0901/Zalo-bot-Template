@@ -18,7 +18,7 @@ chăm khách**. Không nói wiki, harness, brain, token, QR, OpenClaw.
 |---|---|---|
 | 1–2, 4, 10 | Sản phẩm/dịch vụ, khách, giọng, câu chào | Brain |
 | 3, 6 | Tài liệu + câu khách hỏi thêm | Wiki |
-| 5, 7–9 | Việc không được tự ý, đơn hàng, lúc phân vân | Harness |
+| 5, 7–9 | Việc không được tự ý, đơn hàng, lúc phân vân | Harness (`ghi-don`, `khai-thac`, `ban-giao`) |
 
 ---
 
@@ -212,7 +212,7 @@ Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
 > Khi nào được nói với khách là **đã đặt xong / đã giữ chỗ**? (Mặc định: nhân
 > viên mới chỉ ghi nhận, anh/chị xác nhận rồi mới nói chắc.)
 
-→ Harness + wiki quy trình.
+→ `skills/ghi-don/SKILL.md` + wiki quy trình. Không nói chữ skill với họ.
 
 ---
 
@@ -237,7 +237,7 @@ Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
 > Nhắn lại khách sau vài ngày: bản này **chưa làm**. Anh/chị có cần, để em ghi
 > chú, chưa hứa có ngay.
 
-→ `USER.md`.
+→ `USER.md` + `knowledge/tinh-huong.md` (ngoài giờ, ảnh, nhóm). Ảnh CK/hàng → skill `doc-anh`.
 
 ---
 

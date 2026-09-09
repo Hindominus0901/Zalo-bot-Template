@@ -72,10 +72,11 @@ Câu 3: xin **tài liệu sản phẩm, dịch vụ, giá, chính sách** — kh
 |---|---|
 | Tên nick, vibe | `IDENTITY.md` |
 | Bán gì, khách lo, ranh giới, tin mở | `knowledge/persona.md` |
-| Bàn giao, giờ gọi lại | `USER.md` |
-| File/ảnh/link câu 3 | `knowledge/raw/` rồi tách `knowledge/wiki/` |
+| Bàn giao, giờ gọi lại, nhóm nội bộ | `USER.md` |
+| File/ảnh/link câu 3 | `knowledge/raw/` rồi tách `knowledge/wiki/` — danh sách trang: `wiki/TRANG-MAU.md` |
 | FAQ miệng câu 6 | `wiki/` (lấp chỗ raw thiếu) |
 | Slot lúc phân vân | `skills/khai-thac/SKILL.md` |
+| Bước chốt đơn / đặt | `skills/ghi-don/SKILL.md` (câu 7) |
 
 Giọng nền đã có trong `SOUL.md`. Chỉ thêm xưng hô + đoạn chat thật của họ.
 
@@ -96,10 +97,12 @@ Bắt buộc với CSKH:
 
 **Không commit** `openclaw.json` thật, cookie, QR.
 
-### B5 — Thử trong đầu trước khi QR
+### B5 — Thử trong đầu, rồi thử nick
 
 Đọc lại 5 câu FAQ họ vừa kể, đóng vai bot theo `SOUL.md` + wiki vừa viết. Sai
-trang thì sửa wiki. Còn `[CHỜ CHỦ SHOP]` thì chưa xong.
+trang thì sửa wiki. Còn `[CHỜ CHỦ SHOP]` trên persona / giá thì chưa xong phần số.
+
+Sau QR: chạy [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) từ nick khác.
 
 ### B6 — Nối nick (cùng họ)
 
@@ -125,9 +128,9 @@ Xem `docs/02-kenh-zalouser.md`. Không tự thuê VPS hộ.
 
 - `IDENTITY.md` và `knowledge/persona.md` không còn `[CHỜ CHỦ SHOP]`
 - Câu 3: file gốc nằm trong `raw/` **hoặc** chủ nói rõ là không có tài liệu
-- Wiki tách từ raw + miệng; ≥ 5 trang nếu họ có đủ FAQ
-- `USER.md` có tên người nhận bàn giao
-- Thử 5 câu FAQ — không bổ sung bằng kiến thức ngành
+- Wiki tách từ raw + miệng; tạo trang trong `wiki/TRANG-MAU.md` **chỉ khi có dữ liệu**
+- `USER.md` có tên + nick người nhận bàn giao + giờ gọi lại
+- Thử theo `docs/04-kich-ban-thu.md` — không bổ sung bằng kiến thức ngành
 - Họ nhắn thử được từ nick khác vào nick bot
 
 File trong `knowledge/raw/` bị `.gitignore` trên bản mẫu. Shop giữ bản private thì

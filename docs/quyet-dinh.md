@@ -14,3 +14,12 @@ dòng này khi phỏng vấn một shop. Shop-level hỏi ở `PHONG-VAN.md`.
 - Máy khai thác bật mặc định khi khách phân vân
 - Nhắn chủ động follow-up: **chưa** làm ở bản đầu
 - File Tom (SOUL máy cũ) chưa có trong repo — giọng mặc định là `SOUL.md` ở đây
+
+## Bản này làm / chưa làm
+
+**Làm:** giọng, wiki, khai thác, báo giá, ghi đơn (không tự chốt), theo đơn (không bịa),
+ảnh/voice, phàn nàn, bàn giao, ngoài giờ, OTP/giả chủ, vòng học `memory/` + heartbeat
+không nhắn khách, kịch bản thử 12 tin.
+
+**Chưa làm (đừng hứa):** nhắn lại khách sau vài ngày, nút OA, CRM/CSV đơn,
+tồn kho live, cổng thanh toán, lịch slot gắn lịch thật, trộn SOUL Tom.

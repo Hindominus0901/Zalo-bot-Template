@@ -81,7 +81,7 @@ Không phải bot Python mới. Là **workspace CSKH** thả vào OpenClaw:
 | `knowledge/giong-noi.md` | `SOUL.md` — giọng |
 | `persona.md` (sinh lúc phỏng vấn shop) | Bối cảnh shop + rào tiền/nội bộ |
 | `knowledge/wiki/` | Kho số liệu |
-| `skills/` | Cách hay khi tư vấn / phàn nàn / đơn |
+| `skills/` | Khai thác, báo giá, ghi đơn, theo đơn, ảnh, phàn nàn, bàn giao |
 | `knowledge/khung-khai-thac.md` + `moi-loai-cau-hoi.md` | Nhét vào `AGENTS.md` / skill vận hành |
 | `channels.zalouser` | Nick cầm tay |
 
