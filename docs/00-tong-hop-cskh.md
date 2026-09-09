@@ -116,8 +116,8 @@ Chữ, ảnh, sticker, voice, file — nick cá nhân nhận được gần như
 Ảnh/file phải xử lý ngay trong lượt (OpenClaw có hàng đợi local; socket `zca-js`
 không replay tin lúc gateway tắt).
 
-Trong nhóm: mặc định chỉ nghe khi được @ hoặc khi người ta reply tin của bot.
-Cấu hình `requireMention`.
+Trong nhóm: mặc định chỉ nghe khi được gọi tên (**Nami** / biệt hiệu), khi @,
+hoặc khi người ta reply tin của bot. Cấu hình `requireMention`.
 
 ### Bot gửi được
 

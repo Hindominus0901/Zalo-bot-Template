@@ -2,6 +2,11 @@
 // Đừng commit file thật, cookie, QR.
 // CSKH: dmPolicy PHẢI là open — khách lạ vào được.
 // Tom cá nhân hay để pairing; đừng copy pairing sang shop.
+//
+// Tên: Nami (IDENTITY.md). OpenClaw suy mentionPatterns từ identity.name
+// → nhóm: "Nami" / "Nami ơi" / @Nami là gọi mình. Inbox 1-1 luôn vào.
+// Đổi tên thì đổi IDENTITY + identity.name dưới đây cho khớp.
+// Có biệt hiệu (shop ơi): ghi mentionPatterns và PHẢI gồm cả tên gốc.
 
 {
   channels: {
@@ -9,12 +14,27 @@
       enabled: true,
       dmPolicy: "open",
       groupPolicy: "allowlist",
-      // groups: { "<id-nhom>": { enabled: true, requireMention: true } },
+      groups: {
+        "*": { requireMention: true },
+        // "<id-nhom-shop>": { enabled: true, requireMention: true },
+      },
     },
   },
   agents: {
     defaults: {
       workspace: ".", // trỏ vào thư mục repo/workspace của shop
+      identity: {
+        name: "Nami",
+      },
     },
+    // Có biệt hiệu thì bỏ comment, giữ "nami" trong list:
+    // entries: {
+    //   main: {
+    //     identity: { name: "Nami" },
+    //     groupChat: {
+    //       mentionPatterns: ["nami", "nami\\s*ơi", "nami\\s*oi", "shop\\s*ơi"],
+    //     },
+    //   },
+    // },
   },
 }

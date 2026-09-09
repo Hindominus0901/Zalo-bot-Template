@@ -67,8 +67,34 @@ không được thế** — khách mới nhắn vào là phải vào được.
 }
 ```
 
-Trong nhóm: mặc định chỉ trả lời khi được @ hoặc khi người ta reply tin của bot.
-Tránh đọc cả group rồi nhảy vào mỗi câu.
+Trong nhóm: mặc định `requireMention: true`. OpenClaw **gọi mình** khi tin có
+tên trong `IDENTITY.md` (mặc định **Nami**), khi @ nick, hoặc khi reply tin bot.
+Đây là cái hay của Tom: đặt một tên, gõ tên đó là bot biết phải vào — không cần
+nút, không cần prefix `Bot`.
+
+Inbox 1-1 **không** cần gọi tên.
+
+Đổi tên: `IDENTITY.md` + `agents.defaults.identity.name` cho khớp. Tên một tiếng
+dễ lẫn câu Việt (`Mai`, `An`, `Nam`) thì đừng lấy. Biệt hiệu (*shop ơi*): thêm
+`mentionPatterns` **kèm tên gốc**.
+
+```json5
+{
+  channels: {
+    zalouser: {
+      enabled: true,
+      dmPolicy: "open",          // khách lạ vào được
+      groupPolicy: "allowlist",  // nhóm thì chọn, đừng open hết
+      groups: { "*": { requireMention: true } },
+    },
+  },
+  agents: {
+    defaults: {
+      identity: { name: "Nami" },
+    },
+  },
+}
+```
 
 ---
 

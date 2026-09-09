@@ -70,7 +70,7 @@ Câu 3: xin **tài liệu sản phẩm, dịch vụ, giá, chính sách** — kh
 
 | Nguồn | File |
 |---|---|
-| Tên nick, vibe | `IDENTITY.md` |
+| Tên nick, tên gọi, vibe | `IDENTITY.md` + `agents.defaults.identity.name` (khớp nhau) |
 | Bán gì, khách lo, ranh giới, tin mở | `knowledge/persona.md` |
 | Bàn giao, giờ gọi lại, nhóm nội bộ | `USER.md` |
 | File/ảnh/link câu 3 | `knowledge/raw/` rồi tách `knowledge/wiki/` — danh sách trang: `wiki/TRANG-MAU.md` |
@@ -94,6 +94,11 @@ Bắt buộc với CSKH:
 - `channels.zalouser.enabled: true`
 - `dmPolicy: "open"` — khách lạ vào được (không phải `pairing` như Tom cá nhân)
 - `groupPolicy: "allowlist"` trừ khi họ nói rõ muốn nhóm nào
+- `groups."*".requireMention: true` — nhóm phải gọi tên / @ / reply
+- `agents.defaults.identity.name` **khớp** `IDENTITY.md` (mặc định Nami)
+
+Có biệt hiệu (*shop ơi*): `agents.entries.main.groupChat.mentionPatterns` gồm
+**tên gốc + biệt hiệu**. Chỉ ghi biệt hiệu thì hết nhận *Nami ơi*.
 
 **Không commit** `openclaw.json` thật, cookie, QR.
 
@@ -126,7 +131,8 @@ Xem `docs/02-kenh-zalouser.md`. Không tự thuê VPS hộ.
 
 ## Xong khi
 
-- `IDENTITY.md` và `knowledge/persona.md` không còn `[CHỜ CHỦ SHOP]`
+- `IDENTITY.md` có tên (Nami hoặc tên chủ chọn); `identity.name` trên config khớp
+- `knowledge/persona.md` không còn `[CHỜ CHỦ SHOP]` bắt buộc (câu 1–2, 4, 5, 10)
 - Câu 3: file gốc nằm trong `raw/` **hoặc** chủ nói rõ là không có tài liệu
 - Wiki tách từ raw + miệng; tạo trang trong `wiki/TRANG-MAU.md` **chỉ khi có dữ liệu**
 - `USER.md` có tên + nick người nhận bàn giao + giờ gọi lại

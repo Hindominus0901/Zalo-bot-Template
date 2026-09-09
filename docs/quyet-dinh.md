@@ -11,6 +11,7 @@ dòng này khi phỏng vấn một shop. Shop-level hỏi ở `PHONG-VAN.md`.
 - Kênh: nick Zalo **riêng**, OpenClaw `@openclaw/zalouser`, như Tom
 - Phỏng vấn **đã chốt:** 10 chủ đề, câu chính dài về sản phẩm/dịch vụ, hỏi thêm từng câu; câu 3 nhận tài liệu (không nói “đồ”)
 - Generic: slot khai thác và wiki điền lúc phỏng vấn, không khóa một ngành
+- Tên mặc định **Nami** — inbox luôn trả; nhóm chỉ khi gọi tên / @ / reply (kiểu Tom)
 - Máy khai thác bật mặc định khi khách phân vân
 - Nhắn chủ động follow-up: **chưa** làm ở bản đầu
 - File Tom (SOUL máy cũ) chưa có trong repo — giọng mặc định là `SOUL.md` ở đây

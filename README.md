@@ -20,7 +20,7 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 
 | | File |
 |---|---|
-| Brain | `SOUL.md` · `IDENTITY.md` · `knowledge/persona.md` |
+| Brain | `SOUL.md` · `IDENTITY.md` (tên **Nami**) · `knowledge/persona.md` |
 | Wiki | `knowledge/wiki/` ← tách từ `knowledge/raw/` (câu 3) |
 | Harness | `AGENTS.md` · `skills/` (khai thác, báo giá, ghi đơn, theo đơn, ảnh, phàn nàn, bàn giao) · `USER.md` · `HEARTBEAT.md` · `memory/` |
 

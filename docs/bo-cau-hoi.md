@@ -62,7 +62,8 @@ Lúc tư vấn sản phẩm hay dịch vụ trên Zalo, anh/chị nói chuyện 
 
 **Hỏi thêm** (từng câu)
 
-- Nick nhân viên trên Zalo anh/chị muốn đặt tên gì?
+- Nick nhân viên trên Zalo anh/chị muốn đặt tên gì? Bản mẫu đang để **Nami** — khách gọi *Nami ơi* là em biết phải trả. Anh/chị giữ Nami hay đổi? Đổi thì lấy tên hai tiếng hoặc tên lạ, đừng lấy Mai / An / Nam — dễ lẫn câu khách.
+- Ngoài tên đó, khách hay gọi tắt thế nào không? Ví dụ shop ơi, tên shop… (Không có thì thôi.)
 - Anh/chị paste giúp **một tin** mình đã trả khách — nguyên văn. (Có rồi hỏi tin thứ hai, rồi thứ ba.)
 - Trong ngành mình, có chữ nào **không được nói** với khách không? Ví dụ chê chỗ khác, hứa khỏi bệnh, hứa số liệu…
 - Nếu khách hỏi “có phải máy nhắn không”, anh/chị muốn trả lời ra sao?

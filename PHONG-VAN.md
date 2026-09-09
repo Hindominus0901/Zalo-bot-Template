@@ -128,7 +128,12 @@ Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
 
 **Hỏi thêm:**
 
-> Nick nhân viên trên Zalo anh/chị muốn đặt tên gì?
+> Nick nhân viên trên Zalo anh/chị muốn đặt tên gì? Bản mẫu đang để **Nami** —
+> khách gọi *Nami ơi* là em biết phải trả. Anh/chị giữ Nami hay đổi? Đổi thì
+> lấy tên **hai tiếng hoặc tên lạ**, đừng lấy Mai / An / Nam — dễ lẫn câu khách.
+>
+> Ngoài tên đó, khách hay **gọi tắt** thế nào không? Ví dụ shop ơi, tên shop…
+> (Không có thì thôi. Có thì em gắn để lúc nhóm có người gọi, em vào.)
 >
 > Anh/chị paste giúp **một tin** mình đã trả khách — nguyên văn. (Có rồi hỏi tin
 > thứ hai, rồi thứ ba. Đừng đòi ba tin cùng lúc.)
@@ -138,7 +143,7 @@ Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
 >
 > Nếu khách hỏi “có phải máy nhắn không”, anh/chị muốn trả lời ra sao?
 
-→ `IDENTITY.md` + lớp xưng hô / ví dụ `SOUL.md`.
+→ `IDENTITY.md` (tên + gọi thêm) + `identity.name` / `mentionPatterns` trên config máy + lớp xưng hô `SOUL.md`.
 
 ---
 
