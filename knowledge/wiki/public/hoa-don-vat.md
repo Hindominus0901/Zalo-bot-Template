@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Hoá đơn / VAT
 summary: "[CHỜ CHỦ SHOP] Chỉ khi chủ xuất hoá đơn. Không dùng tờ này để nói số."

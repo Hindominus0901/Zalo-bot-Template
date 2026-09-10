@@ -14,7 +14,8 @@ PUBLIC = ROOT / "knowledge" / "wiki" / "public"
 INDEX = ROOT / "knowledge" / "wiki" / "INDEX.md"
 CHO_CHU = "[CHỜ CHỦ SHOP]"
 
-DAU = """# Chỉ mục sổ — tờ nào nói việc gì
+DAU = """<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
+# Chỉ mục sổ — tờ nào nói việc gì
 
 Sinh tự động bởi `scripts/lam_chi_muc.py`. **Đừng sửa tay** — sửa `summary`
 trong chính tờ đó rồi chạy lại.
@@ -31,6 +32,12 @@ không làm việc đó.
 def frontmatter(path: Path) -> dict:
     """Đọc frontmatter tối giản: key: value, một dòng một cặp."""
     text = path.read_text(encoding="utf-8")
+    # Bỏ qua dòng đánh dấu FILE CỦA SHOP (và dòng trống) ở đầu file.
+    while text.startswith("<!--") or text.startswith("\n"):
+        if text.startswith("\n"):
+            text = text[1:]
+        else:
+            text = text[text.index("-->") + 3:].lstrip("\n")
     if not text.startswith("---\n"):
         return {}
     try:

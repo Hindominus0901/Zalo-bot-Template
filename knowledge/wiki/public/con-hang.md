@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Còn hàng
 summary: "[CHỜ CHỦ SHOP] Khi nào được nói còn / hết. Mặc định: không đoán. Không dùng tờ này để nói số."

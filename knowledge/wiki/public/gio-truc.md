@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Giờ trực
 summary: "[CHỜ CHỦ SHOP] Giờ xem tin / gọi lại. Khớp USER.md. Không dùng tờ này để nói số."

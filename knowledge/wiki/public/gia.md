@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Giá
 summary: "[CHỜ CHỦ SHOP] Giá, gói, gồm gì. Không dùng tờ này để nói số."

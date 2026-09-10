@@ -125,3 +125,66 @@ class DongBoHaiBanPhongVan(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class FileCuaShop(unittest.TestCase):
+    """Khách điền đè lên file template — phải biết file nào của ai khi git pull."""
+
+    MARK = "<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->"
+
+    def _danh_sach(self) -> list[str]:
+        doc = _read("docs/15-cap-nhat.md")
+        sec = doc.split("### Của shop")[1].split("### Một phần")[0]
+        return re.findall(r"^- `([^`]+)`$", sec, re.M)
+
+    def test_danh_sach_khong_rong(self):
+        self.assertGreater(len(self._danh_sach()), 10)
+
+    def test_moi_file_trong_danh_sach_ton_tai_va_co_dau(self):
+        for f in self._danh_sach():
+            p = ROOT / f
+            self.assertTrue(p.is_file(), f"docs/15 liet {f} nhung khong co file")
+            self.assertTrue(p.read_text(encoding="utf-8").startswith(self.MARK),
+                            f"{f} thieu dau FILE CUA SHOP")
+
+    def test_khong_file_nao_mang_dau_ma_thieu_trong_danh_sach(self):
+        """Chiều ngược lại — danh sách không được lệch với thực tế."""
+        ds = set(self._danh_sach())
+        for md in ROOT.rglob("*.md"):
+            if ".git" in md.parts:
+                continue
+            if md.read_text(encoding="utf-8").startswith(self.MARK):
+                rel = str(md.relative_to(ROOT))
+                self.assertIn(rel, ds, f"{rel} co dau nhung khong nam trong docs/15")
+
+    def test_moi_to_wiki_deu_la_cua_shop(self):
+        for md in (ROOT / "knowledge/wiki/public").glob("*.md"):
+            self.assertTrue(md.read_text(encoding="utf-8").startswith(self.MARK),
+                            f"{md.name} thieu dau")
+
+
+class ChiMucVanDocDuocFrontmatter(unittest.TestCase):
+    """Dấu FILE CỦA SHOP nằm trước `---` từng làm hỏng bộ đọc frontmatter."""
+
+    def test_index_co_title_that_khong_phai_ten_file(self):
+        index = _read("knowledge/wiki/INDEX.md")
+        self.assertNotIn("(chưa có mô tả)", index,
+                         "INDEX mat summary — bo doc frontmatter dang hong")
+        self.assertIn("Phí ship", index + _read("knowledge/wiki/public/ship.md"))
+
+
+class GhimVersion(unittest.TestCase):
+    def test_co_version_va_changelog(self):
+        self.assertTrue((ROOT / "VERSION").is_file())
+        self.assertTrue((ROOT / "CHANGELOG.md").is_file())
+
+    def test_docs_05_co_khoi_da_test_voi(self):
+        """Không đẩy fix được cho bản khách đã cầm — ít nhất phải có mốc đối chiếu."""
+        doc = _read("docs/05-thiet-lap.md")
+        self.assertIn("Đã test với", doc)
+        self.assertIn("openclaw --version", doc)
+
+    def test_co_chi_dan_khi_lenh_khong_nhu_tai_lieu(self):
+        doc = _read("docs/05-thiet-lap.md")
+        self.assertIn("config schema", doc)
+        self.assertIn("đừng đoán", doc.lower())

@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Đặt lịch
 summary: "[CHỜ CHỦ SHOP] Chỉ khi shop có đặt lịch. Chưa điền ≠ shop không nhận lịch. Không dùng tờ này để nói số."

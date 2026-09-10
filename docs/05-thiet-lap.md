@@ -29,6 +29,44 @@ Không xin OA. Không tạo “Bot …” trên Bot Manager.
 
 ---
 
+## Đã test với
+
+Template này viết theo hành vi của các bản dưới. **Người bán điền sau khi chạy
+thật**, đừng để trống khi giao cho khách.
+
+| Thứ | Bản | Lấy bằng lệnh |
+|---|---|---|
+| OpenClaw | `[CHỜ NGƯỜI BÁN]` | `openclaw --version` |
+| Plugin `@openclaw/zalouser` | `[CHỜ NGƯỜI BÁN]` | `openclaw plugins list` |
+| Node | `[CHỜ NGƯỜI BÁN]` | `node --version` |
+| Python | 3.9 trở lên | `python3 --version` (Windows: `py --version`) |
+| Ngày test | `[CHỜ NGƯỜI BÁN]` | |
+
+Cài đúng bản đã test, đừng lấy `latest`:
+
+```bash
+openclaw plugins install @openclaw/zalouser@<bản-ở-bảng-trên>
+```
+
+## Lệnh không chạy như tài liệu thì làm gì
+
+Sẽ xảy ra: OpenClaw ra bản mới, đổi tên lệnh hoặc đổi tên key config. Template
+trong tay bạn là bản chụp, **không có ai đẩy bản vá xuống**.
+
+1. `openclaw --version` — so với bảng trên. Bằng nhau mà vẫn lỗi thì là lỗi khác,
+   đọc kỹ thông báo.
+2. Lệnh không có: `openclaw --help` tìm tên mới. **Đừng đoán tên.**
+3. Key config không nhận: `openclaw config schema` xem key thật tên gì.
+   **Đừng thêm key mà `config schema` không có** — OpenClaw có thể nuốt im lặng,
+   và mình tưởng đã bật.
+4. Vẫn tắc: hạ về đúng bản trong bảng trên.
+
+Cùng kỷ luật đó áp cho mọi key trong `10-openclaw-config-mau.md`: `dmPolicy`,
+`groupPolicy`, `requireMention`, `agents.defaults.workspace`, `identity.name`,
+`mentionPatterns`. Kiểm bằng `config schema` trước, đừng chép mù từ tài liệu.
+
+---
+
 ## Windows (hay gặp)
 
 1. Mở **PowerShell**. Nếu báo không chạy script:

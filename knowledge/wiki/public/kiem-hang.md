@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Kiểm hàng
 summary: "[CHỜ CHỦ SHOP] Đồng kiểm, xem hàng khi nhận. Không dùng tờ này để nói số."

@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Ship
 summary: "[CHỜ CHỦ SHOP] Phí ship, nội thành / tỉnh, thời gian đã nói chắc. Không dùng tờ này để nói số."

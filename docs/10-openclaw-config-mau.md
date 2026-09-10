@@ -118,3 +118,21 @@ gộp tin dồn (tên hay gặp ở các gateway khác: `inbound_debounce_ms`,
 Cùng luật đó cho *đang soạn* / *đã xem* và chia tin: có key thì bật, không có thì
 để `AGENTS.md` lo.
 
+---
+
+## Kiểm mọi key, không chỉ key gộp tin
+
+Kỷ luật ở mục trên áp cho **tất cả** key trong file này, không riêng chuyện gộp
+tin: `channels.zalouser.dmPolicy`, `groupPolicy`, `groups."*".requireMention`,
+`agents.defaults.workspace`, `agents.defaults.identity.name`, `mentionPatterns`.
+
+```bash
+openclaw config schema | grep -i dmPolicy
+```
+
+Không thấy key → **đừng chép mù từ tài liệu này**. OpenClaw có thể nuốt im lặng
+một key lạ, và mình tưởng đã bật. Tìm tên mới bằng `config schema`, rồi sửa lại
+file này cho đúng máy của mình.
+
+Bản đã test: `05-thiet-lap.md` mục *Đã test với*.
+

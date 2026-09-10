@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Đổi trả
 summary: "[CHỜ CHỦ SHOP] Đổi trả, hoàn, điều kiện. Không dùng tờ này để nói số."

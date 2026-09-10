@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 # Bài học vận hành — dài hạn
 
 OpenClaw nạp file này mỗi phiên (thường phiên riêng, không phải nhóm).

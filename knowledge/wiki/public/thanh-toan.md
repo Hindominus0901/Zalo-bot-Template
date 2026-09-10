@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Thanh toán
 summary: "[CHỜ CHỦ SHOP] CK, COD, không nhận tiền mặt… Không dùng tờ này để nói số."

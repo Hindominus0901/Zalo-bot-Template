@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Giá vốn / hoa hồng
 summary: "[CHỜ CHỦ SHOP] Vốn, hoa hồng, kịch bản khách khó. Không dùng tờ này để nói số."

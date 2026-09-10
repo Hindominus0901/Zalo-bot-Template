@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Xử khách khó
 summary: "[CHỜ CHỦ SHOP] Việc bot không được kể. Không dùng tờ này để nói số."

@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 # [CHỜ CHỦ SHOP: bán gì — một câu như nói với người lạ]
 
 File này điền từ `PHONG-VAN.md`. Còn chữ `[CHỜ CHỦ SHOP]` là chưa xong.

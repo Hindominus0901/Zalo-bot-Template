@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Sỉ / CTV
 summary: "[CHỜ CHỦ SHOP] Chỉ khi chủ có mức sỉ / CTV. Không dùng tờ này để nói số."

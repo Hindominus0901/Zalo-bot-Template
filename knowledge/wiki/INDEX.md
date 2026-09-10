@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 # Chỉ mục sổ — tờ nào nói việc gì
 
 Sinh tự động bởi `scripts/lam_chi_muc.py`. **Đừng sửa tay** — sửa `summary`

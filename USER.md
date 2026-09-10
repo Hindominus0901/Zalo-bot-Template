@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 # Người vận hành bot — chủ shop / người trực
 
 OpenClaw nạp file này mỗi phiên. Đây là **chủ**, không phải khách.

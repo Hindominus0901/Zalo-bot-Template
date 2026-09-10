@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Shop bán / làm gì
 summary: "[CHỜ CHỦ SHOP] Một câu shop bán hoặc làm gì. Không dùng tờ này để nói số."

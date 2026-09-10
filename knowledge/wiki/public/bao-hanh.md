@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Bảo hành
 summary: "[CHỜ CHỦ SHOP] Bảo hành, không bảo hành cái gì. Không dùng tờ này để nói số."

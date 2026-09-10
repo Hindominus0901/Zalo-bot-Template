@@ -1,3 +1,4 @@
+<!-- FILE CỦA SHOP — giữ bản của bạn khi cập nhật template -->
 ---
 title: Địa chỉ
 summary: "[CHỜ CHỦ SHOP] Shop ở đâu, lấy trực tiếp, giờ mở cửa. Không dùng tờ này để nói số."
