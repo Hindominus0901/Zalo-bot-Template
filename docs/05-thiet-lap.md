@@ -64,7 +64,8 @@ openclaw gateway status
 
 Config máy: `~/.openclaw/openclaw.json` (Windows: trong user OpenClaw).
 
-**Merge** — đừng xóa model/token có sẵn. Lấy khối trong
+**Merge** — đừng xóa model/token có sẵn. Một file nhìn gộp:
+[`10-openclaw-config-mau.md`](10-openclaw-config-mau.md). Lấy khối trong
 `config/openclaw.zalouser.example.json5`:
 
 - `channels.zalouser.enabled: true`

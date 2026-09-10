@@ -107,22 +107,11 @@ Sai điển hình: đọc cả danh mục. Đúng điển hình: "lấy A vì đ
 
 ## Chỗ lưu
 
-Mỗi cuộc chat giữ một object nhỏ, ví dụ:
+Ghi **trên phiếu** `memory/phieu/{senderId}.md` (mẫu `MAU.md`). Không giữ object
+YAML trôi ngoài phiếu.
 
-```yaml
-pha: KHAI_THAC
-slot:
-  viec_can: tặng
-  tinh_huong: sinh nhật bạn
-  rang_buoc: 500k
-  da_thu: null
-  lo_ngai: null
-hoi_roi: 2          # đã hỏi 2 câu chẩn đoán
-goi_y_lan_nay:
-  - Bạn ấy hay dùng sẵn
-  - Mình chọn giúp
-  - Ngân sách khoảng...
-```
+Dòng dùng cho máy pha: `pha`, `viec_can`, `tinh_huong`, `rang_buoc`, `da_thu`,
+`lo_ngai`, `hoi_roi`. Đã có thì đừng hỏi lại. `hoi_roi` ≥ 3 → tư vấn trên cái
+đã có, hoặc bàn giao — đừng thành buổi khảo sát.
 
-Object này là dữ liệu, không phải prompt. Prompt chỉ thấy: pha hiện tại, slot đã
-có, câu nên hỏi tiếp (nếu còn), và lệnh "đừng hỏi lại slot đã đầy".
+Gợi ý cuối tin soạn theo pha; không cần lưu list gợi ý.

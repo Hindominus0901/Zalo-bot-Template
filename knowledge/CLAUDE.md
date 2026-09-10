@@ -27,7 +27,9 @@ không dấu, gạch ngang.
 3. Đọc hết. Tách thành **nhiều trang nhỏ** — mỗi trang một câu khách hay hỏi.
 4. Số liệu chỉ lấy từ file hoặc miệng chủ. File im, miệng chưa nói → `[CHỜ CHỦ SHOP]`.
 5. Giá / hoa hồng / giá vốn / kịch bản khách khó: `internal/` nếu phân vân.
-6. Tạo trang theo `wiki/TRANG-MAU.md` **chỉ khi có dữ liệu** — đừng để file trống.
+6. Template đã có tờ chờ trong `wiki/public/` và `wiki/internal/` (xem
+   `wiki/TRANG-MAU.md`). Điền số vào tờ đúng việc. Có số thì xóa banner
+   `[CHỜ CHỦ SHOP]`. Đừng tạo thêm tờ trống. Đừng copy số shop giả.
 
 Ảnh menu, screenshot Zalo: để `raw/`, đọc chữ trong ảnh rồi viết wiki; đừng bảo
 khách “xem file đính kèm” nếu nick không gửi file ổn định.

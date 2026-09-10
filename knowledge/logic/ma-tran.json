@@ -37,10 +37,16 @@
   "phieu": {
     "path": "memory/phieu/{id}.md",
     "ghi": [
+      "pha",
+      "viec_can",
       "size",
       "mon_da_noi",
       "mon_tu_choi",
       "tinh_huong",
+      "rang_buoc",
+      "da_thu",
+      "lo_ngai",
+      "hoi_roi",
       "anh_thay_gi",
       "viec_mo",
       "trang_thai_don",

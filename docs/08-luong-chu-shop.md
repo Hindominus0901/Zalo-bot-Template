@@ -6,7 +6,8 @@ mã trên điện thoại nick nhân viên**.
 
 Người dựng (thường là coding agent trên Cursor / Claude Code) bấm máy và viết
 sổ — họ có **bản hướng dẫn từng bước kỹ thuật** (skill khởi tạo + `HUONG-DAN-AGENT.md`),
-không đoán. Bấm nút: [`05-thiet-lap.md`](05-thiet-lap.md).
+không đoán. Bấm nút: [`05-thiet-lap.md`](05-thiet-lap.md). Một file cấu hình
+gộp (người dựng đọc): [`10-openclaw-config-mau.md`](10-openclaw-config-mau.md).
 
 Sổ shop / dữ liệu khách giải thích thường: [`09-kho-va-du-lieu.md`](09-kho-va-du-lieu.md).
 

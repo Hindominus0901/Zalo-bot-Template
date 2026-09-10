@@ -2,10 +2,16 @@
 
 - **updated:** YYYY-MM-DD
 - **goi:** (anh/chị / họ tự xưng — không đoán)
+- **pha:** MO_DAU | KHAI_THAC | TU_VAN | BUOC_TIEP | BAN_GIAO
+- **viec_can:**
 - **size / biến thể:**
 - **mon_da_noi:**
 - **mon_tu_choi:**
 - **tinh_huong:** (tặng / dùng / gấp…)
+- **rang_buoc:** (ngân sách, thời gian, chỗ ở — chỉ khi giá/món phụ thuộc)
+- **da_thu:**
+- **lo_ngai:**
+- **hoi_roi:** 0
 - **anh_thay_gi:** (chữ, không lưu ảnh, không số CK)
 - **viec_mo:** (chờ chủ chốt phí / bàn giao CK…)
 - **trang_thai_don:** trong | cho_chot | cho_ck | da_chot_chu | dang_giao | xong

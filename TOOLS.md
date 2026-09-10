@@ -52,6 +52,7 @@ SĐT khách → dòng memory + `bao_chu`. File `raw/` không gửi khách.
 ## Bước máy, không phải tool
 
 `lay_id` là bước 1 trong `tuduy-cskh.md` — lấy `senderId` từ metadata tin
-OpenClaw / zalouser. **Không** có hàm `lay_id` trong repo. Không ID → không bịa
-tên file phiếu; xử lý trong phiên.
+OpenClaw / zalouser. Máy đọc: `knowledge/logic/tools.json` → `buoc`.
+**Không** có hàm `lay_id` trong repo. Không ID → không bịa tên file phiếu; xử
+lý trong phiên.
 

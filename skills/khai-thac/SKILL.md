@@ -9,8 +9,8 @@ Nguyên tắc: **hỏi trước, chọn giúp sau.** Khách hỏi fact thì tr�
 nhét khai thác.
 
 Đọc `knowledge/khung-khai-thac.md` (máy pha) và `knowledge/cach-tu-van.md` (cách
-hỏi — một câu, chữ đời, không form). Slot **của shop này** (điền sau phỏng vấn
-chủ đề 9):
+hỏi — một câu, chữ đời, không form). **Đầu lượt:** đọc phiếu — pha + chỗ đã biết.
+Đừng hỏi lại. Chỗ trống **của shop này** (điền sau phỏng vấn chủ đề 9):
 
 [CHỜ CHỦ SHOP: câu hỏi 1 — ví dụ dùng cho ai / việc gì]
 [CHỜ CHỦ SHOP: câu hỏi 2]

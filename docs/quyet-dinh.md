@@ -18,11 +18,19 @@ dòng này khi phỏng vấn một shop. Shop-level hỏi ở `PHONG-VAN.md`.
 - Follow-up chủ động: **hai nhánh có rào** (im sau giá = một tin rồi khóa; sau
   đơn = câu mẫu chủ). Mặc định **tắt** nếu `USER.md` chưa điền. Không broadcast,
   không lần hai khi im, không vì chỉ có ảnh CK
-- File Tom (SOUL máy cũ) chưa có trong repo — giọng mặc định là `SOUL.md` ở đây
+- File Tom (SOUL máy cũ) **chưa đọc được**: không nằm repo, không nằm máy
+  cloud, Drive phiên này chưa login. **Đừng tìm lại** trên GitHub / `goclaw`.
+  Giọng mặc định là `SOUL.md` ở đây. Trộn miệng Tom chỉ khi chủ dán
+  `C:\TOM\SOUL.md` (và `IDENTITY.md` nếu có) — giữ `dmPolicy: open`, nick riêng,
+  ba rào cứng
 
 ## Bản này làm / chưa làm
 
-**Làm:** giọng kỹ, wiki, khai thác, báo giá, ghi đơn, theo đơn, ảnh (ma trận
+**Làm tiếp khi có shop / file Tom:** phỏng vấn 10 chủ đề (B0–B7), điền tờ chờ
+wiki + `USER.md`, quét QR nick riêng (`docs/05` + `docs/10`), chạy
+`docs/04` từ nick khác. Không thêm skill / ZNS / OA / CRM trên wiki trống.
+
+**Làm:** giọng kỹ, tờ wiki chờ (`[CHỜ CHỦ SHOP]`), phiếu pha + chỗ đã biết, khai thác, báo giá, ghi đơn, theo đơn, ảnh (ma trận
 `anh-tinh-huong.md`), phiếu theo ID, tư duy 10 bước (`tuduy-cskh.md`, GỘP/TÁCH C),
 bản đồ vòng (`workflow-cskh.md`), system prompt + catalog tool (`TOOLS.md`),
 follow-up hai nhánh (`skills/follow-up`), tool `doc_anh` + MCP Drive (tắt sẵn),

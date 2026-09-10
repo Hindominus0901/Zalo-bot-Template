@@ -11,9 +11,13 @@ ID = `senderId` zalouser (inbox). Nhóm: `{groupId}-{senderId}`. File
 **Đầu lượt:** có file thì đọc. Dùng im lặng — không *em đã ghi nhớ*, không đọc
 phiếu thành tiếng.
 
-**Cuối lượt:** chỉ ghi fact **bền** vừa có (size, món từ chối, tình huống, *ảnh
-thấy gì* một dòng, việc mở, trạng thái đơn / follow-up nếu đổi). Ghi đè dòng cũ
-cùng mục, giữ ngày `updated`.
+**Cuối lượt:** chỉ ghi fact **bền** vừa có (pha, việc cần, size, món từ chối,
+tình huống / chỗ trống đã biết, *ảnh thấy gì* một dòng, việc mở, trạng thái
+đơn / follow-up nếu đổi). Ghi đè dòng cũ cùng mục, giữ ngày `updated`.
+
+Pha + chỗ đã biết (`viec_can`, `tinh_huong`, `rang_buoc`, `da_thu`, `lo_ngai`,
+`hoi_roi`) nằm **trên phiếu**, không giữ object YAML trôi. Đã có thì **đừng hỏi
+lại**. `hoi_roi` = số câu chẩn đoán đã hỏi (tối đa 3 rồi tư vấn trên cái có).
 
 Trạng thái đơn: `trong` (mặc định) · `cho_chot` (đã `ghi-don`) · `cho_ck` ·
 `da_chot_chu` (người thật chốt — không vì ảnh CK) · `dang_giao` · `xong`.

@@ -11,6 +11,9 @@
     {"id": "ghi_thieu", "openclaw": "write", "skill": null},
     {"id": "mcp_drive", "openclaw": "mcp", "skill": "lam-viec"}
   ],
+  "buoc": [
+    {"id": "lay_id", "nghia": "senderId tu metadata tin OpenClaw / zalouser", "khong_phai_tool": true}
+  ],
   "khong": [
     "tra_don",
     "cong_ck",

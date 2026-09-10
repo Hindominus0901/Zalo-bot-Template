@@ -203,6 +203,58 @@ class LogicToolsAndPrompt(unittest.TestCase):
         self.assertIn("read", honest)
         self.assertIn("message", honest)
         self.assertIn("`tools/`", honest)
+        buoc_ids = [r["id"] for r in data.get("buoc", [])]
+        self.assertIn("lay_id", buoc_ids)
+        self.assertTrue(all(r.get("khong_phai_tool") for r in data["buoc"]))
+        self.assertIn("Bước máy", honest)
+
+    def test_wiki_cho_pages_are_stubs(self):
+        expected = [
+            "knowledge/wiki/public/ban-gi.md",
+            "knowledge/wiki/public/gia.md",
+            "knowledge/wiki/public/ship.md",
+            "knowledge/wiki/public/thanh-toan.md",
+            "knowledge/wiki/public/doi-tra.md",
+            "knowledge/wiki/public/bao-hanh.md",
+            "knowledge/wiki/public/con-hang.md",
+            "knowledge/wiki/public/gio-truc.md",
+            "knowledge/wiki/public/dia-chi.md",
+            "knowledge/wiki/public/kiem-hang.md",
+            "knowledge/wiki/public/dat-lich.md",
+            "knowledge/wiki/public/si-ctv.md",
+            "knowledge/wiki/public/hoa-don-vat.md",
+            "knowledge/wiki/internal/gia-von-hoa-hong.md",
+            "knowledge/wiki/internal/xu-khach-kho.md",
+        ]
+        for rel in expected:
+            text = _read(rel)
+            self.assertIn("CHỜ CHỦ SHOP", text, msg=rel)
+            self.assertIn("Không nói số", text, msg=rel)
+            low = text.lower()
+            self.assertNotIn("150000", low, msg=rel)
+            self.assertNotIn("giá tham khảo", low, msg=rel)
+
+    def test_opener_locked_and_chin_nhom(self):
+        locked = "tìm cho mình dùng hay để tặng"
+        for path in (
+            "knowledge/hoi-thoai-mau.md",
+            "knowledge/moi-loai-cau-hoi.md",
+            "knowledge/khung-khai-thac.md",
+            "docs/00-tong-hop-cskh.md",
+        ):
+            self.assertIn(locked, _read(path), msg=path)
+        zero = _read("docs/00-tong-hop-cskh.md")
+        self.assertNotIn("tìm loại nào", zero)
+        self.assertIn("chín nhóm", zero.lower())
+        self.assertIn("Chín nhóm", _read("knowledge/moi-loai-cau-hoi.md"))
+
+    def test_config_mau_merges_both_fragments(self):
+        text = _read("docs/10-openclaw-config-mau.md")
+        self.assertIn("dmPolicy", text)
+        self.assertIn("mcp.example.json5", text)
+        self.assertIn("openclaw.zalouser.example.json5", text)
+        self.assertIn("enabled: false", text)
+        self.assertIn("pairing", text.lower())
 
     def test_khoi_tao_has_b0_b7_and_write_map(self):
         text = _read(".claude/skills/khoi-tao/SKILL.md")
@@ -212,6 +264,8 @@ class LogicToolsAndPrompt(unittest.TestCase):
         self.assertIn("04-kich-ban-thu.md", text)
         self.assertIn("giao-tiep-chu", text)
         self.assertIn("lam-viec-dung", text)
+        self.assertIn("10-openclaw-config-mau.md", text)
+        self.assertIn("tờ chờ", text)
 
     def test_system_prompt_routes_skills(self):
         text = _read("AGENTS.md")

@@ -43,6 +43,9 @@ flowchart LR
 3. `enabled: true` **chỉ** server đã login. `openclaw mcp doctor --probe`.
 4. `toolFilter` chỉ `search` / `read` / `list` — đừng full write lên Drive khách.
 
+Cây quyết định (một chỗ, đủ): [`10-openclaw-config-mau.md`](10-openclaw-config-mau.md)
+— gửi tay / Cursor Settings / Gateway `enabled: true` / dừng xin file.
+
 Cursor: bật MCP **Google Drive** trong Settings nếu dựng trong Cursor. Cùng luật:
 chỉ file họ cho.
 

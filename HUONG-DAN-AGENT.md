@@ -9,6 +9,7 @@ rồi điền giọng + sổ. Nói với chủ:
 [`.claude/skills/giao-tiep-chu/SKILL.md`](.claude/skills/giao-tiep-chu/SKILL.md).
 File / Drive: [`.claude/skills/lam-viec-dung/SKILL.md`](.claude/skills/lam-viec-dung/SKILL.md)
 + [`docs/11-mcp-ung-dung.md`](docs/11-mcp-ung-dung.md).
+Cấu hình gộp: [`docs/10-openclaw-config-mau.md`](docs/10-openclaw-config-mau.md).
 
 Chủ xem trước (chữ thường): [`docs/08-luong-chu-shop.md`](docs/08-luong-chu-shop.md),
 [`docs/09-kho-va-du-lieu.md`](docs/09-kho-va-du-lieu.md). **Cấm** nói wiki,

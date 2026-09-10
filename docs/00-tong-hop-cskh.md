@@ -30,9 +30,10 @@ Gợi ý tương tác: 2–3 câu gõ được + quote reply + typing/seen. Khô
 
 ---
 
-## 2. Việc CSKH thật sự làm được — tám nhóm
+## 2. Việc CSKH thật sự làm được — chín nhóm
 
-Không phải "trả lời FAQ". Một nhân viên CSKH giỏi trên Zalo làm tám việc — và
+Không phải "trả lời FAQ". Một nhân viên CSKH giỏi trên Zalo làm chín việc
+(A–I trong [`moi-loai-cau-hoi.md`](../knowledge/moi-loai-cau-hoi.md)) — và
 còn **ở lại chat** khi khách hỏi lệch, hỏi đời, hỏi kho chưa có. Biết lúc nào
 dừng là lúc tiền / khiếu nại / quyền quyết, không phải lúc câu hơi lạ.
 
@@ -46,7 +47,7 @@ không đọc, rồi số lạc của lượt trước làm bot mở nhầm tran
 
 Làm đúng: trả lời ý vừa hỏi, rồi **đưa 2–3 hướng đi tiếp** bằng chữ đời thường.
 
-> Alo có em, Nami đây. Anh/chị đang tìm loại nào, hay muốn em hỏi giúp vài câu cho đúng ý?
+> Alo có em, Nami đây. Anh/chị đang tìm cho mình dùng hay để tặng ai đó?
 
 ### B. Khai thác bối cảnh — việc "dễ ăn" nhất
 

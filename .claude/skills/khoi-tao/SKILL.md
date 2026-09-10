@@ -89,7 +89,8 @@ câu “Hỏi thêm” nếu họ chưa phủ. Đừng đọc cả khối Hỏi 
 | 10 Câu đầu | `persona.md` → Tin mở | Không viết *hỗ trợ gì ạ* |
 
 Wiki: `knowledge/CLAUDE.md`. Một tờ một câu hỏi. Phân vân công khai/nội bộ →
-`internal/`. Chỉ tạo tờ trong `wiki/TRANG-MAU.md` **khi có dữ liệu**.
+`internal/`. Template **đã có tờ chờ** (`wiki/TRANG-MAU.md`). Điền số; xóa
+banner khi có số. Đừng tạo thêm tờ trống. Đừng copy shop giả.
 
 Giọng nền đã có. Chỉ thêm xưng hô + tin thật vào `SOUL.md`. Đừng thay bằng
 *cảm ơn đã liên hệ*, *đừng ngần ngại*.
@@ -102,15 +103,16 @@ Giọng nền đã có. Chỉ thêm xưng hô + tin thật vào `SOUL.md`. Đừ
    `updated`, `sources`).
 4. Tên file: chữ thường, không dấu, gạch ngang. `public/` trừ vốn / hoa hồng /
    kịch bản khách khó → `internal/`.
-5. File im + miệng chưa nói → `[CHỜ CHỦ SHOP]` trên tờ, bot chưa được dùng số.
+5. File im + miệng chưa nói → giữ `[CHỜ CHỦ SHOP]` trên tờ chờ, bot chưa được dùng số.
 6. Ảnh menu: đọc chữ, viết sổ; đừng bảo khách “xem file đính kèm”.
-7. Không tạo file trống.
+7. Đừng tạo thêm tờ trống. Đừng xóa tờ chờ chỉ vì chưa có số.
 
 ---
 
 ## B4 — Config (sau khi sổ đã có chữ)
 
-Chi tiết bấm: `docs/05-thiet-lap.md`. Nói với họ từng nút, ít tên phần mềm.
+Chi tiết bấm: `docs/05-thiet-lap.md`. Mẫu gộp một file:
+`docs/10-openclaw-config-mau.md`. Nói với họ từng nút, ít tên phần mềm.
 
 **Windows:** PowerShell → nếu chặn script:
 `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` →

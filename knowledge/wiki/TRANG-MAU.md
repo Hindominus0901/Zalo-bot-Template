@@ -1,7 +1,11 @@
-# Trang wiki nên có — tạo lúc tách câu 3, không tạo trang rỗng
+# Trang wiki nên có — template đã có tờ chờ, điền lúc câu 3
 
-Bot đọc trang **có chữ** như chính sách. Đừng tạo file trống: trống dễ bị hiểu
-là “shop không ship / không đổi trả”.
+Bot đọc trang **có chữ** như chính sách. Template đã để tờ chờ sẵn trong
+`public/` và `internal/` — banner `[CHỜ CHỦ SHOP]` = **chưa dùng để nói số**,
+không = “shop không ship / không đổi trả”.
+
+Điền số vào tờ đúng việc. Có số thì xóa banner. **Đừng** tạo thêm tờ trống.
+**Đừng** copy số từ [`docs/vi-du-file-da-dien.md`](../../docs/vi-du-file-da-dien.md).
 
 Mỗi trang: frontmatter như `knowledge/CLAUDE.md`. Tên file chữ thường, không dấu.
 

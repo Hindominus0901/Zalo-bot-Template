@@ -49,6 +49,7 @@ Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `P
 | [`docs/07-cach-dung.md`](docs/07-cach-dung.md) | Chủ shop / người dựng / người trực |
 | [`docs/08-luong-chu-shop.md`](docs/08-luong-chu-shop.md) | Từng bước dựng bot — chữ thường, không cần biết lập trình |
 | [`docs/09-kho-va-du-lieu.md`](docs/09-kho-va-du-lieu.md) | Ba ngăn kiến thức, wiki, phiếu khách, sửa giá sau này |
+| [`docs/10-openclaw-config-mau.md`](docs/10-openclaw-config-mau.md) | Một file cấu hình gộp (nick + Drive tắt sẵn) |
 | [`AGENTS.md`](AGENTS.md) | Não chat OpenClaw nạp — máy lượt, rào, skill |
 | [`TOOLS.md`](TOOLS.md) | Tên việc → `read`/`write`/`message`/vision; không có thư mục `tools/` |
 | [`docs/11-mcp-ung-dung.md`](docs/11-mcp-ung-dung.md) | MCP nối Drive ↔ sổ ↔ Zalo — không cào web lấy giá |
