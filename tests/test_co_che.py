@@ -115,3 +115,52 @@ class CatPhieuCu(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NhipChat(unittest.TestCase):
+    def test_agents_co_luat_tin_don(self):
+        text = _read("AGENTS.md")
+        self.assertIn("Tin dồn", text)
+        self.assertIn("600", text)
+
+    def test_khong_bia_key_config_chua_kiem(self):
+        """Chưa xác minh được OpenClaw có key gộp tin dồn — không được ghi vào config mẫu."""
+        cfg = _read("config/openclaw.zalouser.example.json5")
+        for key in ("inbound_debounce_ms", "chat_behavior", "quick_ack"):
+            self.assertNotIn(key, cfg, f"{key} chua xac minh, dung ghi vao config mau")
+        doc = _read("docs/10-openclaw-config-mau.md")
+        self.assertIn("config schema", doc, "docs phai day cach tu kiem truoc khi them key")
+
+
+class BanGiaoLaCo(unittest.TestCase):
+    def test_ban_giao_co_trong_phieu(self):
+        for field in ("ban_giao", "ban_giao_luc", "ban_giao_ve"):
+            self.assertIn(field, _read("memory/phieu/MAU.md"))
+            self.assertIn(field, matrix()["phieu"]["ghi"])
+        self.assertIn("ban_giao", matrix()["phieu"]["khong_bao_gio_bo"])
+
+    def test_ban_giao_khong_tat_ca_bot(self):
+        skill = _read("skills/ban-giao/SKILL.md")
+        self.assertIn("dang_cho", skill)
+        self.assertIn("chuyện khác", skill.lower())
+        self.assertIn("24h", skill)
+
+
+class SoNoKhach(unittest.TestCase):
+    def test_boot_xu_tin_no(self):
+        boot = _read("BOOT.md")
+        self.assertIn("no-tra-loi.md", boot)
+        self.assertIn("12h", boot)
+
+    def test_boot_ngat_mach_khi_cookie_chet(self):
+        boot = _read("BOOT.md")
+        self.assertIn("một lần", boot)
+        self.assertIn("quét lại mã", boot)
+
+    def test_file_no_that_bi_ignore(self):
+        """File thật chứa chữ khách — phải bị git ignore."""
+        r = subprocess.run(
+            ["git", "check-ignore", "-q", "memory/no-tra-loi.md"],
+            cwd=ROOT, capture_output=True,
+        )
+        self.assertEqual(r.returncode, 0, "memory/no-tra-loi.md phai bi git ignore")

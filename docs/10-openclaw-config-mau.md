@@ -89,3 +89,32 @@ Chi tiết bus: [`11-mcp-ung-dung.md`](11-mcp-ung-dung.md).
 
 `openclaw doctor --fix` có thể chuyển `HEARTBEAT.md` vào DB. **Giữ file
 workspace làm nguồn** — xem `HEARTBEAT.md`.
+
+---
+
+## Gộp tin dồn — kiểm trước khi thêm key
+
+Khách Việt gõ 4–6 tin ngắn liên tiếp. Xử ở tầng gateway (chờ họ im rồi mới đẩy
+một lượt cho model) **rẻ và chắc hơn** để model tự phán đoán.
+
+Nhưng: **bản OpenClaw mỗi người mỗi khác.** Chưa xác minh được bản nào có key
+gộp tin dồn (tên hay gặp ở các gateway khác: `inbound_debounce_ms`,
+`chat_behavior`). Nên:
+
+1. Kiểm trên **máy của mình** trước:
+
+   ```bash
+   openclaw config schema | grep -i "debounce\|batch\|behavior"
+   openclaw doctor
+   ```
+
+2. Có key → thêm vào `gateway`, để **1500 ms**. Tin có ảnh cần chờ lâu hơn tin
+   chữ (nhiều ảnh gửi lệch nhau vài trăm ms).
+3. **Không có key → đừng thêm.** Config lạ có thể bị OpenClaw từ chối, hoặc tệ
+   hơn là nuốt im lặng và mình tưởng đã bật. Luật gộp tin đang nằm sẵn trong
+   `AGENTS.md` (mục *Tin dồn và nhịp gửi*) — bot vẫn xử được, chỉ là bằng phán
+   đoán chứ không bằng máy.
+
+Cùng luật đó cho *đang soạn* / *đã xem* và chia tin: có key thì bật, không có thì
+để `AGENTS.md` lo.
+

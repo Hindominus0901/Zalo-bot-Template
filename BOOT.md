@@ -9,5 +9,15 @@ Không “Nami online”, không chào lại inbox im, **không** burst follow-u
    kênh đó (message tool: ghi rõ kênh + người nhận). Không sửa wiki. Xong: `NO_REPLY`.
 3. Không có việc / chưa có kênh USER.md / không chắc gửi được → không gửi gì.
    Trả `HEARTBEAT_OK` (hoặc `NO_REPLY` nếu runtime đòi silent token).
-4. Đừng đoán đơn đang treo. Đừng quét phiếu để nhắn khách lúc boot. Trùng
+4. **Tin còn nợ** — đọc `memory/no-tra-loi.md`. Có dòng **trong 12h** → trả đúng
+   `senderId` đó **một** tin: xin lỗi ngắn vì trả muộn, hỏi họ còn cần gì không.
+   Rồi xóa dòng. Cũ hơn 12h → **không nhắn khách** (trả lúc đó chỉ làm phiền),
+   chỉ gom vào tóm tắt cho chủ ở bước 2, và vẫn xóa dòng.
+   Đây là **ngoại lệ duy nhất** của luật "boot không nhắn khách" — vì tin đó là
+   tin họ đã gửi thật, không phải mình tự bắt chuyện.
+5. **Cookie chết / login lỗi lặp lại** → **dừng thử**. Báo chủ **một lần**:
+   cần quét lại mã trên máy đang chạy bot. Đừng thử lại mỗi nhịp, đừng báo lại
+   mỗi nhịp. Một lần fail được xử êm vẫn tính là chạy xong — đừng dựa vào trạng
+   thái chạy để biết là đang hỏng.
+6. Đừng đoán đơn đang treo. Đừng quét phiếu để nhắn khách lúc boot. Trùng
    heartbeat: cùng luật `HEARTBEAT.md`.

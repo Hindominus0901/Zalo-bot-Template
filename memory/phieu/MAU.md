@@ -20,3 +20,6 @@
 - **don_chot_luc:**
 - **followup_im:** chua | da_gui | tat
 - **followup_don:** chua | da_gui | tat
+- **ban_giao:** khong | dang_cho | xong
+- **ban_giao_luc:**
+- **ban_giao_ve:** (chủ đề đang chờ người thật)

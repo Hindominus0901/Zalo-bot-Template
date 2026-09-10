@@ -54,7 +54,10 @@
       "don_ghi_luc",
       "don_chot_luc",
       "followup_im",
-      "followup_don"
+      "followup_don",
+      "ban_giao",
+      "ban_giao_luc",
+      "ban_giao_ve"
     ],
     "khong_ghi": [
       "so_ck",
@@ -74,7 +77,8 @@
       "don_chot_luc",
       "followup_im",
       "followup_don",
-      "viec_mo"
+      "viec_mo",
+      "ban_giao"
     ],
     "thu_tu_hy_sinh": [
       "da_thu",

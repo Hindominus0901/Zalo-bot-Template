@@ -24,6 +24,9 @@ Trạng thái đơn: `trong` (mặc định) · `cho_chot` (đã `ghi-don`) · `
 Ảnh CK chỉ vào `anh_thay_gi` + `viec_mo`, **không** đổi `trang_thai_don` thành
 `cho_chot` / `da_chot_chu`.
 
+`ban_giao`: `khong` (mặc định) · `dang_cho` (đã gọi người, chưa xong) · `xong`.
+Kèm `ban_giao_luc` và `ban_giao_ve` (chủ đề nào đang chờ). Luật: `skills/ban-giao`.
+
 `da_bao_gia_luc` = lúc nói **số wiki** (`bao-gia`). `don_ghi_luc` / `don_chot_luc`
 = lúc ghi đơn / chủ chốt. `followup_*`: `chua` | `da_gui` | `tat` — heartbeat
 xem skill `follow-up`.
