@@ -65,6 +65,10 @@ openclaw doctor
 openclaw gateway status
 ```
 
+**VPS không màn hình → dừng ở đây, sang [`14-vps-headless.md`](14-vps-headless.md).**
+Từ bước quét mã trở đi làm khác hẳn, và phần *quét lại khi phiên chết* là thứ
+bắt buộc phải bàn giao cho chủ shop.
+
 ---
 
 ## Nối workspace CSKH
@@ -87,6 +91,8 @@ openclaw channels login --channel zalouser
 ```
 
 Họ tự quét QR bằng **app nick nhân viên** trên điện thoại. Đừng nhận ảnh QR/cookie.
+
+Máy không màn hình: [`14-vps-headless.md`](14-vps-headless.md) nhánh B.
 
 `openclaw directory self --channel zalouser` — thấy nick bot thì login ổn.
 

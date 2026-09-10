@@ -59,6 +59,7 @@ Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `P
 | [`docs/11-mcp-ung-dung.md`](docs/11-mcp-ung-dung.md) | MCP nối Drive ↔ sổ ↔ Zalo — không cào web lấy giá |
 | [`docs/12-prompt-va-cache.md`](docs/12-prompt-va-cache.md) | Ba tầng prompt — nền cố định vs thứ của lượt |
 | [`docs/13-an-toan.md`](docs/13-an-toan.md) | Khối `<policy>`, hàng rào dữ liệu ngoài, mẫu câu dụ tiếng Việt |
+| [`docs/14-vps-headless.md`](docs/14-vps-headless.md) | VPS không màn hình: quét mã qua SSH, chạy 24/7, quét lại khi phiên chết |
 | [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md) | Coding agent dựng shop: B0→B7 chi tiết |
 | [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) | Tin thử: tình huống + giọng + ảnh + follow-up |
 | [`docs/vi-du-file-da-dien.md`](docs/vi-du-file-da-dien.md) | Shop **giả** — đừng copy số vào wiki thật |

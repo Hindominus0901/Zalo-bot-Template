@@ -205,6 +205,10 @@ không cần mã pairing.
 
 ## B7 — Sống 24/7
 
+**Máy chủ thuê ngoài không màn hình → `docs/14-vps-headless.md`.** Bước quét mã
+làm khác, và phải bàn giao cho chủ shop quy trình **quét lại** khi phiên chết —
+không làm thì lần đầu bot im là họ không biết gọi ai.
+
 Nói thẳng: tắt máy / ngủ = **mất tin lúc đó**. Khách thật cần máy chạy suốt
 (VPS). Không tự thuê hộ. `docs/02-kenh-zalouser.md`.
 

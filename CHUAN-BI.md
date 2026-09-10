@@ -33,6 +33,15 @@ ngân hàng hay giấy tờ quan trọng vào nick này.
 Để **quét mã** lúc bật, và **quét lại** mỗi khi phiên đăng nhập chết. Chuyện
 đó sẽ xảy ra, không phải một lần rồi thôi — cứ giữ điện thoại đó đăng nhập sẵn.
 
+### 3b. Biết trước: sẽ có lúc phải quét lại mã
+
+Phiên đăng nhập của bot **sẽ chết** — vài tuần hay vài tháng một lần, không đoán
+được. Lúc đó bot im, khách nhắn không ai trả.
+
+Không phải hỏng, không phải mất dữ liệu. Chỉ cần quét lại mã như lần đầu. Nhưng
+anh/chị cần **biết gọi ai** khi nó xảy ra, và người đó phải vào được máy chủ.
+Hỏi người dựng dán sẵn bốn bước quét lại vào chỗ anh/chị tìm được.
+
 ### 4. Một nick Zalo thứ hai để nhắn thử
 
 Nick của anh/chị hoặc của nhân viên. Không tự nhắn từ chính nick bot — không
