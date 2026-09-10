@@ -1,13 +1,213 @@
 ---
 name: khoi-tao
-description: Dựng bot CSKH Zalo cho một shop từ template này. Dùng khi người dùng bảo dựng bot, setup, phỏng vấn chủ shop.
+description: Dựng bot CSKH Zalo cho một shop từ template. Dùng khi người dùng bảo dựng bot, setup, phỏng vấn chủ shop, làm Nami, khởi tạo workspace.
 ---
 
-Đọc `/HUONG-DAN-AGENT.md` (từ gốc repo) và làm đúng thứ tự B0→B7. Chủ shop xem
-`docs/08-luong-chu-shop.md` + `docs/09-kho-va-du-lieu.md` (chữ thường). Phỏng vấn
-`PHONG-VAN.md`. Wiki theo `knowledge/wiki/TRANG-MAU.md` — đừng tạo trang trống.
-Xong QR thì chạy `docs/04-kich-ban-thu.md` và `python3 -m unittest discover -s tests -v`.
-Cài nick: `docs/05-thiet-lap.md`. Không bịa số liệu. Không
-copy số từ `docs/vi-du-file-da-dien.md` (shop giả). Không nói thuật ngữ với chủ
-shop. Tên mặc định Nami trừ khi chủ đổi. Đừng viết lại `giong-noi.md` / `cach-tu-van.md`
-thành kịch bản OA.
+# Khởi tạo — coding agent làm từng bước
+
+Bạn đang **dựng**, không đang trả lời khách. Nguồn sự thật:
+[`HUONG-DAN-AGENT.md`](../../../HUONG-DAN-AGENT.md) (khớp repo). Câu hỏi đọc cho
+chủ: `PHONG-VAN.md` / `docs/bo-cau-hoi.md`. Chủ muốn xem trước (chữ thường):
+`docs/08-luong-chu-shop.md`, `docs/09-kho-va-du-lieu.md`. Đã khóa, đừng hỏi lại:
+`docs/quyet-dinh.md`.
+
+Làm **đúng thứ tự B0→B7**. Không nhảy QR trước phỏng vấn. Không tóm tắt rồi hỏi
+“anh/chị sẵn sàng chưa” — hỏi câu B0 ngay.
+
+Bot lúc chạy (system / tool / skill) **không viết ở đây**. Đừng sửa
+`knowledge/system-prompt.md`, `TOOLS.md`, `skills/*/SKILL.md` trừ khi chủ đổi
+việc thật (câu 7/9). Giọng nền (`giong-noi.md`, `cach-tu-van.md`) **không viết
+lại** thành kịch bản OA.
+
+---
+
+## Luật — nhắc mỗi phiên
+
+1. **Không bịa số shop.** Wiki + đoạn giá trong `persona.md` chỉ từ miệng chủ
+   hoặc file họ đưa. Chưa có → `[CHỜ CHỦ SHOP: …]` rồi hỏi. Không “giá tham khảo”,
+   không “shop kiểu này thường”.
+2. **Không nói** wiki, harness, brain, token, QR, OpenClaw, Gateway, persona với
+   chủ — trừ khi họ hỏi. Nói: sổ, nick nhân viên, quét mã, chỗ bot ngồi.
+3. **Không đổi kênh.** Không OA, không Bot Creator, không “Bot …” trên Bot Manager.
+4. **Không** tự mở web/Facebook shop rồi chép giá. **Không** copy số
+   `docs/vi-du-file-da-dien.md` (Tiệm Mây = giả).
+5. Câu 2 (khách ngại) và câu 3 (tài liệu) mỏng = buổi hỏng. Đào từng câu.
+
+---
+
+## B0 — Máy và nick
+
+Tự biết OS. Với họ chỉ hỏi **đúng hai câu** (M1/M2 trong `PHONG-VAN.md`):
+
+> Mình làm trên máy tính anh/chị đang mở đó luôn nhé — Windows hay Mac ạ?
+
+> Bot dùng một nick Zalo như nhân viên riêng, không dùng nick chính. Nick đó có
+> chưa, hay lát mình tạo cùng nhau?
+
+| Họ nói | Bạn làm |
+|---|---|
+| Windows / Mac / Linux | Ghi nhớ. Cài chỗ bot ngồi **sau B3**, lệnh trong `docs/05-thiet-lap.md` |
+| Chưa có nick nhân viên | Tạo nick Zalo mới **cùng họ** (số riêng). Đừng lấy nick chính, đừng gắn ngân hàng |
+| Đã có nick | Ghi. QR sau B3, **họ** quét bằng app nick đó |
+| Đã có OpenClaw trên máy | B4 merge, đừng cài đè. Workspace = thư mục repo shop |
+
+Chưa quét mã lúc này. Nick: `docs/02-kenh-zalouser.md` (bạn đọc, họ không).
+
+---
+
+## B1 — Đọc khung, đừng đụng rào
+
+Đọc hết (im): `SOUL.md`, `knowledge/giong-noi.md`, `knowledge/cach-tu-van.md`,
+`AGENTS.md`, `knowledge/system-prompt.md`, `TOOLS.md`, `knowledge/workflow-cskh.md`,
+`docs/01-it-rao-da-dang.md`, `knowledge/moi-loai-cau-hoi.md`,
+`knowledge/hoi-thoai-mau.md`.
+
+Không xóa ba rào `AGENTS.md` (tiền, nội bộ, jailbreak). Hình file đã điền:
+`docs/vi-du-file-da-dien.md` — **cấm** chép số vào shop đang dựng.
+
+---
+
+## B2 + B3 — Hỏi rồi viết ngay
+
+Mỗi chủ đề: nói **câu chính** trong `PHONG-VAN.md` (dài). Đợi họ kể. Rồi **một**
+câu “Hỏi thêm” nếu họ chưa phủ. Đừng đọc cả khối Hỏi thêm.
+
+**Viết file ngay sau mỗi chủ đề**, đừng chờ hết 10.
+
+| Câu | Viết | Chưa có thì |
+|---|---|---|
+| 1 Bán/làm gì | `knowledge/persona.md` → Công việc | `[CHỜ CHỦ SHOP]` |
+| 2 Khách ngại gì | `persona.md` → Khách và điều họ lo | `[CHỜ CHỦ SHOP]` |
+| 3 Tài liệu | Cất `knowledge/raw/` nguyên. Một dòng `raw/NGUON.md`. Tách wiki (thuật toán dưới) | Chủ nói không có file → FAQ miệng câu 6; vẫn được |
+| 4 Giọng, tên gọi | `IDENTITY.md` + `SOUL.md` đoạn cuối (xưng hô + 2–3 tin thật). Config `identity.name` khớp lúc B4 | Tên mặc định **Nami**. Biệt hiệu nhóm: ghi `Gọi thêm` |
+| 5 Không được tự ý | `persona.md` → Ranh giới (thêm của shop). Không xóa ba rào sẵn | — |
+| 6 FAQ miệng | Mỗi câu một tờ `wiki/public/` hoặc gom cùng chủ đề | Không đẻ số |
+| 7 Bước đặt | `skills/ghi-don/SKILL.md` — chỉ bước shop này, giữ “không tự chốt” | — |
+| 8 Kêu ai + follow-up | `USER.md`: tên, nick bàn giao, giờ gọi lại, SĐT, ảnh, nhóm, **Follow-up** (tắt / giờ / câu mẫu) | Follow-up chưa nói = **để CHỜ / tắt** |
+| 9 Phân vân | `skills/khai-thac/SKILL.md` — đúng câu họ hay hỏi, 2–3 slot | — |
+| 10 Câu đầu | `persona.md` → Tin mở | Không viết *hỗ trợ gì ạ* |
+
+Wiki: `knowledge/CLAUDE.md`. Một tờ một câu hỏi. Phân vân công khai/nội bộ →
+`internal/`. Chỉ tạo tờ trong `wiki/TRANG-MAU.md` **khi có dữ liệu**.
+
+Giọng nền đã có. Chỉ thêm xưng hô + tin thật vào `SOUL.md`. Đừng thay bằng
+*cảm ơn đã liên hệ*, *đừng ngần ngại*.
+
+### Tách wiki (câu 3) — làm đúng
+
+1. Copy/ghi file gốc vào `knowledge/raw/`, giữ tên nguồn (`bang-gia-2026-04.pdf`).
+2. Hàng `raw/NGUON.md`: ngày, ai gửi, công khai hay nội bộ.
+3. Đọc hết. Cắt **nhiều tờ nhỏ**. Frontmatter như `CLAUDE.md` (`title`, `summary`,
+   `updated`, `sources`).
+4. Tên file: chữ thường, không dấu, gạch ngang. `public/` trừ vốn / hoa hồng /
+   kịch bản khách khó → `internal/`.
+5. File im + miệng chưa nói → `[CHỜ CHỦ SHOP]` trên tờ, bot chưa được dùng số.
+6. Ảnh menu: đọc chữ, viết sổ; đừng bảo khách “xem file đính kèm”.
+7. Không tạo file trống.
+
+---
+
+## B4 — Config (sau khi sổ đã có chữ)
+
+Chi tiết bấm: `docs/05-thiet-lap.md`. Nói với họ từng nút, ít tên phần mềm.
+
+**Windows:** PowerShell → nếu chặn script:
+`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` →
+`iwr -useb https://openclaw.ai/install.ps1 | iex` → onboard. Workspace = **đường
+dẫn tuyệt đối** thư mục repo shop.
+
+**Mac/Linux:** `curl -fsSL https://openclaw.ai/install.sh | bash` →
+`openclaw onboard --install-daemon`.
+
+Kiểm: `openclaw --version` · `openclaw doctor` · `openclaw gateway status`.
+Chưa chạy: `openclaw gateway install`.
+
+Merge `config/openclaw.zalouser.example.json5` vào `~/.openclaw/openclaw.json`
+(Windows: user OpenClaw). **Đừng xóa** model/token có sẵn.
+
+Bắt buộc:
+
+- `channels.zalouser.enabled: true`
+- `dmPolicy: "open"` — không `pairing`
+- `groupPolicy: "allowlist"` + `groups."*".requireMention: true`
+- `agents.defaults.identity.name` **khớp** `IDENTITY.md`
+- `agents.defaults.workspace` = path tuyệt đối repo
+- Model **vision** (Claude / GPT-4o / Gemini…)
+
+Biệt hiệu (*shop ơi*): `mentionPatterns` gồm **tên gốc + biệt hiệu**.
+
+Hook boot: `openclaw hooks enable boot-md` (tuỳ). `BOOT.md` không nhắn khách.
+
+**Không commit** `openclaw.json`, cookie, QR, phiếu thật.
+
+---
+
+## B5 — Thử trong đầu, rồi máy
+
+Đóng vai Nami: 5 câu FAQ họ vừa kể + wiki vừa viết + `SOUL` / `giong-noi` /
+`hoi-thoai-mau` (giọng, không lấy giá Tiệm Mây). Sai số → sửa **wiki**. Giọng
+tổng đài → sửa `SOUL` đoạn shop / nhắc `giong-noi`, không sửa số.
+
+Còn `[CHỜ CHỦ SHOP]` trên persona / giá → nói thật: chưa xong phần số, chưa mở
+khách thật.
+
+Trên máy repo:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+Fail → đọc tên test, sửa file, chạy lại. Đừng đoán giá cho khớp.
+
+---
+
+## B6 — Nối nick (cùng họ)
+
+```bash
+openclaw plugins install @openclaw/zalouser
+openclaw channels login --channel zalouser
+```
+
+Họ quét mã bằng **app nick nhân viên**. Đừng nhận ảnh mã/cookie về chat.
+
+`openclaw directory self --channel zalouser` — thấy nick thì ổn.
+
+Từ **nick Zalo khác**, chạy hết `docs/04-kich-ban-thu.md`. `dmPolicy: open` →
+không cần mã pairing.
+
+---
+
+## B7 — Sống 24/7
+
+Nói thẳng: tắt máy / ngủ = **mất tin lúc đó**. Khách thật cần máy chạy suốt
+(VPS). Không tự thuê hộ. `docs/02-kenh-zalouser.md`.
+
+---
+
+## Xong khi (tick hết mới được nói ổn)
+
+- [ ] `IDENTITY.md` có tên; `identity.name` khớp
+- [ ] `persona.md` hết `[CHỜ CHỦ SHOP]` bắt buộc (câu 1–2, 4, 5, 10)
+- [ ] Câu 3: có `raw/` **hoặc** chủ nói không có tài liệu
+- [ ] Wiki chỉ tờ có dữ liệu; `internal/` không lộ
+- [ ] `USER.md` có tên + nick nhận bàn giao + giờ gọi lại
+- [ ] Follow-up: đã hỏi; chưa nói = tắt
+- [ ] `python3 -m unittest discover -s tests -v` xanh
+- [ ] `docs/04-kich-ban-thu.md` trên nick thật (sau QR)
+- [ ] Họ nhắn thử được từ nick khác
+- [ ] Khớp `docs/06-tieu-chuan.md`
+
+Chuẩn chưa xanh: **chưa** bảo mở khách.
+
+---
+
+## Lỗi hay gặp (nói chữ thường với chủ, sửa kỹ thuật im)
+
+| Hiện | Làm |
+|---|---|
+| Khách lạ nhắn không vào | `dmPolicy` còn `pairing` → `open`, restart |
+| Nhóm gọi tên không trả | `identity.name` lệch; biệt hiệu thiếu tên gốc |
+| Ảnh vào bảo gõ lại | Model không vision / plugin cũ |
+| Mất tin lúc đi ngủ | Gateway tắt |
+| Cookie chết | `openclaw channels logout --channel zalouser` rồi login lại |
+| Giọng tổng đài | Workspace sai thư mục / chưa đọc `SOUL.md` |

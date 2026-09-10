@@ -24,7 +24,8 @@ dòng này khi phỏng vấn một shop. Shop-level hỏi ở `PHONG-VAN.md`.
 
 **Làm:** giọng kỹ, wiki, khai thác, báo giá, ghi đơn, theo đơn, ảnh (ma trận
 `anh-tinh-huong.md`), phiếu theo ID, tư duy 10 bước (`tuduy-cskh.md`, GỘP/TÁCH C),
-bản đồ vòng (`workflow-cskh.md`), follow-up hai nhánh (`skills/follow-up`),
+bản đồ vòng (`workflow-cskh.md`), system prompt + catalog tool (`TOOLS.md`),
+follow-up hai nhánh (`skills/follow-up`), skill dựng shop (`.claude/skills/khoi-tao`),
 phàn nàn, từ chối, khách cũ, thu SĐT, bàn giao, `BOOT.md`, ví dụ file đã điền,
 `docs/05-thiet-lap.md` / `06-tieu-chuan.md` / `07-cach-dung.md`, unittest `tests/`,
 kịch bản thử nick.

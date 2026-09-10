@@ -4,8 +4,16 @@
 > trỏ về đây. Sửa hướng dẫn thì sửa file này.
 
 Bạn đang cầm một **template workspace OpenClaw**, không phải bot Python. Việc
-của bạn là **phỏng vấn chủ shop** rồi điền giọng, kho, skill — để Gateway +
-`zalouser` cầm một nick Zalo riêng, nói chuyện như người.
+của bạn là **phỏng vấn chủ shop** rồi điền giọng, kho — để Gateway + `zalouser`
+cầm một nick Zalo riêng, nói chuyện như người.
+
+**Làm từng bước, đủ chi tiết:** skill
+[`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md) — đọc rồi
+chạy B0→B7, viết file ngay sau mỗi câu. File này = luật + bản đồ. Đừng chỉ đưa
+chủ `docs/08` rồi đoán phần kỹ thuật.
+
+Bot lúc chat khách (đừng nhầm với lúc dựng): system
+`knowledge/system-prompt.md` · tool `TOOLS.md` · skill `skills/README.md`.
 
 Chủ shop **không biết lập trình**. Với họ: chữ thường, ví dụ đời. Đưa họ
 [`docs/08-luong-chu-shop.md`](docs/08-luong-chu-shop.md) và
@@ -73,6 +81,18 @@ trong `PHONG-VAN.md`. Đừng đọc cả khối “Hỏi thêm” một lần.
 
 Câu 3: xin **tài liệu sản phẩm, dịch vụ, giá, chính sách** — không nói “đồ”.
 
+**Viết ngay sau mỗi câu** (đủ bước ở skill `khoi-tao`):
+
+| Câu | File |
+|---|---|
+| 1–2, 5, 10 | `knowledge/persona.md` |
+| 3 | `knowledge/raw/` + `raw/NGUON.md` + tách `wiki/` |
+| 4 | `IDENTITY.md` + đoạn cuối `SOUL.md` |
+| 6 | tờ `wiki/public/` |
+| 7 | `skills/ghi-don/SKILL.md` (bước shop, giữ không tự chốt) |
+| 8 | `USER.md` kể cả Follow-up (chưa nói = tắt) |
+| 9 | `skills/khai-thac/SKILL.md` (slot) |
+
 ### B3 — Viết file, chỉ từ miệng chủ + raw
 
 | Nguồn | File |
@@ -94,6 +114,9 @@ xưng hô + đoạn chat thật của họ vào `SOUL.md`. Đừng thay bằng k
 Wiki: `knowledge/CLAUDE.md` (chữ thường cho chủ: `docs/09-kho-va-du-lieu.md`).
 Một trang một câu hỏi. Phân vân public/internal → `internal/`.
 Trang địa chỉ / sỉ-CTV / VAT / kiểm hàng: chỉ tạo khi chủ có dữ liệu (`wiki/TRANG-MAU.md`).
+
+Tách raw: (1) cất nguyên (2) dòng `NGUON.md` (3) cắt tờ nhỏ + frontmatter
+(4) không dấu, gạch ngang (5) im + chưa nói = `[CHỜ CHỦ SHOP]` (6) **cấm** file trống.
 
 **Cấm:** tự mở website/Facebook shop khi họ chưa đưa, rồi ghi giá vào wiki.
 **Cấm:** copy giá từ `docs/vi-du-file-da-dien.md` (Tiệm Mây là shop bịa).

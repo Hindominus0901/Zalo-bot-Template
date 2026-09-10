@@ -1,6 +1,8 @@
 # Phỏng vấn chủ shop — 10 chủ đề, hỏi dài, đào từng câu
 
-Bước **B2** trong [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md).
+Bước **B2** trong [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md). Coding agent chạy
+hết B0→B7 theo [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md)
+— viết file ngay sau mỗi chủ đề, đừng chỉ hỏi.
 
 Chủ shop không rành kỹ thuật. Họ đang **kể về sản phẩm, dịch vụ, và cách đang
 chăm khách**. Không nói wiki, harness, brain, token, QR, OpenClaw. Họ muốn xem

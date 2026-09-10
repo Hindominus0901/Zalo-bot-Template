@@ -4,9 +4,9 @@ Bạn **không cần biết lập trình**. Có người ngồi cùng (người 
 nói như đang nhắn Zalo, gửi bảng giá / ảnh / file, rồi khi tới lúc thì **quét
 mã trên điện thoại nick nhân viên**.
 
-Người dựng bấm máy và viết sổ. File kỹ thuật họ đọc:
-[`HUONG-DAN-AGENT.md`](../HUONG-DAN-AGENT.md) · bấm nút:
-[`05-thiet-lap.md`](05-thiet-lap.md).
+Người dựng (thường là coding agent trên Cursor / Claude Code) bấm máy và viết
+sổ — họ có **bản hướng dẫn từng bước kỹ thuật** (skill khởi tạo + `HUONG-DAN-AGENT.md`),
+không đoán. Bấm nút: [`05-thiet-lap.md`](05-thiet-lap.md).
 
 Sổ shop / dữ liệu khách giải thích thường: [`09-kho-va-du-lieu.md`](09-kho-va-du-lieu.md).
 

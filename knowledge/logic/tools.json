@@ -1,0 +1,23 @@
+{
+  "co": [
+    {"id": "doc_file", "openclaw": "read", "skill": null},
+    {"id": "doc_wiki", "openclaw": "read", "skill": "doc-wiki"},
+    {"id": "doc_phieu", "openclaw": "read", "skill": "phieu"},
+    {"id": "ghi_phieu", "openclaw": "write", "skill": "phieu"},
+    {"id": "xem_anh", "openclaw": "vision", "skill": "doc-anh"},
+    {"id": "gui_zalo", "openclaw": "message", "skill": null},
+    {"id": "bao_chu", "openclaw": "message", "skill": "ban-giao"},
+    {"id": "ghi_thieu", "openclaw": "write", "skill": null}
+  ],
+  "khong": [
+    "tra_don",
+    "cong_ck",
+    "ton_kho_live",
+    "crm",
+    "luu_lead",
+    "zns",
+    "broadcast",
+    "lich_slot",
+    "nut_oa"
+  ]
+}

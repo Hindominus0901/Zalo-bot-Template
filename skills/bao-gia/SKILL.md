@@ -5,6 +5,8 @@ description: Khách hỏi giá, chi phí, mắc không, bớt được không �
 
 # Báo giá
 
+Tool: `doc_wiki` (skill `doc-wiki`) rồi mới nói số. Không đẻ “khoảng”.
+
 Có trang giá trong wiki thì đọc rồi nói **đúng số**, kèm giá gồm gì.
 
 Không có trang / không đúng món họ hỏi: **không đẻ số**, không nói “khoảng”, không suy gói B từ gói A. Ở lại chat, hỏi rõ đang hỏi món nào, hẹn người chốt — skill `ban-giao` nếu cần quyền.

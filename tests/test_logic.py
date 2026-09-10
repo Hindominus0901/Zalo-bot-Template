@@ -80,7 +80,15 @@ class LogicMatrix(unittest.TestCase):
 
     def test_agents_loads_thinking_layer(self):
         text = _read("AGENTS.md")
-        for needle in ("tuduy-cskh.md", "anh-tinh-huong.md", "phieu", "workflow-cskh.md", "follow-up"):
+        for needle in (
+            "tuduy-cskh.md",
+            "anh-tinh-huong.md",
+            "phieu",
+            "workflow-cskh.md",
+            "follow-up",
+            "system-prompt.md",
+            "TOOLS.md",
+        ):
             self.assertIn(needle, text)
 
     def test_phieu_mau_has_fields(self):
@@ -161,3 +169,28 @@ class LogicFollowup(unittest.TestCase):
             self.assertIn("đã ghi đơn", text.lower())
             self.assertIn("tắt", text.lower())
             self.assertNotIn("bản này **chưa làm**", text)
+
+
+class LogicToolsAndPrompt(unittest.TestCase):
+    def test_tools_json_documented(self):
+        data = json.loads((ROOT / "knowledge/logic/tools.json").read_text(encoding="utf-8"))
+        catalog = _read("TOOLS.md") + _read("knowledge/system-prompt.md")
+        for row in data["co"]:
+            self.assertIn(f"`{row['id']}`", catalog, msg=row["id"])
+            if row.get("skill"):
+                path = ROOT / "skills" / row["skill"] / "SKILL.md"
+                self.assertTrue(path.is_file(), msg=row["skill"])
+        for banned in data["khong"]:
+            self.assertIn(banned, _read("TOOLS.md"))
+
+    def test_khoi_tao_has_b0_b7_and_write_map(self):
+        text = _read(".claude/skills/khoi-tao/SKILL.md")
+        for needle in ("B0", "B7", "persona.md", "USER.md", "dmPolicy", "Không bịa"):
+            self.assertIn(needle, text)
+        self.assertIn("PHONG-VAN.md", text)
+        self.assertIn("04-kich-ban-thu.md", text)
+
+    def test_system_prompt_routes_skills(self):
+        text = _read("knowledge/system-prompt.md")
+        for needle in ("doc_wiki", "gui_zalo", "Ba rào", "khai-thac", "follow-up"):
+            self.assertIn(needle, text)
