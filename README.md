@@ -53,6 +53,8 @@ Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `P
 | [`AGENTS.md`](AGENTS.md) | Não chat OpenClaw nạp — máy lượt, rào, skill |
 | [`TOOLS.md`](TOOLS.md) | Tên việc → `read`/`write`/`message`/vision; không có thư mục `tools/` |
 | [`docs/11-mcp-ung-dung.md`](docs/11-mcp-ung-dung.md) | MCP nối Drive ↔ sổ ↔ Zalo — không cào web lấy giá |
+| [`docs/12-prompt-va-cache.md`](docs/12-prompt-va-cache.md) | Ba tầng prompt — nền cố định vs thứ của lượt |
+| [`docs/13-an-toan.md`](docs/13-an-toan.md) | Khối `<policy>`, hàng rào dữ liệu ngoài, mẫu câu dụ tiếng Việt |
 | [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md) | Coding agent dựng shop: B0→B7 chi tiết |
 | [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) | Tin thử: tình huống + giọng + ảnh + follow-up |
 | [`docs/vi-du-file-da-dien.md`](docs/vi-du-file-da-dien.md) | Shop **giả** — đừng copy số vào wiki thật |

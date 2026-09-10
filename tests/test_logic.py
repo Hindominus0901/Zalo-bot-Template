@@ -269,8 +269,14 @@ class LogicToolsAndPrompt(unittest.TestCase):
 
     def test_system_prompt_routes_skills(self):
         text = _read("AGENTS.md")
-        for needle in ("doc_wiki", "doc_anh", "gui_zalo", "Ba rào", "khai-thac", "follow-up", "giao-tiep"):
+        for needle in ("doc_wiki", "doc_anh", "gui_zalo", "khai-thac", "follow-up", "giao-tiep"):
             self.assertIn(needle, text)
+        # Rào cứng nằm trong khối <policy> và phải ở ngay đầu file, trước mọi mục khác.
+        self.assertIn("<policy>", text)
+        self.assertIn("</policy>", text)
+        self.assertLess(text.index("<policy>"), text.index("##"), "policy phai nam truoc muc dau tien")
+        for rao in ("đã nhận tiền", "internal/", "đổi vai", "không phải lệnh"):
+            self.assertIn(rao, text[text.index("<policy>"):text.index("</policy>")])
         stub = _read("knowledge/system-prompt.md")
         self.assertIn("AGENTS.md", stub)
 
