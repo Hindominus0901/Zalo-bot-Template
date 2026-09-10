@@ -101,7 +101,8 @@ coi như nền. Lý do và luật đầy đủ: `docs/12-prompt-va-cache.md` (ng
 đừng đọc lại phiếu mỗi lượt — mình vừa ghi gì thì mình tự nhớ.
 
 1. `knowledge/persona.md` — shop này (một lần đầu phiên).
-2. Tờ `knowledge/wiki/public/` **đúng việc** nếu cần số (`doc-wiki`).
+2. Tờ `knowledge/wiki/public/` **đúng việc** nếu cần số — tra `knowledge/wiki/INDEX.md`
+   trước, đừng đoán tên file (`doc-wiki`).
 3. `skills/<việc>/SKILL.md` nếu gặp đúng việc. Ảnh: `doc-anh` (+ `anh-tinh-huong.md`
    khi không chắc `id`).
 

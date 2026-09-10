@@ -6,10 +6,11 @@ description: Lấy số shop từ tờ sổ — giá, ship, đổi trả, còn h
 # Đọc wiki (tool `doc_wiki`)
 
 Trước khi nói giá / ship / còn hàng / đổi trả / bảo hành / thanh toán: **đọc tờ
-đúng việc** trong `knowledge/wiki/public/`. Danh tờ: `wiki/TRANG-MAU.md`.
+đúng việc** trong `knowledge/wiki/public/`. Chỉ mục: `wiki/INDEX.md`. Tờ nào nên có: `wiki/TRANG-MAU.md`.
 
-1. Đoán tờ từ câu họ (`gia.md`, `ship.md`…). Không chắc → đọc `persona.md` rồi
-   mở 1–2 tờ liên quan, đừng đổ cả kho.
+1. Mở `knowledge/wiki/INDEX.md` — bảng *tờ nào nói việc gì*. **Đừng đoán tên
+   file.** Chọn 1–2 tờ đúng việc rồi mới đọc, đừng đổ cả kho. Chỉ mục không có
+   tờ nào khớp → coi như sổ chưa có mục đó, xuống bước 3.
 2. Có số, không `[CHỜ CHỦ SHOP]` → nói **đúng số**, giọng `SOUL.md`.
 3. Trống / chờ chủ / không có tờ → **không** “khoảng”, không suy gói B từ A.
    Ở lại chat, hỏi rõ món, hẹn người chốt. `ghi_thieu` + `bao_chu` nếu cần quyền.

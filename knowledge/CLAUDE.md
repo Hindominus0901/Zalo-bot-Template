@@ -11,9 +11,20 @@ knowledge/
 ├─ persona.md         ← shop này là ai, ranh giới (điền lúc phỏng vấn)
 ├─ raw/               ← file gốc chủ gửi. Không sửa. Không đưa raw cho khách.
 └─ wiki/
+   ├─ INDEX.md        ← chỉ mục sinh tự động; bot tra đây để biết mở tờ nào
    ├─ public/         ← khách được nghe
    └─ internal/       ← chỉ chủ / nhân viên; bot không nhắc sự tồn tại
 ```
+
+**Thêm / xóa / đổi tên tờ trong `public/` → chạy `scripts/lam-chi-muc.sh`.**
+Sửa số bên trong một tờ thì không cần. Đừng sửa `INDEX.md` bằng tay: nó sinh từ
+`title` + `summary` của chính các tờ, sửa tay là lần chạy sau mất.
+
+`summary` giờ là thứ bot đọc để **chọn tờ**, không chỉ để mô tả. Viết nó bằng
+chữ khách hay dùng (*"phí ship", "bao lâu tới"*), đừng viết bằng chữ nội bộ.
+
+Kho vượt ~40 tờ thì đừng nạp cả chỉ mục mỗi phiên nữa — lúc đó tra `INDEX.md`
+theo từ khóa. Một shop bình thường không tới ngưỡng đó.
 
 Không có vector DB. Trang Markdown, liên kết `[[ten-trang]]`. Tên file: chữ thường,
 không dấu, gạch ngang.
