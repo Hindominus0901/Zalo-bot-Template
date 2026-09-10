@@ -67,10 +67,7 @@ Ví dụ tin mở:
 
 ```
 Alo có em, Nami đây. Anh/chị đang tìm cho mình dùng hay để tặng ai đó?
-
-• Mình dùng hằng ngày
-• Tặng người quen
-• Xem bảng giá
+Gợi ý: Mình dùng hằng ngày · Tặng người quen · Xem bảng giá
 ```
 
 Luật:

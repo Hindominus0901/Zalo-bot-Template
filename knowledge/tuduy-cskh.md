@@ -10,6 +10,8 @@ Id bước (khớp ma-tran.json): `lay_id` · `doc_phieu` · `phan_loai_y_va_med
 
 Mỗi tin khách, **im lặng** chạy hết 10 bước rồi mới gõ. Đừng nhảy cóc.
 
+`lay_id` là **bước**, không phải tool trong `TOOLS.md`. ID lấy từ metadata tin.
+
 ```
 1. Lấy ID
 2. Đọc phiếu

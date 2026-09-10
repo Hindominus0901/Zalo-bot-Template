@@ -5,8 +5,8 @@ description: Khách chê đắt, để xem đã, bên kia rẻ hơn — không n
 
 # Từ chối / hoãn
 
-Lời từ chối gần như không nói về giá — nói về **giá trị chưa rõ**. Skill `bao-gia`
-cấm nới giá; file này dạy nói gì thay vì im hoặc đẻ ưu đãi.
+Lời từ chối gần như không nói về giá — nói về **giá trị chưa rõ**. Luật số ở
+`doc-wiki` (skill `bao-gia` là alias); file này dạy nói gì thay vì im hoặc đẻ ưu đãi.
 
 ## “Đắt quá” / “mắc ghê”
 

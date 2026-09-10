@@ -1,10 +1,12 @@
 # Bộ câu hỏi chủ shop
 
-Đọc cho chủ shop. Hỏi **từng câu**, đợi trả lời. Ô *Hỏi thêm* chỉ hỏi cái họ chưa kể — mỗi lần một câu.
+**Bản đọc cho chủ** — rút từ [`PHONG-VAN.md`](../PHONG-VAN.md). Sửa câu ở đó rồi
+đồng bộ file này. **Đừng sửa hai file độc lập.**
 
-Không nói wiki, harness, token, QR.
+Đọc cho chủ shop. Hỏi **từng câu**, đợi trả lời. Ô *Hỏi thêm* chỉ hỏi cái họ chưa
+kể — mỗi lần một câu.
 
-Kịch bản đủ cho agent (file nào điền đâu): [`PHONG-VAN.md`](../PHONG-VAN.md).
+Không nói wiki, harness, token, QR. File nào điền đâu: ở `PHONG-VAN.md`, không ở đây.
 
 ---
 

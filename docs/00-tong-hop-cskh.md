@@ -1,10 +1,11 @@
 # Bot CSKH trên Zalo làm được gì, và làm thế nào
 
-Viết sau khi đọc bot cũ (`agent-cskh-zalo`), tài liệu Zalo, và các bài CSKH /
-chatbot bán hàng 2025–2026. Đây là bản đồ năng lực, không phải hướng dẫn cài đặt.
+> **Nghiên cứu / bản đồ năng lực** — không phải hướng dẫn cài. Dựng shop:
+> [`08-luong-chu-shop.md`](08-luong-chu-shop.md). Cài nick: [`05-thiet-lap.md`](05-thiet-lap.md).
+> Thử: [`04-kich-ban-thu.md`](04-kich-ban-thu.md). Sổ: [`09-kho-va-du-lieu.md`](09-kho-va-du-lieu.md).
 
-Chủ shop dựng bot: [`08-luong-chu-shop.md`](08-luong-chu-shop.md). Sổ / wiki /
-dữ liệu: [`09-kho-va-du-lieu.md`](09-kho-va-du-lieu.md).
+Viết sau khi đọc bot cũ (`agent-cskh-zalo`), tài liệu Zalo, và các bài CSKH /
+chatbot bán hàng 2025–2026.
 
 ---
 

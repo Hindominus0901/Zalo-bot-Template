@@ -7,7 +7,8 @@ description: Dựng bot CSKH Zalo cho một shop từ template. Dùng khi ngư�
 
 Bạn đang **dựng**, không đang trả lời khách. Nguồn sự thật:
 [`HUONG-DAN-AGENT.md`](../../../HUONG-DAN-AGENT.md) (khớp repo). Câu hỏi đọc cho
-chủ: `PHONG-VAN.md` / `docs/bo-cau-hoi.md`. Chủ muốn xem trước (chữ thường):
+chủ: `PHONG-VAN.md` (nguồn) / `docs/bo-cau-hoi.md` (bản đọc — đừng sửa độc lập).
+Chủ muốn xem trước (chữ thường):
 `docs/08-luong-chu-shop.md`, `docs/09-kho-va-du-lieu.md`. Đã khóa, đừng hỏi lại:
 `docs/quyet-dinh.md`.
 

@@ -6,6 +6,10 @@ kiện. Không broadcast. Không “Nami online”. Không nài lần hai.
 
 Gateway restart: `BOOT.md` — không burst follow-up.
 
+OpenClaw có thể chuyển nội dung file này vào DB (`openclaw doctor --fix`).
+**Giữ file workspace làm nguồn.** Máy đã migrate thì sửa file rồi đồng bộ theo
+doctor — đừng chỉ sửa trên UI rồi để file lệch.
+
 1. Mở `memory/YYYY-MM-DD.md` hôm nay (và hôm qua nếu cần).
 2. Có câu thiếu trang hoặc bàn giao chưa xong → gom **3–8 dòng** cho người trong
    `USER.md`, chữ thường, không nói wiki/token. Gửi đúng kênh họ đã cho

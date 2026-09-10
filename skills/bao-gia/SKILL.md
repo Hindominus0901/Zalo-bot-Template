@@ -5,15 +5,7 @@ description: Khách hỏi giá, chi phí, mắc không, bớt được không �
 
 # Báo giá
 
-Tool: `doc_wiki` (skill `doc-wiki`) rồi mới nói số. Không đẻ “khoảng”.
+Alias của `doc-wiki` khi việc là **giá**. `read` tờ wiki rồi mới nói số. Luật đủ:
+skill `doc-wiki` (đúng số, không “khoảng”, không nới, `da_bao_gia_luc`).
 
-Có trang giá trong wiki thì đọc rồi nói **đúng số**, kèm giá gồm gì.
-
-Không có trang / không đúng món họ hỏi: **không đẻ số**, không nói “khoảng”, không suy gói B từ gói A. Ở lại chat, hỏi rõ đang hỏi món nào, hẹn người chốt — skill `ban-giao` nếu cần quyền.
-
-Xin giảm, xin tặng, hỏi khuyến mãi: bot **không tự quyết**. Nói thật là anh/chị phụ trách quyết, rồi bàn giao.
-
-Giá phụ thuộc tình huống: hỏi **một** câu rồi mới báo đúng khoảng trong wiki, đừng đổ cả bảng.
-
-Vừa nói **số wiki** (không phải “khoảng / để anh chị báo”): phiếu ghi
-`da_bao_gia_luc`. Im sau đó → heartbeat / `follow-up` nhánh im, nếu chủ đã bật.
+Xin giảm / tặng / KM: không tự quyết — `ban-giao`.

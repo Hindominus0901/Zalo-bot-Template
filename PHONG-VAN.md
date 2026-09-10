@@ -1,5 +1,9 @@
 # Phỏng vấn chủ shop — 10 chủ đề, hỏi dài, đào từng câu
 
+**Nguồn sự thật.** Câu chữ sửa ở đây. [`docs/bo-cau-hoi.md`](docs/bo-cau-hoi.md)
+là bản đọc cho chủ (cùng 10 chủ đề) — đồng bộ từ file này, **đừng sửa hai nơi
+độc lập**. File nào điền đâu: chân mỗi chủ đề + mục cuối (chỉ agent).
+
 Bước **B2** trong [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md). Coding agent chạy
 hết B0→B7 theo [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md)
 — viết file ngay sau mỗi chủ đề, đừng chỉ hỏi.
@@ -17,12 +21,6 @@ sổ/dữ liệu: [`docs/09-kho-va-du-lieu.md`](docs/09-kho-va-du-lieu.md).
 3. Sau câu trả lời, **hỏi tiếp từng câu một** ở mục “Hỏi thêm”. Thiếu thì hỏi,
    đã kể rồi thì bỏ qua, đừng hỏi lại.
 4. Số liệu sản phẩm/dịch vụ chỉ lấy từ miệng họ hoặc tài liệu họ gửi.
-
-| Chủ đề | Họ đang kể | Bạn dựng |
-|---|---|---|
-| 1–2, 4, 10 | Sản phẩm/dịch vụ, khách, giọng, câu chào | Brain |
-| 3, 6 | Tài liệu + câu khách hỏi thêm | Wiki |
-| 5, 7–9 | Việc không được tự ý, đơn hàng, lúc phân vân | Harness (`ghi-don`, `khai-thac`, `ban-giao`) |
 
 ---
 
@@ -318,3 +316,15 @@ phẩm/dịch vụ. Còn thiếu thì hỏi lại **bằng lời thường**.
 - **Nói “đồ / kho / wiki”** — họ không hiểu mình cần tài liệu sản phẩm dịch vụ.
 - **Nhận file rồi hỏi lại cả bảng giá.** Đọc file, hỏi chỗ thiếu.
 - **Tự vào web** khi họ chưa gửi link.
+
+---
+
+## Chỉ agent — câu nào đi file nào
+
+Không đọc bảng này cho chủ.
+
+| Chủ đề | Họ đang kể | Bạn dựng |
+|---|---|---|
+| 1–2, 4, 10 | Sản phẩm/dịch vụ, khách, giọng, câu chào | Brain |
+| 3, 6 | Tài liệu + câu khách hỏi thêm | Wiki |
+| 5, 7–9 | Việc không được tự ý, đơn hàng, lúc phân vân | Harness (`ghi-don`, `khai-thac`, `ban-giao`) |

@@ -48,3 +48,10 @@ Không tự viết giá vào wiki.
 `zns` · `broadcast` · `lich_slot` · `nut_oa` · `apify_scrape_gia`.
 
 SĐT khách → dòng memory + `bao_chu`. File `raw/` không gửi khách.
+
+## Bước máy, không phải tool
+
+`lay_id` là bước 1 trong `tuduy-cskh.md` — lấy `senderId` từ metadata tin
+OpenClaw / zalouser. **Không** có hàm `lay_id` trong repo. Không ID → không bịa
+tên file phiếu; xử lý trong phiên.
+

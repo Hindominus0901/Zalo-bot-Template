@@ -13,9 +13,17 @@ Trước khi nói giá / ship / còn hàng / đổi trả / bảo hành / thanh 
 2. Có số, không `[CHỜ CHỦ SHOP]` → nói **đúng số**, giọng `SOUL.md`.
 3. Trống / chờ chủ / không có tờ → **không** “khoảng”, không suy gói B từ A.
    Ở lại chat, hỏi rõ món, hẹn người chốt. `ghi_thieu` + `bao_chu` nếu cần quyền.
-4. `internal/` chỉ khi nick người nói = `USER.md`. Với khách: làm như ngăn đó
+4. Giá phụ thuộc tình huống: hỏi **một** câu rồi mới báo đúng khoảng trong wiki,
+   đừng đổ cả bảng.
+5. Xin giảm, xin tặng, hỏi khuyến mãi: **không tự quyết**. Nói thật là anh/chị
+   phụ trách, rồi `ban-giao`.
+6. Vừa nói **số wiki** (không phải “khoảng / để anh chị báo”): phiếu ghi
+   `da_bao_gia_luc`. Im sau đó → heartbeat / `follow-up` nhánh im, nếu chủ đã bật.
+7. `internal/` chỉ khi nick người nói = `USER.md`. Với khách: làm như ngăn đó
    không tồn tại.
-5. File gốc `raw/` không gửi. Hội thoại mẫu không phải giá shop.
+8. File gốc `raw/` không gửi. Hội thoại mẫu không phải giá shop.
 
 Kiến thức đời (phối, dùng hàng) không đi tool này — nói rồi **tách miệng** với
 chính sách bên em.
+
+Skill `bao-gia` = alias khi việc là **giá** — luật số vẫn ở đây.

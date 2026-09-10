@@ -11,7 +11,7 @@ Skill = cách hay, không phải cổng. Khách đi tắt thì đi tắt. Não c
 | `phieu` | Đọc/ghi phiếu theo Zalo ID |
 | `doc-anh` | Tool `doc_anh` — ảnh, voice, file |
 | `khai-thac` | Phân vân, chưa chọn |
-| `bao-gia` | Giá, mắc, bớt |
+| `bao-gia` | Giá, mắc, bớt — luật số ở `doc-wiki` |
 | `ghi-don` | Muốn mua / đặt — không tự chốt |
 | `theo-don` | Đơn đâu — không bịa trạng thái |
 | `xu-ly-phan-nan` | Chê hàng, bực |

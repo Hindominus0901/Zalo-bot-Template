@@ -169,6 +169,9 @@ class LogicFollowup(unittest.TestCase):
             self.assertIn("đã ghi đơn", text.lower())
             self.assertIn("tắt", text.lower())
             self.assertNotIn("bản này **chưa làm**", text)
+        self.assertIn("PHONG-VAN.md", bo)
+        self.assertIn("độc lập", bo.lower())
+        self.assertIn("bo-cau-hoi.md", pv)
 
 
 class LogicToolsAndPrompt(unittest.TestCase):

@@ -10,7 +10,7 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 ## Chủ shop / coding agent làm gì
 
 1. **Chủ shop (chữ thường):** [`docs/08-luong-chu-shop.md`](docs/08-luong-chu-shop.md) · sổ/dữ liệu: [`docs/09-kho-va-du-lieu.md`](docs/09-kho-va-du-lieu.md) · ngày thường: [`docs/07-cach-dung.md`](docs/07-cach-dung.md)
-2. **Người dựng (coding agent):** skill [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md) · [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md) · hỏi: [`docs/bo-cau-hoi.md`](docs/bo-cau-hoi.md) · kịch bản đủ: [`PHONG-VAN.md`](PHONG-VAN.md)
+2. **Người dựng (coding agent):** skill [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md) · [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md) · hỏi (đọc): [`docs/bo-cau-hoi.md`](docs/bo-cau-hoi.md) · nguồn đủ: [`PHONG-VAN.md`](PHONG-VAN.md)
 3. File gốc vào `knowledge/raw/`, wiki tách theo `knowledge/CLAUDE.md` (giải thích thường = file 09)
 4. Bật nick (người chưa cài): [`docs/05-thiet-lap.md`](docs/05-thiet-lap.md) · thử: [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) · chuẩn: [`docs/06-tieu-chuan.md`](docs/06-tieu-chuan.md)
 5. Test **kho chữ**: `python3 -m unittest discover -s tests -v` — xanh ≠ nick sống. Nick: bước 4.
