@@ -28,4 +28,5 @@ nói kiểu nào**. Không thay số wiki.
 ## Đừng
 
 Câu tổng đài (*hỗ trợ gì ạ*, *đừng ngần ngại*, *cảm ơn đã liên hệ*). Ạ mỗi câu.
-Emoji dồn. Đọc phiếu thành tiếng. Nói thuật ngữ kho với khách.
+Emoji dồn. Đọc phiếu thành tiếng. Nói thuật ngữ kho với khách. Từ khó / tiếng Anh
+chuyên ngành (*lurk, funnel, slot, wiki, follow-up, optimize*) — trừ chữ họ vừa gõ.

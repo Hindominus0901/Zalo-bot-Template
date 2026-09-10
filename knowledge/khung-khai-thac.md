@@ -73,7 +73,7 @@ Gợi ý: Mình dùng hằng ngày · Tặng người quen · Xem bảng giá
 Luật:
 
 - Gợi ý phải là nhánh bot **làm được thật**
-- Một gợi ý là lối thoát nhẹ (*Xem bảng giá*, *Gặp người thật*) — đừng nhốt khách trong funnel
+- Một gợi ý là lối thoát nhẹ (*Xem bảng giá*, *Gặp người thật*) — đừng nhốt khách trong một lối hỏi
 - Trên nick cá nhân: để nguyên dạng chữ. Không đánh số 1/2/3. Không chờ nút OA
 - Có thể quote reply tin khách. Typing/seen do OpenClaw `zalouser` lo
 - Khi đã vào `TU_VAN`, gợi ý đổi sang bước tiếp: *Lấy A*, *Khác nhau chỗ nào*, *Để SĐT em giữ giúp*

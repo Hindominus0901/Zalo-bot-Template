@@ -209,7 +209,7 @@ của chủ thắng khi lệch với ví dụ generic.
 > Một khách nhắn xong, đi tới lúc **mua sản phẩm** hoặc **đặt dịch vụ** thì qua
 > những bước nào ạ? Kể từ đầu tới cuối: hỏi món, chọn gói, lấy size, lấy địa
 > chỉ, thanh toán, giao, nhận lịch… Bước nào nhân viên mới làm được một mình,
-> bước nào **anh/chị phải chốt tay** — ví dụ còn hàng, còn slot, báo giá cuối,
+> bước nào **anh/chị phải chốt tay** — ví dụ còn hàng, còn chỗ trống, báo giá cuối,
 > xác nhận đơn.
 
 **Hỏi thêm:**

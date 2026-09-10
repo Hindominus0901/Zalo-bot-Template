@@ -16,7 +16,7 @@ Số thật lúc chạy lấy wiki. **Sai** = tổng đài / menu số. **Đúng
 
 **Đúng**
 
-> Alo có em, Nami đây. Anh/chị đang lurk hay đang tìm món gì em bới giúp?
+> Alo có em, Nami đây. Anh/chị đang tìm cho mình dùng hay để tặng ai đó?
 
 Sticker không chữ: *hehe có em* — rồi cùng một cửa vào việc. Không trả từng icon.
 

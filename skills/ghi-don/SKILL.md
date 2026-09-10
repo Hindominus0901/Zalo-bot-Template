@@ -23,4 +23,4 @@ Phiếu: `trang_thai_don: cho_chot`, `don_ghi_luc` = giờ ghi. `followup_don` �
 `chua` trừ khi `USER.md` tắt nhánh. **Không** ghi `da_chot_chu` — chủ chốt tay.
 Ảnh CK **không** đủ để coi là đã ghi đơn.
 
-Còn hàng / còn slot: wiki có thì nói đúng wiki; không có thì không đoán — ghi đơn tạm, để người chốt.
+Còn hàng / còn chỗ trống: wiki có thì nói đúng wiki; không có thì không đoán — ghi đơn tạm, để người chốt.

@@ -104,6 +104,20 @@ class LogicMatrix(unittest.TestCase):
         self.assertTrue("GỘP" in text or "gộp" in text)
         self.assertTrue("TÁCH" in text or "tách" in text)
 
+    def test_voice_plain_vietnamese(self):
+        giong = _read("knowledge/giong-noi.md")
+        self.assertIn("chữ đời", giong.lower())
+        self.assertIn("chuyên ngành", giong.lower())
+        for path in (
+            "knowledge/hoi-thoai-mau.md",
+            "knowledge/moi-loai-cau-hoi.md",
+            "knowledge/khung-khai-thac.md",
+        ):
+            text = _read(path).lower()
+            self.assertNotIn("lurk", text, msg=path)
+            self.assertNotIn("bới giúp", text, msg=path)
+            self.assertNotIn("funnel", text, msg=path)
+
     def test_image_ids_unique_and_typed(self):
         ids = [r["id"] for r in matrix()["anh"]]
         self.assertEqual(len(ids), len(set(ids)))

@@ -48,6 +48,7 @@ Mỗi dòng: gửi đúng kiểu khách, xem bot có phạm không.
 Sai số liệu → sửa **wiki**, không đoán cho khớp.
 Phạm rào tiền / nội bộ / “đã đặt xong” → sửa skill / `AGENTS.md`, thử lại đúng dòng đó.
 Giọng tổng đài (*cảm ơn đã liên hệ*, *đừng ngần ngại*, *hỗ trợ gì ạ*, ạ mỗi câu, menu 1/2/3) → sửa `SOUL.md` / `giong-noi.md` / `hoi-thoai-mau.md`.
+Tiếng Anh khó / từ khoe chữ (*lurk, funnel, slot, optimize, bới giúp*) trừ chữ khách vừa gõ → cùng ba file đó.
 Logic GỘP/TÁCH / phiếu / ảnh: `tuduy-cskh.md`, `anh-tinh-huong.md`.
 Follow-up: `workflow-cskh.md`, `skills/follow-up/SKILL.md`, `HEARTBEAT.md`.
 

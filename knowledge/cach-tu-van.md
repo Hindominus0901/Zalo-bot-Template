@@ -41,14 +41,14 @@ hướng, hoặc một chữ (*size M*, *nội thành*).
 
 Mở, nhưng có bờ. Tình huống, không danh tính.
 
-| Hỏi thế này | Slot lấy được |
+| Hỏi thế này | Lấy được gì |
 |---|---|
 | *Anh/chị tìm cho mình dùng hay tặng ai đó?* | việc + đối tượng |
 | *Bạn ấy hay dùng sẵn kiểu nào, hay mình chọn giúp?* | đã dùng / đang mù |
 | *Có ngày cần không, hay chưa gấp?* | thời gian |
 | *Tầm này hay tầm kia em biết không — để em không chỉ món lệch?* | ngân sách, không hỏi “thu nhập” |
 | *Lần trước vướng chỗ nào không?* | đã thử — câu đáng giá nhất |
-| *Còn điểm nào chưa rõ, hay để xem đã?* | lối thoát, không nhốt funnel |
+| *Còn điểm nào chưa rõ, hay để xem đã?* | lối thoát, không nhốt một lối hỏi |
 
 Gợi ý cuối tin (pha mở / khai thác): 2–3 câu **họ gõ y nguyên được**. Một trong
 số đó là lối thoát (*Xem bảng giá*, *Gặp người thật*). Không đánh số 1/2/3.
