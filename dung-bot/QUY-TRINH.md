@@ -234,6 +234,9 @@ Nói thẳng: tắt máy / ngủ = **mất tin lúc đó**. Khách thật cần 
 - [ ] `docs/04-kich-ban-thu.md` trên nick thật (sau QR) — **cửa mở khách**
 - [ ] Họ nhắn thử được từ nick khác
 - [ ] Khớp `docs/06-tieu-chuan.md`
+- [ ] **Máy chủ không màn hình:** xong checklist cuối `docs/14-vps-headless.md`
+      — gateway tự lên sau reboot, múi giờ Việt Nam, và chủ shop đã biết bốn
+      bước quét lại mã
 
 Unittest xanh mà chưa chạy 04 trên nick: **chưa** bảo mở khách.
 
