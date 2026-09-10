@@ -95,6 +95,9 @@ Trang địa chỉ / sỉ-CTV / VAT / kiểm hàng: chỉ tạo khi chủ có d�
 
 ### B4 — Config kênh
 
+B4–B7 chi tiết bấm nút (Windows/Mac, QR, lỗi hay gặp): [`docs/05-thiet-lap.md`](docs/05-thiet-lap.md).
+Chuẩn xong: [`docs/06-tieu-chuan.md`](docs/06-tieu-chuan.md).
+
 Copy `config/openclaw.zalouser.example.json5` vào `openclaw.json` của **máy
 Gateway** (`~/.openclaw/openclaw.json`) — merge, đừng ghi đè model/token có sẵn.
 
@@ -122,7 +125,7 @@ giá mẫu). Sai trang thì sửa wiki. Giọng tổng đài thì sửa giọng,
 Còn `[CHỜ CHỦ SHOP]` trên persona / giá thì chưa xong phần số.
 
 Sau QR: chạy [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) từ nick khác
-(24 dòng: tình huống + giọng).
+(30 dòng) và `python3 -m unittest discover -s tests -v` trên máy repo.
 
 ### B6 — Nối nick (cùng họ)
 

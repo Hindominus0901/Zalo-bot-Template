@@ -13,18 +13,18 @@ dòng này khi phỏng vấn một shop. Shop-level hỏi ở `PHONG-VAN.md`.
 - Generic: slot khai thác và wiki điền lúc phỏng vấn, không khóa một ngành
 - Tên mặc định **Nami** — inbox luôn trả; nhóm chỉ khi gọi tên / @ / reply (kiểu Tom)
 - Máy khai thác bật mặc định khi khách phân vân
+- GỘP/TÁCH **C**: fact nhẹ + chắc thì cùng tin một phương án; CK/lỗi/giấy tờ/không chắc món thì tách
+- Phiếu ngắn **theo Zalo senderId** (`memory/phieu/`) — không CRM/CSV đơn
 - Nhắn chủ động follow-up: **chưa** làm ở bản đầu
 - File Tom (SOUL máy cũ) chưa có trong repo — giọng mặc định là `SOUL.md` ở đây
 
 ## Bản này làm / chưa làm
 
-**Làm:** giọng kỹ (`SOUL.md` tính cách, `giong-noi.md` ngôn từ, `cach-tu-van.md`
-cách hỏi/trả/tư vấn, `hoi-thoai-mau.md` few-shot), wiki, khai thác, báo giá, ghi
-đơn (không tự chốt), theo đơn (không bịa), ảnh/voice, phàn nàn, từ chối (không nới
-giá), khách cũ reactive, thu SĐT (memory + bàn giao, không CRM), bàn giao, ngoài
-giờ, OTP/giả chủ, tình huống Zalo (sỉ, hết hàng, spam, VAT, teencode…), `BOOT.md`
-(restart không nhắn khách), ví dụ file đã điền (shop giả), vòng học `memory/` +
-heartbeat không nhắn khách, kịch bản thử giọng + tình huống.
+**Làm:** giọng kỹ, wiki, khai thác, báo giá, ghi đơn, theo đơn, ảnh (ma trận
+`anh-tinh-huong.md`), phiếu theo ID, tư duy 10 bước (`tuduy-cskh.md`, GỘP/TÁCH C),
+phàn nàn, từ chối, khách cũ, thu SĐT, bàn giao, `BOOT.md`, ví dụ file đã điền,
+`docs/05-thiet-lap.md` / `06-tieu-chuan.md` / `07-cach-dung.md`, unittest `tests/`,
+30 tin thử nick.
 
 **Chưa làm (đừng hứa):** nhắn lại khách sau vài ngày, nút OA, CRM/CSV đơn,
 tồn kho live, cổng thanh toán, lịch slot gắn lịch thật, trộn SOUL Tom.

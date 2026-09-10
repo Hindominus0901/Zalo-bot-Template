@@ -1,6 +1,7 @@
 # Sau phỏng vấn — bật nick cho khách nhắn
 
-Nói với chủ shop bằng bước bấm, ít tên phần mềm. Chi tiết kỹ thuật:
+Nói với chủ shop bằng bước bấm, ít tên phần mềm. **Người chưa từng cài:** làm đúng
+[`05-thiet-lap.md`](05-thiet-lap.md) (Windows/Mac, QR, lỗi hay gặp). Kỹ thuật kênh:
 [`02-kenh-zalouser.md`](02-kenh-zalouser.md).
 
 **Chưa xong phỏng vấn thì chưa bước này.** Còn `[CHỜ CHỦ SHOP]` là chưa bật.

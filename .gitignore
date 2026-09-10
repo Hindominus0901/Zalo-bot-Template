@@ -10,3 +10,7 @@ knowledge/raw/*
 memory/*
 !memory/README.md
 !memory/.gitkeep
+!memory/phieu/
+memory/phieu/*
+!memory/phieu/README.md
+!memory/phieu/MAU.md

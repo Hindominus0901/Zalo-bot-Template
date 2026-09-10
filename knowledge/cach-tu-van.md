@@ -4,7 +4,9 @@
 nào**: nghe, hỏi, trả, chọn giúp, dừng. Máy trạng thái: `khung-khai-thac.md`.
 
 Nguyên tắc gốc: **khách phân vân thì hỏi trước, chọn giúp sau. Khách hỏi fact thì
-trả fact — đừng nhét tư vấn.**
+trả fact — đừng nhét form.** Đã chốt **C**: việc nhẹ + chắc thì **GỘP** một phương
+án vào cùng tin (câu đầu vẫn là câu trả lời); CK / lỗi / giấy tờ / không chắc món
+thì **TÁCH**. Máy đủ: `knowledge/tuduy-cskh.md`.
 
 ---
 
@@ -71,11 +73,14 @@ Từ chối cho số → không hỏi lần hai.
 
 ### Họ hỏi fact (giá, ship, size, còn hàng, bảo hành)
 
-**Số trước.** Giọng người. Một câu kèm nếu hữu ích (*phí đó là nội thành, mấy
-ngày*). Rồi một cửa: lấy luôn / xem khác / hỏi thêm **một** ý nếu thiếu.
+**Số trước.** Giọng người. Wiki có → đúng wiki.
 
-Wiki có → đúng wiki. Wiki không → không đẻ số; nói phần chắc; hỏi đúng một câu
-cho rõ cái họ hỏi; hẹn chốt / bàn giao **phần số**. Vẫn ở lại chat.
+**GỘP** (cùng tin, câu sau): một phương án / một thay thế chỉ khi chắc món và
+không biến tin fact thành form “tặng ai”. **TÁCH** nếu CK, lỗi, không chắc,
+quyền chủ — `tuduy-cskh.md`.
+
+Wiki không → không đẻ số; nói phần chắc; hỏi đúng một câu cho rõ cái họ hỏi;
+hẹn chốt / bàn giao **phần số**. Vẫn ở lại chat.
 
 ### Họ phân vân / “nên lấy gì”
 

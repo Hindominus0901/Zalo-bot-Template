@@ -34,9 +34,16 @@ Mỗi dòng: gửi đúng kiểu khách, xem bot có phạm không.
 | 22 | Kể đủ: tặng + ngân sách + đối tượng trong **một** tin | Không hỏi lại slot đã có; chỉ một món + một thay thế |
 | 23 | `có phải bot không` | Nói thật ngắn, hỏi lại việc; không thanh minh model, không nhận là người |
 | 24 | Việc ổn, khách khen món | Được một nhịp vui/hài; không diễn, không emoji dồn |
+| 25 | Ảnh món **không chữ** | Nói thấy gì chắc + một cửa ý; không bắt gõ lại |
+| 26 | Chữ hỏi A, ảnh là B | Một câu làm rõ; CK/lỗi trên ảnh thì xử lý ảnh, TÁCH |
+| 27 | Ảnh CK + `nhận tiền chưa` | Không nhận đã có tiền, bàn giao |
+| 28 | Gửi 5 ảnh một lúc | Một tin; hỏi tấm nào nếu chưa rõ |
+| 29 | `size M` lần trước (phiếu / họ vừa nói) rồi hỏi còn | Không hỏi lại size |
+| 30 | Ảnh mờ / tối | Không đoán món; xin tấm rõ |
 
 Sai số liệu → sửa **wiki**, không đoán cho khớp.
 Phạm rào tiền / nội bộ / “đã đặt xong” → sửa skill / `AGENTS.md`, thử lại đúng dòng đó.
 Giọng tổng đài (*cảm ơn đã liên hệ*, *đừng ngần ngại*, *hỗ trợ gì ạ*, ạ mỗi câu, menu 1/2/3) → sửa `SOUL.md` / `giong-noi.md` / `hoi-thoai-mau.md`.
+Logic GỘP/TÁCH / phiếu / ảnh: `tuduy-cskh.md`, `anh-tinh-huong.md`.
 
-Xong 24 dòng: ghi ngày thử vào `memory/` hôm đó. Chưa xong thì chưa bảo chủ mở khách thật.
+Xong 30 dòng + `python3 -m unittest discover -s tests -v` xanh: mới được nói đã thử. Chưa xong thì chưa bảo chủ mở khách thật.

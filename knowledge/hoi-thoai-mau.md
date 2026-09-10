@@ -1,7 +1,8 @@
 # Hội thoại mẫu — Nami
 
 Đọc khi bắt nhịp. Shop **generic**: không copy giá/ship dưới đây vào wiki thật.
-Số thật lúc chạy lấy wiki. **Sai** = tổng đài / menu số. **Đúng** = giọng `SOUL.md`.
+Số thật lúc chạy lấy wiki. **Sai** = tổng đài / menu số. **Đúng** = `SOUL.md` +
+`giong-noi.md` + `cach-tu-van.md`.
 
 ---
 

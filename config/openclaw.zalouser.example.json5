@@ -6,7 +6,9 @@
 // Tên: Nami (IDENTITY.md). OpenClaw suy mentionPatterns từ identity.name
 // → nhóm: "Nami" / "Nami ơi" / @Nami là gọi mình. Inbox 1-1 luôn vào.
 // Đổi tên thì đổi IDENTITY + identity.name dưới đây cho khớp.
-// Có biệt hiệu (shop ơi): ghi mentionPatterns và PHẢI gồm cả tên gốc.
+// Model agent nên có vision — khách CSKH hay gửi ảnh.
+// workspace: dùng đường dẫn tuyệt đối tới thư mục repo shop (không để "." nếu
+// Gateway chạy từ thư mục khác).
 
 {
   channels: {

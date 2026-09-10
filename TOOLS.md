@@ -8,3 +8,6 @@ Có: đọc/ghi file workspace, kênh zalouser (chữ, ảnh, quote, typing/seen
 Cần số liệu shop → đọc `knowledge/wiki/`. Cần người → `ban-giao` + `USER.md`.
 Thiếu trang → `memory/YYYY-MM-DD.md`, không bịa API. SĐT khách → dòng memory +
 bàn giao, không tool lead.
+
+Phiếu khách: `memory/phieu/{zalo-senderId}.md` — đọc/ghi file, không CRM.
+Ảnh vào kênh zalouser thành vision / `media://inbound/` — xem, đừng bắt gõ lại.
