@@ -84,6 +84,7 @@ câu “Hỏi thêm” nếu họ chưa phủ. Đừng đọc cả khối Hỏi 
 | 5 Không được tự ý | `persona.md` → Ranh giới (thêm của shop). Không xóa ba rào sẵn | — |
 | 6 FAQ miệng | Mỗi câu một tờ `wiki/public/` hoặc gom cùng chủ đề | Không đẻ số |
 | 7 Bước đặt | `skills/ghi-don/SKILL.md` — chỉ bước shop này, giữ “không tự chốt” | — |
+| 7b Sổ đơn | Có phần mềm + API → bật `sodon` trong `config/mcp.example.json5`; không có → để `enabled: false` | để tắt |
 | 8 Kêu ai + follow-up | `USER.md`: tên, nick bàn giao, giờ gọi lại, SĐT, ảnh, nhóm, **Follow-up** (tắt / giờ / câu mẫu) | Follow-up chưa nói = **để CHỜ / tắt** |
 | 9 Phân vân | `skills/khai-thac/SKILL.md` — đúng câu họ hay hỏi, 2–3 slot | — |
 | 10 Câu đầu | `persona.md` → Tin mở | Không viết *hỗ trợ gì ạ* |

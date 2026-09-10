@@ -1,21 +1,71 @@
 {
   "co": [
-    {"id": "doc_file", "openclaw": "read", "skill": null},
-    {"id": "doc_wiki", "openclaw": "read", "skill": "doc-wiki"},
-    {"id": "doc_phieu", "openclaw": "read", "skill": "phieu"},
-    {"id": "ghi_phieu", "openclaw": "write", "skill": "phieu"},
-    {"id": "doc_anh", "openclaw": "vision", "skill": "doc-anh"},
-    {"id": "xem_anh", "openclaw": "vision", "skill": "doc-anh", "alias_cua": "doc_anh"},
-    {"id": "gui_zalo", "openclaw": "message", "skill": null},
-    {"id": "bao_chu", "openclaw": "message", "skill": "ban-giao"},
-    {"id": "ghi_thieu", "openclaw": "write", "skill": null},
-    {"id": "mcp_drive", "openclaw": "mcp", "skill": "lam-viec"}
+    {
+      "id": "doc_file",
+      "openclaw": "read",
+      "skill": null
+    },
+    {
+      "id": "doc_wiki",
+      "openclaw": "read",
+      "skill": "doc-wiki"
+    },
+    {
+      "id": "doc_phieu",
+      "openclaw": "read",
+      "skill": "phieu"
+    },
+    {
+      "id": "ghi_phieu",
+      "openclaw": "write",
+      "skill": "phieu"
+    },
+    {
+      "id": "doc_anh",
+      "openclaw": "vision",
+      "skill": "doc-anh"
+    },
+    {
+      "id": "xem_anh",
+      "openclaw": "vision",
+      "skill": "doc-anh",
+      "alias_cua": "doc_anh"
+    },
+    {
+      "id": "gui_zalo",
+      "openclaw": "message",
+      "skill": null
+    },
+    {
+      "id": "bao_chu",
+      "openclaw": "message",
+      "skill": "ban-giao"
+    },
+    {
+      "id": "ghi_thieu",
+      "openclaw": "write",
+      "skill": null
+    },
+    {
+      "id": "mcp_drive",
+      "openclaw": "mcp",
+      "skill": "lam-viec"
+    },
+    {
+      "id": "tra_don",
+      "openclaw": "mcp",
+      "skill": "theo-don",
+      "mac_dinh_tat": true
+    }
   ],
   "buoc": [
-    {"id": "lay_id", "nghia": "senderId tu metadata tin OpenClaw / zalouser", "khong_phai_tool": true}
+    {
+      "id": "lay_id",
+      "nghia": "senderId tu metadata tin OpenClaw / zalouser",
+      "khong_phai_tool": true
+    }
   ],
   "khong": [
-    "tra_don",
     "cong_ck",
     "ton_kho_live",
     "crm",

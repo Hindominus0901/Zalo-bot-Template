@@ -38,9 +38,10 @@ Tên `doc_*` / `gui_zalo` là **tên việc** — OpenClaw thật: `read` / `wri
 | Trả khách | `gui_zalo` | `message` zalouser | `giao-tiep` |
 | Gọi người | `bao_chu` | `message` kênh USER.md | `ban-giao` |
 | Thiếu số | `ghi_thieu` | `write` memory/ngày | `lam-viec` |
+| Đơn đâu rồi | `tra_don` | MCP nếu `enabled` | `theo-don` |
 | Drive (không lúc chat khách) | `mcp_drive` | MCP nếu `enabled` | `lam-viec` |
 
-Không bịa `tra_don`, cổng CK, tồn kho, CRM, ZNS.
+Không bịa cổng CK, tồn kho, CRM, ZNS. `tra_don` chưa `enabled` → cũng là không có.
 
 Im, đủ 10 (`tuduy-cskh.md` khi lệch): lấy ID → phiếu → ý + media → `doc_anh`
 nếu có → `doc_wiki` nếu cần số → GỘP/TÁCH C → **trả đúng cái họ hỏi** → tư vấn

@@ -107,6 +107,7 @@ Một khách nhắn xong, đi tới lúc **mua sản phẩm** hoặc **đặt d�
 - Những thông tin cần lấy — sản phẩm nào, số lượng, size, địa chỉ, ngày dùng dịch vụ — anh/chị hỏi **lần lượt** hay hỏi một lúc?
 - Còn hàng, còn chỗ trống — được nói chắc trên chat không, hay phải hỏi anh/chị?
 - Khi nào được nói với khách là **đã đặt xong / đã giữ chỗ**? (Mặc định: nhân viên mới chỉ ghi nhận, anh/chị xác nhận rồi mới nói chắc.)
+- Đơn đã đặt thì anh/chị ghi ở đâu — sổ tay, Excel, hay **phần mềm quản đơn**? Nếu là phần mềm, khách hỏi *đơn tới đâu rồi* thì tra bằng **mã đơn** hay **số điện thoại**? Có chỗ cho phần mềm khác đọc vào không, hay chỉ mở bằng tay?
 
 ---
 

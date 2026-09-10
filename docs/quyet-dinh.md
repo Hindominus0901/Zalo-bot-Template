@@ -42,3 +42,13 @@ kịch bản thử nick.
 
 **Chưa làm (đừng hứa):** follow-up lần 2 khi im, ZNS, nút OA, nhắn hàng loạt,
 CRM/CSV đơn, tồn kho live, cổng thanh toán, lịch slot gắn lịch thật, trộn SOUL Tom.
+
+## Mở thêm sau buổi chốt đầu
+
+- **Tra đơn qua API (`tra_don`)** — chủ chọn. Trước đây nằm ở "chưa làm". Nay là
+  tool MCP **tắt sẵn**: shop có phần mềm quản đơn có API thì bật, không có thì
+  `theo-don` vẫn hỏi mã rồi `ban-giao` như cũ. Chỉ đọc, không sửa / hủy đơn.
+- **Chỉ mục sổ (`knowledge/wiki/INDEX.md`)** — sinh tự động, để bot khỏi đoán tên
+  file. Không phải vector DB, không phải tìm kiếm ngữ nghĩa.
+- Hai cái trên **không** kéo theo CRM, tồn kho live, hay cổng thanh toán. Những
+  thứ đó vẫn ở danh sách trên.

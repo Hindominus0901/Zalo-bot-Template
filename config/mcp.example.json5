@@ -2,6 +2,7 @@
 // Đừng commit token / oauth.json. Dùng ${ENV}.
 // Mặc định TẮT. Chưa enabled + chưa login = không gọi mcp_drive.
 // Không thêm Apify / X để lấy giá shop.
+// tra_don: chỉ đọc. Đừng cho tool nào sửa / hủy đơn.
 //
 // Bật: chủ login Drive (Cursor Settings và/hoặc openclaw mcp login gdrive)
 // rồi enabled: true. openclaw mcp doctor --probe.
@@ -10,6 +11,20 @@
 {
   mcp: {
     servers: {
+      // Sổ đơn của shop. Bật khi shop có phần mềm quản đơn có API.
+      // Không có API → để enabled false; theo-don sẽ hỏi mã rồi ban-giao.
+      // Đừng trỏ vào file Excel trên máy chủ shop: đó không phải API.
+      sodon: {
+        enabled: false,
+        type: "http",
+        url: "${SODON_MCP_URL}",
+        headers: {
+          Authorization: "Bearer ${SODON_TOKEN}",
+        },
+        toolFilter: {
+          include: ["tra_don", "get_order*"],
+        },
+      },
       gdrive: {
         enabled: false,
         command: "npx",

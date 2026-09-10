@@ -37,6 +37,27 @@ Chưa có kênh → chỉ `ghi_thieu`. Skill `ban-giao`.
 
 Không tự viết giá vào wiki.
 
+### `tra_don` → MCP sổ đơn của shop
+
+**Chưa bật (`enabled: false`) = không gọi**, y như `mcp_drive`. Shop chưa có
+phần mềm quản đơn thì tool này không tồn tại — xử như trước: hỏi mã đơn rồi
+`ban-giao`.
+
+Vào: mã đơn **hoặc** SĐT. Ra: `trang_thai`, `ngay_dat`, `mon`, `van_don`, `ghi_chu`.
+
+Thang leo — rẻ trước, đắt sau, **không nhảy cóc**:
+
+1. phiếu (`trang_thai_don`) đã đủ trả lời chưa
+2. `tra_don`
+3. chưa có mã / SĐT → hỏi khách **một** câu
+4. vẫn không ra → `ban-giao`
+
+Lỗi / timeout / không tìm thấy: nói thật *chưa tra được*, `ghi_thieu`, **không
+đoán trạng thái**. Ảnh CK **không** kích hoạt tool này — CK chưa phải đơn.
+
+Không đọc số CK, số thẻ, địa chỉ đầy đủ ra cho người khác trong nhóm. Mẫu:
+`config/mcp.example.json5`. Skill `theo-don`.
+
 ### `mcp_drive` → MCP Google Drive
 
 **Chưa bật (`enabled: false`) = không gọi.** Chỉ file/thư mục chủ đã chỉ; cất
@@ -44,7 +65,7 @@ Không tự viết giá vào wiki.
 
 ## Không có — đừng giả
 
-`tra_don` · `cong_ck` · `ton_kho_live` · `crm` · `luu_lead` (ngoài dòng memory) ·
+`cong_ck` · `ton_kho_live` · `crm` · `luu_lead` (ngoài dòng memory) ·
 `zns` · `broadcast` · `lich_slot` · `nut_oa` · `apify_scrape_gia`.
 
 SĐT khách → dòng memory + `bao_chu`. File `raw/` không gửi khách.

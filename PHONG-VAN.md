@@ -221,6 +221,10 @@ của chủ thắng khi lệch với ví dụ generic.
 >
 > Khi nào được nói với khách là **đã đặt xong / đã giữ chỗ**? (Mặc định: nhân
 > viên mới chỉ ghi nhận, anh/chị xác nhận rồi mới nói chắc.)
+>
+> Đơn đã đặt thì anh/chị ghi ở đâu — sổ tay, Excel, hay **phần mềm quản đơn**?
+> Nếu là phần mềm, khách hỏi *đơn tới đâu rồi* thì tra bằng **mã đơn** hay
+> **số điện thoại**? Có chỗ cho phần mềm khác đọc vào không, hay chỉ mở bằng tay?
 
 → `skills/ghi-don/SKILL.md` + wiki quy trình. Không nói chữ skill với họ.
 
