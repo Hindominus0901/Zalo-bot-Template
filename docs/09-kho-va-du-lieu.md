@@ -5,7 +5,8 @@ Chữ thường cho chủ shop. Người dựng viết file theo
 [`wiki/TRANG-MAU.md`](../knowledge/wiki/TRANG-MAU.md).
 
 Bot **không lên mạng đoán giá shop**. Số khách nghe chỉ lấy từ miệng anh/chị
-và tài liệu anh/chị đưa.
+và tài liệu anh/chị đưa. File nằm Drive: người dựng lấy bằng cầu MCP — chủ chỉ
+đúng thư mục, xem [`11-mcp-ung-dung.md`](11-mcp-ung-dung.md).
 
 ---
 

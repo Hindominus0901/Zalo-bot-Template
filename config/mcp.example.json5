@@ -1,0 +1,20 @@
+// Merge vào ~/.openclaw/openclaw.json → mcp.servers
+// Đừng commit token / oauth.json. Dùng ${ENV}.
+// Mặc định tắt. Bật từng server sau khi chủ login.
+// Không thêm Apify / X để lấy giá shop.
+
+{
+  mcp: {
+    servers: {
+      gdrive: {
+        enabled: false,
+        // command + args: server Drive chủ chọn (stdio) HOẶC url + transport
+        // (streamable-http) sau khi login Control UI.
+        // toolFilter: { include: ["search*", "read*", "list*", "get*"] },
+        env: {
+          // GDRIVE_OAUTH_PATH: "${GDRIVE_OAUTH_PATH}",
+        },
+      },
+    },
+  },
+}

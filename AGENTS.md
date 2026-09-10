@@ -48,10 +48,10 @@ Không có cửa “câu này ngoài phạm vi, em dừng”. Cách đáp: `moi-
   **một nhịp** thành thật, kéo về sản phẩm/dịch vụ shop.
 - Phàn nàn / giảm giá / hợp đồng / đòi người: tắt hài, ghi nhận, bàn giao.
 
-Gặp đúng việc thì đọc skill: `doc-wiki`, `khai-thac`, `bao-gia`, `ghi-don`,
-`theo-don`, `doc-anh`, `xu-ly-phan-nan`, `xu-ly-tu-choi`, `cham-khach-cu`,
-`thu-lead`, `phieu`, `ban-giao`, `follow-up`. Skill là cách hay, không phải cổng
-bắt buộc — khách đi tắt thì đi tắt.
+Gặp đúng việc thì đọc skill: `giao-tiep`, `lam-viec`, `doc-wiki`, `khai-thac`,
+`bao-gia`, `ghi-don`, `theo-don`, `doc-anh`, `xu-ly-phan-nan`, `xu-ly-tu-choi`,
+`cham-khach-cu`, `thu-lead`, `phieu`, `ban-giao`, `follow-up`. Skill là cách hay,
+không phải cổng bắt buộc — khách đi tắt thì đi tắt.
 
 Mỗi lượt: `tuduy-cskh.md` (10 bước, GỘP/TÁCH rule C). Trả **đúng cái họ hỏi**
 trước. Việc nhẹ + chắc → được thêm một phương án. CK / lỗi / giấy tờ / không chắc
@@ -88,7 +88,8 @@ Câu không có số trong wiki: thêm một dòng vào `memory/YYYY-MM-DD.md` (
 ## Tools
 
 Catalog: `TOOLS.md` + `knowledge/logic/tools.json`. Có: `doc_file`, `doc_wiki`,
-`doc_phieu` / `ghi_phieu`, `xem_anh`, `gui_zalo`, `bao_chu`, `ghi_thieu`.
+`doc_phieu` / `ghi_phieu`, `doc_anh`, `gui_zalo`, `bao_chu`, `ghi_thieu`,
+`mcp_drive`. MCP: `docs/11-mcp-ung-dung.md`.
 
 - Wiki: `knowledge/wiki/public/` (và `internal/` chỉ khi đang nói với **nick**
   trong `USER.md`). Skill `doc-wiki`.

@@ -4,10 +4,12 @@
     {"id": "doc_wiki", "openclaw": "read", "skill": "doc-wiki"},
     {"id": "doc_phieu", "openclaw": "read", "skill": "phieu"},
     {"id": "ghi_phieu", "openclaw": "write", "skill": "phieu"},
-    {"id": "xem_anh", "openclaw": "vision", "skill": "doc-anh"},
+    {"id": "doc_anh", "openclaw": "vision", "skill": "doc-anh"},
+    {"id": "xem_anh", "openclaw": "vision", "skill": "doc-anh", "alias_cua": "doc_anh"},
     {"id": "gui_zalo", "openclaw": "message", "skill": null},
     {"id": "bao_chu", "openclaw": "message", "skill": "ban-giao"},
-    {"id": "ghi_thieu", "openclaw": "write", "skill": null}
+    {"id": "ghi_thieu", "openclaw": "write", "skill": null},
+    {"id": "mcp_drive", "openclaw": "mcp", "skill": "lam-viec"}
   ],
   "khong": [
     "tra_don",
@@ -18,6 +20,7 @@
     "zns",
     "broadcast",
     "lich_slot",
-    "nut_oa"
+    "nut_oa",
+    "apify_scrape_gia"
   ]
 }

@@ -192,5 +192,14 @@ class LogicToolsAndPrompt(unittest.TestCase):
 
     def test_system_prompt_routes_skills(self):
         text = _read("knowledge/system-prompt.md")
-        for needle in ("doc_wiki", "gui_zalo", "Ba rào", "khai-thac", "follow-up"):
+        for needle in ("doc_wiki", "doc_anh", "gui_zalo", "Ba rào", "khai-thac", "follow-up", "giao-tiep"):
             self.assertIn(needle, text)
+
+    def test_mcp_bus_forbids_scrape(self):
+        mcp = json.loads((ROOT / "knowledge/logic/mcp.json").read_text(encoding="utf-8"))
+        self.assertEqual(mcp["tool"], "mcp_drive")
+        self.assertIn("apify_scrape_gia", mcp["cam_mac_dinh"])
+        doc = _read("docs/11-mcp-ung-dung.md")
+        self.assertIn("mcp_drive", doc)
+        self.assertIn("Google Drive", doc)
+        self.assertIn("Không nối sẵn", doc)

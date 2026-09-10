@@ -1,54 +1,55 @@
 # Tools — catalog máy, đừng bịa thêm
 
-OpenClaw chỉ cho **file** (đọc/ghi workspace) + **kênh zalouser** (chữ, ảnh,
-quote, typing/seen) + **message** tới kênh đã biết. Bản này **không** có API
-shop. Máy đọc: `knowledge/logic/tools.json`.
+OpenClaw: **file** + **zalouser** (chữ, ảnh, quote, typing/seen) + **message** +
+**MCP** (Drive khi chủ bật). Máy đọc: `knowledge/logic/tools.json`,
+`knowledge/logic/mcp.json`. Bus: `docs/11-mcp-ung-dung.md`.
 
-Mỗi “tool” dưới = cách dùng file/kênh cho đúng việc. Gọi sai tên không được bịa
-công cụ mới.
+Mỗi “tool” = cách dùng đúng việc. Gọi sai tên không được bịa công cụ mới.
 
 ## Có
 
 ### `doc_file`
 
-Đọc file workspace. Dùng cho persona, giọng, skill, `USER.md`, `SOUL.md`.
+Đọc file workspace (persona, giọng, skill, `USER.md`, `SOUL.md`).
 Không đọc `internal/` khi đang nói với khách lạ.
 
 ### `doc_wiki`
 
-Số liệu shop. Đọc `knowledge/wiki/public/` (đúng tờ: giá, ship, đổi trả…).
-Trang trống / `[CHỜ CHỦ SHOP]` = **THIEU**, không suy từ mạng. Skill `doc-wiki`.
+Số shop trong `knowledge/wiki/public/`. Trống / `[CHỜ CHỦ SHOP]` = **THIEU**.
+Skill `doc-wiki`.
 
 ### `doc_phieu` / `ghi_phieu`
 
-`memory/phieu/{senderId}.md`. Đầu lượt đọc, cuối lượt ghi fact bền. Skill `phieu`.
-Không CRM. Không đọc phiếu thành tiếng.
+`memory/phieu/{senderId}.md`. Skill `phieu`. Không CRM. Không đọc phiếu thành tiếng.
 
-### `xem_anh`
+### `doc_anh` (cũ: `xem_anh`)
 
-Ảnh/voice/file inbound (vision / `media://inbound/`). Xem đã, đừng bắt gõ lại.
-Skill `doc-anh` + `anh-tinh-huong.md`. Không ghi số CK/CCCD.
+Đọc ảnh / voice / file inbound (vision / `media://inbound/`). **Xem đã**, đừng
+bắt gõ lại. Xếp loại ma trận, GỘP/TÁCH, một dòng phiếu. Skill `doc-anh`.
+Không ghi số CK/CCCD/OTP.
 
 ### `gui_zalo`
 
-Trả đúng thread khách. Inbox luôn. Nhóm chỉ khi gọi tên / @ / reply. Một tin
-gộp nếu họ dồn. Follow-up: **đúng senderId**, chỉ hai nhánh `follow-up`.
+Trả đúng thread. Inbox luôn. Nhóm: gọi tên / @ / reply. Follow-up: đúng ID, hai
+nhánh có rào.
 
 ### `bao_chu`
 
-Message tới nick/nhóm trong `USER.md`. Tóm tắt chữ thường. Chưa có kênh → chỉ
-ghi `memory/` ngày, đừng đoán. Skill `ban-giao`. Heartbeat / BOOT cũng dùng cái này.
+Message kênh `USER.md`. Chưa có kênh → chỉ `ghi_thieu`. Skill `ban-giao`.
 
 ### `ghi_thieu`
 
-Một dòng `memory/YYYY-MM-DD.md`: câu khách, giờ, thiếu tờ nào. Không tự viết
-giá vào wiki.
+Một dòng `memory/YYYY-MM-DD.md`. Không tự viết giá vào wiki.
+
+### `mcp_drive`
+
+Google Drive **chỉ** file/thư mục chủ đã chỉ. Cất `raw/`. Skill `lam-viec`.
+Chưa auth / `enabled: false` → xin file tay. **Không** gọi lúc chat khách.
+Config mẫu: `config/mcp.example.json5`.
 
 ## Không có — đừng giả
 
 `tra_don` · `cong_ck` · `ton_kho_live` · `crm` · `luu_lead` (ngoài dòng memory) ·
-`zns` · `broadcast` · `lich_slot` · `nut_oa`.
+`zns` · `broadcast` · `lich_slot` · `nut_oa` · `apify_scrape_gia`.
 
-SĐT khách → dòng memory + `bao_chu`, không tool lead.
-
-File gốc `knowledge/raw/` — không gửi raw cho khách.
+SĐT khách → dòng memory + `bao_chu`. File `raw/` không gửi khách.

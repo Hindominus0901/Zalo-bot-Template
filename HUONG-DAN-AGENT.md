@@ -9,8 +9,11 @@ cầm một nick Zalo riêng, nói chuyện như người.
 
 **Làm từng bước, đủ chi tiết:** skill
 [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md) — đọc rồi
-chạy B0→B7, viết file ngay sau mỗi câu. File này = luật + bản đồ. Đừng chỉ đưa
-chủ `docs/08` rồi đoán phần kỹ thuật.
+chạy B0→B7, viết file ngay sau mỗi câu. Nói với chủ:
+[`.claude/skills/giao-tiep/SKILL.md`](.claude/skills/giao-tiep/SKILL.md). File /
+Drive / MCP: [`.claude/skills/lam-viec/SKILL.md`](.claude/skills/lam-viec/SKILL.md)
++ [`docs/11-mcp-ung-dung.md`](docs/11-mcp-ung-dung.md). Đừng chỉ đưa chủ `docs/08`
+rồi đoán phần kỹ thuật.
 
 Bot lúc chat khách (đừng nhầm với lúc dựng): system
 `knowledge/system-prompt.md` · tool `TOOLS.md` · skill `skills/README.md`.

@@ -7,7 +7,7 @@ vấn xong mới tới đây (`HUONG-DAN-AGENT.md` B4–B7).
 Còn `[CHỜ CHỦ SHOP]` trên persona / giá thì **chưa bật khách thật**.
 
 Chuẩn xong: [`06-tieu-chuan.md`](06-tieu-chuan.md). Cách dùng sau khi chạy:
-[`07-cach-dung.md`](07-cach-dung.md).
+[`07-cach-dung.md`](07-cach-dung.md). File Drive: [`11-mcp-ung-dung.md`](11-mcp-ung-dung.md).
 
 ---
 

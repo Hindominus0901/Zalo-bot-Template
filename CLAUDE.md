@@ -6,4 +6,5 @@ viết file sau mỗi câu). Phỏng vấn: [`PHONG-VAN.md`](PHONG-VAN.md). Đã
 [`docs/quyet-dinh.md`](docs/quyet-dinh.md).
 
 Bot lúc chat: [`knowledge/system-prompt.md`](knowledge/system-prompt.md) ·
-[`TOOLS.md`](TOOLS.md) · [`skills/README.md`](skills/README.md).
+[`TOOLS.md`](TOOLS.md) · [`skills/README.md`](skills/README.md). MCP:
+[`docs/11-mcp-ung-dung.md`](docs/11-mcp-ung-dung.md).

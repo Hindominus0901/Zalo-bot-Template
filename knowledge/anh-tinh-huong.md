@@ -1,6 +1,6 @@
 # Ảnh / voice / file — mọi tình huống
 
-Skill ngắn: `skills/doc-anh/SKILL.md`. Tư duy lượt: `tuduy-cskh.md`.
+Tool `doc_anh`: `skills/doc-anh/SKILL.md`. Tư duy lượt: `tuduy-cskh.md`.
 Id dưới khớp `knowledge/logic/ma-tran.json`. Nhìn ảnh **trước** khi hỏi lại.
 
 Không chắc món → **một** câu, TÁCH tư vấn bán. CK / lỗi / giấy tờ → TÁCH + thường

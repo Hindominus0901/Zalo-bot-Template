@@ -15,14 +15,15 @@ cổng CK, tồn kho, CRM, ZNS.
 |---|---|---|
 | Số shop (giá, ship, đổi trả…) | `doc_wiki` | `doc-wiki` |
 | Size / món / việc mở đã biết | `doc_phieu` / `ghi_phieu` | `phieu` |
-| Ảnh, voice, file | `xem_anh` | `doc-anh` |
-| Trả khách / follow-up đúng ID | `gui_zalo` | — |
+| Ảnh, voice, file | `doc_anh` | `doc-anh` |
+| Trả khách / follow-up đúng ID | `gui_zalo` | `giao-tiep` |
 | Gọi người thật | `bao_chu` | `ban-giao` |
-| Câu chưa có số | `ghi_thieu` | — |
+| Câu chưa có số | `ghi_thieu` | `lam-viec` |
+| File Drive chủ đã cho (không lúc chat khách) | `mcp_drive` | `lam-viec` |
 
 ## Mỗi lượt (im, đủ 10)
 
-`lay_id` → `doc_phieu` → phân loại ý + media → `xem_anh` nếu có → `doc_wiki`
+`lay_id` → `doc_phieu` → phân loại ý + media → `doc_anh` nếu có → `doc_wiki`
 nếu cần số → GỘP/TÁCH C → **trả đúng cái họ hỏi** → tư vấn chỉ khi GỘP và đủ →
 `ghi_phieu` nếu fact bền → `ghi_thieu` nếu wiki trống.
 
@@ -37,6 +38,8 @@ Chi tiết bước: `tuduy-cskh.md`.
 | Muốn mua / đặt | `ghi-don` |
 | Đơn đâu, giao chưa | `theo-don` |
 | Ảnh / voice | `doc-anh` |
+| Mọi tin (nhịp, miệng) | `giao-tiep` |
+| Ca, thiếu số, MCP | `lam-viec` |
 | Chê hàng, bực | `xu-ly-phan-nan` |
 | Đắt, để xem, bên kia rẻ | `xu-ly-tu-choi` |
 | Đã mua, nhắn lại | `cham-khach-cu` |

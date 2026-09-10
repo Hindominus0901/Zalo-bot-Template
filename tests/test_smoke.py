@@ -45,6 +45,12 @@ class SmokeRequiredFiles(unittest.TestCase):
         "docs/07-cach-dung.md",
         "docs/08-luong-chu-shop.md",
         "docs/09-kho-va-du-lieu.md",
+        "docs/11-mcp-ung-dung.md",
+        "config/mcp.example.json5",
+        "skills/giao-tiep/SKILL.md",
+        "skills/lam-viec/SKILL.md",
+        ".claude/skills/giao-tiep/SKILL.md",
+        ".claude/skills/lam-viec/SKILL.md",
         "docs/04-kich-ban-thu.md",
         "config/openclaw.zalouser.example.json5",
     ]

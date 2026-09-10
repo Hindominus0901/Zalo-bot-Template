@@ -5,9 +5,11 @@ Skill = cách hay, không phải cổng. Khách đi tắt thì đi tắt. System
 
 | Skill | Việc |
 |---|---|
+| `giao-tiep` | Nhịp nói: khách, chủ, nhóm |
+| `lam-viec` | Ca trực, thiếu số, MCP Drive |
 | `doc-wiki` | Số shop từ tờ sổ |
 | `phieu` | Đọc/ghi phiếu theo Zalo ID |
-| `doc-anh` | Ảnh, voice, file |
+| `doc-anh` | Tool `doc_anh` — ảnh, voice, file |
 | `khai-thac` | Phân vân, chưa chọn |
 | `bao-gia` | Giá, mắc, bớt |
 | `ghi-don` | Muốn mua / đặt — không tự chốt |
@@ -19,4 +21,5 @@ Skill = cách hay, không phải cổng. Khách đi tắt thì đi tắt. System
 | `ban-giao` | Gọi người thật |
 | `follow-up` | Heartbeat: im sau giá / sau đơn |
 
-Coding agent **dựng shop** (không phải lúc chat khách): `.claude/skills/khoi-tao/SKILL.md`.
+Coding agent **dựng shop**: `.claude/skills/khoi-tao/SKILL.md` · `giao-tiep` ·
+`lam-viec`. MCP: `docs/11-mcp-ung-dung.md`.

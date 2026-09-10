@@ -14,6 +14,9 @@ chủ: `PHONG-VAN.md` / `docs/bo-cau-hoi.md`. Chủ muốn xem trước (chữ t
 Làm **đúng thứ tự B0→B7**. Không nhảy QR trước phỏng vấn. Không tóm tắt rồi hỏi
 “anh/chị sẵn sàng chưa” — hỏi câu B0 ngay.
 
+Nói với chủ: skill `giao-tiep`. File/Drive/MCP: skill `lam-viec` +
+`docs/11-mcp-ung-dung.md`.
+
 Bot lúc chạy (system / tool / skill) **không viết ở đây**. Đừng sửa
 `knowledge/system-prompt.md`, `TOOLS.md`, `skills/*/SKILL.md` trừ khi chủ đổi
 việc thật (câu 7/9). Giọng nền (`giong-noi.md`, `cach-tu-van.md`) **không viết
@@ -78,7 +81,7 @@ câu “Hỏi thêm” nếu họ chưa phủ. Đừng đọc cả khối Hỏi 
 |---|---|---|
 | 1 Bán/làm gì | `knowledge/persona.md` → Công việc | `[CHỜ CHỦ SHOP]` |
 | 2 Khách ngại gì | `persona.md` → Khách và điều họ lo | `[CHỜ CHỦ SHOP]` |
-| 3 Tài liệu | Cất `knowledge/raw/` nguyên. Một dòng `raw/NGUON.md`. Tách wiki (thuật toán dưới) | Chủ nói không có file → FAQ miệng câu 6; vẫn được |
+| 3 Tài liệu | Cất `knowledge/raw/` nguyên. Một dòng `raw/NGUON.md`. Tách wiki (thuật toán dưới). Link Drive → skill `lam-viec` + `mcp_drive` nếu MCP đã bật | Chủ nói không có file → FAQ miệng câu 6; vẫn được |
 | 4 Giọng, tên gọi | `IDENTITY.md` + `SOUL.md` đoạn cuối (xưng hô + 2–3 tin thật). Config `identity.name` khớp lúc B4 | Tên mặc định **Nami**. Biệt hiệu nhóm: ghi `Gọi thêm` |
 | 5 Không được tự ý | `persona.md` → Ranh giới (thêm của shop). Không xóa ba rào sẵn | — |
 | 6 FAQ miệng | Mỗi câu một tờ `wiki/public/` hoặc gom cùng chủ đề | Không đẻ số |

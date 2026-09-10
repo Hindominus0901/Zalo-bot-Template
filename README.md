@@ -50,7 +50,8 @@ Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `P
 | [`docs/08-luong-chu-shop.md`](docs/08-luong-chu-shop.md) | Từng bước dựng bot — chữ thường, không cần biết lập trình |
 | [`docs/09-kho-va-du-lieu.md`](docs/09-kho-va-du-lieu.md) | Ba ngăn kiến thức, wiki, phiếu khách, sửa giá sau này |
 | [`knowledge/system-prompt.md`](knowledge/system-prompt.md) | System prompt bot lúc chat — tool + skill + 10 bước |
-| [`TOOLS.md`](TOOLS.md) | Catalog tool: wiki, phiếu, ảnh, Zalo, báo chủ |
+| [`TOOLS.md`](TOOLS.md) | Catalog: wiki, `doc_anh`, Zalo, `mcp_drive` |
+| [`docs/11-mcp-ung-dung.md`](docs/11-mcp-ung-dung.md) | MCP nối Drive ↔ sổ ↔ Zalo — không cào web lấy giá |
 | [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md) | Coding agent dựng shop: B0→B7 chi tiết |
 | [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) | Tin thử: tình huống + giọng + ảnh + follow-up |
 | [`docs/vi-du-file-da-dien.md`](docs/vi-du-file-da-dien.md) | Shop **giả** — đừng copy số vào wiki thật |

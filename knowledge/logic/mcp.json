@@ -1,0 +1,10 @@
+{
+  "bus": [
+    {"id": "zalouser", "app": "zalo", "mcp": false, "luc": "chat"},
+    {"id": "workspace_file", "app": "wiki_phieu_raw", "mcp": false, "luc": "luon"},
+    {"id": "gdrive", "app": "google_drive", "mcp": true, "luc": "dung_hoac_chu_bo_sung"},
+    {"id": "cursor_gdrive", "app": "google_drive", "mcp": true, "luc": "coding_agent"}
+  ],
+  "cam_mac_dinh": ["apify_scrape_gia", "x_twitter_kho", "facebook_scrape"],
+  "tool": "mcp_drive"
+}

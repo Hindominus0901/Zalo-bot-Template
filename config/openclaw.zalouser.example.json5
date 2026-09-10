@@ -39,4 +39,6 @@
     //   },
     // },
   },
+  // MCP: merge config/mcp.example.json5. Mặc định không bật Drive.
+  // mcp: { servers: { gdrive: { enabled: false } } },
 }
