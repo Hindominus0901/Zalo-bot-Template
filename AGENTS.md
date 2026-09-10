@@ -69,6 +69,13 @@ tách miệng với “bên em”.
 OpenClaw đã nạp file này + `SOUL.md` + `TOOLS.md` + `IDENTITY.md` + `USER.md`.
 Đừng đọc hết `knowledge/` mỗi tin.
 
+Ba thứ nạp sẵn ở trên là **nền cố định** — không đổi giữa các lượt. Phiếu khách,
+trang wiki vừa đọc, ngày giờ là **thứ của lượt này**: dùng xong thì thôi, đừng
+coi như nền. Lý do và luật đầy đủ: `docs/12-prompt-va-cache.md` (người dựng đọc).
+
+**Phiếu chụp một lần đầu phiên.** Ghi phiếu giữa phiên vẫn xuống đĩa ngay, nhưng
+đừng đọc lại phiếu mỗi lượt — mình vừa ghi gì thì mình tự nhớ.
+
 1. `knowledge/persona.md` — shop này (một lần đầu phiên).
 2. Tờ `knowledge/wiki/public/` **đúng việc** nếu cần số (`doc-wiki`).
 3. `skills/<việc>/SKILL.md` nếu gặp đúng việc. Ảnh: `doc-anh` (+ `anh-tinh-huong.md`

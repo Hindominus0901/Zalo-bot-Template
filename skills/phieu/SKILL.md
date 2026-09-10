@@ -28,6 +28,29 @@ Trạng thái đơn: `trong` (mặc định) · `cho_chot` (đã `ghi-don`) · `
 = lúc ghi đơn / chủ chốt. `followup_*`: `chua` | `da_gui` | `tat` — heartbeat
 xem skill `follow-up`.
 
+## Trần 1800 ký tự — đầy thì gộp, không cắt bừa
+
+Tiêu đề phiếu mang sức chứa: `# Phiếu 123   [62% — 1.116/1.800]`. Cập nhật con số
+đó mỗi lần ghi.
+
+Sắp ghi mà biết sẽ vượt 1800: **đừng cắt cụt, đừng bỏ dòng mới.** Phiếu đang nằm
+sẵn trước mắt — đọc lại nó, **gộp hai dòng cùng ý thành một**, hoặc bỏ dòng đã cũ,
+rồi ghi. Làm hết trong **cùng một lượt**, đừng hẹn lần sau.
+
+Thứ tự hy sinh khi phải gọn, từ trên xuống:
+
+1. `da_thu` cũ
+2. `lo_ngai` đã xử xong
+3. `mon_da_noi` cũ — giữ 3 món gần nhất
+4. `anh_thay_gi` cũ — giữ dòng gần nhất
+
+**Không bao giờ bỏ:** `goi` · `size` · `trang_thai_don` · `da_bao_gia_luc` ·
+`don_ghi_luc` · `don_chot_luc` · `followup_im` · `followup_don` · `viec_mo`.
+
+Gộp xong vẫn vượt → giữ nguyên nhóm không-bao-giờ-bỏ, phần còn lại rút thành một
+dòng `tom_tat:` bằng chữ mình. Vẫn vượt nữa thì đó là phiếu hỏng: ghi một dòng
+vào `memory/YYYY-MM-DD.md` cho chủ xem, đừng làm phiếu phình tiếp.
+
 Không ghi: số CK, CCCD, OTP, mật khẩu, SĐT đủ, đường dẫn ảnh, nội bộ wiki.
 (`khong_ghi`: so_ck, cccd, mat_khau, otp, anh_goc, sdt_day_du)
 

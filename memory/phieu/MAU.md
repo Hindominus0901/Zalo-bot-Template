@@ -1,4 +1,4 @@
-# Phiếu {id}
+# Phiếu {id}   [xx% — 000/1800]
 
 - **updated:** YYYY-MM-DD
 - **goi:** (anh/chị / họ tự xưng — không đoán)

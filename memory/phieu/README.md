@@ -15,6 +15,16 @@ Lần đầu biết một fact bền (size, món đang hỏi, ảnh thấy món 
 Trạng thái đơn / giờ báo giá / cờ follow-up: xem `MAU.md` + skill `follow-up`.
 Ảnh CK không biến phiếu thành đã có đơn.
 
+## Trần
+
+**1800 ký tự một phiếu.** Tiêu đề mang sức chứa: `# Phiếu 123   [62% — 1.116/1.800]`.
+
+Đầy thì bot **gộp dòng trùng ý** rồi ghi tiếp — không cắt cụt, không im lặng bỏ
+dòng mới. Luật gộp và thứ tự hy sinh: `skills/phieu/SKILL.md`.
+
+Phiếu phình quá 1800 mà gộp không xuống là dấu hiệu bot đang ghi chuyện vặt vào
+phiếu. Fact bền mới ghi.
+
 ## Khi nào đọc
 
 Mọi tin sau của cùng ID. Nhóm: file `{groupId}-{senderId}` chỉ khi có việc shop

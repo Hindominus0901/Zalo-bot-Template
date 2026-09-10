@@ -63,6 +63,24 @@
       "otp",
       "anh_goc",
       "sdt_day_du"
+    ],
+    "tran_ky_tu": 1800,
+    "khong_bao_gio_bo": [
+      "goi",
+      "size",
+      "trang_thai_don",
+      "da_bao_gia_luc",
+      "don_ghi_luc",
+      "don_chot_luc",
+      "followup_im",
+      "followup_don",
+      "viec_mo"
+    ],
+    "thu_tu_hy_sinh": [
+      "da_thu",
+      "lo_ngai",
+      "mon_da_noi",
+      "anh_thay_gi"
     ]
   },
   "skills": [
@@ -84,7 +102,10 @@
   ],
   "followup": {
     "mac_dinh": "tat",
-    "nhanh": ["im_sau_gia", "sau_don"],
+    "nhanh": [
+      "im_sau_gia",
+      "sau_don"
+    ],
     "mot_tin_moi_nhanh": true,
     "lan_hai_khi_im": false,
     "ck_khong_kich_hoat_sau_don": true,
@@ -92,59 +113,287 @@
     "review_tu_hoi": false
   },
   "anh": [
-    {"id": "anh_mon_shop", "gop": true, "skill": "doc-anh", "ban_giao": false},
-    {"id": "anh_cho_khac", "gop": true, "skill": "doc-anh", "ban_giao": false},
-    {"id": "screenshot_gia", "gop": false, "skill": "xu-ly-tu-choi", "ban_giao": false},
-    {"id": "anh_phoi_nguoi", "gop": true, "skill": "khai-thac", "ban_giao": false},
-    {"id": "anh_khong_gian", "gop": true, "skill": "khai-thac", "ban_giao": false},
-    {"id": "bang_size_tag", "gop": true, "skill": "doc-anh", "ban_giao": false},
-    {"id": "menu_bang_gia_anh", "gop": true, "skill": "bao-gia", "ban_giao": false},
-    {"id": "hang_loi", "gop": false, "skill": "xu-ly-phan-nan", "ban_giao": true},
-    {"id": "unbox", "gop": false, "skill": "xu-ly-phan-nan", "ban_giao": false},
-    {"id": "ck_bien_lai", "gop": false, "skill": "doc-anh", "ban_giao": true},
-    {"id": "van_don_tem", "gop": false, "skill": "theo-don", "ban_giao": true},
-    {"id": "ghim_vi_tri", "gop": true, "skill": "ghi-don", "ban_giao": false},
-    {"id": "cccd_the", "gop": false, "skill": "ban-giao", "ban_giao": true},
-    {"id": "screenshot_chat_khac", "gop": false, "skill": "xu-ly-tu-choi", "ban_giao": false},
-    {"id": "qr_code", "gop": false, "skill": "ban-giao", "ban_giao": true},
-    {"id": "mo_toi_crop", "gop": false, "skill": "doc-anh", "ban_giao": false},
-    {"id": "nhieu_mon", "gop": true, "skill": "doc-anh", "ban_giao": false},
-    {"id": "sticker_meme", "gop": true, "skill": "doc-anh", "ban_giao": false},
-    {"id": "file_pdf", "gop": false, "skill": "doc-anh", "ban_giao": false},
-    {"id": "hang_cu_shop", "gop": true, "skill": "cham-khach-cu", "ban_giao": false},
-    {"id": "mau_vai_mau_sac", "gop": true, "skill": "khai-thac", "ban_giao": false},
-    {"id": "thuoc_do", "gop": true, "skill": "doc-anh", "ban_giao": false},
-    {"id": "screenshot_web", "gop": true, "skill": "doc-anh", "ban_giao": false},
-    {"id": "lua_ck", "gop": false, "skill": "ban-giao", "ban_giao": true},
-    {"id": "voucher_anh", "gop": true, "skill": "bao-gia", "ban_giao": false},
-    {"id": "hoa_don_nha_xe", "gop": false, "skill": "theo-don", "ban_giao": true},
-    {"id": "tim_cai_nay", "gop": true, "skill": "khai-thac", "ban_giao": false},
-    {"id": "album_nhieu_anh", "gop": false, "skill": "doc-anh", "ban_giao": false},
-    {"id": "anh_khong_chu_thich", "gop": false, "skill": "doc-anh", "ban_giao": false},
-    {"id": "chu_anh_mau_thuan", "gop": false, "skill": "doc-anh", "ban_giao": false},
-    {"id": "voice", "gop": true, "skill": "doc-anh", "ban_giao": false},
-    {"id": "video", "gop": false, "skill": "doc-anh", "ban_giao": false},
-    {"id": "anh_otp", "gop": false, "skill": "ban-giao", "ban_giao": true},
-    {"id": "phieu_bao_hanh_anh", "gop": false, "skill": "xu-ly-phan-nan", "ban_giao": false},
-    {"id": "danh_gia_screenshot", "gop": true, "skill": "xu-ly-tu-choi", "ban_giao": false},
-    {"id": "anh_nguoi_la_xin_tien", "gop": false, "skill": "ban-giao", "ban_giao": true}
+    {
+      "id": "anh_mon_shop",
+      "gop": true,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "anh_cho_khac",
+      "gop": true,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "screenshot_gia",
+      "gop": false,
+      "skill": "xu-ly-tu-choi",
+      "ban_giao": false
+    },
+    {
+      "id": "anh_phoi_nguoi",
+      "gop": true,
+      "skill": "khai-thac",
+      "ban_giao": false
+    },
+    {
+      "id": "anh_khong_gian",
+      "gop": true,
+      "skill": "khai-thac",
+      "ban_giao": false
+    },
+    {
+      "id": "bang_size_tag",
+      "gop": true,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "menu_bang_gia_anh",
+      "gop": true,
+      "skill": "bao-gia",
+      "ban_giao": false
+    },
+    {
+      "id": "hang_loi",
+      "gop": false,
+      "skill": "xu-ly-phan-nan",
+      "ban_giao": true
+    },
+    {
+      "id": "unbox",
+      "gop": false,
+      "skill": "xu-ly-phan-nan",
+      "ban_giao": false
+    },
+    {
+      "id": "ck_bien_lai",
+      "gop": false,
+      "skill": "doc-anh",
+      "ban_giao": true
+    },
+    {
+      "id": "van_don_tem",
+      "gop": false,
+      "skill": "theo-don",
+      "ban_giao": true
+    },
+    {
+      "id": "ghim_vi_tri",
+      "gop": true,
+      "skill": "ghi-don",
+      "ban_giao": false
+    },
+    {
+      "id": "cccd_the",
+      "gop": false,
+      "skill": "ban-giao",
+      "ban_giao": true
+    },
+    {
+      "id": "screenshot_chat_khac",
+      "gop": false,
+      "skill": "xu-ly-tu-choi",
+      "ban_giao": false
+    },
+    {
+      "id": "qr_code",
+      "gop": false,
+      "skill": "ban-giao",
+      "ban_giao": true
+    },
+    {
+      "id": "mo_toi_crop",
+      "gop": false,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "nhieu_mon",
+      "gop": true,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "sticker_meme",
+      "gop": true,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "file_pdf",
+      "gop": false,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "hang_cu_shop",
+      "gop": true,
+      "skill": "cham-khach-cu",
+      "ban_giao": false
+    },
+    {
+      "id": "mau_vai_mau_sac",
+      "gop": true,
+      "skill": "khai-thac",
+      "ban_giao": false
+    },
+    {
+      "id": "thuoc_do",
+      "gop": true,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "screenshot_web",
+      "gop": true,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "lua_ck",
+      "gop": false,
+      "skill": "ban-giao",
+      "ban_giao": true
+    },
+    {
+      "id": "voucher_anh",
+      "gop": true,
+      "skill": "bao-gia",
+      "ban_giao": false
+    },
+    {
+      "id": "hoa_don_nha_xe",
+      "gop": false,
+      "skill": "theo-don",
+      "ban_giao": true
+    },
+    {
+      "id": "tim_cai_nay",
+      "gop": true,
+      "skill": "khai-thac",
+      "ban_giao": false
+    },
+    {
+      "id": "album_nhieu_anh",
+      "gop": false,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "anh_khong_chu_thich",
+      "gop": false,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "chu_anh_mau_thuan",
+      "gop": false,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "voice",
+      "gop": true,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "video",
+      "gop": false,
+      "skill": "doc-anh",
+      "ban_giao": false
+    },
+    {
+      "id": "anh_otp",
+      "gop": false,
+      "skill": "ban-giao",
+      "ban_giao": true
+    },
+    {
+      "id": "phieu_bao_hanh_anh",
+      "gop": false,
+      "skill": "xu-ly-phan-nan",
+      "ban_giao": false
+    },
+    {
+      "id": "danh_gia_screenshot",
+      "gop": true,
+      "skill": "xu-ly-tu-choi",
+      "ban_giao": false
+    },
+    {
+      "id": "anh_nguoi_la_xin_tien",
+      "gop": false,
+      "skill": "ban-giao",
+      "ban_giao": true
+    }
   ],
   "stress": [
-    {"id": "tin_don_10", "expect": "mot_tin_gop"},
-    {"id": "album_5_anh", "expect": "doc_het_hoi_mot_neu_chua_ro"},
-    {"id": "chu_A_anh_B", "expect": "hoi_mot_cau_uu_tien_anh_neu_tien_loi"},
-    {"id": "wiki_trong", "expect": "khong_de_so_o_lai"},
-    {"id": "phieu_size_M", "expect": "khong_hoi_lai_size"},
-    {"id": "ck_nhan_tien_chua", "expect": "khong_nhan_tien_ban_giao"},
-    {"id": "cccd", "expect": "khong_doc_so_ban_giao"},
-    {"id": "nhom_khong_ten", "expect": "im"},
-    {"id": "teencode_plus_anh", "expect": "xem_anh_khong_bat_go_lai"},
-    {"id": "giam_gia_plus_anh_mon", "expect": "khong_noi_gia_ban_giao_quyen"},
-    {"id": "het_hang_anh_mon", "expect": "noi_het_mot_thay_the_neu_wiki"},
-    {"id": "session_dai_50_luot", "expect": "doc_phieu_khong_hoi_lai_slot"},
-    {"id": "followup_im_mot_tin", "expect": "mot_tin_khoa_nhanh"},
-    {"id": "followup_ck_khong_sau_don", "expect": "ck_khong_kich_hoat_sau_don"},
-    {"id": "followup_heartbeat_khong_spam", "expect": "khong_broadcast_khong_lan_hai"},
-    {"id": "followup_mac_dinh_tat", "expect": "cho_chu_shop_tat"}
+    {
+      "id": "tin_don_10",
+      "expect": "mot_tin_gop"
+    },
+    {
+      "id": "album_5_anh",
+      "expect": "doc_het_hoi_mot_neu_chua_ro"
+    },
+    {
+      "id": "chu_A_anh_B",
+      "expect": "hoi_mot_cau_uu_tien_anh_neu_tien_loi"
+    },
+    {
+      "id": "wiki_trong",
+      "expect": "khong_de_so_o_lai"
+    },
+    {
+      "id": "phieu_size_M",
+      "expect": "khong_hoi_lai_size"
+    },
+    {
+      "id": "ck_nhan_tien_chua",
+      "expect": "khong_nhan_tien_ban_giao"
+    },
+    {
+      "id": "cccd",
+      "expect": "khong_doc_so_ban_giao"
+    },
+    {
+      "id": "nhom_khong_ten",
+      "expect": "im"
+    },
+    {
+      "id": "teencode_plus_anh",
+      "expect": "xem_anh_khong_bat_go_lai"
+    },
+    {
+      "id": "giam_gia_plus_anh_mon",
+      "expect": "khong_noi_gia_ban_giao_quyen"
+    },
+    {
+      "id": "het_hang_anh_mon",
+      "expect": "noi_het_mot_thay_the_neu_wiki"
+    },
+    {
+      "id": "session_dai_50_luot",
+      "expect": "doc_phieu_khong_hoi_lai_slot"
+    },
+    {
+      "id": "followup_im_mot_tin",
+      "expect": "mot_tin_khoa_nhanh"
+    },
+    {
+      "id": "followup_ck_khong_sau_don",
+      "expect": "ck_khong_kich_hoat_sau_don"
+    },
+    {
+      "id": "followup_heartbeat_khong_spam",
+      "expect": "khong_broadcast_khong_lan_hai"
+    },
+    {
+      "id": "followup_mac_dinh_tat",
+      "expect": "cho_chu_shop_tat"
+    }
   ]
 }
