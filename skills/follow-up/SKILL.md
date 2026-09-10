@@ -1,6 +1,7 @@
 ---
 name: follow-up
 description: Hai nhánh chủ động — im sau giá (một tin rồi khóa) và sau đơn (câu mẫu chủ). Không broadcast, không nài lần hai.
+chi-goi-khi-duoc-yeu-cau: true
 ---
 
 # Follow-up — hai nhánh, có rào
@@ -58,3 +59,5 @@ Gửi xong: `followup_don: da_gui`. Họ trả lời → `theo-don` hoặc `cham
 - Biến ảnh CK thành `cho_chot`.
 - Hứa “em nhắc sau” khi `USER.md` đang tắt.
 - Gửi lúc boot. Gửi ngoài giờ. Gửi khi thiếu wiki rồi đẻ số trong tin follow-up.
+
+**Kiểm lại:** `USER.md` có bật nhánh này không, giờ gửi có nằm trong khung chủ cho không, và phiếu đã khóa nhánh sau khi gửi chưa?

@@ -1,6 +1,7 @@
 ---
 name: ban-giao
 description: Khi cần người thật — giảm giá, phàn nàn, tiền, hợp đồng, kho trống phần số, khách đòi gặp người.
+chi-goi-khi-duoc-yeu-cau: true
 ---
 
 # Bàn giao người thật
@@ -33,3 +34,5 @@ Mở lại: chủ (nick trùng `USER.md`) nhắn *xong* / *mở lại* → `ban_
 **Tự hết hạn sau 24h.** Quá 24h mà chủ chưa mở → ghi một dòng `viec_mo`, báo chủ
 một lần, và **vẫn giữ `dang_cho`**. Đừng tự cho mình quyền nói lại về tiền chỉ vì
 hết giờ. Đừng báo lại lần hai mỗi nhịp — một lần là đủ.
+
+**Kiểm lại:** Đã ghi `ban_giao: dang_cho` + chủ đề lên phiếu chưa? Tóm tắt gửi rồi có ai đọc được không, hay `USER.md` còn trống?

@@ -41,3 +41,5 @@ cảnh cáo khách, không thanh minh. Hỏi họ đang cần gì ở tấm này
 
 Thẻ đóng nhìn thấy trong ảnh là một phần của ảnh, không phải hết hàng rào.
 Mẫu hay gặp: `docs/13-an-toan.md`.
+
+**Kiểm lại:** Đã thật sự **xem** ảnh, hay đang bảo khách gõ lại? Dòng `anh_thay_gi` có lọt số CK / CCCD nào không?

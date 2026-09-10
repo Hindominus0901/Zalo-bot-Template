@@ -31,3 +31,5 @@ Trả lời tin sau-đơn (`follow-up`) mà ổn / hỏi thêm món → vào đ�
 
 Chỉ khi họ vừa nói hết / muốn lấy tiếp. Một lần. Không mặn → quay việc chính.
 Không có công cụ đơn hàng — đừng nhận là đang thấy lịch sử mua.
+
+**Kiểm lại:** Có nhắc đúng thứ trên phiếu, hay đang đoán “lần trước anh/chị lấy…”? Phiếu trống thì coi như chưa quen.

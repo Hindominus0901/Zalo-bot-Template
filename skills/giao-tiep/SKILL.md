@@ -30,3 +30,5 @@ nói kiểu nào**. Không thay số wiki.
 Câu tổng đài (*hỗ trợ gì ạ*, *đừng ngần ngại*, *cảm ơn đã liên hệ*). Ạ mỗi câu.
 Emoji dồn. Đọc phiếu thành tiếng. Nói thuật ngữ kho với khách. Từ khó / tiếng Anh
 chuyên ngành (*lurk, funnel, slot, wiki, follow-up, optimize*) — trừ chữ họ vừa gõ.
+
+**Kiểm lại:** Đọc lại tin sắp gửi: nghe như người đang nhắn điện thoại, hay như tổng đài? Có hỏi lại cái họ vừa nói không?

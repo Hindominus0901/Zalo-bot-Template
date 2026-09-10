@@ -22,9 +22,9 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 | | File |
 |---|---|
 | Brain | `SOUL.md` · `giong-noi.md` · `cach-tu-van.md` · `tuduy-cskh.md` · `IDENTITY.md` (**Nami**) · `persona.md` |
-| Wiki | `knowledge/wiki/` ← tách từ `knowledge/raw/` (câu 3) |
+| Wiki | `knowledge/wiki/` ← tách từ `knowledge/raw/` (câu 3); chỉ mục `INDEX.md` sinh bằng `scripts/lam-chi-muc.sh` |
 | Chat (OpenClaw nạp) | `AGENTS.md` · `SOUL.md` · `TOOLS.md` · `IDENTITY.md` · `USER.md` |
-| Harness thêm | `BOOT.md` · `HEARTBEAT.md` · `skills/` · `memory/phieu/` |
+| Harness thêm | `BOOT.md` · `HEARTBEAT.md` · `skills/` · `memory/phieu/` · `memory/de-xuat/` |
 | Dựng shop | `.claude/skills/khoi-tao` · `giao-tiep-chu` · `lam-viec-dung` · `HUONG-DAN-AGENT.md` |
 
 Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `PHONG-VAN.md` rồi điền.

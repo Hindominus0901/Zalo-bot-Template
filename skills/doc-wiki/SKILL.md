@@ -31,3 +31,5 @@ Kiến thức đời (phối, dùng hàng) không đi tool này — nói rồi *
 chính sách bên em.
 
 Skill `bao-gia` = alias khi việc là **giá** — luật số vẫn ở đây.
+
+**Kiểm lại:** Câu vừa gõ có chữ số nào không đến từ tờ wiki vừa mở không? Có là bịa.

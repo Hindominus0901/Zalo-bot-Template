@@ -164,3 +164,23 @@ class SoNoKhach(unittest.TestCase):
             cwd=ROOT, capture_output=True,
         )
         self.assertEqual(r.returncode, 0, "memory/no-tra-loi.md phai bi git ignore")
+
+
+class ChuanSkill(unittest.TestCase):
+    def test_moi_skill_co_dong_kiem_lai(self):
+        for skill in sorted((ROOT / "skills").glob("*/SKILL.md")):
+            body = skill.read_text(encoding="utf-8")
+            self.assertRegex(body, r"\*\*Kiểm lại:\*\*|## Kiểm lại", f"{skill.parent.name} thieu Kiem lai")
+
+    def test_skill_dung_tien_bi_khoa(self):
+        for name in ("ban-giao", "follow-up", "hoc-lai"):
+            body = _read(f"skills/{name}/SKILL.md")
+            self.assertIn("chi-goi-khi-duoc-yeu-cau: true", body, name)
+            head = body.split("---")[1]
+            self.assertIn("chi-goi-khi-duoc-yeu-cau", head, f"{name}: co phai nam trong frontmatter")
+
+    def test_frontmatter_co_name_va_description(self):
+        for skill in sorted((ROOT / "skills").glob("*/SKILL.md")):
+            head = skill.read_text(encoding="utf-8").split("---")[1]
+            self.assertIn("name:", head, skill.parent.name)
+            self.assertIn("description:", head, skill.parent.name)

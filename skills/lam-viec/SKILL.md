@@ -35,3 +35,5 @@ Google Drive / file gốc  →  raw/  →  wiki  (người dựng cắt tờ, kh
 
 Ngoài giờ: vẫn fact trong sổ; không hứa gọi ngay. Heartbeat: báo chủ + follow-up
 có rào. Sửa giá = người dựng sửa tờ sổ, không nhắn miệng rồi quên.
+
+**Kiểm lại:** Số nào wiki chưa có thì đã vào `memory/` ngày chưa? `mcp_drive` có bị gọi lúc đang chat khách không?

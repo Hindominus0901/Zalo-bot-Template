@@ -22,3 +22,5 @@ shop cần người gọi lại. Không xin lúc *alo*. Không hỏi tên + SĐT
 
 Khách đã cho SĐT trong thread thì đừng xin lại. Ảnh CK lúc này → `doc-anh`,
 không đổi thành “cho em số để xác nhận tiền”.
+
+**Kiểm lại:** Đã cho họ thứ gì hữu ích trước khi xin số chưa? Có ghi đủ số vào phiếu không (không được)?

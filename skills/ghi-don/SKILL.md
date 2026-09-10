@@ -24,3 +24,5 @@ Phiếu: `trang_thai_don: cho_chot`, `don_ghi_luc` = giờ ghi. `followup_don` �
 Ảnh CK **không** đủ để coi là đã ghi đơn.
 
 Còn hàng / còn chỗ trống: wiki có thì nói đúng wiki; không có thì không đoán — ghi đơn tạm, để người chốt.
+
+**Kiểm lại:** Có lỡ nói “đã đặt xong” chưa? Phiếu có đang là `cho_chot` (không phải `da_chot_chu`) không?

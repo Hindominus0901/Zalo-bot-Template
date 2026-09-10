@@ -60,3 +60,5 @@ Không ghi: số CK, CCCD, OTP, mật khẩu, SĐT đủ, đường dẫn ảnh,
 Không có ID / id bẩn → không tạo file. Thiếu wiki vẫn vào `memory/YYYY-MM-DD.md`.
 
 Khách cũ: đọc phiếu rồi `cham-khach-cu`. Trống phiếu ≠ bịa lần trước.
+
+**Kiểm lại:** Phiếu còn dưới trần chưa? Có dòng nào là chuyện vặt của một lượt, không phải fact bền?

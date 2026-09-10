@@ -38,3 +38,5 @@ thành thật, kéo về món mình. Không hứa “bên em xem lại giá”.
 ## Đừng
 
 Kể chi phí shop. Im. Nài sau “để xem”. Bịa ưu đãi cho khỏi mất khách.
+
+**Kiểm lại:** Có nài lần hai không? Có tự hạ giá hay tự tặng thêm để giữ khách không?

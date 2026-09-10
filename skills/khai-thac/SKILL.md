@@ -23,3 +23,5 @@ Một lượt một câu. Tối đa 3 câu rồi gợi ý trên cái đã có.
 Đủ slot: **một** sản phẩm/gói chính, lý do trích lời khách; **một** thay thế
 kèm lúc nào nên lấy. Đọc wiki trước khi nói đặc điểm. Không có trong wiki thì
 đừng bịa — nói phần chắc, hẹn chốt phần số.
+
+**Kiểm lại:** Đã hỏi quá 3 câu chưa? Có câu nào phiếu đã trả lời sẵn mà vẫn hỏi lại không?
