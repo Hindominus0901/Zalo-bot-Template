@@ -49,8 +49,8 @@ class SmokeRequiredFiles(unittest.TestCase):
         "config/mcp.example.json5",
         "skills/giao-tiep/SKILL.md",
         "skills/lam-viec/SKILL.md",
-        ".claude/skills/giao-tiep/SKILL.md",
-        ".claude/skills/lam-viec/SKILL.md",
+        ".claude/skills/giao-tiep-chu/SKILL.md",
+        ".claude/skills/lam-viec-dung/SKILL.md",
         "docs/04-kich-ban-thu.md",
         "config/openclaw.zalouser.example.json5",
     ]
@@ -137,3 +137,11 @@ class SmokeDocs(unittest.TestCase):
         self.assertIn("không đẻ số", kho)
         self.assertIn("phiếu", kho.lower())
         self.assertNotIn("vector DB", luong)
+
+    def test_tieu_chuan_splits_repo_vs_nick(self):
+        text = _read("docs/06-tieu-chuan.md")
+        self.assertIn("kho chữ", text)
+        self.assertIn("nick thật", text)
+        self.assertIn("không", text.lower())
+        readme = _read("tests/README.md")
+        self.assertIn("không phải bot sống", readme.lower())

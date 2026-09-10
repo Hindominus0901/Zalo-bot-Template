@@ -86,8 +86,8 @@ class LogicMatrix(unittest.TestCase):
             "phieu",
             "workflow-cskh.md",
             "follow-up",
-            "system-prompt.md",
             "TOOLS.md",
+            "persona.md",
         ):
             self.assertIn(needle, text)
 
@@ -174,7 +174,7 @@ class LogicFollowup(unittest.TestCase):
 class LogicToolsAndPrompt(unittest.TestCase):
     def test_tools_json_documented(self):
         data = json.loads((ROOT / "knowledge/logic/tools.json").read_text(encoding="utf-8"))
-        catalog = _read("TOOLS.md") + _read("knowledge/system-prompt.md")
+        catalog = _read("TOOLS.md") + _read("AGENTS.md")
         for row in data["co"]:
             self.assertIn(f"`{row['id']}`", catalog, msg=row["id"])
             if row.get("skill"):
@@ -182,6 +182,10 @@ class LogicToolsAndPrompt(unittest.TestCase):
                 self.assertTrue(path.is_file(), msg=row["skill"])
         for banned in data["khong"]:
             self.assertIn(banned, _read("TOOLS.md"))
+        honest = _read("TOOLS.md")
+        self.assertIn("read", honest)
+        self.assertIn("message", honest)
+        self.assertIn("`tools/`", honest)
 
     def test_khoi_tao_has_b0_b7_and_write_map(self):
         text = _read(".claude/skills/khoi-tao/SKILL.md")
@@ -189,11 +193,15 @@ class LogicToolsAndPrompt(unittest.TestCase):
             self.assertIn(needle, text)
         self.assertIn("PHONG-VAN.md", text)
         self.assertIn("04-kich-ban-thu.md", text)
+        self.assertIn("giao-tiep-chu", text)
+        self.assertIn("lam-viec-dung", text)
 
     def test_system_prompt_routes_skills(self):
-        text = _read("knowledge/system-prompt.md")
+        text = _read("AGENTS.md")
         for needle in ("doc_wiki", "doc_anh", "gui_zalo", "Ba rào", "khai-thac", "follow-up", "giao-tiep"):
             self.assertIn(needle, text)
+        stub = _read("knowledge/system-prompt.md")
+        self.assertIn("AGENTS.md", stub)
 
     def test_mcp_bus_forbids_scrape(self):
         mcp = json.loads((ROOT / "knowledge/logic/mcp.json").read_text(encoding="utf-8"))

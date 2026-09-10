@@ -5,7 +5,7 @@ description: Ca trực — ảnh, sổ, bàn giao, thiếu số, MCP Drive. Khô
 
 # Làm việc (bot trên ca)
 
-System: `knowledge/system-prompt.md`. Bus ứng dụng: `docs/11-mcp-ung-dung.md`.
+Não: `AGENTS.md`. Bus: `docs/11-mcp-ung-dung.md`.
 
 ## Một tin khách
 

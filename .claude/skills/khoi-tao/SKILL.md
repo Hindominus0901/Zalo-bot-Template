@@ -14,13 +14,12 @@ chủ: `PHONG-VAN.md` / `docs/bo-cau-hoi.md`. Chủ muốn xem trước (chữ t
 Làm **đúng thứ tự B0→B7**. Không nhảy QR trước phỏng vấn. Không tóm tắt rồi hỏi
 “anh/chị sẵn sàng chưa” — hỏi câu B0 ngay.
 
-Nói với chủ: skill `giao-tiep`. File/Drive/MCP: skill `lam-viec` +
+Nói với chủ: skill `giao-tiep-chu`. File/Drive/MCP: skill `lam-viec-dung` +
 `docs/11-mcp-ung-dung.md`.
 
-Bot lúc chạy (system / tool / skill) **không viết ở đây**. Đừng sửa
-`knowledge/system-prompt.md`, `TOOLS.md`, `skills/*/SKILL.md` trừ khi chủ đổi
-việc thật (câu 7/9). Giọng nền (`giong-noi.md`, `cach-tu-van.md`) **không viết
-lại** thành kịch bản OA.
+Bot lúc chạy: `AGENTS.md` (OpenClaw nạp). Đừng sửa `AGENTS.md` / `TOOLS.md` /
+`skills/*/SKILL.md` trừ khi chủ đổi việc thật (câu 7/9). Giọng nền
+(`giong-noi.md`, `cach-tu-van.md`) **không viết lại** thành kịch bản OA.
 
 ---
 
@@ -61,9 +60,7 @@ Chưa quét mã lúc này. Nick: `docs/02-kenh-zalouser.md` (bạn đọc, họ 
 ## B1 — Đọc khung, đừng đụng rào
 
 Đọc hết (im): `SOUL.md`, `knowledge/giong-noi.md`, `knowledge/cach-tu-van.md`,
-`AGENTS.md`, `knowledge/system-prompt.md`, `TOOLS.md`, `knowledge/workflow-cskh.md`,
-`docs/01-it-rao-da-dang.md`, `knowledge/moi-loai-cau-hoi.md`,
-`knowledge/hoi-thoai-mau.md`.
+`AGENTS.md`, `TOOLS.md`, `docs/01-it-rao-da-dang.md`, `knowledge/hoi-thoai-mau.md`.
 
 Không xóa ba rào `AGENTS.md` (tiền, nội bộ, jailbreak). Hình file đã điền:
 `docs/vi-du-file-da-dien.md` — **cấm** chép số vào shop đang dựng.
@@ -81,7 +78,7 @@ câu “Hỏi thêm” nếu họ chưa phủ. Đừng đọc cả khối Hỏi 
 |---|---|---|
 | 1 Bán/làm gì | `knowledge/persona.md` → Công việc | `[CHỜ CHỦ SHOP]` |
 | 2 Khách ngại gì | `persona.md` → Khách và điều họ lo | `[CHỜ CHỦ SHOP]` |
-| 3 Tài liệu | Cất `knowledge/raw/` nguyên. Một dòng `raw/NGUON.md`. Tách wiki (thuật toán dưới). Link Drive → skill `lam-viec` + `mcp_drive` nếu MCP đã bật | Chủ nói không có file → FAQ miệng câu 6; vẫn được |
+| 3 Tài liệu | Cất `knowledge/raw/` nguyên. Một dòng `raw/NGUON.md`. Tách wiki (thuật toán dưới). Link Drive → skill `lam-viec-dung` + `mcp_drive` **chỉ nếu** MCP `enabled` | Chủ nói không có file → FAQ miệng câu 6; vẫn được |
 | 4 Giọng, tên gọi | `IDENTITY.md` + `SOUL.md` đoạn cuối (xưng hô + 2–3 tin thật). Config `identity.name` khớp lúc B4 | Tên mặc định **Nami**. Biệt hiệu nhóm: ghi `Gọi thêm` |
 | 5 Không được tự ý | `persona.md` → Ranh giới (thêm của shop). Không xóa ba rào sẵn | — |
 | 6 FAQ miệng | Mỗi câu một tờ `wiki/public/` hoặc gom cùng chủ đề | Không đẻ số |
@@ -160,7 +157,10 @@ Trên máy repo:
 python3 -m unittest discover -s tests -v
 ```
 
-Fail → đọc tên test, sửa file, chạy lại. Đừng đoán giá cho khớp.
+Xanh = **kho chữ khớp** (file, ma trận, rào trong markdown). **Không** = bot
+sống trên nick. Fail → đọc tên test, sửa file, chạy lại. Đừng đoán giá cho khớp.
+
+Mở khách: `docs/04-kich-ban-thu.md` trên nick thật + `docs/06-tieu-chuan.md`.
 
 ---
 
@@ -195,12 +195,12 @@ Nói thẳng: tắt máy / ngủ = **mất tin lúc đó**. Khách thật cần 
 - [ ] Wiki chỉ tờ có dữ liệu; `internal/` không lộ
 - [ ] `USER.md` có tên + nick nhận bàn giao + giờ gọi lại
 - [ ] Follow-up: đã hỏi; chưa nói = tắt
-- [ ] `python3 -m unittest discover -s tests -v` xanh
-- [ ] `docs/04-kich-ban-thu.md` trên nick thật (sau QR)
+- [ ] `python3 -m unittest discover -s tests -v` xanh (kho chữ, không phải nick)
+- [ ] `docs/04-kich-ban-thu.md` trên nick thật (sau QR) — **cửa mở khách**
 - [ ] Họ nhắn thử được từ nick khác
 - [ ] Khớp `docs/06-tieu-chuan.md`
 
-Chuẩn chưa xanh: **chưa** bảo mở khách.
+Unittest xanh mà chưa chạy 04 trên nick: **chưa** bảo mở khách.
 
 ---
 

@@ -26,6 +26,9 @@ flowchart LR
 
 ## Tool `mcp_drive`
 
+**`enabled: false` hoặc chưa login = không gọi.** Mẫu `command`:
+`npx -y @modelcontextprotocol/server-gdrive` trong `config/mcp.example.json5`.
+
 - Input: link/folder/file **chủ chỉ**.
 - Việc: tải/đọc → `knowledge/raw/` → dòng `NGUON.md` → cắt wiki (`CLAUDE.md`).
 - Chưa đăng nhập MCP → dừng, xin file tay. Không bịa nội dung Drive.

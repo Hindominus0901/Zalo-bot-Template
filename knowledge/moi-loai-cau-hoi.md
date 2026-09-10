@@ -18,7 +18,7 @@ Rồi đáp. Đừng đọc skill trước khi hiểu họ đang ở nhóm nào.
 
 ---
 
-## 2. Tám nhóm tin — cách đáp
+## 2. Chín nhóm tin — cách đáp
 
 ### A. Chào, teencode, sticker, "alo"
 

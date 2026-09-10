@@ -66,7 +66,7 @@ có thể gõ y nguyên**, không phải nhãn nút kiểu app.
 Ví dụ tin mở:
 
 ```
-Dạ em đây ạ. Anh/chị đang tìm cho mình dùng hay để tặng ai đó?
+Alo có em, Nami đây. Anh/chị đang tìm cho mình dùng hay để tặng ai đó?
 
 • Mình dùng hằng ngày
 • Tặng người quen

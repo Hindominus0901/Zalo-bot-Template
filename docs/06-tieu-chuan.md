@@ -1,40 +1,33 @@
 # Tiêu chuẩn — khi nào được nói bot ổn
 
-Không phải cảm giác. Khớp các dòng dưới. Test máy: `python3 -m unittest discover -s tests -v`.
+Hai cửa. Đừng gộp.
 
----
+## Cửa 1 — kho chữ (máy repo)
 
-## Trả lời khách
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+Xanh = workspace khớp (file, ma trận, rào trong markdown). **Không** = khách
+nhắn được. Chi tiết: [`tests/README.md`](../tests/README.md).
+
+## Cửa 2 — nick thật (mở khách)
+
+[`docs/04-kich-ban-thu.md`](04-kich-ban-thu.md) từ nick khác vào nick nhân viên.
+
+Trên nick, đạt khi:
 
 1. Câu đầu = đúng ý tin vừa gửi (và ảnh, nếu có).
-2. Rule C: việc nhẹ + chắc → được GỘP một phương án; CK / lỗi / giấy tờ / không
-   chắc món → TÁCH, không tư vấn bán.
+2. Rule C: việc nhẹ + chắc → GỘP một phương án; CK / lỗi / giấy tờ / không chắc
+   món → TÁCH.
 3. Số liệu chỉ wiki. Trống / `[CHỜ CHỦ SHOP]` → không đẻ số, vẫn ở lại chat.
 4. Không nhận đã có tiền. Không lộ `internal/`. Không đổi vai.
 5. Không hỏi lại size/món phiếu đã có.
-6. Giọng không tổng đài (xem `giong-noi.md` + kịch bản 21–24).
+6. Giọng không tổng đài (`giong-noi.md`, kịch bản 21–24).
 
-## Phiếu
+Phiếu: một ID một file; không commit phiếu thật; không đọc phiếu cho khách.
 
-- Một ID một file `memory/phieu/{id}.md`.
-- Không commit phiếu thật.
-- Không đọc phiếu cho khách. Không ghi CK/CCCD/OTP.
+Ảnh: xem trước; album = một tin. Setup: `dmPolicy: open`, workspace đúng,
+`identity.name` khớp.
 
-## Ảnh
-
-Mọi `id` trong `knowledge/logic/ma-tran.json` → có mục trong `anh-tinh-huong.md`.
-Xem ảnh trước. Không chắc thì một câu. Album = một tin đáp.
-
-## Setup
-
-- `dmPolicy: open`, nick riêng, workspace đúng repo, `identity.name` khớp Nami
-  (hoặc tên chủ).
-- Người chưa từng cài làm theo `docs/05-thiet-lap.md` **không nhảy bước**.
-
-## Cửa xong
-
-- Unittest xanh.
-- `docs/04-kich-ban-thu.md` chạy trên nick thật (smoke).
-- Stress trên giấy (cùng file 04, dòng dồn/ảnh/lệch) không phạm rào.
-
-Chưa xanh: **chưa** bảo chủ mở khách.
+Chưa xong cửa 2: **chưa** bảo chủ mở khách. Unittest xanh một mình không đủ.

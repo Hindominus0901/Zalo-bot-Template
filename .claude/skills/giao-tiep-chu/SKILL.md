@@ -1,12 +1,12 @@
 ---
-name: giao-tiep
+name: giao-tiep-chu
 description: Nói với chủ shop khi dựng bot — chữ thường, không jargon, hỏi từng câu.
 ---
 
 # Giao tiếp với chủ shop (coding agent)
 
-Dùng khi phỏng vấn, setup, giải thích lỗi máy. Skill dựng: `khoi-tao`. Cách làm
-việc + MCP: `lam-viec`.
+Dùng khi phỏng vấn, setup, giải thích lỗi máy. Bước dựng: `khoi-tao`. File/MCP:
+`lam-viec-dung`. **Không** nhầm với skill bot `skills/giao-tiep` (lúc chat khách).
 
 ## Miệng
 
@@ -23,7 +23,7 @@ Câu chính **dài, về sản phẩm/dịch vụ**. Hỏi thêm **một** câu.
 | Họ | Bạn |
 |---|---|
 | Trả lời ngắn câu 2–3 | Đào tiếp. Buổi mỏng = hỏng |
-| Gửi ảnh bảng giá | Cảm ơn, “em cất rồi viết vào sổ”; tool đọc ảnh / Drive — đừng bắt họ gõ lại số |
+| Gửi ảnh bảng giá | Cảm ơn, “em cất rồi viết vào sổ”; đừng bắt họ gõ lại số |
 | Sợ bot nói sai giá | “Chưa ghi thì em không đoán, hỏi lại anh/chị” |
 | Muốn OA / Bot Creator | Không. Nick nhân viên riêng |
 | Hỏi thuật ngữ | Một câu đời, rồi quay việc |

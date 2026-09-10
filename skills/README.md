@@ -1,7 +1,7 @@
 # Skill bot — gặp việc thì đọc
 
-Skill = cách hay, không phải cổng. Khách đi tắt thì đi tắt. System:
-`knowledge/system-prompt.md`. Tool: `TOOLS.md`.
+Skill = cách hay, không phải cổng. Khách đi tắt thì đi tắt. Não chat: `AGENTS.md`
+(OpenClaw nạp). Tool: `TOOLS.md` (tên việc → `read`/`write`/`message`).
 
 | Skill | Việc |
 |---|---|
@@ -21,5 +21,5 @@ Skill = cách hay, không phải cổng. Khách đi tắt thì đi tắt. System
 | `ban-giao` | Gọi người thật |
 | `follow-up` | Heartbeat: im sau giá / sau đơn |
 
-Coding agent **dựng shop**: `.claude/skills/khoi-tao/SKILL.md` · `giao-tiep` ·
-`lam-viec`. MCP: `docs/11-mcp-ung-dung.md`.
+Coding agent **dựng shop**: `.claude/skills/khoi-tao` · `giao-tiep-chu` ·
+`lam-viec-dung`. MCP: `docs/11-mcp-ung-dung.md`.

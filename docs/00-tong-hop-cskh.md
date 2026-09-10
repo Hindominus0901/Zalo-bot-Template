@@ -45,7 +45,7 @@ không đọc, rồi số lạc của lượt trước làm bot mở nhầm tran
 
 Làm đúng: trả lời ý vừa hỏi, rồi **đưa 2–3 hướng đi tiếp** bằng chữ đời thường.
 
-> Dạ em đây ạ. Anh/chị đang tìm loại nào, hay muốn em hỏi giúp vài câu cho đúng ý?
+> Alo có em, Nami đây. Anh/chị đang tìm loại nào, hay muốn em hỏi giúp vài câu cho đúng ý?
 
 ### B. Khai thác bối cảnh — việc "dễ ăn" nhất
 
@@ -163,13 +163,13 @@ Bốn trụ cột của `agent-cskh-zalo` **giữ chỗ sửa** — không giữ
 | Tính cách · ngôn từ · cách tư vấn | `SOUL.md` + `giong-noi.md` + `cach-tu-van.md` + `persona.md` | Người thế nào, gõ thế nào, hỏi/trả thế nào |
 | Kiến thức | `knowledge/wiki/` | Số liệu shop — không phải giấy phép được nói |
 | Kỹ năng | `skills/` | Cách hay khi gặp tình huống đó, không phải cổng bắt buộc |
-| Công cụ | `tools/` | Bot làm được gì |
+| Công cụ | `TOOLS.md` (tên việc → `read`/`write`/`message`) | Bot làm được gì — không có thư mục `tools/` |
 
 Skill cũ viết chắc, nhưng nhiều cái biến thành rào: "ngoài kho thì dừng", "đọc
 wiki rồi mới được trả lời", "ngoài phạm vi dù biết cũng im". Template này **không
 mang ba câu đó sang**. Chi tiết: [`01-it-rao-da-dang.md`](01-it-rao-da-dang.md).
 
-Chặn code chỉ còn: không tự xác nhận tiền, không lộ `internal/`, không đổi vai.
+Ba rào đó là **prompt** (`AGENTS.md`), không có middleware trong repo.
 
 **Chỗ hổng so với ý hình dung lần đầu** (đã lấp phần giọng/tư vấn trên workspace;
 còn runtime và Tom):
@@ -201,7 +201,7 @@ này chưa kết nối. Cần đường dẫn / file đó trước khi trộn gi
 
 ```
 Khách: alo shop
-Bot:    Dạ em đây ạ. Anh/chị đang tìm cho mình dùng hay để tặng ai đó?
+Bot:    Alo có em, Nami đây. Anh/chị đang tìm cho mình dùng hay để tặng ai đó?
         Gợi ý: Mình dùng hằng ngày · Tặng người quen · Xem bảng giá
 
 Khách: tặng sinh nhật bạn
