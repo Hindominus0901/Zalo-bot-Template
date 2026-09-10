@@ -10,11 +10,13 @@ Không nói wiki, harness, token, QR. File nào điền đâu: ở `PHONG-VAN.md
 
 ---
 
-## Mở máy (2 câu, trước bộ 10)
+## Mở máy (3 câu, trước bộ 10)
 
-**M1.** Mình ngồi hỏi trên máy anh/chị đang dùng luôn nhé. Máy này là Windows hay Mac ạ?
+**M1.** Mình ngồi hỏi trên máy anh/chị đang dùng luôn nhé. Máy này là Windows, Mac, hay anh/chị định cho bot chạy trên máy chủ thuê ngoài ạ?
 
 **M2.** Bot sẽ nhắn khách bằng một nick Zalo như nhân viên của shop, không dùng nick Zalo chính của anh/chị — để nick chính khỏi rối. Nick nhân viên đó anh/chị đã có sẵn chưa, hay lát nữa mình tạo cùng nhau?
+
+**M3.** Bot suy nghĩ bằng AI thuê ngoài, nên cần một **mã kết nối** anh/chị đăng ký. Anh/chị có tài khoản Claude, ChatGPT hay Gemini loại có nạp tiền chưa ạ? Chưa có thì mình mở cùng nhau trước — thiếu cái đó là lát dựng xong bot không nói được. Đây là tiền trả hàng tháng theo lượng tin.
 
 ---
 

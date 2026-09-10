@@ -13,10 +13,17 @@ Chuẩn xong: [`06-tieu-chuan.md`](06-tieu-chuan.md). Cách dùng sau khi chạy
 
 ## Cần gì
 
+Danh sách đầy đủ cho chủ shop: [`../CHUAN-BI.md`](../CHUAN-BI.md).
+Dưới đây là bản cho người dựng.
+
 1. Một **máy để mở suốt** (thử thì laptop; khách thật thì VPS). Tắt máy = mất tin.
 2. Nick Zalo **riêng** cho nhân viên (Nami). Không cầm nick chính, không gắn ngân hàng.
 3. Thư mục bot = repo này (đã phỏng vấn / đã điền).
 4. Model **nhìn được ảnh** (Claude / GPT-4o / Gemini…). Chỉ chữ thì xem ảnh kém.
+5. **API key của model** — chủ shop tự mở tài khoản và nạp tiền. Chưa có key là
+   chưa dựng được; đừng hứa dựng xong rồi tính sau.
+6. Trên máy đó: `git`, Python 3. Windows: cài Python nhớ tick **Add to PATH**;
+   `python3` hay mở Microsoft Store nên dùng `py`.
 
 Không xin OA. Không tạo “Bot …” trên Bot Manager.
 

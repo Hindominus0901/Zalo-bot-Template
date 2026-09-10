@@ -24,15 +24,31 @@ sổ/dữ liệu: [`docs/09-kho-va-du-lieu.md`](docs/09-kho-va-du-lieu.md).
 
 ---
 
-## Trước chủ đề 1 — hai câu mở (không tính 10)
+## Trước chủ đề 1 — ba câu mở (không tính 10)
 
-Từng câu, đợi trả lời:
+Từng câu, đợi trả lời.
 
-> Mình ngồi hỏi trên máy anh/chị đang dùng luôn nhé. Máy này là Windows hay Mac ạ?
+**M1 — máy**
+
+> Mình ngồi hỏi trên máy anh/chị đang dùng luôn nhé. Máy này là Windows, Mac,
+> hay anh/chị định cho bot chạy trên máy chủ thuê ngoài ạ?
+
+**M2 — nick**
 
 > Bot sẽ nhắn khách bằng một nick Zalo như nhân viên của shop, không dùng nick
 > Zalo chính của anh/chị — để nick chính khỏi rối. Nick nhân viên đó anh/chị đã
 > có sẵn chưa, hay lát nữa mình tạo cùng nhau?
+
+**M3 — mã kết nối AI**
+
+> Bot suy nghĩ bằng AI thuê ngoài, nên cần một **mã kết nối** anh/chị đăng ký.
+> Anh/chị có tài khoản Claude, ChatGPT hay Gemini loại có nạp tiền chưa ạ? Chưa
+> có thì mình mở cùng nhau trước, vì thiếu cái đó là lát dựng xong bot không nói
+> được. Đây là tiền trả hàng tháng theo lượng tin, không phải trả một lần.
+
+→ M3 **không** viết vào file nào trong repo. Key đi thẳng vào config máy Gateway,
+không commit. Chưa có key → dừng, đừng chạy tiếp B1. Danh sách đủ thứ chủ shop
+phải tự có: `CHUAN-BI.md`.
 
 ---
 

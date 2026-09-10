@@ -1,5 +1,9 @@
 # Template trợ lý AI chăm sóc khách hàng trên Zalo
 
+> **Bắt đầu ở đây:** [`CHUAN-BI.md`](CHUAN-BI.md) — thứ anh/chị phải có trước
+> (tài khoản AI có nạp tiền, nick Zalo riêng, máy chạy 24/7).
+> **Coding agent:** [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md).
+
 Coding agent **phỏng vấn chủ shop (10 chủ đề)**, nhận tài liệu sản phẩm/dịch vụ, rồi
 điền workspace OpenClaw. Bot cầm **nick Zalo riêng**, nói như người: hỏi trước
 khi tư vấn, không cụt cỡ khi khách lệch script.

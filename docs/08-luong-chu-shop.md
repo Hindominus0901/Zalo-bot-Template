@@ -11,6 +11,10 @@ gộp (người dựng đọc): [`10-openclaw-config-mau.md`](10-openclaw-config
 
 Sổ shop / dữ liệu khách giải thích thường: [`09-kho-va-du-lieu.md`](09-kho-va-du-lieu.md).
 
+**Trước khi gọi người dựng:** đọc [`../CHUAN-BI.md`](../CHUAN-BI.md). Có mấy thứ
+anh/chị phải tự có — nhất là **tài khoản AI đã nạp tiền** (đây là chi phí hàng
+tháng) và **một nick Zalo riêng với số riêng**. Thiếu là dựng tới giữa chừng tắc.
+
 ---
 
 ## Bot này là gì

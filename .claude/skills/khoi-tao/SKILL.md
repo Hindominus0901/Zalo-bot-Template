@@ -38,14 +38,29 @@ Bot lúc chạy: `AGENTS.md` (OpenClaw nạp). Đừng sửa `AGENTS.md` / `TOOL
 
 ---
 
-## B0 — Máy và nick
+## B0 — Máy, nick, và mã kết nối AI
 
-Tự biết OS. Với họ chỉ hỏi **đúng hai câu** (M1/M2 trong `PHONG-VAN.md`):
+**Trước khi hỏi câu nào:** đọc `CHUAN-BI.md`. Đó là danh sách chủ shop phải tự
+có. Thiếu mục nào thì lo mục đó xong rồi mới chạy tiếp — đừng dựng nửa chừng
+rồi tắc.
 
-> Mình làm trên máy tính anh/chị đang mở đó luôn nhé — Windows hay Mac ạ?
+Tự biết OS. Với họ hỏi **ba câu** (M1/M2/M3 trong `PHONG-VAN.md`):
+
+> Mình làm trên máy tính anh/chị đang mở đó luôn nhé — Windows, Mac hay máy chủ
+> thuê ngoài ạ?
 
 > Bot dùng một nick Zalo như nhân viên riêng, không dùng nick chính. Nick đó có
 > chưa, hay lát mình tạo cùng nhau?
+
+> Bot suy nghĩ bằng AI thuê ngoài nên cần một mã kết nối anh/chị đăng ký — tài
+> khoản Claude, ChatGPT hay Gemini loại có nạp tiền. Anh/chị có chưa ạ?
+
+**Chưa có mã kết nối → dừng ở đây.** Mở tài khoản cùng họ trước. Dựng xong mà
+không có key thì bot không nói được câu nào, và họ sẽ nghĩ mình làm hỏng.
+Key **không** commit vào repo — nó đi thẳng vào config máy Gateway ở B4.
+
+Máy chủ thuê ngoài không màn hình → bước quét mã làm khác, xem
+`docs/14-vps-headless.md` **trước** khi tới B6.
 
 | Họ nói | Bạn làm |
 |---|---|
@@ -197,13 +212,14 @@ Nói thẳng: tắt máy / ngủ = **mất tin lúc đó**. Khách thật cần 
 
 ## Xong khi (tick hết mới được nói ổn)
 
+- [ ] Mã kết nối AI đã có và đã vào config (không nằm trong repo)
 - [ ] `IDENTITY.md` có tên; `identity.name` khớp
 - [ ] `persona.md` hết `[CHỜ CHỦ SHOP]` bắt buộc (câu 1–2, 4, 5, 10)
 - [ ] Câu 3: có `raw/` **hoặc** chủ nói không có tài liệu
 - [ ] Wiki chỉ tờ có dữ liệu; `internal/` không lộ
 - [ ] `USER.md` có tên + nick nhận bàn giao + giờ gọi lại
 - [ ] Follow-up: đã hỏi; chưa nói = tắt
-- [ ] `bash scripts/lam-chi-muc.sh` rồi `python3 -m unittest discover -s tests -v` xanh (kho chữ, không phải nick)
+- [ ] Sinh lại chỉ mục rồi chạy test — xanh (kho chữ, không phải nick)
 - [ ] `docs/04-kich-ban-thu.md` trên nick thật (sau QR) — **cửa mở khách**
 - [ ] Họ nhắn thử được từ nick khác
 - [ ] Khớp `docs/06-tieu-chuan.md`
