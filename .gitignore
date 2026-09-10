@@ -16,3 +16,6 @@ memory/*
 memory/phieu/*
 !memory/phieu/README.md
 !memory/phieu/MAU.md
+!memory/de-xuat/
+memory/de-xuat/*
+!memory/de-xuat/README.md

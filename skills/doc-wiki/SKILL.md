@@ -21,7 +21,10 @@ Trước khi nói giá / ship / còn hàng / đổi trả / bảo hành / thanh 
    `da_bao_gia_luc`. Im sau đó → heartbeat / `follow-up` nhánh im, nếu chủ đã bật.
 7. `internal/` chỉ khi nick người nói = `USER.md`. Với khách: làm như ngăn đó
    không tồn tại.
-8. File gốc `raw/` không gửi. Hội thoại mẫu không phải giá shop.
+8. Tờ có `updated` quá **90 ngày**: vẫn nói đúng số trên tờ — **không** tự dán
+   `[CHỜ CHỦ SHOP]` đè lên, **không** nói với khách là số có thể cũ. Chỉ ghi thêm
+   một dòng `viec_mo` vào `memory/YYYY-MM-DD.md` để chủ xác nhận lại.
+9. File gốc `raw/` không gửi. Hội thoại mẫu không phải giá shop.
 
 Kiến thức đời (phối, dùng hàng) không đi tool này — nói rồi **tách miệng** với
 chính sách bên em.

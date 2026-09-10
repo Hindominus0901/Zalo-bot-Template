@@ -46,6 +46,7 @@ chỉ khi GỘP và đủ → ghi phiếu nếu fact bền → `ghi_thieu` nếu
 | Xin SĐT sau khi đã cho gì | `thu-lead` |
 | Tiền, quyền, OTP, xưng chủ | `ban-giao` |
 | Heartbeat, USER.md đã bật | `follow-up` |
+| Heartbeat cuối ngày | `hoc-lai` |
 
 Skill là cách hay, không phải cổng. Bảng đủ: `skills/README.md`. Vòng đời:
 `workflow-cskh.md` (đọc khi đơn / sau bán, không mỗi *alo*).

@@ -55,6 +55,10 @@ Liên quan: [[doi-tra]]
 
 `summary` viết như đang mô tả cho người chưa mở trang. Trang > ~1400 ký tự thì tách.
 
+`updated` là ngày số trên trang được chốt, không phải ngày sửa chữ. Quá **90 ngày**
+thì trang vẫn dùng được — bot vẫn trả đúng số đó — nhưng bot ghi một dòng cho chủ
+xác nhận lại. Không có cơ chế nào tự vô hiệu một trang: số cũ còn hơn không có số.
+
 ---
 
 ## Bot dùng kho thế nào

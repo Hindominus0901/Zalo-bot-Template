@@ -20,6 +20,7 @@ Skill = cách hay, không phải cổng. Khách đi tắt thì đi tắt. Não c
 | `thu-lead` | Xin SĐT sau khi đã cho gì |
 | `ban-giao` | Gọi người thật |
 | `follow-up` | Heartbeat: im sau giá / sau đơn |
+| `hoc-lai` | Heartbeat cuối ngày: đề xuất bài học + vá sổ cho chủ |
 
 Coding agent **dựng shop**: `.claude/skills/khoi-tao` · `giao-tiep-chu` ·
 `lam-viec-dung`. MCP: `docs/11-mcp-ung-dung.md`.
