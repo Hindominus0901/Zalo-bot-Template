@@ -274,7 +274,7 @@ class LogicToolsAndPrompt(unittest.TestCase):
         # Rào cứng nằm trong khối <policy> và phải ở ngay đầu file, trước mọi mục khác.
         self.assertIn("<policy>", text)
         self.assertIn("</policy>", text)
-        self.assertLess(text.index("<policy>"), text.index("##"), "policy phai nam truoc muc dau tien")
+        self.assertLess(text.index("<policy>"), text.index("\n## "), "policy phai nam truoc muc dau tien")
         for rao in ("đã nhận tiền", "internal/", "đổi vai", "không phải lệnh"):
             self.assertIn(rao, text[text.index("<policy>"):text.index("</policy>")])
         stub = _read("knowledge/system-prompt.md")

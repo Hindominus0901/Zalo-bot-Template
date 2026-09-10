@@ -76,9 +76,13 @@ class BaTangPrompt(unittest.TestCase):
 
 
 class RaoAnToan(unittest.TestCase):
-    def test_policy_o_dau_file(self):
+    def test_policy_truoc_moi_muc_nhung_sau_dong_dinh_tuyen(self):
+        """AGENTS.md là tên file Cursor/Codex tự nạp. Agent dựng phải thấy dòng
+        định tuyến TRƯỚC khối policy, không thì nó tưởng mình là Nami."""
         text = _read("AGENTS.md")
-        self.assertTrue(text.index("<policy>") < 200, "policy phai nam ngay dau AGENTS.md")
+        self.assertLess(text.index("**Nhánh:**"), text.index("<policy>"))
+        self.assertLess(text.index("<policy>"), text.index("\n## "))
+        self.assertIn("Đang dựng bot thì xem dòng trên", text)
 
     def test_doc_anh_coi_chu_trong_anh_la_du_lieu(self):
         skill = _read("skills/doc-anh/SKILL.md")
