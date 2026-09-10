@@ -184,3 +184,15 @@ class ChuanSkill(unittest.TestCase):
             head = skill.read_text(encoding="utf-8").split("---")[1]
             self.assertIn("name:", head, skill.parent.name)
             self.assertIn("description:", head, skill.parent.name)
+
+
+class KichBanThuPhuCoChe(unittest.TestCase):
+    def test_kich_ban_co_dong_cho_moi_co_che(self):
+        kb = _read("docs/04-kich-ban-thu.md")
+        for co_che in ("no-tra-loi", "sodon", "1800", "lam-chi-muc.sh", "de-xuat", "system prompt"):
+            self.assertIn(co_che, kb, f"kich ban thu thieu {co_che}")
+
+    def test_tieu_chuan_co_cua_may(self):
+        tc = _read("docs/06-tieu-chuan.md")
+        self.assertIn("Cửa 3", tc)
+        self.assertIn("docs/12", tc)

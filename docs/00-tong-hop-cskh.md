@@ -171,7 +171,8 @@ Skill cũ viết chắc, nhưng nhiều cái biến thành rào: "ngoài kho th�
 wiki rồi mới được trả lời", "ngoài phạm vi dù biết cũng im". Template này **không
 mang ba câu đó sang**. Chi tiết: [`01-it-rao-da-dang.md`](01-it-rao-da-dang.md).
 
-Ba rào đó là **prompt** (`AGENTS.md`), không có middleware trong repo.
+Rào là **prompt** — khối `<policy>` đầu `AGENTS.md`, không có middleware trong
+repo. Thứ rào này làm được và không làm được: [`13-an-toan.md`](13-an-toan.md).
 
 **Chỗ hổng so với ý hình dung lần đầu** (đã lấp phần giọng/tư vấn trên workspace;
 còn runtime và Tom):
