@@ -37,6 +37,8 @@ class SmokeRequiredFiles(unittest.TestCase):
         "docs/05-thiet-lap.md",
         "docs/06-tieu-chuan.md",
         "docs/07-cach-dung.md",
+        "docs/08-luong-chu-shop.md",
+        "docs/09-kho-va-du-lieu.md",
         "docs/04-kich-ban-thu.md",
         "config/openclaw.zalouser.example.json5",
     ]
@@ -111,3 +113,15 @@ class SmokeDocs(unittest.TestCase):
         self.assertIn("chuyển khoản", low)
         self.assertIn("không chữ", low)
         self.assertIn("ảnh mờ", low)
+
+    def test_chu_shop_flow_is_plain_language(self):
+        luong = _read("docs/08-luong-chu-shop.md")
+        kho = _read("docs/09-kho-va-du-lieu.md")
+        self.assertIn("không cần biết lập trình", luong.lower())
+        self.assertIn("nick nhân viên", luong.lower())
+        self.assertIn("từng bước", luong.lower())
+        self.assertIn("ba ngăn", kho.lower())
+        self.assertIn("file gốc", kho.lower())
+        self.assertIn("không đẻ số", kho)
+        self.assertIn("phiếu", kho.lower())
+        self.assertNotIn("vector DB", luong)

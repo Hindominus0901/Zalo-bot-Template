@@ -1,5 +1,8 @@
 # Luật kho tri thức
 
+Giải thích chữ thường cho chủ shop: [`docs/09-kho-va-du-lieu.md`](../docs/09-kho-va-du-lieu.md).
+Luồng dựng bot (họ đọc): [`docs/08-luong-chu-shop.md`](../docs/08-luong-chu-shop.md).
+
 Bot trả lời số liệu shop từ đây, không từ kiến thức chung trên mạng.
 
 ```

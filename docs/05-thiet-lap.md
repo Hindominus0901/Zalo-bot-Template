@@ -1,7 +1,8 @@
 # Thiết lập — cho người chưa từng cài
 
-Chủ shop **không cần đọc file này**. Coding agent đọc, rồi **bấm cùng họ**, nói
-chữ thường. Kịch bản phỏng vấn xong mới tới đây (`HUONG-DAN-AGENT.md` B4–B7).
+Chủ shop **không cần đọc file này** — họ đọc [`08-luong-chu-shop.md`](08-luong-chu-shop.md).
+Coding agent đọc file này, rồi **bấm cùng họ**, nói chữ thường. Kịch bản phỏng
+vấn xong mới tới đây (`HUONG-DAN-AGENT.md` B4–B7).
 
 Còn `[CHỜ CHỦ SHOP]` trên persona / giá thì **chưa bật khách thật**.
 

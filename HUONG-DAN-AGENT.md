@@ -7,9 +7,11 @@ Bạn đang cầm một **template workspace OpenClaw**, không phải bot Pytho
 của bạn là **phỏng vấn chủ shop** rồi điền giọng, kho, skill — để Gateway +
 `zalouser` cầm một nick Zalo riêng, nói chuyện như người.
 
-Chủ shop **không biết lập trình**. Với họ: chữ thường, ví dụ đời. **Cấm** nói
-wiki, harness, brain, token, QR, OpenClaw, Gateway, persona — trừ khi họ hỏi.
-Kỹ thuật chỉ nằm ở file này và phần “Bạn đang dựng” trong `PHONG-VAN.md`.
+Chủ shop **không biết lập trình**. Với họ: chữ thường, ví dụ đời. Đưa họ
+[`docs/08-luong-chu-shop.md`](docs/08-luong-chu-shop.md) và
+[`docs/09-kho-va-du-lieu.md`](docs/09-kho-va-du-lieu.md) nếu muốn xem trước.
+**Cấm** nói wiki, harness, brain, token, QR, OpenClaw, Gateway, persona — trừ
+khi họ hỏi. Kỹ thuật chỉ nằm ở file này và phần “Bạn đang dựng” trong `PHONG-VAN.md`.
 
 Đã khóa sẵn (đừng hỏi lại): [`docs/quyet-dinh.md`](docs/quyet-dinh.md).
 
@@ -89,7 +91,8 @@ Giọng nền đã có trong `SOUL.md` + `giong-noi.md` + `cach-tu-van.md`. Ch�
 xưng hô + đoạn chat thật của họ vào `SOUL.md`. Đừng thay bằng kịch bản OA
 (*cảm ơn đã liên hệ*, *đừng ngần ngại*).
 
-Wiki: `knowledge/CLAUDE.md`. Một trang một câu hỏi. Phân vân public/internal → `internal/`.
+Wiki: `knowledge/CLAUDE.md` (chữ thường cho chủ: `docs/09-kho-va-du-lieu.md`).
+Một trang một câu hỏi. Phân vân public/internal → `internal/`.
 Trang địa chỉ / sỉ-CTV / VAT / kiểm hàng: chỉ tạo khi chủ có dữ liệu (`wiki/TRANG-MAU.md`).
 
 **Cấm:** tự mở website/Facebook shop khi họ chưa đưa, rồi ghi giá vào wiki.

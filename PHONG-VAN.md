@@ -3,7 +3,9 @@
 Bước **B2** trong [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md).
 
 Chủ shop không rành kỹ thuật. Họ đang **kể về sản phẩm, dịch vụ, và cách đang
-chăm khách**. Không nói wiki, harness, brain, token, QR, OpenClaw.
+chăm khách**. Không nói wiki, harness, brain, token, QR, OpenClaw. Họ muốn xem
+trước luồng chữ thường: [`docs/08-luong-chu-shop.md`](docs/08-luong-chu-shop.md),
+sổ/dữ liệu: [`docs/09-kho-va-du-lieu.md`](docs/09-kho-va-du-lieu.md).
 
 **Cách hỏi**
 

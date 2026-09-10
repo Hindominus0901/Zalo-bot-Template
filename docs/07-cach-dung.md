@@ -1,6 +1,10 @@
 # Cách dùng — ba người, ba việc
 
-Template này không tự chạy khi clone. Cần nick + Gateway. Thiết lập:
+Chủ shop **chưa từng dựng bot:** đọc [`08-luong-chu-shop.md`](08-luong-chu-shop.md)
+(từng bước) và [`09-kho-va-du-lieu.md`](09-kho-va-du-lieu.md) (sổ / dữ liệu).
+File này là việc ngày thường sau khi nick đã sống.
+
+Template không tự chạy khi clone. Cần nick + chỗ bot ngồi. Thiết lập kỹ thuật:
 [`05-thiet-lap.md`](05-thiet-lap.md).
 
 ---

@@ -1,6 +1,7 @@
 # Sau phỏng vấn — bật nick cho khách nhắn
 
-Nói với chủ shop bằng bước bấm, ít tên phần mềm. **Người chưa từng cài:** làm đúng
+Nói với chủ shop bằng bước bấm, ít tên phần mềm. Họ xem luồng chữ thường:
+[`08-luong-chu-shop.md`](08-luong-chu-shop.md). **Người chưa từng cài:** làm đúng
 [`05-thiet-lap.md`](05-thiet-lap.md) (Windows/Mac, QR, lỗi hay gặp). Kỹ thuật kênh:
 [`02-kenh-zalouser.md`](02-kenh-zalouser.md).
 
