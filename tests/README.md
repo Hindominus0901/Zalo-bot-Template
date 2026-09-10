@@ -3,6 +3,7 @@
 Chạy từ gốc repo:
 
     python3 -m unittest discover -s tests -v
+Windows: thay `python3` bằng `py`.
 
 Không cần pip. Xanh = file bắt buộc có mặt, ma trận khớp markdown, config mẫu
 `dmPolicy: open`, không commit khóa. **Không** chứng minh Gateway, Zalo, vision,

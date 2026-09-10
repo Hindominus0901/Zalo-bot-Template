@@ -16,7 +16,7 @@ CHO_CHU = "[CHỜ CHỦ SHOP]"
 
 DAU = """# Chỉ mục sổ — tờ nào nói việc gì
 
-Sinh tự động bởi `scripts/lam-chi-muc.sh`. **Đừng sửa tay** — sửa `summary`
+Sinh tự động bởi `scripts/lam_chi_muc.py`. **Đừng sửa tay** — sửa `summary`
 trong chính tờ đó rồi chạy lại.
 
 Bot đọc bảng này để biết mở tờ nào, không phải đoán tên file. Tờ có dấu `⏳` là

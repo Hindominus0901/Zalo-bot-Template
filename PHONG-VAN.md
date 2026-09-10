@@ -5,7 +5,7 @@ là bản đọc cho chủ (cùng 10 chủ đề) — đồng bộ từ file nà
 độc lập**. File nào điền đâu: chân mỗi chủ đề + mục cuối (chỉ agent).
 
 Bước **B2** trong [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md). Coding agent chạy
-hết B0→B7 theo [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md)
+hết B0→B7 theo [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md)
 — viết file ngay sau mỗi chủ đề, đừng chỉ hỏi.
 
 Chủ shop không rành kỹ thuật. Họ đang **kể về sản phẩm, dịch vụ, và cách đang

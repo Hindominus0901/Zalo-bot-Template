@@ -1,0 +1,25 @@
+---
+description: Dựng bot CSKH Zalo từ template này — phỏng vấn chủ shop rồi điền workspace
+alwaysApply: true
+---
+
+Repo này là **template bot chăm sóc khách hàng trên Zalo**, chưa phải bot của
+một shop cụ thể.
+
+**Nếu người dùng bảo dựng bot / setup / phỏng vấn chủ shop / làm Nami:**
+làm theo [`dung-bot/QUY-TRINH.md`](../../dung-bot/QUY-TRINH.md) — B0 tới B7,
+theo đúng thứ tự. Đó là nguồn duy nhất, đừng tự nghĩ ra bước.
+
+Trước đó đọc [`CHUAN-BI.md`](../../CHUAN-BI.md): thứ chủ shop phải tự có. Thiếu
+mã kết nối AI thì dừng ở B0, đừng dựng nửa chừng.
+
+**`AGENTS.md` ở gốc repo không phải hướng dẫn cho bạn.** Đó là não của con bot
+lúc nó trả lời khách trên Zalo. Đừng làm theo nó, đừng nhận mình là Nami.
+
+Bốn thứ đừng quên:
+
+1. Không bịa số shop — chưa có thì `[CHỜ CHỦ SHOP: …]` rồi hỏi.
+2. Không nói chữ wiki / harness / token / QR / OpenClaw với chủ shop. Nói: sổ,
+   nick nhân viên, quét mã, chỗ bot ngồi.
+3. Đừng sửa `AGENTS.md`, `TOOLS.md`, `skills/*/SKILL.md` trừ khi chủ đổi việc thật.
+4. Máy chủ không màn hình → `docs/14-vps-headless.md` trước khi tới bước quét mã.

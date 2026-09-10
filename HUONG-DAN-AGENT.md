@@ -1,7 +1,7 @@
 # Hướng dẫn cho coding agent
 
 > Luật khi **dựng bot cho một shop**. Bước B0→B7: skill
-> [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md) — đừng
+> [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md) — đừng
 > copy bước ở đây rồi lệch với skill.
 
 Bạn cầm **template workspace OpenClaw**, không phải bot Python. Phỏng vấn chủ
@@ -42,12 +42,12 @@ Không OA, không Bot Creator. Nick riêng + quét mã `zalouser`. Chi tiết b�
 
 ---
 
-## Thứ tự (chi tiết trong `khoi-tao`)
+## Thứ tự (chi tiết trong `dung-bot/QUY-TRINH.md`)
 
 B0 máy + nick → B1 đọc khung, giữ ba rào `AGENTS.md` → B2 hỏi / B3 viết ngay →
 B4 merge config → B5 đóng vai + chỉ mục + unittest **kho chữ** → B6 quét mã → B7 máy mở.
 
-Viết file sau mỗi câu: bảng trong `khoi-tao`. Wiki: `knowledge/CLAUDE.md`. **Cấm**
+Viết file sau mỗi câu: bảng trong `dung-bot/QUY-TRINH.md`. Wiki: `knowledge/CLAUDE.md`. **Cấm**
 tự mở web shop lấy giá; **cấm** copy `docs/vi-du-file-da-dien.md`.
 
 Unittest xanh = file khớp nhau, **không** = bot sống. Mở khách: [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md)
@@ -55,6 +55,6 @@ trên nick thật + [`docs/06-tieu-chuan.md`](docs/06-tieu-chuan.md).
 
 ## Xong khi
 
-Tick list đầy đủ trong `khoi-tao`. Tóm: IDENTITY khớp config; persona hết chỗ
+Tick list đầy đủ trong `dung-bot/QUY-TRINH.md`. Tóm: IDENTITY khớp config; persona hết chỗ
 bắt buộc; raw hoặc chủ nói không có tài liệu; wiki chỉ tờ có chữ; USER.md có
 người nhận bàn giao; 04 trên nick; họ nhắn thử được.

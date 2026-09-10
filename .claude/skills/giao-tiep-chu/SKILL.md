@@ -5,7 +5,7 @@ description: Nói với chủ shop khi dựng bot — chữ thường, không ja
 
 # Giao tiếp với chủ shop (coding agent)
 
-Dùng khi phỏng vấn, setup, giải thích lỗi máy. Bước dựng: `khoi-tao`. File/MCP:
+Dùng khi phỏng vấn, setup, giải thích lỗi máy. Bước dựng: `dung-bot/QUY-TRINH.md`. File/MCP:
 `lam-viec-dung`. **Không** nhầm với skill bot `skills/giao-tiep` (lúc chat khách).
 
 ## Miệng

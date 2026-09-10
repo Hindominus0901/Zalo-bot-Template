@@ -7,6 +7,7 @@ Hai cửa. Đừng gộp.
 ```bash
 python3 -m unittest discover -s tests -v
 ```
+Windows: thay `python3` bằng `py`.
 
 Xanh = workspace khớp (file, ma trận, rào trong markdown). **Không** = khách
 nhắn được. Chi tiết: [`tests/README.md`](../tests/README.md).
@@ -43,7 +44,7 @@ cả, chỉ mất tin, phình phiếu, hoặc đội tiền. Đạt khi:
    còn nguyên sau khi phiếu chạm trần.
 10. **Bàn giao không tắt bot.** Đang chờ người thật một việc, hỏi việc khác vẫn
     trả bình thường.
-11. **Chỉ mục khớp thư mục.** `scripts/lam-chi-muc.sh` chạy xong `git diff` phải
+11. **Chỉ mục khớp thư mục.** `scripts/lam_chi_muc.py` chạy xong `git diff` phải
     sạch. Lệch = bot đang tra một tờ không tồn tại.
 12. **Vòng học không đụng sổ.** Sau một đêm, `git status` trong `knowledge/`
     phải sạch. Có thay đổi = skill `hoc-lai` đang tự sửa số, hỏng.

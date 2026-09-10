@@ -193,7 +193,7 @@ class ChuanSkill(unittest.TestCase):
 class KichBanThuPhuCoChe(unittest.TestCase):
     def test_kich_ban_co_dong_cho_moi_co_che(self):
         kb = _read("docs/04-kich-ban-thu.md")
-        for co_che in ("no-tra-loi", "sodon", "1800", "lam-chi-muc.sh", "de-xuat", "system prompt"):
+        for co_che in ("no-tra-loi", "sodon", "1800", "lam_chi_muc", "de-xuat", "system prompt"):
             self.assertIn(co_che, kb, f"kich ban thu thieu {co_che}")
 
     def test_tieu_chuan_co_cua_may(self):
@@ -205,8 +205,8 @@ class KichBanThuPhuCoChe(unittest.TestCase):
 class LuongDungNhoChiMuc(unittest.TestCase):
     def test_khoi_tao_chay_lai_chi_muc(self):
         """Điền wiki xong mà quên sinh lại chỉ mục thì bot đọc mô tả cũ."""
-        skill = _read(".claude/skills/khoi-tao/SKILL.md")
-        self.assertIn("lam-chi-muc.sh", skill)
-        i = skill.index("lam-chi-muc.sh")
+        skill = _read("dung-bot/QUY-TRINH.md")
+        self.assertIn("lam_chi_muc", skill)
+        i = skill.index("lam_chi_muc")
         j = skill.index("unittest discover")
         self.assertLess(i, j, "chi muc phai chay truoc test")

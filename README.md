@@ -14,7 +14,7 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 ## Chủ shop / coding agent làm gì
 
 1. **Chủ shop (chữ thường):** [`docs/08-luong-chu-shop.md`](docs/08-luong-chu-shop.md) · sổ/dữ liệu: [`docs/09-kho-va-du-lieu.md`](docs/09-kho-va-du-lieu.md) · ngày thường: [`docs/07-cach-dung.md`](docs/07-cach-dung.md)
-2. **Người dựng (coding agent):** skill [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md) · [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md) · hỏi (đọc): [`docs/bo-cau-hoi.md`](docs/bo-cau-hoi.md) · nguồn đủ: [`PHONG-VAN.md`](PHONG-VAN.md)
+2. **Người dựng (coding agent):** [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md) · [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md) · hỏi (đọc): [`docs/bo-cau-hoi.md`](docs/bo-cau-hoi.md) · nguồn đủ: [`PHONG-VAN.md`](PHONG-VAN.md)
 3. File gốc vào `knowledge/raw/`, wiki tách theo `knowledge/CLAUDE.md` (giải thích thường = file 09)
 4. Bật nick (người chưa cài): [`docs/05-thiet-lap.md`](docs/05-thiet-lap.md) · thử: [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) · chuẩn: [`docs/06-tieu-chuan.md`](docs/06-tieu-chuan.md)
 5. Test **kho chữ**: `python3 -m unittest discover -s tests -v` — xanh ≠ nick sống. Nick: bước 4.
@@ -26,10 +26,10 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 | | File |
 |---|---|
 | Brain | `SOUL.md` · `giong-noi.md` · `cach-tu-van.md` · `tuduy-cskh.md` · `IDENTITY.md` (**Nami**) · `persona.md` |
-| Wiki | `knowledge/wiki/` ← tách từ `knowledge/raw/` (câu 3); chỉ mục `INDEX.md` sinh bằng `scripts/lam-chi-muc.sh` |
+| Wiki | `knowledge/wiki/` ← tách từ `knowledge/raw/` (câu 3); chỉ mục `INDEX.md` sinh bằng `scripts/lam_chi_muc.py` |
 | Chat (OpenClaw nạp) | `AGENTS.md` · `SOUL.md` · `TOOLS.md` · `IDENTITY.md` · `USER.md` |
 | Harness thêm | `BOOT.md` · `HEARTBEAT.md` · `skills/` · `memory/phieu/` · `memory/de-xuat/` |
-| Dựng shop | `.claude/skills/khoi-tao` · `giao-tiep-chu` · `lam-viec-dung` · `HUONG-DAN-AGENT.md` |
+| Dựng shop | `dung-bot/QUY-TRINH.md` · skill `giao-tiep-chu` · `lam-viec-dung` · `HUONG-DAN-AGENT.md` |
 
 Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `PHONG-VAN.md` rồi điền.
 
@@ -60,7 +60,7 @@ Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `P
 | [`docs/12-prompt-va-cache.md`](docs/12-prompt-va-cache.md) | Ba tầng prompt — nền cố định vs thứ của lượt |
 | [`docs/13-an-toan.md`](docs/13-an-toan.md) | Khối `<policy>`, hàng rào dữ liệu ngoài, mẫu câu dụ tiếng Việt |
 | [`docs/14-vps-headless.md`](docs/14-vps-headless.md) | VPS không màn hình: quét mã qua SSH, chạy 24/7, quét lại khi phiên chết |
-| [`.claude/skills/khoi-tao/SKILL.md`](.claude/skills/khoi-tao/SKILL.md) | Coding agent dựng shop: B0→B7 chi tiết |
+| [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md) | Coding agent dựng shop: B0→B7 chi tiết — **nguồn duy nhất** |
 | [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) | Tin thử: tình huống + giọng + ảnh + follow-up |
 | [`docs/vi-du-file-da-dien.md`](docs/vi-du-file-da-dien.md) | Shop **giả** — đừng copy số vào wiki thật |
 | [`SOUL.md`](SOUL.md) | Tính cách Nami: để ý, thành thật, vui nhẹ, hài đúng lúc |

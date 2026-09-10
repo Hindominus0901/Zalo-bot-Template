@@ -34,7 +34,7 @@ wiki + `USER.md`, quét QR nick riêng (`docs/05` + `docs/10`), chạy
 `anh-tinh-huong.md`), phiếu theo ID, tư duy 10 bước (`tuduy-cskh.md`, GỘP/TÁCH C),
 bản đồ vòng (`workflow-cskh.md`), system prompt + catalog tool (`TOOLS.md`),
 follow-up hai nhánh (`skills/follow-up`), tool `doc_anh` + MCP Drive (tắt sẵn),
-skill bot `giao-tiep` / `lam-viec`, skill dựng `khoi-tao` / `giao-tiep-chu` /
+skill bot `giao-tiep` / `lam-viec`, quy trình dựng `dung-bot/QUY-TRINH.md`, skill `giao-tiep-chu` /
 `lam-viec-dung`,
 phàn nàn, từ chối, khách cũ, thu SĐT, bàn giao, `BOOT.md`, ví dụ file đã điền,
 `docs/05-thiet-lap.md` / `06-tieu-chuan.md` / `07-cach-dung.md`, unittest `tests/`,

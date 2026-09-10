@@ -22,7 +22,7 @@ Skill = cách hay, không phải cổng. Khách đi tắt thì đi tắt. Não c
 | `follow-up` | Heartbeat: im sau giá / sau đơn |
 | `hoc-lai` | Heartbeat cuối ngày: đề xuất bài học + vá sổ cho chủ |
 
-Coding agent **dựng shop**: `.claude/skills/khoi-tao` · `giao-tiep-chu` ·
+Coding agent **dựng shop**: `dung-bot/QUY-TRINH.md` · skill `giao-tiep-chu` ·
 `lam-viec-dung`. MCP: `docs/11-mcp-ung-dung.md`.
 
 ---

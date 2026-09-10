@@ -16,7 +16,7 @@ knowledge/
    └─ internal/       ← chỉ chủ / nhân viên; bot không nhắc sự tồn tại
 ```
 
-**Thêm / xóa / đổi tên tờ trong `public/` → chạy `scripts/lam-chi-muc.sh`.**
+**Thêm / xóa / đổi tên tờ trong `public/` → chạy `scripts/lam_chi_muc.py`.**
 Sửa số bên trong một tờ thì không cần. Đừng sửa `INDEX.md` bằng tay: nó sinh từ
 `title` + `summary` của chính các tờ, sửa tay là lần chạy sau mất.
 

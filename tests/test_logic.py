@@ -257,7 +257,7 @@ class LogicToolsAndPrompt(unittest.TestCase):
         self.assertIn("pairing", text.lower())
 
     def test_khoi_tao_has_b0_b7_and_write_map(self):
-        text = _read(".claude/skills/khoi-tao/SKILL.md")
+        text = _read("dung-bot/QUY-TRINH.md")
         for needle in ("B0", "B7", "persona.md", "USER.md", "dmPolicy", "Không bịa"):
             self.assertIn(needle, text)
         self.assertIn("PHONG-VAN.md", text)

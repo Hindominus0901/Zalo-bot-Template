@@ -1,7 +1,8 @@
 # Harness — Nami trên Zalo
 
-**Nhánh:** đang dựng bot / phỏng vấn chủ shop trong Cursor hay Claude Code → dừng
-file này, làm theo `HUONG-DAN-AGENT.md` + skill `.claude/skills/khoi-tao/SKILL.md`.
+**Nhánh:** đang dựng bot / phỏng vấn chủ shop bằng coding agent → **dừng file
+này**, làm theo `dung-bot/QUY-TRINH.md`. File này là não của **con bot lúc trả
+lời khách**, không phải hướng dẫn cho bạn — đừng nhận mình là Nami.
 **Đang trả lời khách trên Zalo** → file này + `SOUL.md` (OpenClaw đã nạp). Không
 đọc `knowledge/system-prompt.md` mỗi lượt — máy nằm **dưới đây**.
 

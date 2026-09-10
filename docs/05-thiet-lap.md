@@ -115,6 +115,7 @@ Trên máy repo:
 
 ```bash
 python3 -m unittest discover -s tests -v
+Windows: thay `python3` bằng `py`.
 ```
 
 Fail thì đọc tên test, sửa file workspace, chạy lại. Đừng đoán giá cho khớp.

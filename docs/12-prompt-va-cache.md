@@ -60,7 +60,7 @@ khởi động lại gateway, đừng sửa nóng.
 
 `knowledge/wiki/public/*.md` thì khác — nội dung trang chỉ nạp khi bot cần
 (`doc-wiki`), nằm ở tầng 3. Sửa số trong trang **không** cần khởi động lại.
-Nhưng **thêm hoặc xóa trang** thì phải chạy lại `scripts/lam-chi-muc.sh` vì
+Nhưng **thêm hoặc xóa trang** thì phải chạy lại `scripts/lam_chi_muc.py` vì
 `INDEX.md` nằm ở tầng 2.
 
 ---

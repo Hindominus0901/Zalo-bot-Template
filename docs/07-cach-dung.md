@@ -21,7 +21,7 @@ Muốn đổi tên nhân viên: nói tên mới — người dựng sửa `IDENT
 
 ## Người dựng (coding agent / freelancer)
 
-Skill `.claude/skills/khoi-tao` + `HUONG-DAN-AGENT.md`. Phỏng vấn `PHONG-VAN.md`.
+[`../dung-bot/QUY-TRINH.md`](../dung-bot/QUY-TRINH.md) + `HUONG-DAN-AGENT.md`. Phỏng vấn `PHONG-VAN.md`.
 Đừng bịa wiki. Bot chat: `AGENTS.md` + `TOOLS.md` + `skills/`.
 
 Xong bước kỹ thuật: `docs/05-thiet-lap.md`. `tests/` = kho chữ; nick:

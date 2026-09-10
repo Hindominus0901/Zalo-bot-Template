@@ -5,7 +5,7 @@ description: Làm việc dựng bot — file, ảnh, MCP Drive. Không cào web 
 
 # Làm việc + MCP (coding agent)
 
-Dựng: `khoi-tao` B0→B7. Nói với chủ: `giao-tiep-chu`. Bus:
+Dựng: `dung-bot/QUY-TRINH.md` B0→B7. Nói với chủ: `giao-tiep-chu`. Bus:
 [`docs/11-mcp-ung-dung.md`](../../../docs/11-mcp-ung-dung.md).
 **Không** nhầm với skill bot `skills/lam-viec` (ca chat).
 

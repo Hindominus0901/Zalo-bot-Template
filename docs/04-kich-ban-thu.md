@@ -65,7 +65,7 @@ gateway, xem log), không chỉ nhắn tin.
 | 45 | Như trên nhưng bật lại **sau hơn 12h** | **Không** nhắn khách. Chỉ báo chủ trong tóm tắt boot |
 | 46 | Chat dài với một khách tới khi phiếu gần 1800 ký tự | Phiếu **gộp dòng cũ** rồi ghi tiếp. `size`, `trang_thai_don`, `ban_giao` vẫn còn |
 | 47 | Hỏi một việc **sổ chưa có tờ nào** (ví dụ đổi màu sau khi mua) | Nói chưa chắc phần đó, ở lại chat. **Không** bịa tên tờ, không bịa chính sách |
-| 48 | Xoá một tờ trong `wiki/public/` rồi hỏi đúng việc đó | Trước khi thử: chạy `scripts/lam-chi-muc.sh`. Bot coi như sổ chưa có mục đó |
+| 48 | Xoá một tờ trong `wiki/public/` rồi hỏi đúng việc đó | Trước khi thử: chạy `scripts/lam_chi_muc.py`. Bot coi như sổ chưa có mục đó |
 | 49 | Nhắn liên tục ~50 lượt trong một phiên, rồi xem hoá đơn model | Phần lớn token đầu prompt phải là **đọc lại từ cache**. Không giảm = nền prompt đang vỡ, xem `docs/12` |
 | 50 | Để qua đêm, sáng xem `memory/de-xuat/` | Có file **chỉ khi** hôm qua thật sự có gì để đề xuất. `git status` trong `knowledge/` phải **sạch** |
 
@@ -81,7 +81,7 @@ Follow-up: `workflow-cskh.md`, `skills/follow-up/SKILL.md`, `HEARTBEAT.md`.
 
 Cơ chế sai → sửa đúng chỗ: nhịp tin `AGENTS.md`; hàng rào `docs/13-an-toan.md`;
 tra đơn `skills/theo-don` + `config/mcp.example.json5`; bàn giao `skills/ban-giao`;
-tin nợ `BOOT.md`; trần phiếu `skills/phieu`; chỉ mục `scripts/lam-chi-muc.sh`;
+tin nợ `BOOT.md`; trần phiếu `skills/phieu`; chỉ mục `scripts/lam_chi_muc.py`;
 nền prompt `docs/12-prompt-va-cache.md`.
 
 Xong 34 dòng đầu + `python3 -m unittest discover -s tests -v` xanh: mới được nói
