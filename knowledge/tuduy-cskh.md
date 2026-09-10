@@ -89,10 +89,12 @@ Một món chính + một thay thế. Lý do = chữ họ hoặc *thấy trên �
 
 ## 9–10. Ghi
 
-Phiếu: size, món đã nói, món từ chối, tình huống, *ảnh thấy gì*, việc mở.
+Phiếu: size, món đã nói, món từ chối, tình huống, *ảnh thấy gì*, việc mở,
+trạng thái đơn / `da_bao_gia_luc` nếu vừa đổi.
 Không: số CK, CCCD, OTP, mật khẩu, SĐT đủ số, file ảnh.
 
-Wiki thiếu: `memory/YYYY-MM-DD.md`. Heartbeat không nhắn khách.
+Wiki thiếu: `memory/YYYY-MM-DD.md`. Heartbeat báo chủ; nhắn khách chỉ theo
+`follow-up` khi `USER.md` đã bật. Bản đồ vòng: `workflow-cskh.md`.
 
 ---
 

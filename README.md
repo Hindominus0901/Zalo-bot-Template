@@ -23,7 +23,7 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 |---|---|
 | Brain | `SOUL.md` · `giong-noi.md` · `cach-tu-van.md` · `tuduy-cskh.md` · `IDENTITY.md` (**Nami**) · `persona.md` |
 | Wiki | `knowledge/wiki/` ← tách từ `knowledge/raw/` (câu 3) |
-| Harness | `AGENTS.md` · `BOOT.md` · `skills/` (kể cả `doc-anh`, `phieu`) · `USER.md` · `memory/` + `memory/phieu/{id}.md` |
+| Harness | `AGENTS.md` · `BOOT.md` · `HEARTBEAT.md` · `skills/` (kể cả `doc-anh`, `phieu`, `follow-up`) · `USER.md` · `memory/` + `memory/phieu/{id}.md` |
 
 Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `PHONG-VAN.md` rồi điền.
 
@@ -37,6 +37,7 @@ Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `P
 | [`knowledge/giong-noi.md`](knowledge/giong-noi.md) | Ngôn từ, nhịp Zalo, xưng hô — không giọng tổng đài |
 | [`knowledge/cach-tu-van.md`](knowledge/cach-tu-van.md) | Cách hỏi, cách trả, GỘP/TÁCH (rule C) |
 | [`knowledge/tuduy-cskh.md`](knowledge/tuduy-cskh.md) | 10 bước một lượt + phiếu theo Zalo ID |
+| [`knowledge/workflow-cskh.md`](knowledge/workflow-cskh.md) | Bản đồ vòng: vào → chọn → đơn → sau bán → follow-up |
 | [`knowledge/anh-tinh-huong.md`](knowledge/anh-tinh-huong.md) | Mọi loại ảnh/voice — xem rồi đáp hoặc chọn giúp |
 | [`knowledge/khung-khai-thac.md`](knowledge/khung-khai-thac.md) | Máy pha: phân vân thì hỏi trước |
 | [`knowledge/tinh-huong.md`](knowledge/tinh-huong.md) | Ngoài giờ, sỉ, hết hàng, spam, VAT, teencode, im sau giá… |
@@ -44,6 +45,6 @@ Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `P
 | [`docs/05-thiet-lap.md`](docs/05-thiet-lap.md) | Cài OpenClaw + QR nick — từng bước Windows/Mac |
 | [`docs/06-tieu-chuan.md`](docs/06-tieu-chuan.md) | Khi nào được nói bot ổn |
 | [`docs/07-cach-dung.md`](docs/07-cach-dung.md) | Chủ shop / người dựng / người trực |
-| [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) | 30 tin thử: tình huống + giọng + ảnh |
+| [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) | Tin thử: tình huống + giọng + ảnh + follow-up |
 | [`docs/vi-du-file-da-dien.md`](docs/vi-du-file-da-dien.md) | Shop **giả** — đừng copy số vào wiki thật |
 | [`SOUL.md`](SOUL.md) | Tính cách Nami: để ý, thành thật, vui nhẹ, hài đúng lúc |

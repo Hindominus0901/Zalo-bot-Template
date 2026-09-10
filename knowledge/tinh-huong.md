@@ -117,6 +117,9 @@ chỉ từ wiki. Đừng giảng chính tả, đừng giả teen nếu họ gõ 
 
 ## Khách im sau báo giá
 
-Đã báo giá (wiki) mà họ im: **một** cửa mở (*cứ nhắn lại khi cần*), rồi dừng.
-Không hỏi “anh/chị còn đó không”, không nhắc giá lần hai, không hẹn follow-up
-sau vài ngày.
+Trong phiên: **một** cửa mở (*cứ nhắn lại khi cần*), rồi dừng. Không hỏi
+“anh/chị còn đó không”, không nhắc giá lần hai.
+
+Heartbeat: nếu `USER.md` bật nhánh im + phiếu có `da_bao_gia_luc` + hết delay →
+**đúng một** tin (`follow-up`), ghi `followup_im: da_gui`. `USER.md` tắt / chưa
+điền → không hẹn, không gửi. Không lần hai.

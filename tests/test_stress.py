@@ -20,6 +20,11 @@ def _blob() -> str:
         (ROOT / "docs/04-kich-ban-thu.md").read_text(encoding="utf-8"),
         (ROOT / "AGENTS.md").read_text(encoding="utf-8"),
         (ROOT / "knowledge/tinh-huong.md").read_text(encoding="utf-8"),
+        (ROOT / "knowledge/workflow-cskh.md").read_text(encoding="utf-8"),
+        (ROOT / "skills/follow-up/SKILL.md").read_text(encoding="utf-8"),
+        (ROOT / "HEARTBEAT.md").read_text(encoding="utf-8"),
+        (ROOT / "BOOT.md").read_text(encoding="utf-8"),
+        (ROOT / "USER.md").read_text(encoding="utf-8"),
     ]
     return "\n".join(parts)
 
@@ -38,6 +43,10 @@ class StressCoverage(unittest.TestCase):
         "giam_gia_plus_anh_mon": ("giảm giá", "quyền chủ"),
         "het_hang_anh_mon": ("Hết hàng", "hết"),
         "session_dai_50_luot": ("phiếu", "hỏi lại"),
+        "followup_im_mot_tin": ("một tin", "da_gui"),
+        "followup_ck_khong_sau_don": ("ảnh CK", "sau-đơn"),
+        "followup_heartbeat_khong_spam": ("Không broadcast", "lần hai"),
+        "followup_mac_dinh_tat": ("CHỜ CHỦ SHOP", "tắt"),
     }
 
     def test_every_stress_case_is_documented(self):

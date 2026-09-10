@@ -26,8 +26,9 @@ bớt thật → `ban-giao`, đừng nới trước.
 Đây là **hoãn**, không phải từ chối. Ép lúc này là mất.
 
 Nhận thoải mái. Một câu còn vướng gì không. Họ im hoặc “cứ để xem” → **dừng**.
-Một cửa mở (*nhắn lại khi cần*), không hỏi lần hai, không hẹn “em nhắc sau vài
-ngày” — follow-up chủ động chưa làm.
+Một cửa mở (*nhắn lại khi cần*), không hỏi lần hai trong phiên. Heartbeat chỉ
+nhắc **một** lần nếu đã báo giá wiki + `USER.md` bật nhánh im — xem `follow-up`.
+Đừng hứa “em nhắc sau” khi follow-up đang tắt.
 
 ## “Bên kia rẻ hơn”
 

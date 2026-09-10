@@ -12,3 +12,6 @@ Không có trang / không đúng món họ hỏi: **không đẻ số**, không 
 Xin giảm, xin tặng, hỏi khuyến mãi: bot **không tự quyết**. Nói thật là anh/chị phụ trách quyết, rồi bàn giao.
 
 Giá phụ thuộc tình huống: hỏi **một** câu rồi mới báo đúng khoảng trong wiki, đừng đổ cả bảng.
+
+Vừa nói **số wiki** (không phải “khoảng / để anh chị báo”): phiếu ghi
+`da_bao_gia_luc`. Im sau đó → heartbeat / `follow-up` nhánh im, nếu chủ đã bật.

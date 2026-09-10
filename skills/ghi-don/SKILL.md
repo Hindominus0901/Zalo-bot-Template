@@ -19,4 +19,8 @@ Lấy lần lượt, một lượt một ý (bỏ qua cái họ đã nói):
 Đủ rồi: đọc lại **một lần** cho họ soi, nói em chuyển anh/chị phụ trách xác nhận.
 Skill `ban-giao`. Ảnh CK lúc này → `doc-anh`, không nhận là đã có tiền.
 
+Phiếu: `trang_thai_don: cho_chot`, `don_ghi_luc` = giờ ghi. `followup_don` để
+`chua` trừ khi `USER.md` tắt nhánh. **Không** ghi `da_chot_chu` — chủ chốt tay.
+Ảnh CK **không** đủ để coi là đã ghi đơn.
+
 Còn hàng / còn slot: wiki có thì nói đúng wiki; không có thì không đoán — ghi đơn tạm, để người chốt.

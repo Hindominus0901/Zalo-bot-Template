@@ -80,7 +80,7 @@ class LogicMatrix(unittest.TestCase):
 
     def test_agents_loads_thinking_layer(self):
         text = _read("AGENTS.md")
-        for needle in ("tuduy-cskh.md", "anh-tinh-huong.md", "phieu"):
+        for needle in ("tuduy-cskh.md", "anh-tinh-huong.md", "phieu", "workflow-cskh.md", "follow-up"):
             self.assertIn(needle, text)
 
     def test_phieu_mau_has_fields(self):
@@ -109,3 +109,55 @@ class LogicMatrix(unittest.TestCase):
 
         documented = {row["id"] for row in matrix()["stress"]}
         self.assertEqual(documented, set(StressCoverage.EXPECT_NEEDLES))
+
+
+class LogicFollowup(unittest.TestCase):
+    def test_matrix_followup_gates(self):
+        f = matrix()["followup"]
+        self.assertEqual(f["mac_dinh"], "tat")
+        self.assertEqual(f["nhanh"], ["im_sau_gia", "sau_don"])
+        self.assertTrue(f["mot_tin_moi_nhanh"])
+        self.assertFalse(f["lan_hai_khi_im"])
+        self.assertTrue(f["ck_khong_kich_hoat_sau_don"])
+        self.assertTrue(f["boot_khong_gui"])
+        self.assertFalse(f["review_tu_hoi"])
+
+    def test_user_defaults_off(self):
+        text = _read("USER.md")
+        self.assertIn("CHỜ CHỦ SHOP", text)
+        self.assertIn("Im sau giá", text)
+        self.assertIn("Sau đơn", text)
+        self.assertIn("Câu mẫu sau đơn", text)
+        self.assertIn("mặc định tắt", text.lower())
+
+    def test_heartbeat_scans_phieu_boot_does_not(self):
+        hb = _read("HEARTBEAT.md")
+        boot = _read("BOOT.md")
+        skill = _read("skills/follow-up/SKILL.md")
+        self.assertIn("memory/phieu/", hb)
+        self.assertIn("da_gui", hb)
+        self.assertIn("Không broadcast", hb)
+        self.assertIn("không", boot.lower())
+        self.assertIn("follow-up", boot.lower())
+        self.assertIn("không", boot.lower())
+        self.assertIn("burst", boot.lower())
+        self.assertIn("ảnh ck", skill.lower())
+        self.assertIn("da_gui", skill)
+        self.assertIn("USER.md", skill)
+
+    def test_workflow_and_quyet_dinh_unlock(self):
+        wf = _read("knowledge/workflow-cskh.md")
+        qd = _read("docs/quyet-dinh.md")
+        self.assertIn("Im sau giá", wf)
+        self.assertIn("Sau đơn", wf)
+        self.assertIn("follow-up", qd.lower())
+        self.assertNotIn("Nhắn chủ động follow-up: **chưa** làm", qd)
+
+    def test_interview_maps_to_user(self):
+        pv = _read("PHONG-VAN.md")
+        bo = _read("docs/bo-cau-hoi.md")
+        for text in (pv, bo):
+            self.assertIn("im sau khi em báo giá", text.lower())
+            self.assertIn("đã ghi đơn", text.lower())
+            self.assertIn("tắt", text.lower())
+            self.assertNotIn("bản này **chưa làm**", text)

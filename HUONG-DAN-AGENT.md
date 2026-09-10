@@ -56,7 +56,8 @@ Chưa quét QR lúc này.
 ### B1 — Đọc khung, đừng đụng rào cứng
 
 Đọc: `SOUL.md`, `knowledge/giong-noi.md`, `knowledge/cach-tu-van.md`, `AGENTS.md`,
-`docs/01-it-rao-da-dang.md`, `knowledge/moi-loai-cau-hoi.md`, `knowledge/hoi-thoai-mau.md`.
+`knowledge/workflow-cskh.md`, `docs/01-it-rao-da-dang.md`,
+`knowledge/moi-loai-cau-hoi.md`, `knowledge/hoi-thoai-mau.md`.
 
 Không xóa ba rào trong `AGENTS.md` (tiền, nội bộ, jailbreak).
 
@@ -78,6 +79,7 @@ Câu 3: xin **tài liệu sản phẩm, dịch vụ, giá, chính sách** — kh
 | Xưng hô + 2–3 tin thật của chủ | `SOUL.md` đoạn cuối — **không** viết lại `giong-noi.md` / `cach-tu-van.md` |
 | Bán gì, khách lo, ranh giới, tin mở | `knowledge/persona.md` |
 | Bàn giao, giờ gọi lại, nhóm nội bộ | `USER.md` |
+| Follow-up: tắt / delay / câu mẫu sau đơn | `USER.md` (câu 8). Chưa điền = **tắt** |
 | File/ảnh/link câu 3 | `knowledge/raw/` rồi tách `knowledge/wiki/` — danh sách trang: `wiki/TRANG-MAU.md` |
 | FAQ miệng câu 6 | `wiki/` (lấp chỗ raw thiếu) |
 | Slot lúc phân vân | `skills/khai-thac/SKILL.md` |
@@ -113,7 +115,8 @@ Có biệt hiệu (*shop ơi*): `agents.entries.main.groupChat.mentionPatterns` 
 **tên gốc + biệt hiệu**. Chỉ ghi biệt hiệu thì hết nhận *Nami ơi*.
 
 Muốn checklist lúc Gateway bật: `openclaw hooks enable boot-md`. `BOOT.md` **cấm**
-nhắn khách; bàn giao dở chỉ gửi kênh trong `USER.md`.
+nhắn khách và **cấm** burst follow-up lúc restart; bàn giao dở chỉ gửi kênh trong
+`USER.md`. Follow-up (nếu chủ bật) nằm ở `HEARTBEAT.md` + skill `follow-up`.
 
 **Không commit** `openclaw.json` thật, cookie, QR.
 
@@ -125,7 +128,7 @@ giá mẫu). Sai trang thì sửa wiki. Giọng tổng đài thì sửa giọng,
 Còn `[CHỜ CHỦ SHOP]` trên persona / giá thì chưa xong phần số.
 
 Sau QR: chạy [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) từ nick khác
-(30 dòng) và `python3 -m unittest discover -s tests -v` trên máy repo.
+và `python3 -m unittest discover -s tests -v` trên máy repo.
 
 ### B6 — Nối nick (cùng họ)
 

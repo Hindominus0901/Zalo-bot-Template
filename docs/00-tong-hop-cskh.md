@@ -179,7 +179,8 @@ còn runtime và Tom):
 5. **Runtime:** workspace OpenClaw + zalouser, chưa dựng trên nick thật. File Tom (SOUL máy cũ) chưa có trong repo.
 
 Từ chối / lead / khách cũ: đã có skill (`xu-ly-tu-choi`, `thu-lead`, `cham-khach-cu`).
-Few-shot: `knowledge/hoi-thoai-mau.md`. Restart: `BOOT.md` (không nhắn khách).
+Few-shot: `knowledge/hoi-thoai-mau.md`. Restart: `BOOT.md` (không nhắn khách,
+không burst follow-up). Bản đồ vòng: `knowledge/workflow-cskh.md`.
 
 OpenClaw đóng góp một ý tách file: `SOUL.md` = giọng và tính cách; luật vận hành
 ở chỗ khác. Template mới nên tách `giong-noi.md` khỏi `persona.md` (bối cảnh

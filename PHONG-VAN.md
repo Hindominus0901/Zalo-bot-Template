@@ -242,10 +242,16 @@ của chủ thắng khi lệch với ví dụ generic.
 >
 > Có nhóm Zalo riêng để báo “có khách đang chờ” không?
 >
-> Nhắn lại khách sau vài ngày: bản này **chưa làm**. Anh/chị có cần, để em ghi
-> chú, chưa hứa có ngay.
+> Khách **im sau khi em báo giá** — anh/chị muốn bot nhắn lại **một lần**
+> không? Nói **tắt**, hoặc sau bao nhiêu giờ (24 hay 48 thường đủ). Chưa nói =
+> tắt, em không nhắn.
+>
+> Sau khi **đã ghi đơn** hoặc anh/chị đã chốt — muốn bot hỏi một câu *nhận hàng
+> chưa* / *dùng ổn không* không? Tắt, hoặc sau bao nhiêu giờ, **và viết đúng
+> câu** muốn gửi. Không viết câu = tắt. Không tự hỏi đánh giá nếu anh/chị chưa
+> cho câu đó. Ảnh chuyển khoản **không** tính là đã có đơn.
 
-→ `USER.md` + `knowledge/tinh-huong.md` (ngoài giờ, ảnh, nhóm). Ảnh CK/hàng → skill `doc-anh`.
+→ `USER.md` (kể cả mục Follow-up) + `knowledge/tinh-huong.md`. Ảnh CK/hàng → skill `doc-anh`. Follow-up → `skills/follow-up/SKILL.md`. Chưa điền = tắt.
 
 ---
 

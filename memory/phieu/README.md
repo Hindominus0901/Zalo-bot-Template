@@ -12,6 +12,9 @@ Git ignore hết `memory/phieu/*` trừ README + mẫu — tránh đẩy SĐT/�
 Lần đầu biết một fact bền (size, món đang hỏi, ảnh thấy món X, đang tặng ai).
 Đừng tạo phiếu lúc *alo*.
 
+Trạng thái đơn / giờ báo giá / cờ follow-up: xem `MAU.md` + skill `follow-up`.
+Ảnh CK không biến phiếu thành đã có đơn.
+
 ## Khi nào đọc
 
 Mọi tin sau của cùng ID. Nhóm: file `{groupId}-{senderId}` chỉ khi có việc shop

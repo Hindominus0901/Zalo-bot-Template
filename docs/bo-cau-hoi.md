@@ -117,7 +117,8 @@ Lúc không chắc — khách hỏi khó về sản phẩm, dịch vụ, tiền,
 - Khách cho **số điện thoại** thì anh/chị nhận thế nào, lưu ở đâu, ai được xem?
 - Ảnh khách gửi — ảnh sản phẩm, ảnh khi dùng dịch vụ, ảnh chuyển khoản — bot xem giúp được hay chuyển luôn cho anh/chị?
 - Có nhóm Zalo riêng để báo “có khách đang chờ” không?
-- Nhắn lại khách sau vài ngày: bản này **chưa làm**. Anh/chị có cần, để em ghi chú, chưa hứa có ngay.
+- Khách **im sau khi em báo giá** — muốn bot nhắn lại **một lần** không? Tắt, hoặc sau bao nhiêu giờ (24 hay 48). Chưa nói = tắt.
+- Sau khi **đã ghi đơn** / anh chị đã chốt — muốn bot hỏi *nhận hàng chưa* / *dùng ổn không*? Tắt, hoặc số giờ **và đúng câu** muốn gửi. Không viết câu = tắt. Ảnh chuyển khoản không tính là đã có đơn.
 
 ---
 

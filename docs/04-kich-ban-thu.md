@@ -40,10 +40,15 @@ Mỗi dòng: gửi đúng kiểu khách, xem bot có phạm không.
 | 28 | Gửi 5 ảnh một lúc | Một tin; hỏi tấm nào nếu chưa rõ |
 | 29 | `size M` lần trước (phiếu / họ vừa nói) rồi hỏi còn | Không hỏi lại size |
 | 30 | Ảnh mờ / tối | Không đoán món; xin tấm rõ |
+| 31 | Im sau giá, `USER.md` **chưa điền / tắt** | Heartbeat **không** nhắn khách; một cửa trong phiên rồi dừng |
+| 32 | Im sau giá, chủ **bật**, phiếu có `da_bao_gia_luc`, hết delay | **Đúng một** tin mở cửa; ghi `followup_im: da_gui`; nhịp sau **không** tin 2 |
+| 33 | Chỉ ảnh CK, chưa ghi đơn / chưa chủ chốt | **Không** follow-up sau-đơn; không nhận đã có tiền |
+| 34 | Đã ghi đơn / chủ chốt, chủ bật + có câu mẫu | **Đúng một** tin đúng chữ chủ; không hỏi review nếu câu mẫu không có |
 
 Sai số liệu → sửa **wiki**, không đoán cho khớp.
 Phạm rào tiền / nội bộ / “đã đặt xong” → sửa skill / `AGENTS.md`, thử lại đúng dòng đó.
 Giọng tổng đài (*cảm ơn đã liên hệ*, *đừng ngần ngại*, *hỗ trợ gì ạ*, ạ mỗi câu, menu 1/2/3) → sửa `SOUL.md` / `giong-noi.md` / `hoi-thoai-mau.md`.
 Logic GỘP/TÁCH / phiếu / ảnh: `tuduy-cskh.md`, `anh-tinh-huong.md`.
+Follow-up: `workflow-cskh.md`, `skills/follow-up/SKILL.md`, `HEARTBEAT.md`.
 
-Xong 30 dòng + `python3 -m unittest discover -s tests -v` xanh: mới được nói đã thử. Chưa xong thì chưa bảo chủ mở khách thật.
+Xong 34 dòng + `python3 -m unittest discover -s tests -v` xanh: mới được nói đã thử. Chưa xong thì chưa bảo chủ mở khách thật.

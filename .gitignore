@@ -4,6 +4,8 @@ openclaw.json
 **/*.pem
 **/secrets*
 .DS_Store
+__pycache__/
+*.pyc
 knowledge/raw/*
 !knowledge/raw/NGUON.md
 !knowledge/raw/.gitkeep

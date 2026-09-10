@@ -15,16 +15,19 @@ dòng này khi phỏng vấn một shop. Shop-level hỏi ở `PHONG-VAN.md`.
 - Máy khai thác bật mặc định khi khách phân vân
 - GỘP/TÁCH **C**: fact nhẹ + chắc thì cùng tin một phương án; CK/lỗi/giấy tờ/không chắc món thì tách
 - Phiếu ngắn **theo Zalo senderId** (`memory/phieu/`) — không CRM/CSV đơn
-- Nhắn chủ động follow-up: **chưa** làm ở bản đầu
+- Follow-up chủ động: **hai nhánh có rào** (im sau giá = một tin rồi khóa; sau
+  đơn = câu mẫu chủ). Mặc định **tắt** nếu `USER.md` chưa điền. Không broadcast,
+  không lần hai khi im, không vì chỉ có ảnh CK
 - File Tom (SOUL máy cũ) chưa có trong repo — giọng mặc định là `SOUL.md` ở đây
 
 ## Bản này làm / chưa làm
 
 **Làm:** giọng kỹ, wiki, khai thác, báo giá, ghi đơn, theo đơn, ảnh (ma trận
 `anh-tinh-huong.md`), phiếu theo ID, tư duy 10 bước (`tuduy-cskh.md`, GỘP/TÁCH C),
+bản đồ vòng (`workflow-cskh.md`), follow-up hai nhánh (`skills/follow-up`),
 phàn nàn, từ chối, khách cũ, thu SĐT, bàn giao, `BOOT.md`, ví dụ file đã điền,
 `docs/05-thiet-lap.md` / `06-tieu-chuan.md` / `07-cach-dung.md`, unittest `tests/`,
-30 tin thử nick.
+kịch bản thử nick.
 
-**Chưa làm (đừng hứa):** nhắn lại khách sau vài ngày, nút OA, CRM/CSV đơn,
-tồn kho live, cổng thanh toán, lịch slot gắn lịch thật, trộn SOUL Tom.
+**Chưa làm (đừng hứa):** follow-up lần 2 khi im, ZNS, nút OA, nhắn hàng loạt,
+CRM/CSV đơn, tồn kho live, cổng thanh toán, lịch slot gắn lịch thật, trộn SOUL Tom.

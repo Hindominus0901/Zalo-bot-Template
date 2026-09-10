@@ -19,6 +19,8 @@ trước anh lấy ba cái”. Lời kể *em mua nhiều lắm rồi* không ph
 
 Trục trặc sau mua → `xu-ly-phan-nan`, không chào bán.
 
+Trả lời tin sau-đơn (`follow-up`) mà ổn / hỏi thêm món → vào đây, không chào lại.
+
 ## Ghi im lặng
 
 Đáng nhớ lần sau (size, món đã từ chối, tình huống dùng) → một dòng

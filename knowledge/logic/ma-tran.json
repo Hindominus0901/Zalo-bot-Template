@@ -42,7 +42,13 @@
       "mon_tu_choi",
       "tinh_huong",
       "anh_thay_gi",
-      "viec_mo"
+      "viec_mo",
+      "trang_thai_don",
+      "da_bao_gia_luc",
+      "don_ghi_luc",
+      "don_chot_luc",
+      "followup_im",
+      "followup_don"
     ],
     "khong_ghi": [
       "so_ck",
@@ -64,8 +70,18 @@
     "cham-khach-cu",
     "thu-lead",
     "ban-giao",
-    "phieu"
+    "phieu",
+    "follow-up"
   ],
+  "followup": {
+    "mac_dinh": "tat",
+    "nhanh": ["im_sau_gia", "sau_don"],
+    "mot_tin_moi_nhanh": true,
+    "lan_hai_khi_im": false,
+    "ck_khong_kich_hoat_sau_don": true,
+    "boot_khong_gui": true,
+    "review_tu_hoi": false
+  },
   "anh": [
     {"id": "anh_mon_shop", "gop": true, "skill": "doc-anh", "ban_giao": false},
     {"id": "anh_cho_khac", "gop": true, "skill": "doc-anh", "ban_giao": false},
@@ -116,6 +132,10 @@
     {"id": "teencode_plus_anh", "expect": "xem_anh_khong_bat_go_lai"},
     {"id": "giam_gia_plus_anh_mon", "expect": "khong_noi_gia_ban_giao_quyen"},
     {"id": "het_hang_anh_mon", "expect": "noi_het_mot_thay_the_neu_wiki"},
-    {"id": "session_dai_50_luot", "expect": "doc_phieu_khong_hoi_lai_slot"}
+    {"id": "session_dai_50_luot", "expect": "doc_phieu_khong_hoi_lai_slot"},
+    {"id": "followup_im_mot_tin", "expect": "mot_tin_khoa_nhanh"},
+    {"id": "followup_ck_khong_sau_don", "expect": "ck_khong_kich_hoat_sau_don"},
+    {"id": "followup_heartbeat_khong_spam", "expect": "khong_broadcast_khong_lan_hai"},
+    {"id": "followup_mac_dinh_tat", "expect": "cho_chu_shop_tat"}
   ]
 }

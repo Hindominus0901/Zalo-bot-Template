@@ -26,8 +26,10 @@ Phiếu: bot tự ghi. Đừng mở CRM. Đừng commit `memory/phieu/` thật.
 
 ## Người trực / chủ lúc bot đã chạy
 
-`USER.md` = nick được đọc `internal/` và nhận bàn giao. Heartbeat / BOOT không
-nhắn khách; chỉ gom thiếu wiki về nick này nếu đã cho kênh.
+`USER.md` = nick được đọc `internal/` và nhận bàn giao. BOOT không nhắn khách.
+Heartbeat báo thiếu wiki về nick này; nhắn khách **chỉ** khi anh/chị đã bật
+follow-up trong `USER.md` (im sau giá / sau đơn — một tin mỗi nhánh). Chưa điền
+= tắt.
 
 Sửa giá: sửa **trang wiki**, không nhắn “Nami ơi từ giờ giá X” rồi quên file
 (nói miệng thì bot có thể nhớ phiếu, wiki mới là số lần sau).
