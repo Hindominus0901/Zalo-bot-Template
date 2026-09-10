@@ -155,11 +155,15 @@ tổng đài → sửa `SOUL` đoạn shop / nhắc `giong-noi`, không sửa s�
 Còn `[CHỜ CHỦ SHOP]` trên persona / giá → nói thật: chưa xong phần số, chưa mở
 khách thật.
 
-Trên máy repo:
+Trên máy repo — **chỉ mục trước, test sau**:
 
 ```bash
+bash scripts/lam-chi-muc.sh
 python3 -m unittest discover -s tests -v
 ```
+
+Vừa điền `summary` cho các tờ wiki xong → chỉ mục đang cũ. Không chạy lại thì
+test đỏ ở `test_index_khop_thu_muc`, và bot sẽ đọc mô tả cũ để chọn tờ.
 
 Xanh = **kho chữ khớp** (file, ma trận, rào trong markdown). **Không** = bot
 sống trên nick. Fail → đọc tên test, sửa file, chạy lại. Đừng đoán giá cho khớp.
@@ -199,7 +203,7 @@ Nói thẳng: tắt máy / ngủ = **mất tin lúc đó**. Khách thật cần 
 - [ ] Wiki chỉ tờ có dữ liệu; `internal/` không lộ
 - [ ] `USER.md` có tên + nick nhận bàn giao + giờ gọi lại
 - [ ] Follow-up: đã hỏi; chưa nói = tắt
-- [ ] `python3 -m unittest discover -s tests -v` xanh (kho chữ, không phải nick)
+- [ ] `bash scripts/lam-chi-muc.sh` rồi `python3 -m unittest discover -s tests -v` xanh (kho chữ, không phải nick)
 - [ ] `docs/04-kich-ban-thu.md` trên nick thật (sau QR) — **cửa mở khách**
 - [ ] Họ nhắn thử được từ nick khác
 - [ ] Khớp `docs/06-tieu-chuan.md`

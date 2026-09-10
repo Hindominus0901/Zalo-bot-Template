@@ -196,3 +196,13 @@ class KichBanThuPhuCoChe(unittest.TestCase):
         tc = _read("docs/06-tieu-chuan.md")
         self.assertIn("Cửa 3", tc)
         self.assertIn("docs/12", tc)
+
+
+class LuongDungNhoChiMuc(unittest.TestCase):
+    def test_khoi_tao_chay_lai_chi_muc(self):
+        """Điền wiki xong mà quên sinh lại chỉ mục thì bot đọc mô tả cũ."""
+        skill = _read(".claude/skills/khoi-tao/SKILL.md")
+        self.assertIn("lam-chi-muc.sh", skill)
+        i = skill.index("lam-chi-muc.sh")
+        j = skill.index("unittest discover")
+        self.assertLess(i, j, "chi muc phai chay truoc test")

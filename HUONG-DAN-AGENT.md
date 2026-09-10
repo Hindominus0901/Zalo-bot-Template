@@ -45,7 +45,7 @@ Không OA, không Bot Creator. Nick riêng + quét mã `zalouser`. Chi tiết b�
 ## Thứ tự (chi tiết trong `khoi-tao`)
 
 B0 máy + nick → B1 đọc khung, giữ ba rào `AGENTS.md` → B2 hỏi / B3 viết ngay →
-B4 merge config → B5 đóng vai + unittest **kho chữ** → B6 quét mã → B7 máy mở.
+B4 merge config → B5 đóng vai + chỉ mục + unittest **kho chữ** → B6 quét mã → B7 máy mở.
 
 Viết file sau mỗi câu: bảng trong `khoi-tao`. Wiki: `knowledge/CLAUDE.md`. **Cấm**
 tự mở web shop lấy giá; **cấm** copy `docs/vi-du-file-da-dien.md`.
