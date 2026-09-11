@@ -1,0 +1,36 @@
+Bản quyền © 2026. Giữ toàn quyền.
+
+TEMPLATE TRỢ LÝ CSKH ZALO — ĐIỀU KHOẢN SỬ DỤNG
+
+Đây KHÔNG phải phần mềm nguồn mở. Bạn chỉ được dùng bộ mã và tài liệu này khi đã
+nhận quyền truy cập hợp lệ từ chủ sở hữu (mua, được cấp, hoặc thoả thuận khác).
+
+ĐƯỢC LÀM
+- Dùng cho công việc kinh doanh của chính bạn, không giới hạn số khách hàng
+  cuối mà bạn phục vụ.
+- Sửa, thêm, xoá bất kỳ phần nào để hợp với ngành nghề của bạn.
+- Sao chép trong nội bộ tổ chức của bạn, kể cả nhiều máy chủ, nhiều chi nhánh.
+- Giữ bản đã sửa cho riêng mình, kể cả sau khi ngừng nhận cập nhật.
+
+KHÔNG ĐƯỢC LÀM
+- Bán lại, cho thuê, cấp phép lại, hoặc phát tán bộ mã này (nguyên bản hay đã
+  sửa) cho bên thứ ba.
+- Đăng công khai toàn bộ hay phần đáng kể của nó, kể cả trên kho mã công khai.
+- Dùng nó làm nền để tạo ra một sản phẩm template cạnh tranh đem bán.
+- Gỡ bỏ thông báo bản quyền này khỏi các bản sao.
+
+Cung cấp dịch vụ dựng bot cho khách bằng template này là ĐƯỢC, miễn là bạn không
+giao bộ mã cho họ như một sản phẩm rời.
+
+KHÔNG BẢO HÀNH
+Phần mềm được cung cấp "nguyên trạng", không kèm bảo đảm nào, dù rõ ràng hay
+ngụ ý. Chủ sở hữu không chịu trách nhiệm cho bất kỳ thiệt hại nào phát sinh từ
+việc sử dụng.
+
+LƯU Ý RIÊNG VỀ ZALO
+Template này điều khiển một tài khoản Zalo cá nhân qua giao diện không chính
+thức. Zalo có thể hạn chế hoặc khoá tài khoản đó bất cứ lúc nào. Rủi ro thuộc về
+người vận hành. Xem `docs/02-kenh-zalouser.md`.
+
+Phần mềm bên thứ ba đi kèm (OpenClaw, zca-js và các gói phụ thuộc) giữ giấy phép
+riêng của chúng; điều khoản này không áp lên chúng.

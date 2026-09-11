@@ -59,8 +59,8 @@ Ba file này conflict thì **giữ phần shop, lấy phần còn lại từ b�
 ### Của template — luôn lấy bản mới
 
 Mọi thứ còn lại: `AGENTS.md`, `TOOLS.md`, `BOOT.md`, `HEARTBEAT.md`, `docs/`,
-`dung-bot/`, `scripts/`, `tests/`, và các `skills/*/SKILL.md` không nằm trong
-bảng trên.
+`dung-bot/`, `scripts/`, `sim/`, `tests/`, `.github/`, `LICENSE`, và các
+`skills/*/SKILL.md` không nằm trong bảng trên.
 
 Sửa mấy file này ở bản shop = tự làm khó mình lần cập nhật sau. Cần đổi hành vi
 bot thì đổi qua `USER.md` / wiki / persona, không đổi qua harness.

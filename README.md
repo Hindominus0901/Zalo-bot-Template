@@ -1,15 +1,28 @@
 # Template trợ lý AI chăm sóc khách hàng trên Zalo
 
-> **Bắt đầu ở đây:** [`CHUAN-BI.md`](CHUAN-BI.md) — thứ anh/chị phải có trước
-> (tài khoản AI có nạp tiền, nick Zalo riêng, máy chạy 24/7).
-> **Coding agent:** [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md).
+Một **nick Zalo như nhân viên** trực chat cho shop: hỏi trước khi tư vấn, trả số
+đúng sổ, không bịa, gọi người thật khi đụng tiền — và nói chuyện vui như người.
 
-Coding agent **phỏng vấn chủ shop (10 chủ đề)**, nhận tài liệu sản phẩm/dịch vụ, rồi
-điền workspace OpenClaw. Bot cầm **nick Zalo riêng**, nói như người: hỏi trước
-khi tư vấn, không cụt cỡ khi khách lệch script.
+Dựng được cho **bán hàng, coaching, đào tạo, tư vấn, dịch vụ tại chỗ**.
 
-Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-first, kênh
-`zalouser` (như Tom) — không Bot Creator.
+---
+
+## Ba bước
+
+1. **Bấm `Use this template`** ở đầu trang GitHub → tạo repo riêng cho shop mình.
+   (Đừng fork, đừng clone chung — mỗi shop một repo.)
+2. **Đọc [`CHUAN-BI.md`](CHUAN-BI.md)** — thứ phải có trước: tài khoản AI đã nạp
+   tiền, nick Zalo riêng + số riêng, máy chạy 24/7. Thiếu là dựng nửa chừng tắc.
+3. **Mở repo bằng Cursor hoặc Claude Code**, bảo nó *dựng bot cho shop mình*.
+   Agent sẽ tự tìm [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md) và phỏng vấn
+   chủ shop 10 chủ đề.
+
+Không cần biết lập trình. Chủ shop chỉ trả lời câu hỏi và quét một mã QR.
+
+---
+
+Bot cầm **nick cá nhân** qua OpenClaw `zalouser` — không phải OA, không Bot
+Creator, không nút bấm. Kiến thức shop nằm ở sổ Markdown, không vector DB.
 
 ## Chủ shop / coding agent làm gì
 

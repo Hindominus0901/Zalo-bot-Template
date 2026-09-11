@@ -221,3 +221,34 @@ class LienKetNoiBo(unittest.TestCase):
                 if not (ROOT / dich).exists():
                     hong.append(f"{md.relative_to(ROOT)} -> {dich}")
         self.assertEqual(hong, [], f"duong dan sai: {hong}")
+
+
+class RepoTemplateGithub(unittest.TestCase):
+    """Khách bấm Use this template rồi mở bằng agent của họ — mặt tiền phải đủ."""
+
+    def test_co_license(self):
+        lic = _read("LICENSE")
+        self.assertIn("KHÔNG ĐƯỢC LÀM", lic, "phai noi ro cai khong duoc lam")
+        self.assertIn("Bán lại", lic)
+        self.assertIn("ZALO", lic.upper(), "phai canh bao rui ro khoa nick")
+
+    def test_co_ci_chay_du_bon_cong(self):
+        ci = _read(".github/workflows/kiem-tra.yml")
+        for buoc in ("lam_chi_muc.py --kiem", "unittest discover",
+                     "sim.chay nhip", "sim.chay nen"):
+            self.assertIn(buoc, ci, f"CI thieu buoc: {buoc}")
+
+    def test_ci_khong_can_cai_gi(self):
+        """Cả test lẫn giả lập chạy bằng stdlib — CI không được pip install."""
+        self.assertNotIn("pip install", _read(".github/workflows/kiem-tra.yml"))
+
+    def test_readme_day_use_this_template(self):
+        rm = _read("README.md")
+        self.assertIn("Use this template", rm)
+        self.assertIn("CHUAN-BI.md", rm)
+        self.assertIn("dung-bot/QUY-TRINH.md", rm)
+
+    def test_readme_noi_ro_dung_duoc_cho_nganh_nao(self):
+        rm = _read("README.md")
+        for nganh in ("coaching", "tư vấn", "dịch vụ"):
+            self.assertIn(nganh, rm.lower(), nganh)

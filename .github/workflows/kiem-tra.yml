@@ -1,0 +1,29 @@
+name: kiểm tra kho chữ
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Không cài gì cả — cả bộ test lẫn giả lập đều chạy bằng stdlib.
+      - name: Chỉ mục sổ có khớp thư mục không
+        run: python3 scripts/lam_chi_muc.py --kiem
+
+      - name: Test kho chữ
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Giả lập — rào follow-up, ngày nghỉ, sổ tin nợ
+        run: python3 -m sim.chay nhip
+
+      - name: Giả lập — nền prompt có gì bay hơi lọt vào không
+        run: python3 -m sim.chay nen
