@@ -27,6 +27,10 @@ Trạng thái đơn: `trong` (mặc định) · `cho_chot` (đã `ghi-don`) · `
 `ban_giao`: `khong` (mặc định) · `dang_cho` (đã gọi người, chưa xong) · `xong`.
 Kèm `ban_giao_luc` và `ban_giao_ve` (chủ đề nào đang chờ). Luật: `skills/ban-giao`.
 
+**Mốc giờ ghi đúng `YYYY-MM-DD HH:MM`** (`2026-09-11 14:30`). Không *hôm qua*,
+không *chiều nay*. Heartbeat đọc để tính đủ giờ chưa — ghi sai định dạng thì
+follow-up im luôn, không báo lỗi gì cả.
+
 `da_bao_gia_luc` = lúc nói **số wiki** (`bao-gia`). `don_ghi_luc` / `don_chot_luc`
 = lúc ghi đơn / chủ chốt. `followup_*`: `chua` | `da_gui` | `tat` — heartbeat
 xem skill `follow-up`.

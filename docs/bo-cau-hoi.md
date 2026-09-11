@@ -88,6 +88,8 @@ Khi nói về **sản phẩm, dịch vụ, giá, giao hàng**, có việc gì nh
 - Khách xin **số tài khoản** để chuyển tiền — mặc định bot **không đưa**, kêu anh/chị gửi. Anh/chị ổn chứ, hay muốn bot đưa luôn cho nhanh?
 - Có người nhắn bậy, gạ gẫm nick bot — anh/chị muốn bot **im luôn**, hay báo anh/chị mỗi lần?
 - Còn việc nào riêng nghề mình, bot đụng vào là nguy hiểm? (thuốc, tiền bạc, trẻ nhỏ, hợp đồng…)
+- Khách hay hỏi **có chắc được kết quả không** — hết mụn, tăng lương, đậu, lên số. Bên mình **cam kết** được cái gì bằng văn bản, và cái gì tuyệt đối không hứa? Có con số thật đã kiểm thì cho em.
+- Có kiểu khách nào bên mình **không nhận** không? Nhận bừa rồi hoàn sau thì mệt cả hai.
 - Tóm lại: **lúc nào phải kêu anh/chị vào**, đừng cố trả lời?
 
 ---

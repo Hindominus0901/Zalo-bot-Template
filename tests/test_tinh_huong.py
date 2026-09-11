@@ -157,3 +157,50 @@ class PhongVanVanMuoiChuDe(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DungDuocChoMoiNganh(unittest.TestCase):
+    """Coaching, tư vấn, dịch vụ, bán hàng — đều phải dựng được."""
+
+    def test_co_to_so_cho_dich_vu(self):
+        for to in ("lo-trinh", "ai-phu-hop", "sau-khi-xong"):
+            self.assertTrue((ROOT / f"knowledge/wiki/public/{to}.md").is_file(), to)
+
+    def test_day_cach_xoa_to_khong_dung(self):
+        tm = _read("knowledge/wiki/TRANG-MAU.md")
+        self.assertIn("xóa", tm.lower())
+        self.assertIn("lam_chi_muc", tm)
+        self.assertIn("Coaching", tm)
+
+    def test_ghi_don_co_ca_hai_hinh_dang(self):
+        skill = _read("skills/ghi-don/SKILL.md")
+        self.assertIn("Bán hàng:", skill)
+        self.assertIn("Khóa học / dịch vụ / tư vấn:", skill)
+        self.assertIn("Ai dùng", skill)
+
+    def test_khung_khai_thac_khong_khoa_mot_nganh(self):
+        self.assertIn("Mỗi ngành điền bộ slot riêng", _read("knowledge/khung-khai-thac.md"))
+
+
+class KhongHuaKetQua(unittest.TestCase):
+    """Với coaching / thẩm mỹ / tư vấn, hứa kết quả là chuyện pháp lý."""
+
+    def test_co_muc_rieng(self):
+        self.assertIn("## Hứa kết quả", _read(TH))
+
+    def test_ba_cho_nguy_deu_duoc_goi_ten(self):
+        body = _read(TH)
+        muc = body[body.index("## Hứa kết quả"):body.index("## Khách xin số tài khoản")]
+        for x in ("Sức khỏe", "Tiền, nghề", "Thi cử"):
+            self.assertIn(x, muc, x)
+        self.assertIn("ban-giao", muc)
+
+    def test_duoc_noi_cai_shop_lam_khong_noi_cai_se_xay_ra(self):
+        body = _read(TH)
+        muc = body[body.index("## Hứa kết quả"):body.index("## Khách xin số tài khoản")]
+        self.assertIn("cái shop làm", muc.lower())
+        self.assertIn("không làm tròn lên", muc.lower())
+
+    def test_phong_van_hoi_ve_cam_ket(self):
+        for f in ("PHONG-VAN.md", "docs/bo-cau-hoi.md"):
+            self.assertIn("cam kết", _read(f).lower(), f)

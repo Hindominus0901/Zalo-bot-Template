@@ -3,6 +3,7 @@
     python3 -m sim.chay nen              # soi nền prompt: to bao nhiêu, có gì bay hơi lọt vào
     python3 -m sim.chay nhip             # chạy bảng tình huống rào follow-up / boot
     python3 -m sim.chay chat "alo shop"  # một lượt; --nao claude để gọi model thật
+                                         # --effort low|medium|high để chỉnh sâu/rẻ
 """
 
 from __future__ import annotations
@@ -77,11 +78,11 @@ def lenh_nhip() -> int:
     return 1 if hong else 0
 
 
-def lenh_chat(tin_chu: str, ten_nao: str) -> int:
+def lenh_chat(tin_chu: str, ten_nao: str, effort: str | None = None) -> int:
     if ten_nao == "claude" and not co_key():
         print("Chưa có ANTHROPIC_API_KEY. Dùng --nao luat để chạy phần máy.")
         return 2
-    nao, nen = chon(ten_nao), Nen.dung()
+    nao, nen = chon(ten_nao, effort=effort), Nen.dung()
     tin = Tin("999", tin_chu, datetime.now())
     print(f"phiên : {session_key(tin)}\nphiếu : {phieu_id(tin)}\n")
     tl = nao(luot(nen, tin_chu))
@@ -100,17 +101,21 @@ def main(argv: list[str]) -> int:
         print(__doc__)
         return 0
     lenh, con = argv[0], argv[1:]
-    nao = "luat"
-    if "--nao" in con:
-        i = con.index("--nao")
-        nao = con[i + 1]
-        con = con[:i] + con[i + 2:]
+    nao, effort = "luat", None
+    for co, dat in (("--nao", "nao"), ("--effort", "effort")):
+        if co in con:
+            i = con.index(co)
+            if dat == "nao":
+                nao = con[i + 1]
+            else:
+                effort = con[i + 1]
+            con = con[:i] + con[i + 2:]
     if lenh == "nen":
         return lenh_nen()
     if lenh == "nhip":
         return lenh_nhip()
     if lenh == "chat":
-        return lenh_chat(" ".join(con) or "alo", nao)
+        return lenh_chat(" ".join(con) or "alo", nao, effort)
     print(f"lệnh lạ: {lenh}")
     print(__doc__)
     return 2

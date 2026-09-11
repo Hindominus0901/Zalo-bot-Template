@@ -10,6 +10,7 @@ không làm việc đó.
 
 | Tờ | Nói về | Trạng thái |
 |---|---|---|
+| `ai-phu-hop.md` | Ai phù hợp / chưa phù hợp — Dịch vụ này hợp với ai, chưa hợp với ai. Không dùng tờ này để nói số. | ⏳ |
 | `ban-gi.md` | Shop bán / làm gì — Một câu shop bán hoặc làm gì. Không dùng tờ này để nói số. | ⏳ |
 | `bao-hanh.md` | Bảo hành — Bảo hành, không bảo hành cái gì. Không dùng tờ này để nói số. | ⏳ |
 | `con-hang.md` | Còn hàng — Khi nào được nói còn / hết. Mặc định: không đoán. Không dùng tờ này để nói số. | ⏳ |
@@ -20,6 +21,8 @@ không làm việc đó.
 | `gio-truc.md` | Giờ trực — Giờ xem tin, gọi lại, ngày nghỉ Tết. Khớp USER.md. Không dùng tờ này để nói số. | ⏳ |
 | `hoa-don-vat.md` | Hoá đơn / VAT — Chỉ khi chủ xuất hoá đơn. Không dùng tờ này để nói số. | ⏳ |
 | `kiem-hang.md` | Kiểm hàng — Đồng kiểm, xem hàng khi nhận. Không dùng tờ này để nói số. | ⏳ |
+| `lo-trinh.md` | Lộ trình / chương trình — Khóa, gói dịch vụ gồm gì, bao lâu, mấy buổi. Không dùng tờ này để nói số. | ⏳ |
+| `sau-khi-xong.md` | Sau khi xong — Xong khóa / xong dịch vụ thì còn gì nữa. Không dùng tờ này để nói số. | ⏳ |
 | `ship.md` | Ship — Phí ship, nội thành / tỉnh, thời gian đã nói chắc. Không dùng tờ này để nói số. | ⏳ |
 | `si-ctv.md` | Sỉ / CTV — Chỉ khi chủ có mức sỉ / CTV. Không dùng tờ này để nói số. | ⏳ |
 | `thanh-toan.md` | Thanh toán — CK, COD, không nhận tiền mặt… Không dùng tờ này để nói số. | ⏳ |

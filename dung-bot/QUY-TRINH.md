@@ -96,10 +96,11 @@ câu “Hỏi thêm” nếu họ chưa phủ. Đừng đọc cả khối Hỏi 
 | Câu | Viết | Chưa có thì |
 |---|---|---|
 | 1 Bán/làm gì | `knowledge/persona.md` → Công việc. Món shop **không** bán → `wiki/public/ban-gi.md` | `[CHỜ CHỦ SHOP]`. Không có danh sách không-bán thì bot không dám nói *bên em không có* |
+| 1b Kiểu shop | **Xóa tờ wiki không dùng** rồi chạy lại `scripts/lam_chi_muc.py` — bảng trong `knowledge/wiki/TRANG-MAU.md` | Bán hàng thì xóa `lo-trinh`/`ai-phu-hop`/`sau-khi-xong`; dịch vụ thì xóa `ship`/`kiem-hang` |
 | 2 Khách ngại gì | `persona.md` → Khách và điều họ lo | `[CHỜ CHỦ SHOP]` |
 | 3 Tài liệu | Cất `knowledge/raw/` nguyên. Một dòng `raw/NGUON.md`. Tách wiki (thuật toán dưới). Link Drive → skill `lam-viec-dung` + `mcp_drive` **chỉ nếu** MCP `enabled` | Chủ nói không có file → FAQ miệng câu 6; vẫn được |
 | 4 Giọng, tên gọi, **mức lầy** | `IDENTITY.md` + `SOUL.md` đoạn cuối (xưng hô + 2–3 tin thật). Chủ muốn nghiêm hơn mặc định → ghi một dòng vào `persona.md` → Ranh giới. Config `identity.name` khớp lúc B4 | Tên mặc định **Nami**, giọng mặc định **vui và lầy** (`vui-va-ngoai-le.md`). Biệt hiệu nhóm: ghi `Gọi thêm` |
-| 5 Không được tự ý | `persona.md` → Ranh giới (thêm của shop). Không xóa rào sẵn | Chủ muốn bot **đưa số tài khoản** → ghi rõ vào Ranh giới; mặc định template là **không đưa** |
+| 5 Không được tự ý + cam kết | `persona.md` → Ranh giới. Cam kết/không cam kết → `wiki/public/ai-phu-hop.md` + `lo-trinh.md` | Chủ muốn bot **đưa số tài khoản** → ghi rõ; mặc định **không đưa**. Bot **không bao giờ** hứa kết quả, kể cả chủ hay hứa ngoài đời |
 | 6 FAQ miệng | Mỗi câu một tờ `wiki/public/` hoặc gom cùng chủ đề | Không đẻ số |
 | 7 Bước đặt | `skills/ghi-don/SKILL.md` — chỉ bước shop này, giữ “không tự chốt” | — |
 | 7b Sổ đơn | Có phần mềm + API → bật `sodon` trong `config/mcp.example.json5`; không có → để `enabled: false` | để tắt |

@@ -28,8 +28,9 @@ def _gio(v: str) -> tuple[time, time] | None:
     """`9h–21h`, `9h-21h`, `09:00-21:00` → (bắt đầu, kết thúc). Không đọc được → None."""
     if _chua_dien(v):
         return None
-    so = re.findall(r"(\d{1,2})(?::(\d{2}))?\s*[h:]?", v)
-    cap = [(int(h), int(p or 0)) for h, p in so if 0 <= int(h) <= 23][:2]
+    # 9h · 9h30 · 09:00 · 18h30 — bắt cả phút, không nuốt mất.
+    so = re.findall(r"(\d{1,2})\s*[h:]\s*(\d{2})?", v)
+    cap = [(int(h), int(p or 0)) for h, p in so if int(h) <= 23 and int(p or 0) <= 59][:2]
     if len(cap) != 2:
         return None
     return time(*cap[0]), time(*cap[1])
@@ -121,14 +122,33 @@ class Phieu:
     def lay(self, ten: str, mac_dinh: str = "") -> str:
         return self.truong.get(ten, mac_dinh).strip()
 
-    def gio(self, ten: str) -> datetime | None:
+    def gio(self, ten: str, nam_mac_dinh: int | None = None) -> datetime | None:
+        """Đọc mốc giờ trên phiếu.
+
+        Định dạng **chuẩn** là `YYYY-MM-DD HH:MM` (xem `memory/phieu/MAU.md`).
+        Mấy dạng người Việt hay gõ được đọc cứu — nhưng bot ghi sai định dạng
+        vẫn là lỗi: `nhip.py` im lặng bỏ qua phiếu không đọc được giờ, nghĩa là
+        follow-up **không bao giờ chạy** mà không ai thấy lỗi.
+        """
         v = self.lay(ten)
-        for dinh in ("%Y-%m-%d %H:%M", "%Y-%m-%dT%H:%M", "%Y-%m-%d"):
+        if not v:
+            return None
+        for dinh in ("%Y-%m-%d %H:%M", "%Y-%m-%dT%H:%M", "%Y-%m-%d %Hh%M", "%Y-%m-%d"):
             try:
                 return datetime.strptime(v, dinh)
             except ValueError:
                 continue
-        return None
+        # cứu: "10h ngày 9/9", "9/9 10h30", "9/9/2026 10h"
+        ngay = re.search(r"(\d{1,2})\s*/\s*(\d{1,2})(?:\s*/\s*(\d{4}))?", v)
+        gio = re.search(r"(\d{1,2})\s*[h:]\s*(\d{2})?", v)
+        if not (ngay and gio):
+            return None
+        nam = int(ngay.group(3) or nam_mac_dinh or datetime.now().year)
+        try:
+            return datetime(nam, int(ngay.group(2)), int(ngay.group(1)),
+                            int(gio.group(1)), int(gio.group(2) or 0))
+        except ValueError:
+            return None
 
     def do_dai(self) -> int:
         return sum(len(k) + len(v) + 8 for k, v in self.truong.items())

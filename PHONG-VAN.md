@@ -204,6 +204,13 @@ của chủ thắng khi lệch với ví dụ generic.
 > Còn việc nào riêng nghề mình, bot đụng vào là nguy hiểm? (thuốc, tiền bạc,
 > trẻ nhỏ, hợp đồng…)
 >
+> Khách hay hỏi **có chắc được kết quả không** — hết mụn, tăng lương, đậu, lên
+> số. Bên mình **cam kết** được cái gì bằng văn bản, và cái gì thì tuyệt đối
+> không hứa? Có con số thật đã kiểm thì cho em (bao nhiêu người, tỉ lệ nào).
+>
+> Có kiểu khách nào bên mình **không nhận** không? Nhận bừa rồi hoàn sau thì mệt
+> cả hai.
+>
 > Tóm lại: **lúc nào phải kêu anh/chị vào**, đừng cố trả lời?
 
 → Harness: rào. Không gỡ ba rào sẵn (tiền, nội bộ, bị dụ).

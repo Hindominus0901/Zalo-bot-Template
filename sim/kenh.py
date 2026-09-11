@@ -44,14 +44,20 @@ def phieu_id(tin: Tin) -> str:
 
 def gop_tin_don(tins: list[Tin], cua_so_ms: int = DEBOUNCE_MS) -> list[list[Tin]]:
     """Timer reset mỗi tin. Tin có media chờ lâu hơn — nhiều ảnh gửi lệch nhau."""
+    # Gộp theo TỪNG hội thoại, không theo thứ tự tới. Hai khách nhắn xen kẽ là
+    # chuyện thường ở shop đông — gộp tuần tự sẽ cắt vụn cụm của cả hai.
     cum: list[list[Tin]] = []
+    cuoi: dict[tuple[str, str | None], list[Tin]] = {}
     for tin in sorted(tins, key=lambda t: t.luc):
         ms = max(cua_so_ms, DEBOUNCE_MEDIA_MS) if tin.co_media else cua_so_ms
-        if cum and cum[-1][-1].sender == tin.sender and cum[-1][-1].nhom == tin.nhom \
-                and tin.luc - cum[-1][-1].luc <= timedelta(milliseconds=ms):
-            cum[-1].append(tin)
+        khoa = (tin.sender, tin.nhom)
+        truoc = cuoi.get(khoa)
+        if truoc is not None and tin.luc - truoc[-1].luc <= timedelta(milliseconds=ms):
+            truoc.append(tin)
         else:
-            cum.append([tin])
+            moi = [tin]
+            cum.append(moi)
+            cuoi[khoa] = moi
     return cum
 
 

@@ -24,8 +24,9 @@ BAY_HOI = [
     (re.compile(r"\b[0-9a-f]{8}-[0-9a-f]{4}-", re.I), "id ngẫu nhiên"),
     (re.compile(r"session[_ ]?id|request[_ ]?id", re.I), "id phiên / id request"),
 ]
-# Ví dụ trong tài liệu không tính — chúng nằm trong khối code hoặc sau "ví dụ".
-MIEN_TRU = re.compile(r"ví dụ|`[^`]*`|^\s{4,}|^```", re.I | re.M)
+# Ví dụ trong tài liệu không tính. Miễn trừ phải HẸP — miễn trừ mọi dòng có
+# backtick là bỏ soi 1/3 nền, tức là kiểm cho có.
+MIEN_TRU = re.compile(r"ví dụ|CHỜ CHỦ SHOP", re.I)
 
 
 @dataclass
@@ -55,8 +56,12 @@ class Nen:
         """Tìm thứ đổi mỗi lượt mà lại nằm ở nền."""
         loi = []
         for ten, noi_dung in self.manh:
+            trong_khoi_code = False
             for dong in noi_dung.split("\n"):
-                if MIEN_TRU.search(dong):
+                if dong.lstrip().startswith("```"):
+                    trong_khoi_code = not trong_khoi_code
+                    continue
+                if trong_khoi_code or MIEN_TRU.search(dong):
                     continue
                 for mau, nhan in BAY_HOI:
                     if mau.search(dong):

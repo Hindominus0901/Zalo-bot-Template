@@ -36,7 +36,7 @@ class NaoClaude:
 
     ten = "claude"
 
-    def __init__(self, model: str = MODEL):
+    def __init__(self, model: str = MODEL, effort: str | None = None):
         try:
             import anthropic
         except ImportError as e:
@@ -46,16 +46,27 @@ class NaoClaude:
             ) from e
         self.client = anthropic.Anthropic()
         self.model = model
+        self.effort = effort   # None = mặc định của model. Hạ xuống low/medium để rẻ hơn.
 
     def __call__(self, goi: dict) -> TraLoi:
+        them = {"output_config": {"effort": self.effort}} if self.effort else {}
         r = self.client.messages.create(
             model=self.model,
             max_tokens=2000,
-            output_config={"effort": "low"},   # CSKH là việc nhẹ, không cần nghĩ sâu
             system=goi["system"],              # nền đã gắn cache_control ở sim/nen.py
             messages=goi["messages"],
+            **them,
         )
+        # Khách CSKH có thể nói thứ làm model từ chối. Không bắt thì nó ra chuỗi
+        # rỗng và mình tưởng prompt hỏng.
+        if r.stop_reason == "refusal":
+            loai = getattr(r.stop_details, "category", None)
+            return TraLoi(chu=f"[model từ chối trả lời — loại: {loai}]", that=True,
+                          tu_cache=r.usage.cache_read_input_tokens or 0,
+                          token_vao=r.usage.input_tokens, token_ra=r.usage.output_tokens)
         chu = "".join(b.text for b in r.content if b.type == "text")
+        if not chu.strip():
+            chu = f"[không có chữ nào trong trả lời — stop_reason={r.stop_reason}]"
         return TraLoi(
             chu=chu,
             tu_cache=r.usage.cache_read_input_tokens or 0,
@@ -65,9 +76,9 @@ class NaoClaude:
         )
 
 
-def chon(ten: str, model: str = MODEL):
+def chon(ten: str, model: str = MODEL, effort: str | None = None):
     if ten == "claude":
-        return NaoClaude(model)
+        return NaoClaude(model, effort)
     if ten == "luat":
         return NaoLuat()
     raise SystemExit(f"não lạ: {ten} (chọn: luat | claude)")

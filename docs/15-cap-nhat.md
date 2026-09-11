@@ -24,6 +24,7 @@ Mỗi file này mang một dòng đánh dấu ở đầu:
 - `MEMORY.md`
 - `knowledge/persona.md`
 - `knowledge/wiki/INDEX.md`
+- `knowledge/wiki/public/ai-phu-hop.md`
 - `knowledge/wiki/public/ban-gi.md`
 - `knowledge/wiki/public/bao-hanh.md`
 - `knowledge/wiki/public/con-hang.md`
@@ -34,6 +35,8 @@ Mỗi file này mang một dòng đánh dấu ở đầu:
 - `knowledge/wiki/public/gio-truc.md`
 - `knowledge/wiki/public/hoa-don-vat.md`
 - `knowledge/wiki/public/kiem-hang.md`
+- `knowledge/wiki/public/lo-trinh.md`
+- `knowledge/wiki/public/sau-khi-xong.md`
 - `knowledge/wiki/public/ship.md`
 - `knowledge/wiki/public/si-ctv.md`
 - `knowledge/wiki/public/thanh-toan.md`

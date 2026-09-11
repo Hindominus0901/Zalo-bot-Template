@@ -221,3 +221,56 @@ class NenPrompt(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LoiDaSua(unittest.TestCase):
+    """Bốn lỗi tìm ra lúc soi từng dòng. Test ở đây để chúng không quay lại."""
+
+    def test_hai_khach_xen_ke_van_gop_dung(self):
+        """Shop đông thì hai khách nhắn đan nhau — gộp tuần tự sẽ cắt vụn cả hai."""
+        t = T
+        tins = [Tin("A", "a1", t), Tin("B", "b1", t + timedelta(milliseconds=100)),
+                Tin("A", "a2", t + timedelta(milliseconds=200)),
+                Tin("B", "b2", t + timedelta(milliseconds=300))]
+        cum = gop_tin_don(tins)
+        self.assertEqual(len(cum), 2, "moi khach mot cum")
+        self.assertEqual({len(c) for c in cum}, {2})
+
+    def test_gio_khong_nuot_phut(self):
+        self.assertEqual(_gio("9h–18h30"), (time(9), time(18, 30)))
+        self.assertEqual(_gio("08:15 - 17:45"), (time(8, 15), time(17, 45)))
+        self.assertIsNone(_gio("24/7"), "24/7 khong phai khung gio")
+
+    def test_doc_duoc_gio_kieu_nguoi_viet(self):
+        """Bot ghi sai định dạng thì follow-up im luôn mà không báo lỗi."""
+        self.assertEqual(Phieu("x", {"g": "2026-09-09 10:00"}).gio("g"),
+                         datetime(2026, 9, 9, 10, 0))
+        self.assertEqual(Phieu("x", {"g": "10h ngày 9/9"}).gio("g", nam_mac_dinh=2026),
+                         datetime(2026, 9, 9, 10, 0))
+        self.assertIsNone(Phieu("x", {"g": "hôm qua"}).gio("g"))
+
+    def test_mau_phieu_chot_dinh_dang_gio(self):
+        """Đọc cứu chỉ là lưới an toàn — template phải nói rõ định dạng."""
+        from pathlib import Path
+        goc = Path(__file__).resolve().parent.parent
+        for f in ("memory/phieu/MAU.md", "skills/phieu/SKILL.md"):
+            self.assertIn("YYYY-MM-DD HH:MM", (goc / f).read_text(encoding="utf-8"), f)
+
+    def test_soi_bay_hoi_khong_mien_tru_qua_tay(self):
+        """Miễn trừ rộng quá là kiểm cho có."""
+        from sim.nen import MIEN_TRU
+        n = Nen.dung()
+        dong = [d for _, noi in n.manh for d in noi.split("\n")]
+        bo_qua = sum(1 for d in dong if MIEN_TRU.search(d))
+        self.assertLess(bo_qua / len(dong), 0.15, "mien tru qua 15% nen la kiem cho co")
+
+    def test_soi_bay_hoi_bat_duoc_dau_thoi_gian(self):
+        class NenGia(Nen):
+            pass
+        gia = NenGia([("gia.md", "Phiên bắt đầu lúc 14:32 ngày 2026-09-11.")])
+        loi = gia.soi_bay_hoi()
+        self.assertTrue(loi, "phai bat duoc dau thoi gian o nen")
+
+    def test_soi_bay_hoi_bo_qua_khoi_code(self):
+        gia = Nen([("x.md", "Mẫu:\n\n```\nupdated: 2026-09-09\n```\n\nHết.")])
+        self.assertEqual(gia.soi_bay_hoi(), [], "khoi code la vi du, khong tinh")
