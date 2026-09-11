@@ -20,12 +20,16 @@ class CuaVao(unittest.TestCase):
 
     CUA = [
         "CLAUDE.md",                        # Claude Code
-        "AGENTS.md",                        # Cursor / Codex tự nạp
+        "AGENTS.md",                        # Codex + agent lạ tự nạp
+        "GEMINI.md",                        # Gemini / Antigravity
         ".cursor/rules/dung-bot.mdc",       # Cursor
         ".github/copilot-instructions.md",  # Copilot
         "README.md",                        # người
         ".claude/skills/khoi-tao/SKILL.md",
     ]
+
+    # Năm agent template hứa chạy được. Đổi danh sách thì đổi cả CUA ở trên.
+    AGENT = ("Claude Code", "Cursor", "Codex", "Antigravity", "Copilot")
 
     def test_moi_cua_tro_ve_mot_nguon(self):
         for cua in self.CUA:
@@ -33,10 +37,31 @@ class CuaVao(unittest.TestCase):
 
     def test_cua_khong_phai_claude_code_noi_ro_agents_md_khong_danh_cho_ho(self):
         """AGENTS.md là não bot. Agent dựng đọc nhầm là tưởng mình là Nami."""
-        for cua in ("CLAUDE.md", ".cursor/rules/dung-bot.mdc", ".github/copilot-instructions.md"):
+        for cua in ("CLAUDE.md", "GEMINI.md", ".cursor/rules/dung-bot.mdc",
+                    ".github/copilot-instructions.md"):
             body = _read(cua)
             self.assertIn("AGENTS.md", body, cua)
             self.assertRegex(body, r"không phải hướng dẫn cho (bạn|bạn\.)", cua)
+
+    def test_tieu_de_agents_md_tu_noi_no_khong_danh_cho_coding_agent(self):
+        """Codex/Antigravity nạp AGENTS.md trước cả khi đọc hết. Agent nào chỉ
+        liếc H1 cũng phải hiểu ngay là đừng làm theo file này."""
+        h1 = _read("AGENTS.md").splitlines()[0]
+        self.assertIn("KHÔNG phải hướng dẫn", h1, f"H1 hien tai: {h1!r}")
+
+    def test_dau_agents_md_chi_duong_cho_tung_agent(self):
+        """Tám dòng đầu phải nêu đích danh cửa của từng agent, không chỉ nói chung."""
+        dau = "\n".join(_read("AGENTS.md").splitlines()[:10])
+        for cua in ("CLAUDE.md", "GEMINI.md", ".cursor/rules/",
+                    "copilot-instructions.md", NGUON):
+            self.assertIn(cua, dau, f"dau AGENTS.md thieu {cua}")
+
+    def test_hai_file_khach_doc_neu_du_ten_agent(self):
+        """Khách dùng Codex mà README chỉ nói Cursor thì tưởng template khong hop."""
+        for tai_lieu in ("README.md", "CHUAN-BI.md", "HUONG-DAN-AGENT.md"):
+            body = _read(tai_lieu)
+            for ten in self.AGENT:
+                self.assertIn(ten, body, f"{tai_lieu} thieu {ten}")
 
     def test_skill_khoi_tao_khong_chep_lai_quy_trinh(self):
         """Một nguồn. Skill là con trỏ mỏng, không phải bản sao."""

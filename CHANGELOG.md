@@ -5,6 +5,28 @@
 Bản nào đổi thứ shop đang phụ thuộc — tên trường phiếu, tên tool, tên tờ wiki,
 tên file — **phải ghi ở đây**. Không ghi = coi như không đổi.
 
+## 0.3.1 — mở cửa cho Codex và Antigravity
+
+**Thêm `GEMINI.md`.** Cửa vào cho Gemini / Antigravity — trước đây thiếu, hai
+agent đó rơi thẳng vào `AGENTS.md` mà không có gì đỡ.
+
+**`AGENTS.md` đổi tiêu đề** từ *Harness — Nami trên Zalo* thành
+*Não bot Zalo (Nami) — KHÔNG phải hướng dẫn cho coding agent*. Lý do: Codex và
+nhiều agent khác tự nạp `AGENTS.md` theo chuẩn chung, mà trong repo này tên đó
+đã là não con bot (OpenClaw nạp workspace đúng tên đó nên **không đổi tên
+được**). Agent nào chỉ liếc H1 sẽ hiểu ngược. Tám dòng đầu nay chỉ đích danh
+cửa của từng agent. **Nội dung não bot không đổi một chữ** — `<policy>` và mọi
+mục dưới giữ nguyên.
+
+**`README.md` · `CHUAN-BI.md` · `HUONG-DAN-AGENT.md`** nay nêu đủ năm agent:
+Claude Code · Cursor · Codex · Antigravity · Copilot. Trước chỉ nói Cursor và
+Claude Code, khách dùng Codex đọc xong tưởng template không hợp.
+`HUONG-DAN-AGENT.md` có bảng *agent → file nó nạp*.
+
+**Chưa chạy thật:** hai cửa mới chưa mở bằng Codex và Antigravity thật. Việc
+phải làm trước khi tin: mở repo bằng từng cái, gõ *dựng bot cho shop mình*, xem
+nó có nhảy vào `dung-bot/QUY-TRINH.md` và **không** xưng là Nami không.
+
 ## 0.3.0 — repo template, và key config đã xác minh
 
 **Đã hết đoán về OpenClaw.** Tải package npm `openclaw@2026.9.4` (nó mang theo

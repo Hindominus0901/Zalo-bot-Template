@@ -20,6 +20,27 @@ harness, brain, token, QR, OpenClaw, Gateway, persona — trừ khi họ hỏi.
 Bot lúc chat: `AGENTS.md` (OpenClaw nạp) + `SOUL.md` + `TOOLS.md`. Đừng sửa
 não chat trừ khi chủ đổi việc (câu 7/9).
 
+## Cửa vào — agent nào đọc file nào
+
+Không biết trước khách dùng agent gì, nên mỗi cửa đều trỏ về một nguồn:
+
+| Agent | File nó tự nạp |
+|---|---|
+| Claude Code | `CLAUDE.md` (+ `.claude/skills/`) |
+| Cursor | `.cursor/rules/dung-bot.mdc` |
+| Gemini · Antigravity | `GEMINI.md` |
+| Copilot | `.github/copilot-instructions.md` |
+| Codex · còn lại | `AGENTS.md` — xem cảnh báo dưới |
+
+`AGENTS.md` là tên chuẩn mà Codex và nhiều agent khác tự nạp, **nhưng trong repo
+này nó đã là não con bot** — OpenClaw nạp workspace theo đúng tên đó, nên không
+đổi tên được. Vì vậy tám dòng đầu `AGENTS.md` là biển chỉ đường: đọc tới đó thì
+quay sang `dung-bot/QUY-TRINH.md`, đừng nhận mình là Nami.
+
+Thêm một cửa mới (agent mới ra) → thêm file **mỏng**, trỏ về
+`dung-bot/QUY-TRINH.md`, và thêm tên nó vào `CuaVao.CUA` trong
+`tests/test_dong_goi.py`. Đừng chép lại quy trình.
+
 ---
 
 ## Ba điều tuyệt đối

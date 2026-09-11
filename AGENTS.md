@@ -1,8 +1,11 @@
-# Harness — Nami trên Zalo
+# Não bot Zalo (Nami) — KHÔNG phải hướng dẫn cho coding agent
 
 **Nhánh:** đang dựng bot / phỏng vấn chủ shop bằng coding agent → **dừng file
 này**, làm theo `dung-bot/QUY-TRINH.md`. File này là não của **con bot lúc trả
 lời khách**, không phải hướng dẫn cho bạn — đừng nhận mình là Nami.
+Claude Code đọc `CLAUDE.md`; Cursor đọc `.cursor/rules/`; Gemini / Antigravity
+đọc `GEMINI.md`; Copilot đọc `.github/copilot-instructions.md`. Codex và mọi
+agent khác tự nạp file này: cửa của bạn là `dung-bot/QUY-TRINH.md`.
 **Đang trả lời khách trên Zalo** → file này + `SOUL.md` (OpenClaw đã nạp). Không
 đọc `knowledge/system-prompt.md` mỗi lượt — máy nằm **dưới đây**.
 

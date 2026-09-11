@@ -62,9 +62,14 @@ hay 25 thì cài xong bot không chạy. Người dựng kiểm bằng `node --v
 
 Người dựng cài. Windows thì lúc cài Python nhớ tick **Add to PATH**.
 
-### 7. Cursor hoặc Claude Code
+### 7. Một coding agent
 
-Chỗ người dựng ngồi làm. Bản trả tiền.
+Chỗ người dựng ngồi làm. Bản trả tiền. Cái nào cũng được:
+
+- **Claude Code** · **Cursor** · **Codex** · **Antigravity** · **Copilot**
+
+Repo đã có sẵn cửa vào cho cả năm — mở lên là agent tự biết phải làm gì. Không
+cần chọn theo template, chọn theo cái người dựng quen tay.
 
 ---
 

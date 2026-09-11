@@ -13,9 +13,13 @@ Dựng được cho **bán hàng, coaching, đào tạo, tư vấn, dịch vụ 
    (Đừng fork, đừng clone chung — mỗi shop một repo.)
 2. **Đọc [`CHUAN-BI.md`](CHUAN-BI.md)** — thứ phải có trước: tài khoản AI đã nạp
    tiền, nick Zalo riêng + số riêng, máy chạy 24/7. Thiếu là dựng nửa chừng tắc.
-3. **Mở repo bằng Cursor hoặc Claude Code**, bảo nó *dựng bot cho shop mình*.
+3. **Mở repo bằng coding agent của mình**, bảo nó *dựng bot cho shop mình*.
    Agent sẽ tự tìm [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md) và phỏng vấn
    chủ shop 10 chủ đề.
+
+   Dùng cái nào cũng được — **Claude Code, Cursor, Codex, Antigravity, Copilot**.
+   Repo đã để sẵn cửa vào cho từng cái, không phải cài thêm gì
+   (bảng cửa: [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md)).
 
 Không cần biết lập trình. Chủ shop chỉ trả lời câu hỏi và quét một mã QR.
 
