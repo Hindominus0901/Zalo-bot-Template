@@ -29,6 +29,7 @@ Em muốn hiểu shop mình bán **sản phẩm** gì, làm **dịch vụ** gì,
 - Trong đó, cái nào khách hỏi nhiều nhất?
 - Có sản phẩm hoặc gói dịch vụ nào khách hay **nhầm** với nhau không? Nhầm thế nào?
 - Người ngoài hay **hiểu sai** điều gì về bên mình? Ví dụ tưởng mình làm A nhưng thật ra là B.
+- Khách hay hỏi món gì mà bên mình **không** bán, không làm? Kể vài cái — để bot nói thẳng “bên em không có”, đừng trả lửng lơ thành “hết hàng rồi ạ”.
 - Có câu nào anh/chị hay nói với khách, mình tin thật — có số, có chuyện thật — kể nguyên giúp em?
 
 ---
@@ -124,6 +125,8 @@ Lúc không chắc — khách hỏi khó về sản phẩm, dịch vụ, tiền,
 - Khách cho **số điện thoại** thì anh/chị nhận thế nào, lưu ở đâu, ai được xem?
 - Ảnh khách gửi — ảnh sản phẩm, ảnh khi dùng dịch vụ, ảnh chuyển khoản — bot xem giúp được hay chuyển luôn cho anh/chị?
 - Có nhóm Zalo riêng để báo “có khách đang chờ” không?
+- Shop mình **nghỉ những ngày nào** — Tết, lễ, chủ nhật? Cho em khoảng ngày cụ thể, để mấy hôm đó bot không nhắn khách và không hứa giao.
+- Khách **bấm gọi** vào nick nhân viên đó — bot không nghe máy được. Anh/chị muốn bot mời họ nhắn chữ, hay báo anh/chị gọi lại? Gọi lại bằng số nào?
 - Khách **im sau khi em báo giá** — muốn bot nhắn lại **một lần** không? Tắt, hoặc sau bao nhiêu giờ (24 hay 48). Chưa nói = tắt.
 - Sau khi **đã ghi đơn** / anh chị đã chốt — muốn bot hỏi *nhận hàng chưa* / *dùng ổn không*? Tắt, hoặc số giờ **và đúng câu** muốn gửi. Không viết câu = tắt. Ảnh chuyển khoản không tính là đã có đơn.
 

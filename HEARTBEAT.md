@@ -16,7 +16,7 @@ doctor — đừng chỉ sửa trên UI rồi để file lệch.
    (nhóm nội bộ / nick chủ). Chưa có kênh → chỉ ghi file, đừng đoán.
 3. Follow-up: `USER.md` còn `[CHỜ CHỦ SHOP]` / **tắt** trên nhánh → **bỏ qua**
    quét khách. Đã bật → đọc `skills/follow-up/SKILL.md`, quét `memory/phieu/*.md`
-   (bỏ `MAU.md`, `README.md`). Đủ điều kiện + trong giờ → **một** tin Zalo đúng
+   (bỏ `MAU.md`, `README.md`). Đủ điều kiện + trong giờ + **không phải ngày nghỉ** trong `USER.md` → **một** tin Zalo đúng
    `senderId` đó, ghi phiếu `da_gui`. Ảnh CK không kích hoạt sau-đơn.
 4. **Nhịp cuối ngày** (sau giờ đóng trong `USER.md`, một lần một ngày): đọc
    `skills/hoc-lai/SKILL.md`. Nó ghi đề xuất vào `memory/de-xuat/` và tóm tắt

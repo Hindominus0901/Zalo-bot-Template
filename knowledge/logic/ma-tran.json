@@ -114,7 +114,8 @@
     "lan_hai_khi_im": false,
     "ck_khong_kich_hoat_sau_don": true,
     "boot_khong_gui": true,
-    "review_tu_hoi": false
+    "review_tu_hoi": false,
+    "ngay_nghi_khong_gui": true
   },
   "anh": [
     {

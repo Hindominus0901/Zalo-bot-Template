@@ -70,6 +70,9 @@ phải tự có: `CHUAN-BI.md`.
 > Người ngoài hay **hiểu sai** điều gì về bên mình? Ví dụ tưởng mình làm A nhưng
 > thật ra là B.
 >
+> Khách hay hỏi món gì mà bên mình **không** bán, không làm? Kể vài cái — để bot
+> nói thẳng “bên em không có”, đừng trả lửng lơ thành “hết hàng rồi ạ”.
+>
 > Có câu nào anh/chị hay nói với khách, mình tin thật — có số, có chuyện thật —
 > kể nguyên giúp em?
 
@@ -269,6 +272,12 @@ của chủ thắng khi lệch với ví dụ generic.
 > xem giúp được hay chuyển luôn cho anh/chị?
 >
 > Có nhóm Zalo riêng để báo “có khách đang chờ” không?
+>
+> Shop mình **nghỉ những ngày nào** — Tết, lễ, chủ nhật? Cho em khoảng ngày cụ
+> thể, để mấy hôm đó bot không nhắn khách và không hứa giao.
+>
+> Khách **bấm gọi** vào nick nhân viên đó — bot không nghe máy được. Anh/chị
+> muốn bot mời họ nhắn chữ, hay báo anh/chị gọi lại? Gọi lại bằng số nào?
 >
 > Khách **im sau khi em báo giá** — anh/chị muốn bot nhắn lại **một lần**
 > không? Nói **tắt**, hoặc sau bao nhiêu giờ (24 hay 48 thường đủ). Chưa nói =

@@ -30,6 +30,9 @@ Rồi đáp. Đừng đọc skill trước khi hiểu họ đang ở nhóm nào.
 
 Kho có → nói đúng, giọng tự nhiên, có thể thêm một câu hữu ích (phí ship kèm thời gian).
 
+**Shop không kinh doanh món đó** là chuyện khác hẳn *hết hàng* — xem
+`tinh-huong.md` mục *Món shop không bán*. Đừng trả nhầm thành hết hàng.
+
 Kho không có → không đẻ số. Hỏi đúng một câu cho rõ cái họ hỏi, nói em kiểm tra / chuyển người **phần số**, và vẫn gợi ý được hướng (ví dụ: "nội thành thường nhanh hơn liên tỉnh" là kinh nghiệm chung, không phải cam kết ngày).
 
 ### C. Tư vấn, phân vân, "nên lấy gì"

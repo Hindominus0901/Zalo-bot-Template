@@ -20,7 +20,9 @@ Một tin / khách / nhánh. Đúng `senderId` trên phiếu. Xong thì khóa nh
 
 1. Đọc `USER.md`: nhánh bật? delay là **số giờ**? giờ được nhắn (ví dụ 9h–21h)?
 2. Quét `memory/phieu/*.md` — bỏ `MAU.md`, `README.md`.
-3. Trong giờ `USER.md`. Ngoài giờ → để nhịp sau, đừng gửi, đừng ghi `da_gui`.
+3. Trong giờ `USER.md`, **và không phải ngày nghỉ**. Ngoài giờ hoặc trong
+   ngày nghỉ / Tết → để nhịp sau, đừng gửi, đừng ghi `da_gui`. Nghỉ xong
+   mới gửi; đừng dồn gửi bù ngày mở lại.
 4. Họ vừa nhắn trong delay → chưa im, bỏ qua nhánh im.
 5. Không chắc ID / kênh Zalo → không đoán, ghi `memory/` ngày, báo chủ.
 

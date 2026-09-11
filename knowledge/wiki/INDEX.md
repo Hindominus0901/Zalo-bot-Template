@@ -17,7 +17,7 @@ không làm việc đó.
 | `dia-chi.md` | Địa chỉ — Shop ở đâu, lấy trực tiếp, giờ mở cửa. Không dùng tờ này để nói số. | ⏳ |
 | `doi-tra.md` | Đổi trả — Đổi trả, hoàn, điều kiện. Không dùng tờ này để nói số. | ⏳ |
 | `gia.md` | Giá — Giá, gói, gồm gì. Không dùng tờ này để nói số. | ⏳ |
-| `gio-truc.md` | Giờ trực — Giờ xem tin / gọi lại. Khớp USER.md. Không dùng tờ này để nói số. | ⏳ |
+| `gio-truc.md` | Giờ trực — Giờ xem tin, gọi lại, ngày nghỉ Tết. Khớp USER.md. Không dùng tờ này để nói số. | ⏳ |
 | `hoa-don-vat.md` | Hoá đơn / VAT — Chỉ khi chủ xuất hoá đơn. Không dùng tờ này để nói số. | ⏳ |
 | `kiem-hang.md` | Kiểm hàng — Đồng kiểm, xem hàng khi nhận. Không dùng tờ này để nói số. | ⏳ |
 | `ship.md` | Ship — Phí ship, nội thành / tỉnh, thời gian đã nói chắc. Không dùng tờ này để nói số. | ⏳ |

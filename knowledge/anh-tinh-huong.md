@@ -21,6 +21,9 @@ Không chê. *Bên em gần nhất là [wiki nếu có]*. Không có món khớp
 hỏi họ thích chỗ nào trên ảnh (màu, dáng), rồi khai thác. Không bịa “hàng này
 bên em cũng có” nếu wiki im.
 
+Món trên ảnh **ngoài hẳn ngành** shop (khách gửi ảnh cái tủ lạnh cho shop hoa):
+`tinh-huong.md` mục *Món shop không bán* — nói thẳng, đừng khai thác tiếp.
+
 ## screenshot_gia — chụp bảng giá / app chỗ khác
 
 TÁCH khuyến mãi. Không hứa khớp giá. `xu-ly-tu-choi`: khác biệt đo được trong
