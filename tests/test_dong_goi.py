@@ -188,3 +188,36 @@ class GhimVersion(unittest.TestCase):
         doc = _read("docs/05-thiet-lap.md")
         self.assertIn("config schema", doc)
         self.assertIn("đừng đoán", doc.lower())
+
+
+class LienKetNoiBo(unittest.TestCase):
+    """Ba đợt sửa đã đổi chỗ nhiều file. Link gãy là agent dựng đi vào ngõ cụt."""
+
+    BO_QUA = ("http://", "https://", "mailto:", "#")
+
+    def test_moi_link_markdown_deu_ton_tai(self):
+        hong = []
+        for md in ROOT.rglob("*.md"):
+            if ".git" in md.parts:
+                continue
+            for dich in re.findall(r"\]\(([^)]+)\)", md.read_text(encoding="utf-8")):
+                if dich.startswith(self.BO_QUA):
+                    continue
+                duong = (md.parent / dich.split("#")[0]).resolve()
+                if not duong.exists():
+                    hong.append(f"{md.relative_to(ROOT)} -> {dich}")
+        self.assertEqual(hong, [], f"link gay: {hong}")
+
+    def test_moi_duong_dan_trong_backtick_deu_ton_tai(self):
+        """`knowledge/abc.md` trong backtick cũng là chỉ dẫn — sai là bot đọc hụt."""
+        hong = []
+        mau = re.compile(r"`((?:knowledge|skills|docs|config|scripts|tests|dung-bot)/[A-Za-z0-9._/-]+\.(?:md|json|json5|py|sh))`")
+        # memory/ bị bỏ qua: file trong đó sinh lúc chạy (memory/2026-09-11.md,
+        # memory/no-tra-loi.md), đúng là không có trong repo.
+        for md in ROOT.rglob("*.md"):
+            if ".git" in md.parts:
+                continue
+            for dich in set(mau.findall(md.read_text(encoding="utf-8"))):
+                if not (ROOT / dich).exists():
+                    hong.append(f"{md.relative_to(ROOT)} -> {dich}")
+        self.assertEqual(hong, [], f"duong dan sai: {hong}")

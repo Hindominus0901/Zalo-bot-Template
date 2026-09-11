@@ -1,5 +1,11 @@
 # Bot CSKH trên Zalo làm được gì, và làm thế nào
 
+> **Bản ghi của buổi khảo sát đầu tiên.** Giữ nguyên làm lịch sử — đừng sửa cho
+> khớp hiện tại. Những gì đã đổi từ sau bản này (bot được lầy, ngoài lề mở hẳn,
+> tra đơn, chỉ mục sổ, ngày nghỉ, sáu tình huống khó): xem
+> [`../CHANGELOG.md`](../CHANGELOG.md) và [`quyet-dinh.md`](quyet-dinh.md).
+
+
 > **Nghiên cứu / bản đồ năng lực** — không phải hướng dẫn cài. Dựng shop:
 > [`08-luong-chu-shop.md`](08-luong-chu-shop.md). Cài nick: [`05-thiet-lap.md`](05-thiet-lap.md).
 > Thử: [`04-kich-ban-thu.md`](04-kich-ban-thu.md). Sổ: [`09-kho-va-du-lieu.md`](09-kho-va-du-lieu.md).
