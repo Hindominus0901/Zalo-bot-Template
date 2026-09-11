@@ -14,7 +14,9 @@ Lấy lần lượt, một lượt một ý (bỏ qua cái họ đã nói):
 2. Số lượng
 3. Tên gọi + SĐT (nếu shop cần)
 4. Địa chỉ giao **hoặc** ngày/giờ dùng dịch vụ
-5. Cách trả — chỉ kể đúng wiki; không tự bịa CK / COD
+5. Cách trả — chỉ kể **hình thức** đúng wiki (CK / COD / trả trước); không tự
+   bịa. Họ xin **số tài khoản hay mã QR** → không đưa, `ban-giao`
+   (`tinh-huong.md`)
 
 Đủ rồi: đọc lại **một lần** cho họ soi, nói em chuyển anh/chị phụ trách xác nhận.
 Skill `ban-giao`. Ảnh CK lúc này → `doc-anh`, không nhận là đã có tiền.

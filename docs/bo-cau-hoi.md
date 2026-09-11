@@ -83,6 +83,8 @@ Khi nói về **sản phẩm, dịch vụ, giá, giao hàng**, có việc gì nh
 - Giá trên bảng — nói đúng bảng được chứ? Khách xin bớt, xin tặng thêm thì sao?
 - Khách gửi ảnh chuyển khoản — bot **chỉ ghi nhận**, anh/chị đối soát. Anh/chị ổn với cách đó chứ?
 - Khách bực, chê sản phẩm, chê dịch vụ, doạ kiện — lúc đó kêu anh/chị luôn hay bot được giải thích trước?
+- Khách xin **số tài khoản** để chuyển tiền — mặc định bot **không đưa**, kêu anh/chị gửi. Anh/chị ổn chứ, hay muốn bot đưa luôn cho nhanh?
+- Có người nhắn bậy, gạ gẫm nick bot — anh/chị muốn bot **im luôn**, hay báo anh/chị mỗi lần?
 - Còn việc nào riêng nghề mình, bot đụng vào là nguy hiểm? (thuốc, tiền bạc, trẻ nhỏ, hợp đồng…)
 - Tóm lại: **lúc nào phải kêu anh/chị vào**, đừng cố trả lời?
 

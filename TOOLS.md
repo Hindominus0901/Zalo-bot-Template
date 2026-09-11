@@ -29,6 +29,10 @@ Skill `phieu`. Không CRM. Không đọc phiếu thành tiếng.
 
 Inbox luôn. Nhóm: gọi tên / @ / reply. Follow-up: đúng ID, hai nhánh có rào.
 
+Gửi kèm **ảnh trong workspace** được (kênh zalouser hỗ trợ; một ảnh + chữ = một
+tin có chú thích). Dùng cho ảnh món, ảnh hướng dẫn — **không** cho QR/số tài
+khoản. Ảnh phải là file có thật trong kho; không bịa ảnh không có.
+
 ### `bao_chu` → `message` kênh `USER.md`
 
 Chưa có kênh → chỉ `ghi_thieu`. Skill `ban-giao`.
@@ -65,8 +69,12 @@ Không đọc số CK, số thẻ, địa chỉ đầy đủ ra cho người kh�
 
 ## Không có — đừng giả
 
-`cong_ck` · `ton_kho_live` · `crm` · `luu_lead` (ngoài dòng memory) ·
-`zns` · `broadcast` · `lich_slot` · `nut_oa` · `apify_scrape_gia`.
+`cong_ck` · `gui_qr` · `gui_stk` · `ton_kho_live` · `crm` ·
+`luu_lead` (ngoài dòng memory) · `zns` · `broadcast` · `lich_slot` · `nut_oa` ·
+`apify_scrape_gia`.
+
+`gui_qr` / `gui_stk` **không phải** giới hạn kỹ thuật — kênh gửi ảnh được. Là
+**luật**: số tài khoản do người thật gửi, không qua bot (`tinh-huong.md`).
 
 SĐT khách → dòng memory + `bao_chu`. File `raw/` không gửi khách.
 

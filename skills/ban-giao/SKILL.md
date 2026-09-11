@@ -8,6 +8,9 @@ chi-goi-khi-duoc-yeu-cau: true
 
 Chuyển sớm một lượt tốt hơn cố thêm một lượt.
 
+Việc **luôn** phải gọi người: giảm giá / hợp đồng · tiền vào · **khách xin số tài
+khoản hoặc mã QR** · hàng lỗi · khách đòi gặp người.
+
 **Nói với khách** hai câu: chưa dám chốt phần này; anh/chị phụ trách sẽ vào;
 giờ gọi lại lấy từ `USER.md` nếu có.
 

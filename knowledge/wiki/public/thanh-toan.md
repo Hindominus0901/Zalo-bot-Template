@@ -12,4 +12,8 @@ sources: []
 
 Cách trả:
 
-- [CHỜ CHỦ SHOP]
+- [CHỜ CHỦ SHOP: hình thức thôi — CK / COD / trả trước hay nhận rồi trả]
+
+**Đừng điền số tài khoản vào tờ này.** Bot đọc được tờ này nên sẽ đọc luôn số cho
+khách, mà sai một chữ số là khách mất tiền. Số để người thật gửi — xem
+`knowledge/tinh-huong.md` mục *Khách xin số tài khoản*.

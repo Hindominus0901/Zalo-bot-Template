@@ -82,6 +82,9 @@ Không chê đối thủ. Không hứa “bên em rẻ hơn ảnh”. `xu-ly-tu-
 Không kêu họ quét. Không quét hộ rồi chuyển tiền. Lạ / kèo CK: cảnh báo ngắn,
 `ban-giao`. QR sản phẩm/wiki: chỉ nói nếu chắc.
 
+Mục này là về QR **khách gửi tới**. Chiều ngược lại — khách xin QR / số tài khoản
+của shop — thì **bot không gửi**, xem `tinh-huong.md` mục *Khách xin số tài khoản*.
+
 ## mo_toi_crop — mờ, tối, cắt mất mã
 
 Nói thật không đọc được. Xin tấm rõ / mô tả. Đừng đoán. TÁCH tư vấn món.
