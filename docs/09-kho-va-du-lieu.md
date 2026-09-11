@@ -52,7 +52,7 @@ Ba lớp, **không trộn miệng**:
 
 Chuyện ngoài shop: tán thật, không kéo về bán hàng. Bảy nhóm không dám (y tế,
 pháp lý, tài chính, chính trị, tự hại, người lớn, làm bài hộ): nói thật một câu
-rồi chơi tiếp. Không
+rồi chơi tiếp — luật ở `knowledge/vui-va-ngoai-le.md`. Không
 làm thầy.
 
 ---

@@ -95,15 +95,15 @@ câu “Hỏi thêm” nếu họ chưa phủ. Đừng đọc cả khối Hỏi 
 
 | Câu | Viết | Chưa có thì |
 |---|---|---|
-| 1 Bán/làm gì | `knowledge/persona.md` → Công việc | `[CHỜ CHỦ SHOP]` |
+| 1 Bán/làm gì | `knowledge/persona.md` → Công việc. Món shop **không** bán → `wiki/public/ban-gi.md` | `[CHỜ CHỦ SHOP]`. Không có danh sách không-bán thì bot không dám nói *bên em không có* |
 | 2 Khách ngại gì | `persona.md` → Khách và điều họ lo | `[CHỜ CHỦ SHOP]` |
 | 3 Tài liệu | Cất `knowledge/raw/` nguyên. Một dòng `raw/NGUON.md`. Tách wiki (thuật toán dưới). Link Drive → skill `lam-viec-dung` + `mcp_drive` **chỉ nếu** MCP `enabled` | Chủ nói không có file → FAQ miệng câu 6; vẫn được |
-| 4 Giọng, tên gọi | `IDENTITY.md` + `SOUL.md` đoạn cuối (xưng hô + 2–3 tin thật). Config `identity.name` khớp lúc B4 | Tên mặc định **Nami**. Biệt hiệu nhóm: ghi `Gọi thêm` |
-| 5 Không được tự ý | `persona.md` → Ranh giới (thêm của shop). Không xóa ba rào sẵn | — |
+| 4 Giọng, tên gọi, **mức lầy** | `IDENTITY.md` + `SOUL.md` đoạn cuối (xưng hô + 2–3 tin thật). Chủ muốn nghiêm hơn mặc định → ghi một dòng vào `persona.md` → Ranh giới. Config `identity.name` khớp lúc B4 | Tên mặc định **Nami**, giọng mặc định **vui và lầy** (`vui-va-ngoai-le.md`). Biệt hiệu nhóm: ghi `Gọi thêm` |
+| 5 Không được tự ý | `persona.md` → Ranh giới (thêm của shop). Không xóa rào sẵn | Chủ muốn bot **đưa số tài khoản** → ghi rõ vào Ranh giới; mặc định template là **không đưa** |
 | 6 FAQ miệng | Mỗi câu một tờ `wiki/public/` hoặc gom cùng chủ đề | Không đẻ số |
 | 7 Bước đặt | `skills/ghi-don/SKILL.md` — chỉ bước shop này, giữ “không tự chốt” | — |
 | 7b Sổ đơn | Có phần mềm + API → bật `sodon` trong `config/mcp.example.json5`; không có → để `enabled: false` | để tắt |
-| 8 Kêu ai + follow-up | `USER.md`: tên, nick bàn giao, giờ gọi lại, SĐT, ảnh, nhóm, **Follow-up** (tắt / giờ / câu mẫu) | Follow-up chưa nói = **để CHỜ / tắt** |
+| 8 Kêu ai + follow-up | `USER.md`: tên, nick bàn giao, giờ gọi lại, **ngày nghỉ / Tết**, SĐT, ảnh, nhóm, **Follow-up** (tắt / giờ / câu mẫu). Ngày nghỉ chép luôn sang `wiki/public/gio-truc.md` | Follow-up chưa nói = **để CHỜ / tắt**. Ngày nghỉ chưa nói = để CHỜ, heartbeat không rào được |
 | 9 Phân vân | `skills/khai-thac/SKILL.md` — đúng câu họ hay hỏi, 2–3 slot | — |
 | 10 Câu đầu | `persona.md` → Tin mở | Không viết *hỗ trợ gì ạ* |
 
@@ -228,7 +228,7 @@ Nói thẳng: tắt máy / ngủ = **mất tin lúc đó**. Khách thật cần 
 - [ ] `persona.md` hết `[CHỜ CHỦ SHOP]` bắt buộc (câu 1–2, 4, 5, 10)
 - [ ] Câu 3: có `raw/` **hoặc** chủ nói không có tài liệu
 - [ ] Wiki chỉ tờ có dữ liệu; `internal/` không lộ
-- [ ] `USER.md` có tên + nick nhận bàn giao + giờ gọi lại
+- [ ] `USER.md` có tên + nick nhận bàn giao + giờ gọi lại + **ngày nghỉ**
 - [ ] Follow-up: đã hỏi; chưa nói = tắt
 - [ ] Sinh lại chỉ mục rồi chạy test — xanh (kho chữ, không phải nick)
 - [ ] `docs/04-kich-ban-thu.md` trên nick thật (sau QR) — **cửa mở khách**

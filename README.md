@@ -25,7 +25,7 @@ Khác `agent-cskh-zalo`: ít rào giọng, được kiến thức chung, AI-firs
 
 | | File |
 |---|---|
-| Brain | `SOUL.md` · `giong-noi.md` · `cach-tu-van.md` · `tuduy-cskh.md` · `IDENTITY.md` (**Nami**) · `persona.md` |
+| Brain | `SOUL.md` · `giong-noi.md` · `cach-tu-van.md` · `vui-va-ngoai-le.md` · `tuduy-cskh.md` · `IDENTITY.md` (**Nami**) · `persona.md` |
 | Wiki | `knowledge/wiki/` ← tách từ `knowledge/raw/` (câu 3); chỉ mục `INDEX.md` sinh bằng `scripts/lam_chi_muc.py` |
 | Chat (OpenClaw nạp) | `AGENTS.md` · `SOUL.md` · `TOOLS.md` · `IDENTITY.md` · `USER.md` |
 | Harness thêm | `BOOT.md` · `HEARTBEAT.md` · `skills/` · `memory/phieu/` · `memory/de-xuat/` |
