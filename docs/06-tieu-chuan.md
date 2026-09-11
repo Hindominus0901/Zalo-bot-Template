@@ -12,6 +12,16 @@ Windows: thay `python3` bằng `py`.
 Xanh = workspace khớp (file, ma trận, rào trong markdown). **Không** = khách
 nhắn được. Chi tiết: [`tests/README.md`](../tests/README.md).
 
+Thêm một tầng nữa, vẫn không cần nick:
+
+```bash
+python3 -m sim.chay nhip
+python3 -m sim.chay nen
+```
+
+Cái này **chạy luật** chứ không khớp chữ — rào follow-up, ngày nghỉ, sổ tin nợ,
+gộp tin dồn, nền prompt. Xem [`../sim/README.md`](../sim/README.md).
+
 ## Cửa 2 — nick thật (mở khách)
 
 [`docs/04-kich-ban-thu.md`](04-kich-ban-thu.md) từ nick khác vào nick nhân viên.

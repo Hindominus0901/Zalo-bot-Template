@@ -23,6 +23,7 @@ mở khách: [`docs/06-tieu-chuan.md`](../docs/06-tieu-chuan.md).
 | `test_dong_goi.py` | Cửa vào cho agent lạ, `CHUAN-BI`, file của shop, **link nội bộ** |
 | `test_tinh_huong.py` | Sáu tình huống khó, và không có số tài khoản nào lọt vào kho |
 | `test_vui.py` | Công tắc tắt hài, bảy nhóm không dám, luật nhóm |
+| `test_gia_lap.py` | **Chạy luật thật** qua `sim/` — rào giờ, ngày nghỉ, gộp tin, nền prompt |
 
 Hai test đáng để ý vì chúng bắt lỗi im lặng: `test_dong_goi` quét **mọi link
 markdown và mọi đường dẫn trong backtick** — link gãy là agent dựng đi vào ngõ

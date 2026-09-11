@@ -173,7 +173,7 @@ tổng đài → sửa `SOUL` đoạn shop / nhắc `giong-noi`, không sửa s�
 Còn `[CHỜ CHỦ SHOP]` trên persona / giá → nói thật: chưa xong phần số, chưa mở
 khách thật.
 
-Trên máy repo — **chỉ mục trước, test sau**:
+Trên máy repo — **chỉ mục trước, test sau**, rồi chạy giả lập:
 
 ```bash
 python3 scripts/lam_chi_muc.py       # Mac / Linux
@@ -183,6 +183,15 @@ python3 -m unittest discover -s tests -v
 # py scripts\lam_chi_muc.py
 # py -m unittest discover -s tests -v
 ```
+
+Rồi:
+
+```bash
+python3 -m sim.chay nhip     # rào follow-up có chạy đúng không
+python3 -m sim.chay nen      # nền prompt có gì bay hơi lọt vào không
+```
+
+Hai lệnh này chạy **luật thật**, không cần nick. `sim/README.md`.
 
 Vừa điền `summary` cho các tờ wiki xong → chỉ mục đang cũ. Không chạy lại thì
 test đỏ ở `test_index_khop_thu_muc`, và bot sẽ đọc mô tả cũ để chọn tờ.
