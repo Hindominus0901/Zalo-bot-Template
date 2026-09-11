@@ -17,9 +17,16 @@
       dmPolicy: "open",
       groupPolicy: "allowlist",
       groups: {
-        "*": { requireMention: true },
-        // "<id-nhom-shop>": { enabled: true, requireMention: true },
+        // "*" chỉ đặt mặc định cho mention gating, KHÔNG mở nhóm nào cả.
+        "*": { enabled: true, requireMention: true },
+        // Khoá phải là ID nhóm, không phải tên. Tên chỉ khớp khi bật
+        // dangerouslyAllowNameMatching — đừng bật.
+        // "1234567890": { enabled: true, requireMention: true },
       },
+      // CẨN THẬN: groupAllowFrom trống = MỌI người trong nhóm đã cho phép đều
+      // gọi được bot. Nó KHÔNG tự lấy allowFrom. Với CSKH thường là đúng ý
+      // (ai trong nhóm cũng hỏi được), nhưng phải biết mình đang chọn cái đó.
+      // groupAllowFrom: ["<id-nguoi-duoc-goi>"],
     },
   },
   agents: {

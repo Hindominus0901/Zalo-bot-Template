@@ -127,13 +127,26 @@ class NhipChat(unittest.TestCase):
         self.assertIn("Tin dồn", text)
         self.assertIn("600", text)
 
-    def test_khong_bia_key_config_chua_kiem(self):
-        """Chưa xác minh được OpenClaw có key gộp tin dồn — không được ghi vào config mẫu."""
+    def test_khong_bia_key_config_khong_ton_tai(self):
+        """Đã kiểm package openclaw 2026.9.4: không có key gộp tin dồn cho người dùng.
+
+        Chỉ có createChannelInboundDebouncer — thứ của người viết plugin, không
+        phải key trong openclaw.json.
+        """
         cfg = _read("config/openclaw.zalouser.example.json5")
         for key in ("inbound_debounce_ms", "chat_behavior", "quick_ack"):
-            self.assertNotIn(key, cfg, f"{key} chua xac minh, dung ghi vao config mau")
+            self.assertNotIn(key, cfg, f"{key} khong ton tai, dung ghi vao config mau")
         doc = _read("docs/10-openclaw-config-mau.md")
         self.assertIn("config schema", doc, "docs phai day cach tu kiem truoc khi them key")
+        self.assertIn("2026.9.4", doc, "phai ghi ban da kiem")
+
+    def test_config_mau_dung_key_that(self):
+        """Mọi key trong config mẫu phải là key có thật trên bản đã kiểm."""
+        cfg = _read("config/openclaw.zalouser.example.json5")
+        for key in ("dmPolicy", "groupPolicy", "requireMention", "enabled"):
+            self.assertIn(key, cfg, key)
+        self.assertIn("groupAllowFrom", cfg, "phai canh bao bay groupAllowFrom trong")
+        self.assertNotIn("dangerouslyAllowNameMatching: true", cfg)
 
 
 class BanGiaoLaCo(unittest.TestCase):

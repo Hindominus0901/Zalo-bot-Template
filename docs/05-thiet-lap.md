@@ -36,16 +36,26 @@ thật**, đừng để trống khi giao cho khách.
 
 | Thứ | Bản | Lấy bằng lệnh |
 |---|---|---|
-| OpenClaw | `[CHỜ NGƯỜI BÁN]` | `openclaw --version` |
-| Plugin `@openclaw/zalouser` | `[CHỜ NGƯỜI BÁN]` | `openclaw plugins list` |
-| Node | `[CHỜ NGƯỜI BÁN]` | `node --version` |
+| OpenClaw | `2026.9.4` | `openclaw --version` |
+| Plugin `@openclaw/zalouser` | `2026.9.4` | `openclaw plugins list` |
+| Node | **`>=24.16.0 <25` hoặc `>=26.1.0`** | `node --version` |
 | Python | 3.9 trở lên | `python3 --version` (Windows: `py --version`) |
-| Ngày test | `[CHỜ NGƯỜI BÁN]` | |
+| Ngày đối chiếu | 2026-09-11 | |
+
+**Node là chỗ hay tắc nhất.** OpenClaw không chạy trên Node 25, và không chạy
+dưới 24.16. Node 22 hay 23 thì cài xong mới báo lỗi.
+
+Đối chiếu tên key với tài liệu đi kèm chính bản đang cài — nó nằm ngay trong
+package, không cần mạng:
+
+```bash
+ls "$(npm root -g)/openclaw/docs/channels/zalouser.md"
+```
 
 Cài đúng bản đã test, đừng lấy `latest`:
 
 ```bash
-openclaw plugins install @openclaw/zalouser@<bản-ở-bảng-trên>
+openclaw plugins install @openclaw/zalouser@2026.9.4
 ```
 
 ## Lệnh không chạy như tài liệu thì làm gì

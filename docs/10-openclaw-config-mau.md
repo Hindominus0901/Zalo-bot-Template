@@ -97,26 +97,28 @@ workspace làm nguồn** — xem `HEARTBEAT.md`.
 Khách Việt gõ 4–6 tin ngắn liên tiếp. Xử ở tầng gateway (chờ họ im rồi mới đẩy
 một lượt cho model) **rẻ và chắc hơn** để model tự phán đoán.
 
-Nhưng: **bản OpenClaw mỗi người mỗi khác.** Chưa xác minh được bản nào có key
-gộp tin dồn (tên hay gặp ở các gateway khác: `inbound_debounce_ms`,
-`chat_behavior`). Nên:
+**Đã kiểm trên bản 2026.9.4: KHÔNG có key gộp tin dồn cho người dùng.** Trong
+package chỉ có `createChannelInboundDebouncer` — thứ dành cho người viết plugin,
+không phải key trong `openclaw.json`.
 
-1. Kiểm trên **máy của mình** trước:
+Nên luật gộp tin nằm ở `AGENTS.md` (mục *Tin dồn và nhịp gửi*), bot xử bằng phán
+đoán. Chấp nhận được, chỉ là không chắc bằng máy.
 
-   ```bash
-   openclaw config schema | grep -i "debounce\|batch\|behavior"
-   openclaw doctor
-   ```
+Bản sau có thể thêm — kiểm trên máy mình trước khi thêm bất cứ key nào:
 
-2. Có key → thêm vào `gateway`, để **1500 ms**. Tin có ảnh cần chờ lâu hơn tin
-   chữ (nhiều ảnh gửi lệch nhau vài trăm ms).
-3. **Không có key → đừng thêm.** Config lạ có thể bị OpenClaw từ chối, hoặc tệ
-   hơn là nuốt im lặng và mình tưởng đã bật. Luật gộp tin đang nằm sẵn trong
-   `AGENTS.md` (mục *Tin dồn và nhịp gửi*) — bot vẫn xử được, chỉ là bằng phán
-   đoán chứ không bằng máy.
+```bash
+openclaw config schema | grep -i "debounce\|batch\|behavior"
+```
+
+**Không thấy thì đừng thêm.** Config lạ có thể bị nuốt im lặng và mình tưởng đã
+bật.
 
 Cùng luật đó cho *đang soạn* / *đã xem* và chia tin: có key thì bật, không có thì
 để `AGENTS.md` lo.
+
+Có thật trên 2026.9.4: `channels.zalouser.mediaMaxMb` (chặn cỡ file gửi ra) và
+`channels.zalouser.dangerouslyAllowNameMatching` — **đừng bật cái thứ hai**, nó
+cho phép khớp nhóm theo tên thay vì ID.
 
 ---
 

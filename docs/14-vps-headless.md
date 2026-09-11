@@ -102,6 +102,7 @@ Rồi từ máy mình mở đường hầm SSH: `ssh -L 8899:127.0.0.1:8899 user
 ### B3. Kiểm đã vào chưa
 
 ```bash
+openclaw channels status --probe
 openclaw directory self --channel zalouser
 ```
 
@@ -127,8 +128,8 @@ Phiên đăng nhập zca-js **sẽ chết**. Zalo hết hạn phiên, đổi m�
 tay trên điện thoại, hoặc Zalo thấy bất thường. Khi đó bot im, và khách nhắn vào
 không ai trả.
 
-**Dấu hiệu:** `openclaw directory self --channel zalouser` không ra nick, hoặc
-log gateway báo lỗi đăng nhập lặp lại.
+**Dấu hiệu:** `openclaw channels status --probe` báo kênh không khoẻ, hoặc
+`openclaw directory self --channel zalouser` không ra nick.
 
 **`BOOT.md` đã dạy bot ngắt mạch:** login lỗi lặp thì dừng thử, báo chủ **một
 lần** rằng cần quét lại mã. Không thử lại mù mỗi nhịp. Nên chủ shop sẽ nhận
@@ -137,8 +138,12 @@ lần** rằng cần quét lại mã. Không thử lại mù mỗi nhịp. Nên 
 **Quy trình quét lại, viết sẵn cho chủ shop bằng chữ thường:**
 
 1. Báo người dựng (hoặc người trực kỹ thuật).
-2. Người đó SSH vào, `tmux new -s zalo`, chạy lại `openclaw channels login
-   --channel zalouser`.
+2. Người đó SSH vào, `tmux new -s zalo`, rồi **đăng xuất trước cho sạch**:
+
+   ```bash
+   openclaw channels logout --channel zalouser
+   openclaw channels login  --channel zalouser
+   ```
 3. Chủ shop giơ điện thoại quét — **cùng cách như lần đầu**.
 4. `openclaw directory self --channel zalouser` kiểm lại.
 
