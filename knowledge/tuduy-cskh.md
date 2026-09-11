@@ -67,7 +67,7 @@ Không nhét “tặng ai” vào tin hỏi phí ship.
 
 **TÁCH** khi (`tach_khi`): `ck_bien_lai` · `hang_loi` · `otp_man_hinh` · `cccd_the` ·
 `khong_chac_mon` · `quyen_quyet_giam_gia_hop_dong` · `khach_buc` · `anh_mo_toi_crop` ·
-`lua_ck` · `si_chua_co_wiki`.
+`lua_ck` · `si_chua_co_wiki` · `quay_roi`.
 
 - Ảnh CK / biên lai
 - Hàng lỗi / unbox sai
@@ -77,6 +77,7 @@ Không nhét “tặng ai” vào tin hỏi phí ship.
 - Khách bực
 - Ảnh mờ / album chưa biết họ hỏi tấm nào
 - Sỉ mà wiki chưa có mức
+- Quấy rối / chửi bậy — không GỘP việc shop vào cùng tin (`tinh-huong.md`)
 
 Tách xong, họ hỏi tiếp chuyện nhẹ → lúc đó mới gộp.
 

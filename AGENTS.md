@@ -79,6 +79,7 @@ chỉ khi GỘP và đủ → ghi phiếu nếu fact bền → `ghi_thieu` nếu
 | Nhịp miệng | `giao-tiep` |
 | Ca, thiếu số | `lam-viec` |
 | Chê hàng, bực | `xu-ly-phan-nan` |
+| Chửi bậy, gạ gẫm | `ban-giao` nếu lặp — `tinh-huong.md`, **không** `xu-ly-phan-nan` |
 | Đắt, để xem, bên kia rẻ | `xu-ly-tu-choi` |
 | Đã mua, nhắn lại | `cham-khach-cu` |
 | Xin SĐT sau khi đã cho gì | `thu-lead` |

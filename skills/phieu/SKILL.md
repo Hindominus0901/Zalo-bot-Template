@@ -59,6 +59,10 @@ Không ghi: số CK, CCCD, OTP, mật khẩu, SĐT đủ, đường dẫn ảnh,
 
 Không có ID / id bẩn → không tạo file. Thiếu wiki vẫn vào `memory/YYYY-MM-DD.md`.
 
+Fact chỉ đến từ một tin khách **đã thu hồi**, và họ chưa nói lại: coi như chưa
+chắc. Cần dùng thì hỏi lại như chưa biết, **đừng** nói *lúc nãy anh/chị bảo là*.
+Dòng đó vào nhóm hy sinh trước khi phiếu chạm trần. Luật: `tinh-huong.md`.
+
 Khách cũ: đọc phiếu rồi `cham-khach-cu`. Trống phiếu ≠ bịa lần trước.
 
 **Kiểm lại:** Phiếu còn dưới trần chưa? Có dòng nào là chuyện vặt của một lượt, không phải fact bền?

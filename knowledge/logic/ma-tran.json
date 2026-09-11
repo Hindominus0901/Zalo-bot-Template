@@ -32,7 +32,8 @@
     "khach_buc",
     "anh_mo_toi_crop",
     "lua_ck",
-    "si_chua_co_wiki"
+    "si_chua_co_wiki",
+    "quay_roi"
   ],
   "phieu": {
     "path": "memory/phieu/{id}.md",
