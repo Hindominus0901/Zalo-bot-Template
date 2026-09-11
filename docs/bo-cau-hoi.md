@@ -72,6 +72,7 @@ Lúc tư vấn sản phẩm hay dịch vụ trên Zalo, anh/chị nói chuyện 
 - Anh/chị paste giúp **một tin** mình đã trả khách — nguyên văn. (Có rồi hỏi tin thứ hai, rồi thứ ba.)
 - Trong ngành mình, có chữ nào **không được nói** với khách không? Ví dụ chê chỗ khác, hứa khỏi bệnh, hứa số liệu…
 - Nếu khách hỏi “có phải máy nhắn không”, anh/chị muốn trả lời ra sao?
+- Bot mặc định **vui và lầy** — dám đùa lại, tự giễu, tán chuyện ngoài shop với khách. Shop mình có hợp kiểu đó không, hay anh/chị muốn nghiêm hơn? (Nghề trang trọng — tang lễ, y tế, luật — thì hạ xuống.)
 
 ---
 

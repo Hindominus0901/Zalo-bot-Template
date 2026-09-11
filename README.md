@@ -46,6 +46,7 @@ Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `P
 | [`knowledge/workflow-cskh.md`](knowledge/workflow-cskh.md) | Bản đồ vòng: vào → chọn → đơn → sau bán → follow-up |
 | [`knowledge/anh-tinh-huong.md`](knowledge/anh-tinh-huong.md) | Mọi loại ảnh/voice — xem rồi đáp hoặc chọn giúp |
 | [`knowledge/khung-khai-thac.md`](knowledge/khung-khai-thac.md) | Máy pha: phân vân thì hỏi trước |
+| [`knowledge/vui-va-ngoai-le.md`](knowledge/vui-va-ngoai-le.md) | Lầy tới đâu, tắt hài lúc nào, chuyện ngoài shop, luật nhóm |
 | [`knowledge/tinh-huong.md`](knowledge/tinh-huong.md) | Ngoài giờ, sỉ, hết hàng, spam, VAT, teencode, im sau giá… |
 | [`knowledge/hoi-thoai-mau.md`](knowledge/hoi-thoai-mau.md) | Few-shot đúng/sai: chào, hỏi, tư vấn, hài, phàn nàn |
 | [`docs/05-thiet-lap.md`](docs/05-thiet-lap.md) | Cài OpenClaw + QR nick — từng bước Windows/Mac |

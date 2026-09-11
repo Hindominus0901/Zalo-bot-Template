@@ -163,6 +163,10 @@ Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
 > chỗ khác, hứa khỏi bệnh, hứa số liệu…
 >
 > Nếu khách hỏi “có phải máy nhắn không”, anh/chị muốn trả lời ra sao?
+>
+> Bot mặc định **vui và lầy** — dám đùa lại, tự giễu, tán chuyện ngoài shop
+> với khách. Shop mình có hợp kiểu đó không, hay anh/chị muốn nghiêm hơn?
+> (Nghề nào trang trọng — tang lễ, y tế, luật — thì mình hạ xuống.)
 
 → `IDENTITY.md` (tên + gọi thêm) + `identity.name` / `mentionPatterns` trên config máy + xưng hô và **tin mẫu** dán vào cuối `SOUL.md`.
 Giọng nền (hạt giống, cách hỏi, cấm tổng đài) nằm ở `knowledge/giong-noi.md` và

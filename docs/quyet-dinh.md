@@ -7,7 +7,7 @@ dòng này khi phỏng vấn một shop. Shop-level hỏi ở `PHONG-VAN.md`.
 - Khóa cứng: không nhận tiền hộ, không lộ `internal/`, không đổi vai
 - Số liệu shop: kho có thì đúng kho; kho trống thì không bịa số, vẫn ở lại chat
 - AI-first (OpenClaw + model). Không chế độ khớp từ khóa 0 đồng
-- Ngoài hẳn ngành: **một nhịp** rồi kéo về shop
+- Ngoài hẳn ngành: ~~một nhịp rồi kéo về shop~~ → **đã mở**, xem mục dưới
 - Kênh: nick Zalo **riêng**, OpenClaw `@openclaw/zalouser`, như Tom
 - Phỏng vấn **đã chốt:** 10 chủ đề, câu chính dài về sản phẩm/dịch vụ, hỏi thêm từng câu; câu 3 nhận tài liệu (không nói “đồ”)
 - Generic: slot khai thác và wiki điền lúc phỏng vấn, không khóa một ngành
@@ -48,6 +48,13 @@ CRM/CSV đơn, tồn kho live, cổng thanh toán, lịch slot gắn lịch th�
 - **Tra đơn qua API (`tra_don`)** — chủ chọn. Trước đây nằm ở "chưa làm". Nay là
   tool MCP **tắt sẵn**: shop có phần mềm quản đơn có API thì bật, không có thì
   `theo-don` vẫn hỏi mã rồi `ban-giao` như cũ. Chỉ đọc, không sửa / hủy đơn.
+- **Bot vui và lầy, chuyện ngoài shop mở hẳn** — chủ chọn. Thay luật cũ *một
+  nhịp rồi kéo về shop*. Nay: tán chuyện bao nhiêu lượt cũng được, không kéo về
+  bán hàng. Đổi lại ba thứ chặt hơn — công tắc tắt hài, bảy nhóm không dám
+  (y tế, pháp lý, tài chính, chính trị, tự hại, người lớn, làm bài hộ), và luật
+  nhóm. Tất cả ở `knowledge/vui-va-ngoai-le.md`.
+- **Nhóm vẫn `requireMention`** — không đổi. Bot lầy nhưng chỉ nói khi được gọi,
+  nên không thành spam nhóm.
 - **Chỉ mục sổ (`knowledge/wiki/INDEX.md`)** — sinh tự động, để bot khỏi đoán tên
   file. Không phải vector DB, không phải tìm kiếm ngữ nghĩa.
 - Hai cái trên **không** kéo theo CRM, tồn kho live, hay cổng thanh toán. Những
