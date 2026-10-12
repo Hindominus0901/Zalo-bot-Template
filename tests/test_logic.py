@@ -288,3 +288,36 @@ class LogicToolsAndPrompt(unittest.TestCase):
         self.assertIn("mcp_drive", doc)
         self.assertIn("Google Drive", doc)
         self.assertIn("Không nối sẵn", doc)
+
+
+class LuatNen(unittest.TestCase):
+    """Luật cần cho tin vặt phải nằm trong nền (AGENTS.md), không ở file phụ.
+
+    Sự cố thật (bot chị Thanh, nhóm lớp): luật im trong nhóm nằm ở file phụ, mà
+    tin nhóm phần lớn là tin vặt — loại tin bot không mở file nào. Kết quả bot
+    hùa theo chủ, trả câu khách hỏi thẳng chủ, và tự báo "20:00 tối nay" lấy từ
+    tin cũ trong nhóm trong khi tờ lịch còn trống.
+    """
+
+    def setUp(self):
+        self.nen = _read("AGENTS.md")
+
+    def test_luat_im_trong_nhom_nam_trong_nen(self):
+        self.assertIn("Nhóm: mặc định im", self.nen)
+        for dong in ("vừa nói", "hỏi cả nhóm", "gọi thẳng tên chủ", "im đi"):
+            self.assertIn(dong, self.nen, f"thieu luat nhom: {dong}")
+
+    def test_so_chi_tu_so_khong_tu_tin_cu(self):
+        self.assertIn("Số không có trong sổ thì không có", self.nen)
+        self.assertIn("tin ghim", self.nen)
+
+    def test_moi_tin_duoc_dap_chi_trong_inbox(self):
+        """"Mọi tin đều được đáp" không điều kiện là sai cho nhóm."""
+        self.assertNotRegex(self.nen, r"(?m)^## Mọi tin đều được đáp")
+        self.assertIn("## Inbox: mọi tin đều được đáp", self.nen)
+
+    def test_doc_them_mac_dinh_la_khong(self):
+        """"Tối đa 3" bị hiểu thành luôn mở 3 file — mỗi file là khách chờ thêm."""
+        self.assertIn("mặc định là **không**", self.nen)
+        self.assertIn("Không mở file để phòng xa", self.nen)
+        self.assertNotIn("tối đa 3, khi cần", self.nen)

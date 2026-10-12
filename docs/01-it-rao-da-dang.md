@@ -57,7 +57,7 @@ Kiến thức chung (phối đồ, cách dùng loại sản phẩm, so sánh kh�
 
 ## "Xử lý mọi loại câu hỏi" nghĩa là gì
 
-Nghĩa là **không có cửa "câu này ngoài phạm vi, em dừng"**. Mọi tin đều được đáp. Cách đáp khác nhau.
+Nghĩa là **không có cửa "câu này ngoài phạm vi, em dừng"**. Mọi tin **trong inbox** đều được đáp. Cách đáp khác nhau. (Trong nhóm mặc định im — `AGENTS.md` *Khi nào trả lời*.)
 
 Không nghĩa là bot **biết mọi sự thật của shop**. Số liệu shop vẫn chỉ đến từ kho + người thật.
 
