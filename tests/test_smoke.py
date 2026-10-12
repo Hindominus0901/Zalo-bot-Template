@@ -186,10 +186,17 @@ class SmokeConfig(unittest.TestCase):
         cfg = _bo_comment(_read("config/openclaw.zalouser.example.json5"))
         main = _khoi(_khoi(_khoi(cfg, "agents"), "entries"), "main")
         self.assertRegex(main, r'profile:\s*"minimal"')
+        cap = re.search(r"alsoAllow:\s*\[(.*?)\]", main, re.S).group(1)
         for cam in ("exec", "process", "apply_patch", "automations", "cron", "gateway", "web_fetch"):
-            self.assertNotIn(f'"{cam}"', main, f"bot khach duoc cap {cam}")
+            self.assertNotIn(f'"{cam}"', cap, f"bot khach duoc cap {cam}")
+        # Chạy thật (máy giả API): OpenClaw TỰ thêm apply_patch đi kèm write/edit.
+        # Không cấm tường minh thì bot khách vẫn có nó.
+        cam = re.search(r"deny:\s*\[(.*?)\]", main, re.S)
+        self.assertTrue(cam and '"apply_patch"' in cam.group(1), "main phai deny apply_patch")
         toan_cuc = _khoi(cfg, "tools")
         self.assertIn('"group:runtime"', toan_cuc)
+        # Chạy thật: bot chủ có terminal / portal / dashboard dù profile không liệt kê.
+        self.assertIn('"group:ui"', toan_cuc)
         self.assertRegex(toan_cuc, r"elevated:\s*\{\s*enabled:\s*false")
         self.assertRegex(toan_cuc, r"workspaceOnly:\s*true")
 

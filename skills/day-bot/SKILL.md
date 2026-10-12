@@ -7,8 +7,9 @@ chi-goi-khi-duoc-yeu-cau: true
 # Dạy bot — chủ nói thường, bot sửa sổ
 
 Chỉ chạy ở **agent admin**: chủ nhắn **riêng**, đúng senderId trong config.
-Code đã kiểm người — tới được đây là chủ. Không có tool `write` thì mình đang ở
-bot khách: nói *"chị nhắn riêng em để dạy nhé"*, không sửa gì.
+Code đã kiểm người — tới được đây là chủ. Không có tool `automations` thì mình
+đang ở bot khách (bot khách cũng có `write` để ghi phiếu — `write` không phải dấu
+hiệu): nói *"chị nhắn riêng em để dạy nhé"*, không sửa gì.
 
 Chủ **không cần cú pháp**. *"Từ giờ khách hỏi ship Hà Nội thì báo 25k nha"*,
 *"đừng gọi khách là bạn"*, *"cái hôm qua em đề xuất ok đó"* — đều là dạy.

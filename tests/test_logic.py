@@ -325,3 +325,16 @@ class LuatNen(unittest.TestCase):
         self.assertIn("mặc định là **không**", self.nen)
         self.assertIn("Không mở file để phòng xa", self.nen)
         self.assertNotIn("tối đa 3, khi cần", self.nen)
+
+
+class NhanBotChu(unittest.TestCase):
+    """Chạy thật: bot khách CŨNG có write (ghi phiếu). Dấu hiệu "mình là bot chủ"
+    phải là automations — tool duy nhất chỉ bot chủ có. Neo vào write là bot khách
+    tưởng mình được dạy."""
+
+    def test_dau_hieu_bot_chu_la_automations(self):
+        for f in ("AGENTS.md", "skills/day-bot/SKILL.md"):
+            body = _read(f)
+            self.assertIn("automations", body, f)
+            self.assertNotIn("Không có tool `write` thì mình đang ở", body, f)
+            self.assertNotIn("có tool ghi sổ + hẹn giờ →", body, f)

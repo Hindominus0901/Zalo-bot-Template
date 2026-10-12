@@ -5,6 +5,28 @@
 Bản nào đổi thứ shop đang phụ thuộc — tên trường phiếu, tên tool, tên tờ wiki,
 tên file — **phải ghi ở đây**. Không ghi = coi như không đổi.
 
+## 0.4.1 — chạy lượt bot thật (model giả), bịt hai chỗ hở
+
+OpenClaw 2026.9.4 chạy **lượt bot thật** (`openclaw agent --local`), model thay
+bằng máy chủ giả API Claude ghi lại từng request. Thấy đúng thứ Claude sẽ thấy:
+prompt nền, tool từng agent. Kết quả đầy đủ: `docs/16-day-bot.md` mục *Đã kiểm
+thế nào*.
+
+Kiểm config không bắt được, chạy thật mới thấy:
+
+- **OpenClaw tự thêm `apply_patch`** đi kèm `write`/`edit` cho bot khách. Nay
+  `main.tools.deny: ["apply_patch"]`. Test cũ kiểm chữ trong config nên tưởng
+  đã không có.
+- **Bot chủ có `terminal`, `portal`, `dashboard`** (nhóm `group:ui`) dù profile
+  `coding` không liệt kê. Nay cấm `group:ui` toàn cục.
+- **Dấu hiệu "mình là bot chủ" sai:** `AGENTS.md` và `day-bot` dựa vào việc có
+  tool ghi — nhưng bot khách cũng có `write` (ghi phiếu). Nay neo vào
+  `automations`, tool duy nhất chỉ bot chủ có.
+
+Đã chạy và đạt: bot khách gọi `exec` / `automations` / `terminal` bị OpenClaw
+từ chối; bot chủ ghi đúng thư mục repo; sửa sổ lượt sau thấy ngay; khách B
+không thấy chuyện khách A.
+
 ## 0.4.0 — chạy thật lần đầu: vá lỗ an toàn, chủ dạy bot qua Zalo
 
 Bot chị Thanh (shop coaching) là lần đầu template chạy trên máy thật. Mọi thứ

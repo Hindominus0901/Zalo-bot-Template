@@ -131,7 +131,26 @@ Trên OpenClaw **2026.9.4** + plugin `@openclaw/zalouser` 2026.9.4, Node v24.21.
 - `scripts/dien_config.py` chạy trên config giả lập máy đã `onboard`: token
   gateway còn nguyên sau khi gộp.
 
-**Chưa kiểm** — cần nick thật: chủ nhắn riêng thật sự vào `admin` qua plugin
+**Chạy lượt bot thật** — OpenClaw thật, model thay bằng một máy chủ giả API
+Claude ghi lại nguyên văn mọi request (`openclaw agent --local`):
+
+| Thử | Kết quả |
+|---|---|
+| Tool bot khách nhận thật | `read`, `write`, `edit`, `message`, `view_image`, `session_status` — hết |
+| Tool bot chủ, người gửi là chủ | thêm `write`, `edit`, `automations`, `message`; **không** `exec`, `terminal`, web, `gateway` |
+| Tool bot chủ, người gửi lạ (lớp hai) | không ghi, không hẹn giờ, không gửi tin |
+| Ra lệnh bot khách gọi `exec` / `automations` / `terminal` | OpenClaw từ chối cả ba: *"isn't available"* |
+| Bot chủ gọi `write` | Ghi đúng `memory/nhat-ky-sua/` của repo shop |
+| Sửa `MEMORY.md` / tờ wiki giữa hai lượt | Lượt sau thấy chữ mới, không restart |
+| Khách B nhắn sau khách A | Request của B **không** có tên, SĐT của A |
+| Prompt bot khách | Có `<policy>`, khối *Shop này + sổ*, SOUL, IDENTITY, USER, MEMORY; không có `TOOLS.md`. ~32.800 ký tự (template ~19.500 + khung OpenClaw ~13.000) |
+
+Lần chạy này bắt được hai chỗ mà kiểm config không thấy: OpenClaw **tự thêm**
+`apply_patch` đi kèm `write`/`edit`, và bot chủ có sẵn `terminal` / `portal` /
+`dashboard` dù profile không liệt kê. Cả hai nay bị cấm tường minh.
+
+**Chưa kiểm** — cần nick thật / mã API: giọng và độ khôn thật của Claude; lượt
+heartbeat thật (follow-up); chủ nhắn riêng thật sự vào `admin` qua plugin
 (đã kiểm hàm định tuyến, chưa kiểm tin Zalo thật đi qua nó); một việc hẹn giờ
 thật gửi tới `user:<id>` / `group:<id>`; bot admin sửa sổ rồi bot khách nói theo
 ở tin kế. Kịch bản thử: `04-kich-ban-thu.md` mục *Dạy bot*.

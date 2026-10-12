@@ -40,7 +40,10 @@
   // Không ai được chạy lệnh shell trên VPS (máy giữ cookie Zalo + mã AI), không
   // ai đổi config gateway, không ghi ra ngoài repo shop.
   tools: {
-    deny: ["group:runtime", "gateway", "skill_workshop"],
+    // group:ui = terminal / portal / dashboard: điều khiển terminal và mở cổng
+    // web từ giao diện quản trị. Bot CSKH không cần — chạy thật thì bot chủ có
+    // sẵn ba tool này dù profile không liệt kê.
+    deny: ["group:runtime", "group:ui", "gateway", "skill_workshop"],
     elevated: { enabled: false },
     fs: { workspaceOnly: true },
     // Agent không nhắn chéo nhau. Chủ xem hội thoại khách qua admin thì được,
@@ -122,6 +125,9 @@
           // sandbox) — workspaceOnly chỉ chặn ra ngoài repo. Luật "chỉ ghi
           // memory/" nằm ở AGENTS.md. Xem docs/16-day-bot.md mục "Giới hạn".
           alsoAllow: ["read", "write", "edit", "message", "view_image", "heartbeat_respond"],
+          // OpenClaw tự thêm apply_patch đi kèm write/edit (thấy khi chạy thật).
+          // Bot khách chỉ cần ghi phiếu — bỏ nó.
+          deny: ["apply_patch"],
           fs: { workspaceOnly: true },
         },
         // Có biệt hiệu thì bỏ comment, giữ "nami" trong list:
