@@ -17,7 +17,9 @@ bảng giá / ảnh / file. Không cần tạo OA.
 Sau khi nick sống: xem tin Nami; chỗ tiền / khiếu nại thì **vào tay**. Ngoài giờ
 Nami vẫn trả giá/ship nếu đã ghi; không hứa gọi ngay.
 
-Muốn đổi tên nhân viên: nói tên mới — người dựng sửa `IDENTITY.md` + config cho khớp.
+Muốn đổi giá, đổi câu trả lời, thêm luật, hẹn bot nhắc việc: **nhắn riêng cho
+bot** như nhắn nhân viên (mục *Người trực* dưới). Đổi tên nhân viên thì nói
+người dựng — tên phải đổi cùng lúc ở hai chỗ.
 
 ## Người dựng (coding agent / freelancer)
 
@@ -36,5 +38,10 @@ Heartbeat báo thiếu wiki về nick này; nhắn khách **chỉ** khi anh/ch�
 follow-up trong `USER.md` (im sau giá / sau đơn — một tin mỗi nhánh). Chưa điền
 = tắt.
 
-Sửa giá: sửa **trang wiki**, không nhắn “Nami ơi từ giờ giá X” rồi quên file
-(nói miệng thì bot có thể nhớ phiếu, wiki mới là số lần sau).
+**Sửa giá, dạy bot, giao việc: nhắn RIÊNG cho nick bot** — *“từ giờ gói A là
+2 triệu nha em”*, *“9h mai nhắc chị gọi chị Lan”*. Bot nhắc lại, chờ chị gật,
+rồi tự sửa sổ / tự hẹn giờ. Đủ cách nói và bot sẽ từ chối gì:
+[`16-day-bot.md`](16-day-bot.md).
+
+Trong **nhóm** thì nói vậy bot không sửa — nhóm có khách đọc chung. Và chỉ nick
+chủ đã khai lúc dựng mới dạy được; người khác tự xưng là chủ cũng không.

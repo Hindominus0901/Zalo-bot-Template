@@ -7,7 +7,7 @@ Hai mảnh nguồn (đừng sửa lệch nhau rồi quên gộp):
 
 | Mảnh | File | Việc |
 |---|---|---|
-| Nick Zalo | [`config/openclaw.zalouser.example.json5`](../config/openclaw.zalouser.example.json5) | `dmPolicy: open`, tên Nami, nhóm phải gọi tên |
+| Nick Zalo + hai agent + rào an toàn | [`config/openclaw.zalouser.example.json5`](../config/openclaw.zalouser.example.json5) | Nguồn duy nhất. Điền bằng `scripts/dien_config.py` |
 | Drive | [`config/mcp.example.json5`](../config/mcp.example.json5) | Tắt sẵn. Có `command` mẫu |
 
 Merge vào `~/.openclaw/openclaw.json` trên **máy Gateway**. Workspace = đường dẫn
@@ -16,35 +16,41 @@ Merge vào `~/.openclaw/openclaw.json` trên **máy Gateway**. Workspace = đư�
 Tom cá nhân hay để `pairing`. Shop **không** copy pairing — khách lạ phải nhắn
 được.
 
-## Mẫu gộp (chú thích ở trên, JSON5 ở dưới)
+## Mẫu gộp — một nguồn duy nhất
 
-Bắt buộc khớp `IDENTITY.md` (`name`). Model agent nên **có mắt** (xem ảnh) —
-khách CSKH hay gửi ảnh. Chưa chọn model mắt → ghi `[CHỜ]` trên checklist B4,
-đừng bảo nick đã sẵn.
+**Đừng chép config từ trang này.** Nguồn duy nhất là
+[`config/openclaw.zalouser.example.json5`](../config/openclaw.zalouser.example.json5),
+và cách dễ nhất là để script điền hộ:
+
+```bash
+python3 scripts/dien_config.py
+```
+
+Script hỏi tên bot, senderId của chủ, đường dẫn repo — rồi ghi file và tự chạy
+`openclaw config validate`. Bản 0.3.0 từng chép config ra ba trang docs, ba bản
+lệch nhau, và cả ba cùng sai một key. Một nguồn thì không lệch được.
+
+File đó có những khối này — đọc để hiểu, không phải để chép:
+
+| Khối | Làm gì | Bỏ đi thì |
+|---|---|---|
+| `session.dmScope: "per-channel-peer"` | Mỗi khách một cuộc hội thoại | Mọi khách **chung một phiên** — bot trả khách B mà nhớ SĐT, đơn của khách A |
+| `skills.workshop.autonomous.mode: "off"` | Tắt tự học | Ai gõ *“từ giờ luôn…”* — kể cả khách — cũng thành skill |
+| `commands.ownerAllowFrom` | Ai là chủ, **code** kiểm | Không ai là chủ → không dạy bot, không giao việc được |
+| `tools` (toàn cục) | Cấm shell, cấm đổi gateway, cấm ghi ra ngoài repo | Bot có `exec` trên VPS giữ cookie Zalo |
+| `dreaming` / `memoryFlush` tắt | Không tự chép chat vào `MEMORY.md` | Chữ khách vào file nạp nền của mọi khách |
+| `channels.zalouser` | `open` + `allowFrom: ["*"]`, nhóm phải gọi tên | Thiếu `"*"` = rơi hết tin khách, không báo lỗi |
+| `agents.entries.main` | Bot trả **khách**: đọc, ghi phiếu, gửi tin, xem ảnh | — |
+| `agents.entries.admin` | Bot nói với **chủ**: dạy bot, giao việc | Chủ không dạy được qua Zalo |
+| `bindings` | Chủ nhắn riêng → admin; còn lại → main | Chủ cũng thành khách |
+
+Cả hai agent dùng **chung một workspace**: chủ dạy ở admin thì bot khách thấy
+ngay lượt sau. Chi tiết dạy bot: [`16-day-bot.md`](16-day-bot.md).
+
+Drive (tắt sẵn) merge riêng từ `config/mcp.example.json5`:
 
 ```json5
 {
-  channels: {
-    zalouser: {
-      enabled: true,
-      dmPolicy: "open",
-      allowFrom: ["*"],          // bắt buộc kèm "open" — thiếu là rơi hết tin khách
-      groupPolicy: "allowlist",
-      groups: {
-        "*": { enabled: true, requireMention: true },
-      },
-    },
-  },
-  agents: {
-    defaults: {
-      workspace: "/duong/dan/tuyet/doi/toi/repo-shop",
-    },
-    entries: {
-      main: {
-        identity: { name: "Nami" }, // ở entries, KHÔNG ở defaults
-      },
-    },
-  },
   mcp: {
     servers: {
       gdrive: {

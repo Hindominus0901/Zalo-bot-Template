@@ -137,9 +137,10 @@ Tự viết unit thì nhớ ba chỗ:
 | `200/CHDIR` | `WorkingDirectory` không tồn tại — workspace bị dời / xoá |
 | `Out of memory` (trong `journalctl -u …`) | Máy thiếu RAM — mục *Máy nhỏ* dưới |
 
-**Cập nhật workspace xong phải restart:** `openclaw gateway restart`. Gateway
-giữ `AGENTS.md` / `SOUL.md` / `TOOLS.md` trong bộ nhớ — sửa file mà không
-restart thì bot vẫn chạy bản cũ.
+**Cập nhật workspace thì không cần restart** — OpenClaw đọc lại file nền mỗi
+lượt (đã kiểm trong code 2026.9.4). Chỉ cài plugin mới mới cần
+`openclaw gateway restart`. (Runbook của shop đầu tiên ghi phải restart — kiểm
+lại thì không đúng.)
 
 ---
 

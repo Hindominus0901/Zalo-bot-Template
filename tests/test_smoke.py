@@ -166,6 +166,65 @@ class SmokeConfig(unittest.TestCase):
             self.assertNotIn("agents.defaults.identity", path.read_text(encoding="utf-8"),
                              str(path.relative_to(ROOT)))
 
+    def test_moi_khach_mot_phien(self):
+        """Máy thật (hàm định tuyến OpenClaw): thiếu dòng này thì chủ, khách A,
+        khách B đều vào CHUNG phiên agent:main:main — lộ thông tin khách cho nhau."""
+        cfg = _bo_comment(_read("config/openclaw.zalouser.example.json5"))
+        self.assertRegex(cfg, r'session:\s*\{\s*dmScope:\s*"per-channel-peer"')
+
+    def test_tu_hoc_va_tu_ghi_bo_nho_tat(self):
+        """Mặc định OpenClaw: tự học "auto" (ai gõ "từ giờ luôn…" cũng thành skill),
+        dreaming + memoryFlush bật (chép chữ khách vào MEMORY.md — file nạp nền)."""
+        cfg = _bo_comment(_read("config/openclaw.zalouser.example.json5"))
+        self.assertRegex(cfg, r'autonomous:\s*\{\s*mode:\s*"off"')
+        self.assertRegex(cfg, r'dreaming:\s*\{\s*enabled:\s*false')
+        self.assertRegex(cfg, r'memoryFlush:\s*\{\s*enabled:\s*false')
+
+    def test_bot_khach_khong_co_shell_khong_hen_gio(self):
+        """Không đặt tools thì OpenClaw dùng profile "coding": exec trên VPS cho
+        khách. security audit xếp CRITICAL."""
+        cfg = _bo_comment(_read("config/openclaw.zalouser.example.json5"))
+        main = _khoi(_khoi(_khoi(cfg, "agents"), "entries"), "main")
+        self.assertRegex(main, r'profile:\s*"minimal"')
+        for cam in ("exec", "process", "apply_patch", "automations", "cron", "gateway", "web_fetch"):
+            self.assertNotIn(f'"{cam}"', main, f"bot khach duoc cap {cam}")
+        toan_cuc = _khoi(cfg, "tools")
+        self.assertIn('"group:runtime"', toan_cuc)
+        self.assertRegex(toan_cuc, r"elevated:\s*\{\s*enabled:\s*false")
+        self.assertRegex(toan_cuc, r"workspaceOnly:\s*true")
+
+    def test_chi_chu_nhan_rieng_moi_vao_admin(self):
+        cfg = _bo_comment(_read("config/openclaw.zalouser.example.json5"))
+        b = _khoi(cfg, "bindings") or cfg[cfg.index("bindings"):]
+        self.assertRegex(b, r'(?s)agentId:\s*"admin".*?peer:\s*\{\s*kind:\s*"direct",\s*id:\s*"SENDERID_CHU"', )
+        # admin phải đứng TRƯỚC binding chung, và khớp riêng peer — không khớp cả kênh.
+        self.assertLess(b.index('"admin"'), b.index('"main"'))
+        self.assertIn('ownerAllowFrom: ["zalouser:SENDERID_CHU"]', cfg)
+
+    def test_moi_skill_khach_deu_duoc_khai_cho_bot_khach(self):
+        """agents.entries.main.skills là danh sách cho phép: skill không có tên ở
+        đó thì bot khách KHÔNG thấy (đã kiểm bằng `openclaw skills list`). Thêm
+        skill mà quên khai = skill chết lặng. Hai skill chỉ-chủ thì ngược lại:
+        tuyệt đối không được có trong danh sách của bot khách."""
+        cfg = _bo_comment(_read("config/openclaw.zalouser.example.json5"))
+        main = _khoi(_khoi(_khoi(cfg, "agents"), "entries"), "main")
+        m = re.search(r"skills:\s*\[(.*?)\]", main, re.S)
+        self.assertTrue(m, "main thieu danh sach skills")
+        khai = set(re.findall(r'"([a-z0-9-]+)"', m.group(1)))
+        co = {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")}
+        CHI_CHU = {"day-bot", "giao-viec"}
+        self.assertEqual(khai & CHI_CHU, set(), "bot khach nap duoc skill chi-chu")
+        self.assertEqual(co - CHI_CHU - khai, set(), "skill khach chua khai cho main")
+        self.assertEqual(khai - co, set(), "khai skill khong ton tai")
+
+    def test_moi_agent_co_workspace_rieng(self):
+        """Nhiều agent: workspace ở defaults bị hiểu là thư mục gốc → agent chạy
+        trong <gốc>/main, không thấy sổ. Phải đặt ở từng agent."""
+        cfg = _bo_comment(_read("config/openclaw.zalouser.example.json5"))
+        ent = _khoi(_khoi(cfg, "agents"), "entries")
+        for ag in ("main", "admin"):
+            self.assertRegex(_khoi(ent, ag), r"\bworkspace:", f"{ag} thieu workspace")
+
     def test_buoc_validate_co_trong_quy_trinh(self):
         for noi in ("dung-bot/QUY-TRINH.md", "docs/05-thiet-lap.md", "docs/10-openclaw-config-mau.md"):
             self.assertIn("config validate", _read(noi), noi)

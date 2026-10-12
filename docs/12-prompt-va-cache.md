@@ -13,8 +13,14 @@ Nên thứ tự nạp không phải chuyện thẩm mỹ — nó là tiền.
 
 | Tầng | Gồm gì | Đổi khi nào |
 |---|---|---|
-| **1. Ổn định** | `<policy>` · `SOUL.md` · `IDENTITY.md` · `TOOLS.md` | Chỉ khi sửa file rồi khởi động lại |
-| **2. Bối cảnh** | `persona.md` · `USER.md` · `knowledge/wiki/INDEX.md` | Khi dựng shop / chủ đổi thông tin |
+| **1. Ổn định** | `AGENTS.md` (gồm `<policy>`) · `SOUL.md` · `IDENTITY.md` | Khi sửa file |
+| **2. Bối cảnh** | `USER.md` · `MEMORY.md` · khối *Shop này và sổ* cuối `AGENTS.md` (chép từ `persona.md` + `INDEX.md`) | Khi dựng shop / chủ đổi thông tin |
+
+**Chỉ năm file đó được nạp** — `AGENTS.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`,
+`MEMORY.md` (đã kiểm trong code OpenClaw 2026.9.4). Bản template cũ tưởng
+`TOOLS.md`, `persona.md`, `INDEX.md` cũng được nạp — không phải. Bot không biết
+shop bán gì và tra tờ nào trừ khi tự mở. Vì thế `scripts/lam_chi_muc.py` chép
+`persona.md` + bảng chỉ mục vào cuối `AGENTS.md`: thấy ngay, không tốn lượt mở.
 | **3. Bay hơi** | phiếu khách · trang wiki vừa đọc · ngày giờ · tin khách | **Mỗi lượt** |
 
 Luật một câu: **tầng 3 không bao giờ nằm trong system prompt.** Nó đi kèm tin
@@ -52,22 +58,26 @@ Nén xong thì chụp lại phiếu.
 
 ---
 
-## Sửa gì thì phải khởi động lại
+## Sửa file thì bao giờ bot thấy
 
-`SOUL.md`, `AGENTS.md`, `TOOLS.md`, `IDENTITY.md`, `<policy>` — đây là tầng 1.
-Sửa giữa lúc bot đang chạy thì mỗi phiên mới sẽ khác phiên cũ. Sửa xong:
-khởi động lại gateway, đừng sửa nóng.
+**Lượt sau.** OpenClaw đọc lại năm file nền **mỗi lượt** (code:
+*"refreshing each turn so edits become visible"*) — không cần khởi động lại.
+Skill làm mới khi có file `SKILL.md` đổi. Config (`agents`, `tools`, `bindings`…)
+tự nạp lại. Chỉ **cài plugin mới** mới cần `openclaw gateway restart`.
+
+Giá phải trả: sửa tầng 1–2 là phần đầu prompt đổi, lượt sau mất cache một lần.
+Đừng sửa vặt cả ngày — gom lại sửa một lần.
 
 `knowledge/wiki/public/*.md` thì khác — nội dung trang chỉ nạp khi bot cần
-(`doc-wiki`), nằm ở tầng 3. Sửa số trong trang **không** cần khởi động lại.
-Nhưng **thêm hoặc xóa trang** thì phải chạy lại `scripts/lam_chi_muc.py` vì
-`INDEX.md` nằm ở tầng 2.
+(`doc-wiki`), nằm ở tầng 3. Sửa số trong trang không đụng nền.
+Nhưng **thêm, xóa trang hoặc đổi `summary` / `persona.md`** thì phải chạy lại
+`scripts/lam_chi_muc.py` — nó viết lại khối nền cuối `AGENTS.md`.
 
 ---
 
 ## Mỗi lượt bot đọc bao nhiêu
 
-`AGENTS.md` đã chốt: **tối đa 3 file** mỗi lượt, và chỉ khi cần.
+`AGENTS.md` đã chốt: **mặc định không mở file nào**, tối đa 3 khi thật cần.
 
 Đừng đọc cả `knowledge/` mỗi tin. Đừng đọc `hoi-thoai-mau.md` khi khách chỉ hỏi
 phí ship. Cái gì hay dùng thì đã nằm sẵn ở tầng 1–2 rồi.

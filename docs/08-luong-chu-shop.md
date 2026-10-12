@@ -131,6 +131,10 @@ thì nói rõ sau bao nhiêu giờ và đúng câu muốn gửi.
 - Chỗ chuyển khoản, khiếu nại, khách khó: **vào tay**. Nami ghi nhận rồi gọi.
 - Ngoài giờ: Nami vẫn trả giá / ship **nếu đã ghi trên sổ**. Không hứa “anh chị
   gọi ngay”.
+- **Đổi giá, dạy bot, hẹn bot nhắc việc: nhắn riêng cho bot**, nói thường —
+  *“từ giờ ship Hà Nội 25k nha”*, *“9h mai nhắc chị gọi chị Lan”*. Bot nhắc lại,
+  chị gật thì bot làm. Không cần gọi người dựng. Chi tiết:
+  [`16-day-bot.md`](16-day-bot.md).
 - Đổi tên nhân viên: nói tên mới, người dựng sửa cho khớp.
 - Tắt máy = khoảng đó khách nhắn không được.
 

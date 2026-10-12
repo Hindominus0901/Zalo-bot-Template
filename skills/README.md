@@ -21,6 +21,12 @@ Skill = cách hay, không phải cổng. Khách đi tắt thì đi tắt. Não c
 | `ban-giao` | Gọi người thật |
 | `follow-up` | Heartbeat: im sau giá / sau đơn |
 | `hoc-lai` | Heartbeat cuối ngày: đề xuất bài học + vá sổ cho chủ |
+| `day-bot` | **Chỉ chủ, nhắn riêng:** dạy bot — sửa sổ, thêm luật, đổi giọng, duyệt đề xuất của `hoc-lai` |
+| `giao-viec` | **Chỉ chủ, nhắn riêng:** hẹn giờ — nhắc chủ, nhắn một khách, nhắn nhóm định kỳ |
+
+Hai skill cuối **bot khách không nạp** (`agents.entries.main.skills` trong config
+không có tên chúng) và không có tool để làm (không `automations`, ghi bị giới
+hạn). Chủ nhắn riêng thì vào agent `admin` — chi tiết `docs/16-day-bot.md`.
 
 Coding agent **dựng shop**: `dung-bot/QUY-TRINH.md` · skill `giao-tiep-chu` ·
 `lam-viec-dung`. MCP: `docs/11-mcp-ung-dung.md`.
@@ -42,5 +48,8 @@ nguyên đoạn chat.
 
 `chi-goi-khi-duoc-yeu-cau: true` cho skill **đụng tiền hoặc hứa hẹn** — bot
 không được tự kích, chỉ chạy khi đúng điều kiện máy. Hiện có: `ban-giao`,
-`follow-up`, `hoc-lai`.
+`follow-up`, `hoc-lai`, `day-bot`, `giao-viec`.
+
+Thêm skill mới cho **khách** → thêm tên vào `agents.entries.main.skills` trong
+`config/openclaw.zalouser.example.json5`, không thì bot khách không thấy nó.
 

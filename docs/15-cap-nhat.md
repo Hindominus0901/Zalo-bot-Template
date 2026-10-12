@@ -62,6 +62,22 @@ Mọi thứ còn lại: `AGENTS.md`, `TOOLS.md`, `BOOT.md`, `HEARTBEAT.md`, `doc
 `dung-bot/`, `scripts/`, `sim/`, `tests/`, `.github/`, `LICENSE`, và các
 `skills/*/SKILL.md` không nằm trong bảng trên.
 
+**Lấy bản mới xong, luôn chạy lại hai lệnh:**
+
+```bash
+python3 scripts/lam_chi_muc.py      # viết lại khối Shop này + sổ cuối AGENTS.md
+python3 scripts/dien_config.py      # gộp config mới (rào mới, model mới) vào máy
+```
+
+`AGENTS.md` bản mới **không có** khối *Shop này và sổ của shop* của shop mình —
+chưa chạy `lam_chi_muc.py` thì bot không biết shop bán gì. `config/openclaw.zalouser.example.json5`
+conflict ở dòng `name:` → lấy bản mới, script tự điền lại tên.
+
+**Đổi sang model đời mới** (ví dụ Opus 5.5 — rẻ hơn Opus 5) chỉ sau khi nâng
+OpenClaw lên bản hỗ trợ nó. OpenClaw cũ **giấu** model đời mới; ép tên vào
+config thì hỏng mọi tin. Nâng OpenClaw trước, `openclaw models list` thấy tên
+rồi mới đổi `model.primary`.
+
 Sửa mấy file này ở bản shop = tự làm khó mình lần cập nhật sau. Cần đổi hành vi
 bot thì đổi qua `USER.md` / wiki / persona, không đổi qua harness.
 

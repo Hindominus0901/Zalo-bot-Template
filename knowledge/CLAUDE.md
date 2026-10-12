@@ -16,9 +16,14 @@ knowledge/
    └─ internal/       ← chỉ chủ / nhân viên; bot không nhắc sự tồn tại
 ```
 
-**Thêm / xóa / đổi tên tờ trong `public/` → chạy `scripts/lam_chi_muc.py`.**
-Sửa số bên trong một tờ thì không cần. Đừng sửa `INDEX.md` bằng tay: nó sinh từ
-`title` + `summary` của chính các tờ, sửa tay là lần chạy sau mất.
+**Thêm / xóa / đổi tên tờ, đổi `summary`, sửa `persona.md` → chạy
+`scripts/lam_chi_muc.py`.** Nó viết `INDEX.md` **và** khối *Shop này và sổ của
+shop* cuối `AGENTS.md` — OpenClaw không nạp `persona.md` / `INDEX.md`, chỉ nạp
+`AGENTS.md`, nên bot thấy shop qua khối đó. Sửa số trong thân tờ thì không cần.
+
+Đừng sửa `INDEX.md` bằng tay — nó sinh từ `title` + `summary`. Ngoại lệ duy nhất:
+bot admin khi chủ dạy qua Zalo (`skills/day-bot`) — không chạy được script nên
+sửa dòng chỉ mục theo **đúng khuôn script sinh**; `--kiem` trong CI bắt chỗ lệch.
 
 `summary` giờ là thứ bot đọc để **chọn tờ**, không chỉ để mô tả. Viết nó bằng
 chữ khách hay dùng (*"phí ship", "bao lâu tới"*), đừng viết bằng chữ nội bộ.

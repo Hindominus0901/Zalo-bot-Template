@@ -190,7 +190,7 @@ class ChuanSkill(unittest.TestCase):
             self.assertRegex(body, r"\*\*Kiểm lại:\*\*|## Kiểm lại", f"{skill.parent.name} thieu Kiem lai")
 
     def test_skill_dung_tien_bi_khoa(self):
-        for name in ("ban-giao", "follow-up", "hoc-lai"):
+        for name in ("ban-giao", "follow-up", "hoc-lai", "day-bot", "giao-viec"):
             body = _read(f"skills/{name}/SKILL.md")
             self.assertIn("chi-goi-khi-duoc-yeu-cau: true", body, name)
             head = body.split("---")[1]

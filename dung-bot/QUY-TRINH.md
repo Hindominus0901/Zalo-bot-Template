@@ -145,19 +145,32 @@ dẫn tuyệt đối** thư mục repo shop.
 Kiểm: `openclaw --version` · `openclaw doctor` · `openclaw gateway status`.
 Chưa chạy: `openclaw gateway install`.
 
-Merge `config/openclaw.zalouser.example.json5` vào `~/.openclaw/openclaw.json`
-(Windows: user OpenClaw). **Đừng xóa** model/token có sẵn.
+**Điền config bằng script — đừng sửa JSON tay:**
 
-Bắt buộc:
+```bash
+python3 scripts/dien_config.py
+```
 
-- `channels.zalouser.enabled: true`
-- `dmPolicy: "open"` — không `pairing` — **và** `allowFrom: ["*"]`
-- `groupPolicy: "allowlist"` + `groups."*".requireMention: true`
-- `agents.entries.main.identity.name` **khớp** `IDENTITY.md` (không đặt ở `defaults`)
-- `openclaw config validate` → **đọc cả warning**. *Valid* mà có warning
-  *all DMs will be dropped* = chưa xong
-- `agents.defaults.workspace` = path tuyệt đối repo
-- Model **vision** (Claude / GPT-4o / Gemini…)
+Ba câu hỏi: tên bot, senderId chủ (bỏ trống được — chưa bật dạy bot), có tiết
+kiệm không. Script gộp vào `~/.openclaw/openclaw.json` bằng `openclaw config
+patch` (**không** xoá model/token có sẵn), sửa tên ở `IDENTITY.md` + config cho
+khớp, rồi chạy `openclaw config validate` và báo warning bằng chữ thường.
+
+senderId chủ chỉ có **sau khi** nick bot đăng nhập (B5). Lần đầu bỏ trống, quét
+mã xong lấy ID (`docs/14-vps-headless.md` *Lấy senderId và groupId*) rồi chạy
+lại: `python3 scripts/dien_config.py --chu <id>`.
+
+Script không chạy được (không có `openclaw` trên máy này) thì nó ghi file đã
+điền ra `openclaw.da-dien.json5` trong thư mục `config` để mang sang máy Gateway. Cái phải đúng —
+script làm hết, đây để biết khi đọc lỗi (`docs/10` có bảng đủ):
+
+- `dmPolicy: "open"` **và** `allowFrom: ["*"]` — thiếu `"*"` là rơi hết tin khách
+- `session.dmScope: "per-channel-peer"` — thiếu là mọi khách **chung một phiên**
+- `identity` ở `agents.entries.<id>`, không ở `defaults`; tên khớp `IDENTITY.md`
+- `workspace` ở **từng agent** — thiếu là agent chạy trong thư mục con rỗng
+- Bot khách `tools.profile: "minimal"` — không shell, không web
+- `openclaw config validate` → **đọc cả warning**. *Valid* mà có warning = chưa xong
+- Model mặc định `anthropic/claude-opus-5` (có xem ảnh). Tiết kiệm: `claude-sonnet-5`
 
 Biệt hiệu (*shop ơi*): `mentionPatterns` gồm **tên gốc + biệt hiệu**.
 

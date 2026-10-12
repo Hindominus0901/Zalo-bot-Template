@@ -13,9 +13,10 @@ from pathlib import Path
 
 from .kho import GOC
 
-# Tầng 1–2: nền cố định. OpenClaw nạp sẵn mỗi phiên.
-NEN = ["AGENTS.md", "SOUL.md", "TOOLS.md", "IDENTITY.md", "USER.md",
-       "knowledge/persona.md", "knowledge/wiki/INDEX.md"]
+# Tầng 1–2: nền cố định. ĐÚNG danh sách OpenClaw 2026.9.4 nạp (đã kiểm trong
+# code: dist/workspace-*.mjs). TOOLS.md, persona.md, INDEX.md KHÔNG có ở đây —
+# persona + chỉ mục được scripts/lam_chi_muc.py chép vào cuối AGENTS.md.
+NEN = ["AGENTS.md", "SOUL.md", "IDENTITY.md", "USER.md", "MEMORY.md"]
 
 # Thứ chỉ được nằm ở tầng 3 (đi cùng tin khách), không bao giờ ở nền.
 BAY_HOI = [

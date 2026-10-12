@@ -1,29 +1,65 @@
 // Merge vào ~/.openclaw/openclaw.json trên máy Gateway.
 // Đừng commit file thật, cookie, QR.
-// CSKH: dmPolicy PHẢI là open — VÀ allowFrom phải có "*". Thiếu "*" thì config
-// vẫn hợp lệ, gateway vẫn chạy, nhưng OpenClaw BỎ HẾT tin riêng của khách lạ —
-// bot im với mọi người mà không báo lỗi nào.
-// Merge xong luôn chạy `openclaw config validate`. Nó bắt được cả hai lỗi hay
-// gặp nhất (thiếu "*", và identity đặt sai chỗ).
-// Tom cá nhân hay để pairing; đừng copy pairing sang shop.
+// Merge xong LUÔN chạy `openclaw config validate` và đọc CẢ warning — lệnh vẫn
+// báo "valid", exit 0, khi config sai kiểu im lặng (xem dmPolicy dưới).
 //
-// Tên: Nami (IDENTITY.md). identity nằm ở agents.entries.<id>.identity —
-// KHÔNG phải agents.defaults.identity (2026.9.4 báo "Unrecognized key", config
-// invalid, gateway không lên).
-// Plugin zalouser nhận "gọi mình" theo identity.name TRONG CONFIG, không đọc
-// IDENTITY.md → nhóm: "Nami" / "Nami ơi" / @Nami là gọi mình. Inbox 1-1 luôn vào.
-// Đổi tên thì đổi CẢ HAI chỗ. Lệch tên = bot im trong nhóm. Bot im trong nhóm
-// thì kiểm tên trước — đừng tắt requireMention (tắt là bot trả mọi tin trong nhóm).
-// Model agent nên có vision — khách CSKH hay gửi ảnh.
-// workspace: dùng đường dẫn tuyệt đối tới thư mục repo shop (không để "." nếu
-// Gateway chạy từ thư mục khác).
+// Mọi key ở đây đã chạy `openclaw config validate` thật trên 2026.9.4 + plugin
+// @openclaw/zalouser 2026.9.4, và định tuyến đã thử bằng hàm định tuyến của
+// chính OpenClaw (docs/16-day-bot.md mục "Đã kiểm thế nào").
+//
+// Tên: Nami (IDENTITY.md). Plugin zalouser nhận "gọi mình" theo identity.name
+// TRONG CONFIG, không đọc IDENTITY.md. Đổi tên thì đổi CẢ HAI chỗ (và cả hai
+// agent dưới). Lệch tên = bot im trong nhóm. Bot im trong nhóm thì kiểm tên
+// trước — đừng tắt requireMention (tắt là bot trả mọi tin trong nhóm).
+// Model nên có vision — khách CSKH hay gửi ảnh.
+//
+// ── CHỖ PHẢI ĐIỀN: SENDERID_CHU ──
+// Thay MỌI chữ SENDERID_CHU bằng senderId Zalo của chủ (docs/14-vps-headless.md
+// mục "Lấy senderId và groupId"). Chưa thay thì không ai là chủ: mọi người,
+// kể cả chủ, đều được đối xử như khách. Đóng an toàn, không mở.
 
 {
+  // Mỗi khách một cuộc hội thoại riêng. Mặc định của OpenClaw là "main" = MỌI
+  // tin riêng dùng CHUNG một phiên: bot trả khách B mà còn nhớ tên, SĐT, đơn
+  // của khách A. Đừng bỏ dòng này.
+  session: { dmScope: "per-channel-peer" },
+
+  // Tự học của OpenClaw mặc định "auto": câu "từ giờ luôn…" của BẤT KỲ AI —
+  // kể cả khách — được tự ghi thành skill. Template có đường dạy bot riêng,
+  // chỉ chủ dùng được (skills/day-bot). Tắt cái tự động này.
+  skills: { workshop: { autonomous: { mode: "off" } } },
+
+  // Ai là chủ — kiểm ở tầng code, không phải bot tự đoán. Người không khớp
+  // dòng này thì code tự gỡ hẹn giờ (automations/cron), gateway, sessions.
+  commands: {
+    ownerAllowFrom: ["zalouser:SENDERID_CHU"],
+    allowFrom: { zalouser: ["SENDERID_CHU"] },
+  },
+
+  // Rào toàn cục — áp cho MỌI agent, kể cả agent nào lọt ra ngoài hai cái dưới.
+  // Không ai được chạy lệnh shell trên VPS (máy giữ cookie Zalo + mã AI), không
+  // ai đổi config gateway, không ghi ra ngoài repo shop.
+  tools: {
+    deny: ["group:runtime", "gateway", "skill_workshop"],
+    elevated: { enabled: false },
+    fs: { workspaceOnly: true },
+    // Agent không nhắn chéo nhau. Chủ xem hội thoại khách qua admin thì được,
+    // nhưng bot khách không bao giờ gọi sang admin.
+    agentToAgent: { enabled: false },
+  },
+
+  // Hai cơ chế tự ghi bộ nhớ, mặc định bật. Template đã có bộ nhớ riêng (phiếu
+  // theo khách + MEMORY.md do chủ giữ). Để bật thì máy tự chép chữ của khách
+  // vào MEMORY.md — file được nạp vào nền MỌI lượt, cho MỌI khách.
+  plugins: { entries: { "memory-core": { config: { dreaming: { enabled: false } } } } },
+
   channels: {
     zalouser: {
       enabled: true,
+      // CSKH: open — khách lạ vào được. Tom cá nhân hay để pairing; đừng chép.
       dmPolicy: "open",
-      // Bắt buộc đi kèm dmPolicy open. Thiếu dòng này = rơi hết tin khách lạ.
+      // BẮT BUỘC đi kèm open. Thiếu "*" thì config vẫn valid, gateway vẫn chạy,
+      // nhưng OpenClaw BỎ HẾT tin riêng của khách lạ — bot im, không báo lỗi.
       allowFrom: ["*"],
       groupPolicy: "allowlist",
       groups: {
@@ -31,31 +67,104 @@
         "*": { enabled: true, requireMention: true },
         // Khoá phải là ID nhóm, không phải tên. Tên chỉ khớp khi bật
         // dangerouslyAllowNameMatching — đừng bật.
-        // Lấy ID: docs/14-vps-headless.md mục "Lấy senderId và groupId".
         // "1234567890": { enabled: true, requireMention: true },
       },
       // CẨN THẬN: groupAllowFrom trống = MỌI người trong nhóm đã cho phép đều
-      // gọi được bot. Nó KHÔNG tự lấy allowFrom. Với CSKH thường là đúng ý
-      // (ai trong nhóm cũng hỏi được), nhưng phải biết mình đang chọn cái đó.
+      // gọi được bot. Nó KHÔNG tự lấy allowFrom. Với CSKH thường là đúng ý.
       // groupAllowFrom: ["<id-nguoi-duoc-goi>"],
     },
   },
+
   agents: {
+    // Mỗi việc chạy nền (heartbeat, hẹn giờ) phải thuộc về một agent rõ ràng.
+    ownership: "explicit",
     defaults: {
-      workspace: ".", // trỏ vào thư mục repo/workspace của shop
+      // Có nhiều agent thì workspace ở defaults bị hiểu là THƯ MỤC GỐC: agent
+      // "main" thành <gốc>/main — thư mục không có gì, bot không thấy AGENTS.md,
+      // sổ, phiếu, skill. (Đã kiểm trên 2026.9.4.) Nên đặt workspace ở TỪNG
+      // agent dưới, cùng một đường dẫn. Dòng này chỉ để dự phòng.
+      workspace: ".", // ĐƯỜNG DẪN TUYỆT ĐỐI tới repo shop.
+      // Model: mạnh nhất mà OpenClaw 2026.9.4 hỗ trợ cho chat, có xem ảnh.
+      // GHIM tên đầy đủ — đừng viết "opus": bí danh đó tự trượt sang đời mới
+      // khi nâng cấp OpenClaw, không ai hay. Sonnet 5 đỡ khi Opus quá tải.
+      // Opus 5.5 (mới hơn, rẻ hơn) CHƯA chạy được trên 2026.9.4 — OpenClaw giấu
+      // model đời mới tới khi có bản hỗ trợ. Xem docs/15-cap-nhat.md.
+      model: {
+        primary: "anthropic/claude-opus-5",
+        fallbacks: ["anthropic/claude-sonnet-5"],
+      },
+      heartbeat: { agentId: "main" },
+      compaction: { memoryFlush: { enabled: false } },
     },
-    // identity PHẢI nằm trong entries, không nằm trong defaults.
-    // Đừng thêm `default: true` — key đó đã bị gỡ, doctor sẽ xoá.
+    // identity PHẢI nằm trong entries, KHÔNG nằm trong defaults (2026.9.4 báo
+    // "Unrecognized key", gateway không lên). Đừng thêm `default: true` — đã gỡ.
     entries: {
+      // ── main: trả KHÁCH. Mọi người không phải chủ đều vào đây. ──
       main: {
         identity: { name: "Nami" },
+        workspace: ".", // CÙNG đường dẫn tuyệt đối như trên — hai agent chung một sổ.
+        // "high" = mặc định của Opus 5: nghĩ kỹ, đúng luật nhiều tầng của shop.
+        // Khách chê chậm thì hạ "medium" — nhanh hơn, vẫn ổn với tin thường.
+        thinkingDefault: "high",
+        // Skill bot khách được thấy. KHÔNG có day-bot, giao-viec — hai skill đó
+        // chỉ agent admin nạp. Thêm skill mới cho khách thì thêm tên vào đây.
+        skills: ["ban-giao", "bao-gia", "cham-khach-cu", "doc-anh", "doc-wiki",
+                 "follow-up", "ghi-don", "giao-tiep", "hoc-lai", "khai-thac",
+                 "lam-viec", "phieu", "theo-don", "thu-lead", "xu-ly-phan-nan",
+                 "xu-ly-tu-choi"],
+        tools: {
+          // Nền tối thiểu rồi cấp đúng thứ bot khách cần. KHÔNG đặt profile
+          // thì OpenClaw dùng "coding": có exec (chạy lệnh shell trên VPS giữ
+          // cookie Zalo), web, đọc phiên người khác. Không cho khách những thứ đó.
+          profile: "minimal",
+          // write/edit: để ghi phiếu khách (memory/phieu) và ghi_thieu.
+          // OpenClaw KHÔNG khoá ghi theo thư mục được (trừ khi chạy Docker
+          // sandbox) — workspaceOnly chỉ chặn ra ngoài repo. Luật "chỉ ghi
+          // memory/" nằm ở AGENTS.md. Xem docs/16-day-bot.md mục "Giới hạn".
+          alsoAllow: ["read", "write", "edit", "message", "view_image", "heartbeat_respond"],
+          fs: { workspaceOnly: true },
+        },
         // Có biệt hiệu thì bỏ comment, giữ "nami" trong list:
         // groupChat: {
         //   mentionPatterns: ["nami", "nami\\s*ơi", "nami\\s*oi", "shop\\s*ơi"],
         // },
       },
+
+      // ── admin: chỉ CHỦ, chỉ nhắn RIÊNG. Dạy bot + giao việc. ──
+      // Vào được đây chỉ bằng binding dưới (khớp senderId trong code). Trong
+      // nhóm, chủ vẫn vào main — nhóm có khách đọc chung, không dạy ở đó.
+      admin: {
+        identity: { name: "Nami" },
+        workspace: ".", // CÙNG đường dẫn tuyệt đối như trên — hai agent chung một sổ.
+        // Sửa sổ, hẹn giờ: sai một chữ là sai cho mọi khách. Nghĩ kỹ.
+        thinkingDefault: "high",
+        tools: {
+          profile: "coding",
+          // Thêm: gửi tin (chủ bảo "nhắn khách X…").
+          alsoAllow: ["message"],
+          // Bỏ: shell, web (nội dung web là chỗ cài lệnh lạ), tự học, đổi
+          // gateway, sinh ảnh/nhạc/video.
+          deny: ["group:runtime", "group:web", "gateway", "skill_workshop",
+                 "image_generate", "music_generate", "video_generate"],
+          fs: { workspaceOnly: true },
+          // Lớp rào thứ hai: lỡ ai khác lọt vào agent này (binding sai), vẫn
+          // không ghi được, không hẹn giờ được.
+          toolsBySender: {
+            "channel:zalouser:SENDERID_CHU": {},
+            "*": { deny: ["write", "edit", "apply_patch", "automations", "cron", "message"] },
+          },
+        },
+      },
     },
   },
+
+  // Định tuyến: khớp đúng nhất thắng. Chủ nhắn riêng → admin. Còn lại → main.
+  bindings: [
+    { agentId: "admin", match: { channel: "zalouser", accountId: "*",
+                                 peer: { kind: "direct", id: "SENDERID_CHU" } } },
+    { agentId: "main",  match: { channel: "zalouser", accountId: "*" } },
+  ],
+
   // MCP: merge config/mcp.example.json5. Mặc định không bật Drive.
   // mcp: { servers: { gdrive: { enabled: false } } },
 }
