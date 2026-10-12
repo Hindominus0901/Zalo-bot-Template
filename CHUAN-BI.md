@@ -87,6 +87,9 @@ Chỗ người dựng ngồi làm. Bản trả tiền. Cái nào cũng được:
 Repo đã có sẵn cửa vào cho cả năm — mở lên là agent tự biết phải làm gì. Không
 cần chọn theo template, chọn theo cái người dựng quen tay.
 
+Không quen dòng lệnh? **Claude Cowork**, **ChatGPT Work**, **dots** làm được phần
+hỏi và điền sổ. Bot vẫn cần máy chạy 24/7 (mục 3). Xem `docs/17-dung-bang-app-chat.md`.
+
 ---
 
 ## Tuỳ shop, không bắt buộc

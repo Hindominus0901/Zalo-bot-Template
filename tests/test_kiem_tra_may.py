@@ -108,6 +108,22 @@ class Gateway(unittest.TestCase):
         self.assertEqual([d.muc for d in km.kiem_gateway(js)], ["ok", "ok"])
 
 
+class So(unittest.TestCase):
+    def test_so_mau_chi_nhac(self):
+        """Repo vừa clone, sổ còn chữ mẫu → nhắc chuyển sổ, không đỏ."""
+        d = km.kiem_so(ROOT)
+        self.assertEqual(d.muc, "nhac")
+        self.assertIn("mo_goi.py", d.sua)
+
+    def test_so_da_dien(self):
+        with tempfile.TemporaryDirectory() as t:
+            w = Path(t) / "knowledge" / "wiki" / "public"
+            w.mkdir(parents=True)
+            for f in ("ban-gi.md", "gia.md"):
+                (w / f).write_text("# Giá\n\n- Gói A: 2.000.000đ\n", encoding="utf-8")
+            self.assertEqual(km.kiem_so(Path(t)).muc, "ok")
+
+
 class MayKhac(unittest.TestCase):
     def test_mui_gio(self):
         self.assertEqual(km.kiem_mui_gio("Asia/Ho_Chi_Minh").muc, "ok")

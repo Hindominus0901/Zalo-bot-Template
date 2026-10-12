@@ -5,6 +5,37 @@
 Bản nào đổi thứ shop đang phụ thuộc — tên trường phiếu, tên tool, tên tờ wiki,
 tên file — **phải ghi ở đây**. Không ghi = coi như không đổi.
 
+## 0.4.3 — dựng bằng app chat (Cowork, ChatGPT Work, dots), chuyển sổ sang VPS
+
+**App chat làm được phần chữ, không làm được chỗ bot sống.** Claude Cowork,
+ChatGPT Work, OpenAI dots hỏi chủ + điền sổ được (B0–B3). Gateway 24/7 giữ phiên
+Zalo thì không: phiên cloud của Cowork xoá khi xong, dots không có sudo / systemd.
+Bot vẫn ở VPS. Tra web 12/10/2026, tin bên thứ ba — `docs/17` ghi rõ.
+
+Mới:
+
+- `docs/17-dung-bang-app-chat.md` — bảng ba app, **câu mở đầu dán sẵn** (các app
+  này không chắc tự nạp `CLAUDE.md`; không dán thì dễ đọc `AGENTS.md` rồi tưởng
+  mình là Nami), và **sáu cách chuyển sổ**: GitHub · gói dán · zip kéo thả · zip
+  qua Drive · trang tải của nhà VPS · làm luôn trên VPS. Có mục cấm (pastebin,
+  transfer.sh, nhóm chat — gói có giá vốn, hoa hồng).
+- `scripts/dong_goi.py` — gói đúng sổ shop (tờ có dấu `FILE CỦA SHOP`, `SOUL.md`,
+  hai skill, `knowledge/wiki/`) thành một khối chữ dán được, hoặc `--zip`. Không
+  bao giờ gói `.env`, `memory/`, config đã điền, `AGENTS.md`.
+- `scripts/mo_goi.py` — mở gói trên VPS: kiểm sha256 trước khi ghi (dán thiếu thì
+  không ghi gì), chặn `..` / symlink / `scripts/` / `config/`, giữ bản cũ ở
+  `.ban-cu/`, làm lại chỉ mục.
+- `kiem_tra_may.py` có dòng *Sổ shop đã có chữ* — bắt lỗi dựng máy xong mà quên
+  chuyển sổ.
+
+Đã chạy thật trong container: hai bản sao repo, sửa sổ ở A, dán khối (kèm rác,
+CRLF, thụt lề) vào B → sổ khớp, chỉ mục B xanh; đường zip cũng vậy; gói bị sửa
+một ký tự hoặc thiếu đuôi → từ chối, không ghi gì.
+
+**Chưa chạy thật:** mở repo bằng Cowork / ChatGPT Work / dots; kết nối GitHub /
+Drive của từng app; dán gói qua cửa sổ SSH thật. Kịch bản: `docs/04` dòng 83–84,
+`docs/17` mục *Thử*.
+
 ## 0.4.2 — dựng máy một lệnh, chỉ dừng ở bốn việc của người
 
 Người dựng gõ **một** lệnh `python3 scripts/bat_dau.py` (tự gọi `scripts/cai_dat.sh`). Máy

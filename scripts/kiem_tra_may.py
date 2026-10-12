@@ -154,6 +154,16 @@ def kiem_gateway(status_json: str | None) -> list[Dong]:
     return out
 
 
+def kiem_so(goc: Path) -> Dong:
+    """Dựng máy xong mà quên chuyển sổ sang → bot chạy nhưng chẳng biết shop bán gì."""
+    chua = [r for r in ("knowledge/wiki/public/ban-gi.md", "knowledge/wiki/public/gia.md")
+            if (goc / r).exists() and "[CHỜ CHỦ SHOP]" in (goc / r).read_text(encoding="utf-8")]
+    if chua:
+        return nhac("Sổ shop chưa điền (" + ", ".join(Path(r).name for r in chua) + ") — bot chưa biết shop bán gì",
+                    "điền ở máy khác rồi? chuyển sang: python3 scripts/mo_goi.py (docs/17)")
+    return ok("Sổ shop đã có chữ")
+
+
 def kiem_mui_gio(tz: str | None) -> Dong:
     if tz and ("Ho_Chi_Minh" in tz or tz in ("Asia/Saigon", "+07")):
         return ok(f"Múi giờ {tz}")
@@ -209,6 +219,7 @@ def soi(oc: str, goc: Path) -> list[Dong]:
     for ag in ("main", "admin"):
         out.append(kiem_skill(ag, _chay(oc, "skills", "list", "--agent", ag, "--json")[1], goc))
     out += kiem_gateway(_chay(oc, "gateway", "status", "--json")[1])
+    out.append(kiem_so(goc))
     tz = None
     if shutil.which("timedatectl"):
         ma, ra = _chay("timedatectl", "show", "-p", "Timezone", "--value")

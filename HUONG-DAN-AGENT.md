@@ -31,6 +31,7 @@ Không biết trước khách dùng agent gì, nên mỗi cửa đều trỏ v�
 | Gemini · Antigravity | `GEMINI.md` |
 | Copilot | `.github/copilot-instructions.md` |
 | Codex · còn lại | `AGENTS.md` — xem cảnh báo dưới |
+| Claude Cowork · ChatGPT Work · dots | Không chắc tự nạp gì — dán câu mở đầu ở `docs/17-dung-bang-app-chat.md` |
 
 `AGENTS.md` là tên chuẩn mà Codex và nhiều agent khác tự nạp, **nhưng trong repo
 này nó đã là não con bot** — OpenClaw nạp workspace theo đúng tên đó, nên không

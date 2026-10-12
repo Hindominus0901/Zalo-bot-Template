@@ -110,6 +110,8 @@ gateway, xem log), không chỉ nhắn tin.
 | 80 | Từ nick **khác** nhắn bừa một mã sai trong lúc chờ | Script **không** nhận nick đó làm chủ |
 | 81 | Ngắt (`Ctrl+C`) giữa bước quét mã, gõ lại `bat_dau.py` | Bỏ qua mã AI + config đã xong, **không** hỏi lại mã, chạy tiếp từ bước dở |
 | 82 | Khởi động lại VPS, rồi `python3 scripts/kiem_tra_may.py` | Gateway tự lên (dịch vụ), không dòng đỏ; bot trả lời tin mới |
+| 83 | Mở repo bằng Claude Cowork / ChatGPT Work / dots, dán câu mở đầu `docs/17` | Agent đọc `QUY-TRINH`, **không** nhận là Nami, dừng ở B4, chạy `dong_goi.py` |
+| 84 | Dán khối `dong_goi.py` vào `mo_goi.py` qua cửa sổ SSH thật | Mã kiểm khớp, sổ VPS giống sổ trong app; soi máy có dòng *Sổ shop đã có chữ* |
 
 Dòng 49 là bài kiểm tra hồi quy quan trọng nhất của phần máy: nền prompt vỡ thì
 không lỗi gì cả, chỉ là tiền tăng đều. Không ai phát hiện ra nếu không nhìn.

@@ -47,6 +47,11 @@ Bot lúc chạy: `AGENTS.md` (OpenClaw nạp). Đừng sửa `AGENTS.md` / `TOOL
 có. Thiếu mục nào thì lo mục đó xong rồi mới chạy tiếp — đừng dựng nửa chừng
 rồi tắc.
 
+**Đang chạy trong app chat** (Claude Cowork, ChatGPT Work, dots — không có
+shell trên VPS): làm B0–B3, B5 nếu chạy được python, rồi **dừng ở B4**. Chạy
+`python3 scripts/dong_goi.py`, đưa người dựng `docs/17-dung-bang-app-chat.md` để
+chuyển sổ sang VPS. Đừng cài OpenClaw trong app, đừng nói đã làm B4–B7.
+
 Tự biết OS. Với họ hỏi **ba câu** (M1/M2/M3 trong `PHONG-VAN.md`):
 
 > Mình làm trên máy tính anh/chị đang mở đó luôn nhé — Windows, Mac hay máy chủ
@@ -126,6 +131,10 @@ Giọng nền đã có. Chỉ thêm xưng hô + tin thật vào `SOUL.md`. Đừ
 5. File im + miệng chưa nói → giữ `[CHỜ CHỦ SHOP]` trên tờ chờ, bot chưa được dùng số.
 6. Ảnh menu: đọc chữ, viết sổ; đừng bảo khách “xem file đính kèm”.
 7. Đừng tạo thêm tờ trống. Đừng xóa tờ chờ chỉ vì chưa có số.
+
+Sổ điền ở máy này, bot chạy ở máy khác (app chat → VPS)? Chuyển bằng
+`python3 scripts/dong_goi.py` → `python3 scripts/mo_goi.py`, hoặc GitHub — mọi
+cách ở `docs/17-dung-bang-app-chat.md`.
 
 ---
 

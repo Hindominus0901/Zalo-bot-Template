@@ -147,6 +147,32 @@ class VpsHeadless(unittest.TestCase):
             self.assertTrue("14-vps-headless" in body or "không màn hình" in body, f)
 
 
+class AppChat(unittest.TestCase):
+    """Cowork / ChatGPT Work / dots không chắc nạp file cửa vào — câu mở đầu dán tay là cửa."""
+
+    DOC = "docs/17-dung-bang-app-chat.md"
+
+    def test_cau_mo_dau_tro_nguon_va_canh_bao_agents(self):
+        doc = _read(self.DOC)
+        self.assertIn(NGUON, doc)
+        self.assertRegex(doc, r"`AGENTS.md` là não .*không phải hướng dẫn cho bạn")
+        self.assertIn("Dừng ở B4", doc)
+
+    def test_noi_that_chua_thu(self):
+        self.assertIn("chưa thử thật", _read(self.DOC).lower())
+
+    def test_du_sau_cach_chuyen(self):
+        doc = _read(self.DOC)
+        for i in range(1, 7):
+            self.assertIn(f"### {i}.", doc, f"docs/17 thieu cach {i}")
+        for lenh in ("dong_goi.py", "mo_goi.py", "--zip", "git clone", "Cấm"):
+            self.assertIn(lenh, doc)
+
+    def test_duoc_tro_toi(self):
+        for f in ("README.md", NGUON, "CHUAN-BI.md", "HUONG-DAN-AGENT.md"):
+            self.assertIn("17-dung-bang-app-chat", _read(f), f)
+
+
 class DongBoHaiBanPhongVan(unittest.TestCase):
     """PHONG-VAN.md và docs/bo-cau-hoi.md cố ý là hai bản của cùng nội dung."""
 
