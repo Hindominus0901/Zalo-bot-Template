@@ -118,6 +118,47 @@ openclaw gateway status
 Đừng để gateway sống trong tmux — VPS reboot là mất. tmux chỉ dùng cho lúc
 đăng nhập.
 
+**File khởi động không được nằm trong workspace.** Nếu tự viết unit systemd
+hay script chạy gateway, đặt nó **ngoài** thư mục repo shop. Bot chị Thanh từng
+để `run-gateway.sh` trong workspace: cập nhật workspace là xoá luôn file đó,
+systemd báo `203/EXEC`, bot im mà lỗi không chỉ tên file nào.
+
+Tự viết unit thì nhớ ba chỗ:
+
+- `ExecStart=… openclaw gateway run` — **`run`**, không phải `start`. `start` giao
+  cho service manager rồi thoát, systemd tưởng chết và khởi động lại mãi.
+- `Environment=PATH=/usr/local/bin:/usr/bin:/bin` — systemd không nạp PATH của
+  shell, không thấy `node`.
+- `Environment=TZ=Asia/Ho_Chi_Minh`.
+
+| `systemctl status` báo | Nghĩa |
+|---|---|
+| `203/EXEC` | Không chạy được file trong `ExecStart` — mất file, sai đường dẫn, thiếu quyền |
+| `200/CHDIR` | `WorkingDirectory` không tồn tại — workspace bị dời / xoá |
+| `Out of memory` (trong `journalctl -u …`) | Máy thiếu RAM — mục *Máy nhỏ* dưới |
+
+**Cập nhật workspace xong phải restart:** `openclaw gateway restart`. Gateway
+giữ `AGENTS.md` / `SOUL.md` / `TOOLS.md` trong bộ nhớ — sửa file mà không
+restart thì bot vẫn chạy bản cũ.
+
+---
+
+## Lấy `senderId` và `groupId`
+
+Config nhóm (`groups`), `groupAllowFrom`, và nick chủ trong `USER.md` đều cần
+**ID do Zalo sinh** — không phải số điện thoại, không phải tên nhóm. ID chỉ có
+**sau khi bot đã đăng nhập**.
+
+```bash
+openclaw logs --follow
+```
+
+Nhờ người cần lấy ID nhắn bot một tin (hoặc nhắn trong nhóm có bot). Dòng log
+của tin đó có `senderId` (người) và `groupId` (nhóm). Chép đúng chuỗi.
+
+Dán ID **chỉ** vào config máy và `USER.md`. Đừng dán vào `knowledge/` hay
+`skills/` — đó là chỗ bot đọc cho khách.
+
 ---
 
 ## Quét lại — đây là việc lặp, không phải việc một lần
@@ -169,6 +210,42 @@ Dán bốn bước này vào chỗ chủ shop tìm được — nhóm nội bộ
   giờ Việt Nam. Đặt `timedatectl set-timezone Asia/Ho_Chi_Minh`, không thì bot
   nhắn follow-up lúc bốn giờ sáng.
 - **Ổ đĩa đầy.** `memory/` lớn dần theo ngày. Ngó `df -h` thỉnh thoảng.
+- **Máy giữ phiên Zalo và mã AI.** Đăng nhập SSH bằng **khoá**, tắt đăng nhập
+  root bằng mật khẩu. Một VPS lộ mật khẩu là lộ cả nick Zalo shop.
+- **Deploy bằng zip, không có `.git`:** `git pull` không dùng được, đường quay
+  lại bằng `git` cũng mất, và test `test_file_no_that_bi_ignore` đỏ — đỏ đó là
+  đúng, không phải lỗi shop.
+
+### Máy nhỏ (≤ 1 GB RAM)
+
+Thêm swap **trước** `npm install`, không thì cài giữa chừng bị giết:
+
+```bash
+fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile
+echo '/swapfile none swap sw 0 0' >> /etc/fstab
+free -h
+```
+
+Chạy rồi thì thỉnh thoảng `journalctl -u <tên-service> | grep -i "out of memory"`.
+
+### Distro cũ (RHEL / AlmaLinux / Rocky 8)
+
+Gặp thật trên máy chị Thanh — AlmaLinux 8.6:
+
+- **Node của distro quá cũ.** Cài từ tarball chính thức, ghim đúng bản đã chạy
+  được: Node **v24.21.0** + `openclaw@2026.9.4`. Đừng lấy bản mới nhất.
+- **`python3` là 3.6** — test không chạy. Cài `python3.11` và **gọi đúng tên đó**
+  (`python3.11 -m unittest …`). Đừng trỏ lại `python3` của hệ thống.
+- **Khoá GPG AlmaLinux 8.6 đã hết hạn** (12/1/2024) → mọi `dnf install` báo
+  `GPG check FAILED`. Tải khoá mới về `/tmp`, **kiểm fingerprint trước**
+  (`gpg --show-keys --with-subkey-fingerprint`, phải có `2AE81E8ACED7258B`),
+  khớp mới `rpm --import`. **Tuyệt đối không `--nogpgcheck`** trên máy giữ phiên
+  Zalo.
+- **Bẫy `alias cp='cp -i'`** của root: dán nhiều dòng một lúc, câu hỏi
+  *overwrite?* nuốt dòng dán kế tiếp làm câu trả lời → lệnh chép lặng lẽ không
+  chạy. Dùng `\cp -f`, và **dán từng dòng** với lệnh nào có thể hỏi lại.
+- **Đừng `dnf update` trên đĩa nhỏ** — kéo gần 1 GB (riêng `linux-firmware`
+  ~650 MB). Chỉ cài đúng thứ cần.
 
 ---
 
@@ -178,5 +255,7 @@ Dán bốn bước này vào chỗ chủ shop tìm được — nhóm nội bộ
 - [ ] `openclaw gateway status` báo đang chạy
 - [ ] Reboot VPS xong gateway tự lên lại
 - [ ] `timedatectl` đúng giờ Việt Nam
+- [ ] Đã lấy `senderId` chủ / `groupId` nhóm từ `openclaw logs --follow`, dán vào config + `USER.md`
+- [ ] Đăng nhập SSH bằng khoá
 - [ ] Chủ shop đã biết bốn bước quét lại, và biết tìm ở đâu
 - [ ] Nhắn thử từ nick khác, bot trả (`docs/04-kich-ban-thu.md`)

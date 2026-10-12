@@ -4,7 +4,7 @@
 OpenClaw nạp file này mỗi phiên. Đây là **chủ**, không phải khách.
 
 - **Tên:** [CHỜ CHỦ SHOP]
-- **Nick Zalo nhận bàn giao:** [CHỜ CHỦ SHOP]
+- **Nick Zalo nhận bàn giao:** [CHỜ CHỦ SHOP] — ghi `senderId`, không ghi số điện thoại. Cách lấy: `docs/14-vps-headless.md` mục *Lấy senderId và groupId*
 - **Giờ được hẹn gọi lại:** [CHỜ CHỦ SHOP: ví dụ 9h–18h]
 - **Ngày nghỉ / Tết:** [CHỜ CHỦ SHOP: ví dụ 28/1–5/2, hoặc “không nghỉ”]
 - **Khách để SĐT thì:** [CHỜ CHỦ SHOP: lưu đâu, ai xem]
