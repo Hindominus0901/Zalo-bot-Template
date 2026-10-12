@@ -60,6 +60,7 @@ không được thế** — khách mới nhắn vào là phải vào được.
     zalouser: {
       enabled: true,
       dmPolicy: "open",          // khách lạ vào được
+      allowFrom: ["*"],          // BẮT BUỘC kèm open — thiếu là rơi hết tin khách
       groupPolicy: "allowlist",  // nhóm thì chọn, đừng open hết
       // groups: { "<id>": { enabled: true, requireMention: true } }
     },
@@ -67,14 +68,20 @@ không được thế** — khách mới nhắn vào là phải vào được.
 }
 ```
 
-Trong nhóm: mặc định `requireMention: true`. OpenClaw **gọi mình** khi tin có
-tên trong `IDENTITY.md` (mặc định **Nami**), khi @ nick, hoặc khi reply tin bot.
+Trong nhóm: mặc định `requireMention: true`. Plugin zalouser **gọi mình** khi tin
+có tên trong `agents.entries.main.identity.name` **của config máy** (mặc định
+**Nami**), khi @ nick, hoặc khi reply tin bot. Plugin **không đọc `IDENTITY.md`** —
+hai chỗ phải khớp bằng tay. Tin không gọi tên bị plugin bỏ **trước khi tới model**:
+luật nhóm trong prompt không cứu được một cái tên lệch.
+
+`requireMention` là khoá thật duy nhất cho Zalo. `messages.groupChat.unmentionedInbound`
+qua được validate nhưng **không có tác dụng với Zalo** (chỉ Telegram đọc) — đừng thử.
 Đây là cái hay của Tom: đặt một tên, gõ tên đó là bot biết phải vào — không cần
 nút, không cần prefix `Bot`.
 
 Inbox 1-1 **không** cần gọi tên.
 
-Đổi tên: `IDENTITY.md` + `agents.defaults.identity.name` cho khớp. Tên một tiếng
+Đổi tên: `IDENTITY.md` + `agents.entries.main.identity.name` cho khớp. Tên một tiếng
 dễ lẫn câu Việt (`Mai`, `An`, `Nam`) thì đừng lấy. Biệt hiệu (*shop ơi*): thêm
 `mentionPatterns` **kèm tên gốc**.
 
@@ -84,13 +91,16 @@ dễ lẫn câu Việt (`Mai`, `An`, `Nam`) thì đừng lấy. Biệt hiệu (*
     zalouser: {
       enabled: true,
       dmPolicy: "open",          // khách lạ vào được
+      allowFrom: ["*"],          // BẮT BUỘC kèm open
       groupPolicy: "allowlist",  // nhóm thì chọn, đừng open hết
-      groups: { "*": { requireMention: true } },
+      groups: { "*": { enabled: true, requireMention: true } },
     },
   },
   agents: {
-    defaults: {
-      identity: { name: "Nami" },
+    entries: {
+      main: {
+        identity: { name: "Nami" }, // ở entries, KHÔNG ở defaults
+      },
     },
   },
 }

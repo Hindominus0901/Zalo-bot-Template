@@ -1,11 +1,19 @@
 // Merge vào ~/.openclaw/openclaw.json trên máy Gateway.
 // Đừng commit file thật, cookie, QR.
-// CSKH: dmPolicy PHẢI là open — khách lạ vào được.
+// CSKH: dmPolicy PHẢI là open — VÀ allowFrom phải có "*". Thiếu "*" thì config
+// vẫn hợp lệ, gateway vẫn chạy, nhưng OpenClaw BỎ HẾT tin riêng của khách lạ —
+// bot im với mọi người mà không báo lỗi nào.
+// Merge xong luôn chạy `openclaw config validate`. Nó bắt được cả hai lỗi hay
+// gặp nhất (thiếu "*", và identity đặt sai chỗ).
 // Tom cá nhân hay để pairing; đừng copy pairing sang shop.
 //
-// Tên: Nami (IDENTITY.md). OpenClaw suy mentionPatterns từ identity.name
-// → nhóm: "Nami" / "Nami ơi" / @Nami là gọi mình. Inbox 1-1 luôn vào.
-// Đổi tên thì đổi IDENTITY + identity.name dưới đây cho khớp.
+// Tên: Nami (IDENTITY.md). identity nằm ở agents.entries.<id>.identity —
+// KHÔNG phải agents.defaults.identity (2026.9.4 báo "Unrecognized key", config
+// invalid, gateway không lên).
+// Plugin zalouser nhận "gọi mình" theo identity.name TRONG CONFIG, không đọc
+// IDENTITY.md → nhóm: "Nami" / "Nami ơi" / @Nami là gọi mình. Inbox 1-1 luôn vào.
+// Đổi tên thì đổi CẢ HAI chỗ. Lệch tên = bot im trong nhóm. Bot im trong nhóm
+// thì kiểm tên trước — đừng tắt requireMention (tắt là bot trả mọi tin trong nhóm).
 // Model agent nên có vision — khách CSKH hay gửi ảnh.
 // workspace: dùng đường dẫn tuyệt đối tới thư mục repo shop (không để "." nếu
 // Gateway chạy từ thư mục khác).
@@ -15,12 +23,15 @@
     zalouser: {
       enabled: true,
       dmPolicy: "open",
+      // Bắt buộc đi kèm dmPolicy open. Thiếu dòng này = rơi hết tin khách lạ.
+      allowFrom: ["*"],
       groupPolicy: "allowlist",
       groups: {
         // "*" chỉ đặt mặc định cho mention gating, KHÔNG mở nhóm nào cả.
         "*": { enabled: true, requireMention: true },
         // Khoá phải là ID nhóm, không phải tên. Tên chỉ khớp khi bật
         // dangerouslyAllowNameMatching — đừng bật.
+        // Lấy ID: docs/14-vps-headless.md mục "Lấy senderId và groupId".
         // "1234567890": { enabled: true, requireMention: true },
       },
       // CẨN THẬN: groupAllowFrom trống = MỌI người trong nhóm đã cho phép đều
@@ -32,19 +43,18 @@
   agents: {
     defaults: {
       workspace: ".", // trỏ vào thư mục repo/workspace của shop
-      identity: {
-        name: "Nami",
+    },
+    // identity PHẢI nằm trong entries, không nằm trong defaults.
+    // Đừng thêm `default: true` — key đó đã bị gỡ, doctor sẽ xoá.
+    entries: {
+      main: {
+        identity: { name: "Nami" },
+        // Có biệt hiệu thì bỏ comment, giữ "nami" trong list:
+        // groupChat: {
+        //   mentionPatterns: ["nami", "nami\\s*ơi", "nami\\s*oi", "shop\\s*ơi"],
+        // },
       },
     },
-    // Có biệt hiệu thì bỏ comment, giữ "nami" trong list:
-    // entries: {
-    //   main: {
-    //     identity: { name: "Nami" },
-    //     groupChat: {
-    //       mentionPatterns: ["nami", "nami\\s*ơi", "nami\\s*oi", "shop\\s*ơi"],
-    //     },
-    //   },
-    // },
   },
   // MCP: merge config/mcp.example.json5. Mặc định không bật Drive.
   // mcp: { servers: { gdrive: { enabled: false } } },

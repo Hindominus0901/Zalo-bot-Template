@@ -43,7 +43,8 @@ thật**, đừng để trống khi giao cho khách.
 | Ngày đối chiếu | 2026-09-11 | |
 
 **Node là chỗ hay tắc nhất.** OpenClaw không chạy trên Node 25, và không chạy
-dưới 24.16. Node 22 hay 23 thì cài xong mới báo lỗi.
+dưới 24.16. Node 22 hay 23 thì **cài hỏng ngay** — `npm install` báo
+`EBADENGINE` và không có lệnh `openclaw` nào được cài.
 
 Đối chiếu tên key với tài liệu đi kèm chính bản đang cài — nó nằm ngay trong
 package, không cần mạng:
@@ -66,14 +67,16 @@ trong tay bạn là bản chụp, **không có ai đẩy bản vá xuống**.
 1. `openclaw --version` — so với bảng trên. Bằng nhau mà vẫn lỗi thì là lỗi khác,
    đọc kỹ thông báo.
 2. Lệnh không có: `openclaw --help` tìm tên mới. **Đừng đoán tên.**
-3. Key config không nhận: `openclaw config schema` xem key thật tên gì.
-   **Đừng thêm key mà `config schema` không có** — OpenClaw có thể nuốt im lặng,
-   và mình tưởng đã bật.
+3. Key config không nhận: `openclaw config validate` chỉ đúng key sai, rồi
+   `openclaw config schema` xem key thật tên gì. Key lạ bị **từ chối to**
+   (*Unrecognized key*, gateway không lên). Cái nguy là key **đúng tên mà thiếu
+   cặp** — validate chỉ ra *warning*, vẫn báo valid.
 4. Vẫn tắc: hạ về đúng bản trong bảng trên.
 
 Cùng kỷ luật đó áp cho mọi key trong `10-openclaw-config-mau.md`: `dmPolicy`,
-`groupPolicy`, `requireMention`, `agents.defaults.workspace`, `identity.name`,
-`mentionPatterns`. Kiểm bằng `config schema` trước, đừng chép mù từ tài liệu.
+`allowFrom`, `groupPolicy`, `requireMention`, `agents.defaults.workspace`,
+`agents.entries.main.identity.name`, `mentionPatterns`. Kiểm bằng
+`config validate` sau khi merge, đừng chép mù từ tài liệu.
 
 ---
 
@@ -129,9 +132,26 @@ Config máy: `~/.openclaw/openclaw.json` (Windows: trong user OpenClaw).
 
 - `channels.zalouser.enabled: true`
 - `dmPolicy: "open"` ← bắt buộc CSKH (không `pairing` như Tom)
-- `groupPolicy: "allowlist"` + `groups."*".requireMention: true`
-- `agents.defaults.identity.name`: **Nami** (hoặc tên đã điền IDENTITY)
+- `allowFrom: ["*"]` ← **bắt buộc đi kèm** `open`. Thiếu = rơi hết tin khách lạ
+- `groupPolicy: "allowlist"` + `groups."*": { enabled: true, requireMention: true }`
+- `agents.entries.main.identity.name`: **Nami** (hoặc tên đã điền IDENTITY).
+  **Không** đặt ở `agents.defaults` — key đó không tồn tại, gateway không lên
 - `agents.defaults.workspace`: đường dẫn **tuyệt đối** tới thư mục repo
+
+Merge xong **luôn chạy** — trước khi bật gateway:
+
+```bash
+openclaw config validate
+```
+
+Đọc **hết** kết quả, không chỉ dòng đầu. Hai kiểu lỗi:
+
+- *Unrecognized key* → config hỏng, gateway không lên. Đặt key sai chỗ (hay gặp
+  nhất: `identity` nằm trong `defaults`).
+- Dòng **warning** dưới chữ `Config valid` → config chạy được nhưng **sai**. Hay
+  gặp nhất: `dmPolicy="open" but allowFrom does not include "*"; all DMs will be
+  dropped` — bot sống mà mọi khách nhắn riêng đều rơi. Lệnh vẫn ra exit 0, nên
+  **đừng tin chữ "valid"**, đọc warning.
 
 ```bash
 openclaw plugins install @openclaw/zalouser
@@ -174,8 +194,9 @@ Fail thì đọc tên test, sửa file workspace, chạy lại. Đừng đoán g
 
 | Hiện tượng | Làm |
 |---|---|
-| Khách lạ nhắn không vào | `dmPolicy` còn `pairing` → đổi `open`, restart gateway |
-| Nhóm im khi gọi Nami | `identity.name` không khớp IDENTITY; biệt hiệu thiếu tên gốc |
+| Khách lạ nhắn không vào | Thiếu `allowFrom: ["*"]` (`config validate` có warning *all DMs will be dropped*); hoặc `dmPolicy` còn `pairing` → `open`. Restart gateway |
+| Gateway không lên | `openclaw config validate` — thường là *Unrecognized key* (`identity` để trong `defaults`) |
+| Nhóm im khi gọi Nami | `agents.entries.main.identity.name` không khớp IDENTITY (plugin đọc tên **trong config**); biệt hiệu thiếu tên gốc. **Đừng tắt `requireMention`** để chữa — tắt là bot trả mọi tin trong nhóm |
 | Ảnh gửi vào bot bảo gõ lại | Model không vision / plugin zalouser cũ — cập nhật plugin |
 | Mất tin lúc đi ngủ | Gateway tắt — bật lại, VPS nếu mở khách |
 | Cookie chết, không gửi được | `openclaw channels logout --channel zalouser` rồi login QR lại |

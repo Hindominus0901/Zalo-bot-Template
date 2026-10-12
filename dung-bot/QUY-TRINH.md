@@ -151,9 +151,11 @@ Merge `config/openclaw.zalouser.example.json5` vào `~/.openclaw/openclaw.json`
 Bắt buộc:
 
 - `channels.zalouser.enabled: true`
-- `dmPolicy: "open"` — không `pairing`
+- `dmPolicy: "open"` — không `pairing` — **và** `allowFrom: ["*"]`
 - `groupPolicy: "allowlist"` + `groups."*".requireMention: true`
-- `agents.defaults.identity.name` **khớp** `IDENTITY.md`
+- `agents.entries.main.identity.name` **khớp** `IDENTITY.md` (không đặt ở `defaults`)
+- `openclaw config validate` → **đọc cả warning**. *Valid* mà có warning
+  *all DMs will be dropped* = chưa xong
 - `agents.defaults.workspace` = path tuyệt đối repo
 - Model **vision** (Claude / GPT-4o / Gemini…)
 
@@ -256,7 +258,8 @@ Unittest xanh mà chưa chạy 04 trên nick: **chưa** bảo mở khách.
 
 | Hiện | Làm |
 |---|---|
-| Khách lạ nhắn không vào | `dmPolicy` còn `pairing` → `open`, restart |
+| Khách lạ nhắn không vào | thiếu `allowFrom: ["*"]` hoặc `dmPolicy` còn `pairing`. `config validate`, restart |
+| Gateway không lên | `config validate` — *Unrecognized key*, thường là `identity` để trong `defaults` |
 | Nhóm gọi tên không trả | `identity.name` lệch; biệt hiệu thiếu tên gốc |
 | Ảnh vào bảo gõ lại | Model không vision / plugin cũ |
 | Mất tin lúc đi ngủ | Gateway tắt |

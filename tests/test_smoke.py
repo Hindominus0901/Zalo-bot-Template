@@ -91,13 +91,84 @@ class SmokeSkills(unittest.TestCase):
             self.assertTrue(len(body) > 40, msg=f"trang wiki qua mong: {md.name}")
 
 
+def _bo_comment(json5: str) -> str:
+    """Bỏ // comment để kiểm cấu trúc, không bị câu cảnh báo trong comment lừa."""
+    return "\n".join(re.sub(r"//.*$", "", dong) for dong in json5.splitlines())
+
+
+def _khoi(text: str, khoa: str) -> str:
+    """Nội dung trong `khoa: { ... }` đầu tiên, đếm ngoặc."""
+    m = re.search(rf"\b{re.escape(khoa)}\s*:\s*\{{", text)
+    if not m:
+        return ""
+    sau, sau_cung = 1, m.end()
+    for i in range(m.end(), len(text)):
+        if text[i] == "{":
+            sau += 1
+        elif text[i] == "}":
+            sau -= 1
+            if sau == 0:
+                return text[m.end():i]
+    return text[m.end():]
+
+
+def _ten_bot() -> str:
+    m = re.search(r"\*\*Name:\*\*\s*(.+)", _read("IDENTITY.md"))
+    return m.group(1).strip() if m else ""
+
+
+# Mọi chỗ in ra một khối config cho người chép. Thêm file có khối config thì thêm vào đây.
+NOI_CO_CONFIG = [
+    "config/openclaw.zalouser.example.json5",
+    "docs/10-openclaw-config-mau.md",
+    "docs/02-kenh-zalouser.md",
+]
+
+
 class SmokeConfig(unittest.TestCase):
     def test_example_config_is_cskh_not_tom_pairing(self):
         text = _read("config/openclaw.zalouser.example.json5")
         self.assertIn('dmPolicy: "open"', text)
         self.assertIn("zalouser", text)
-        self.assertIn("Nami", text)
         self.assertNotRegex(text, r'dmPolicy:\s*"pairing"')
+
+    def test_ten_trong_config_khop_identity(self):
+        """Plugin nhận "gọi mình" theo tên TRONG CONFIG, không đọc IDENTITY.md.
+        Lệch là bot im trong nhóm. Không cắm cứng "Nami" — shop đổi tên vẫn xanh."""
+        ten = _ten_bot()
+        self.assertTrue(ten, "IDENTITY.md thieu dong **Name:**")
+        cfg = _bo_comment(_read("config/openclaw.zalouser.example.json5"))
+        self.assertRegex(cfg, rf'identity:\s*\{{\s*name:\s*"{re.escape(ten)}"')
+
+    def test_open_luon_kem_allowfrom_sao(self):
+        """Máy thật: open thiếu "*" vẫn báo valid, exit 0 — và rơi HẾT tin khách lạ."""
+        for noi in NOI_CO_CONFIG:
+            cfg = _bo_comment(_read(noi))
+            if 'dmPolicy: "open"' not in cfg:
+                continue
+            so_open = cfg.count('dmPolicy: "open"')
+            so_allow = len(re.findall(r'allowFrom:\s*\[[^\]]*"\*"', cfg))
+            self.assertEqual(so_open, so_allow, f"{noi}: dmPolicy open thieu allowFrom [\"*\"]")
+
+    def test_identity_khong_nam_trong_defaults(self):
+        """agents.defaults.identity = Unrecognized key, gateway không lên."""
+        for noi in NOI_CO_CONFIG:
+            cfg = _bo_comment(_read(noi))
+            for khoi in re.findall(r"```json5\n(.*?)```", cfg, re.S) or [cfg]:
+                defaults = _khoi(_khoi(khoi, "agents"), "defaults")
+                self.assertNotIn("identity", defaults, f"{noi}: identity nam trong agents.defaults")
+                self.assertNotRegex(khoi, r"\bdefault:\s*true", f"{noi}: key default da bi go")
+
+    def test_khong_tai_lieu_nao_day_key_cu(self):
+        for path in ROOT.rglob("*.md"):
+            if ".git" in path.parts or path.name == "CHANGELOG.md":
+                continue
+            self.assertNotIn("agents.defaults.identity", path.read_text(encoding="utf-8"),
+                             str(path.relative_to(ROOT)))
+
+    def test_buoc_validate_co_trong_quy_trinh(self):
+        for noi in ("dung-bot/QUY-TRINH.md", "docs/05-thiet-lap.md", "docs/10-openclaw-config-mau.md"):
+            self.assertIn("config validate", _read(noi), noi)
 
     def test_gitignore_keeps_phieu_private(self):
         gi = _read(".gitignore")

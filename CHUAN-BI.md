@@ -58,7 +58,7 @@ Máy không màn hình (VPS) thì bước quét mã làm khác — người dự
 ### 6. Trên máy đó: `git`, Python 3, và **Node đúng bản**
 
 Node phải là **24.16 trở lên nhưng dưới 25**, hoặc **26.1 trở lên**. Node 22, 23
-hay 25 thì cài xong bot không chạy. Người dựng kiểm bằng `node --version`.
+hay 25 thì cài hỏng ngay từ đầu. Người dựng kiểm bằng `node --version`.
 
 Người dựng cài. Windows thì lúc cài Python nhớ tick **Add to PATH**.
 

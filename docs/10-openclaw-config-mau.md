@@ -28,16 +28,21 @@ khách CSKH hay gửi ảnh. Chưa chọn model mắt → ghi `[CHỜ]` trên ch
     zalouser: {
       enabled: true,
       dmPolicy: "open",
+      allowFrom: ["*"],          // bắt buộc kèm "open" — thiếu là rơi hết tin khách
       groupPolicy: "allowlist",
       groups: {
-        "*": { requireMention: true },
+        "*": { enabled: true, requireMention: true },
       },
     },
   },
   agents: {
     defaults: {
       workspace: "/duong/dan/tuyet/doi/toi/repo-shop",
-      identity: { name: "Nami" },
+    },
+    entries: {
+      main: {
+        identity: { name: "Nami" }, // ở entries, KHÔNG ở defaults
+      },
     },
   },
   mcp: {
@@ -125,16 +130,31 @@ cho phép khớp nhóm theo tên thay vì ID.
 ## Kiểm mọi key, không chỉ key gộp tin
 
 Kỷ luật ở mục trên áp cho **tất cả** key trong file này, không riêng chuyện gộp
-tin: `channels.zalouser.dmPolicy`, `groupPolicy`, `groups."*".requireMention`,
-`agents.defaults.workspace`, `agents.defaults.identity.name`, `mentionPatterns`.
+tin: `channels.zalouser.dmPolicy`, `allowFrom`, `groupPolicy`,
+`groups."*".requireMention`, `agents.defaults.workspace`,
+`agents.entries.main.identity.name`, `mentionPatterns`.
+
+Merge xong **luôn chạy** — trước khi bật gateway:
 
 ```bash
-openclaw config schema | grep -i dmPolicy
+openclaw config validate
 ```
 
-Không thấy key → **đừng chép mù từ tài liệu này**. OpenClaw có thể nuốt im lặng
-một key lạ, và mình tưởng đã bật. Tìm tên mới bằng `config schema`, rồi sửa lại
-file này cho đúng máy của mình.
+Đọc **hết** kết quả, không chỉ dòng đầu. Hai kiểu lỗi:
+
+- *Unrecognized key* → config hỏng, gateway không lên. Đặt key sai chỗ (hay gặp
+  nhất: `identity` nằm trong `defaults`).
+- Dòng **warning** dưới chữ `Config valid` → config chạy được nhưng **sai**. Hay
+  gặp nhất: `dmPolicy="open" but allowFrom does not include "*"; all DMs will be
+  dropped` — bot sống mà mọi khách nhắn riêng đều rơi. Lệnh vẫn ra exit 0, nên
+  **đừng tin chữ "valid"**, đọc warning.
+
+Bản 0.3.0 của template **đã sai cả hai** dù tự nhận "đã đối chiếu từng key" —
+vì chỉ so với tài liệu, không chạy `validate`. Lần chạy thật đầu tiên mới lộ.
+Bài học: **chạy, đừng đọc**.
+
+Không thấy key trong bản đang cài → `openclaw config schema` tìm tên mới, rồi
+sửa lại file này cho đúng máy của mình. Đừng chép mù từ tài liệu này.
 
 Bản đã test: `05-thiet-lap.md` mục *Đã test với*.
 

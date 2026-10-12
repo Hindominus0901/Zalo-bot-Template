@@ -9,7 +9,7 @@
 - **Gọi thêm (nhóm):** [CHỜ CHỦ SHOP: ví dụ shop ơi, tên shop — để trống nếu chưa có]
 
 Tên **Nami** là mặc định của template (dễ gõ, ít lẫn câu tiếng Việt hơn Mai / An / Nam).
-Chủ shop đổi thì đổi **cùng lúc**: file này + `agents.defaults.identity.name` trong
+Chủ shop đổi thì đổi **cùng lúc**: file này + `agents.entries.main.identity.name` trong
 config máy Gateway.
 
 **Gọi thêm:** nếu điền `mentionPatterns` trên config thì **phải gồm cả tên gốc**
