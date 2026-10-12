@@ -9,13 +9,20 @@ hiện mã QR.
 
 ---
 
-## Trước tiên: cảnh báo chưa xác minh
+## Đường ngắn
 
-Tài liệu này dựa trên **suy đoán về cách OpenClaw in mã QR**, chưa chạy thật
-trên VPS. Bước đầu của nhánh B là **tự kiểm** rồi mới đi tiếp — đừng làm theo
-mù. Nếu OpenClaw hành xử khác, sửa file này lại cho đúng máy của mình.
+```bash
+python3 scripts/bat_dau.py
+```
 
-Cùng kỷ luật với `docs/10-openclaw-config-mau.md`: kiểm trước, đừng đoán.
+Lo hết phần dưới — cài máy, quét mã ngay trên terminal, gateway 24/7, nick chủ,
+soi máy. Phần dưới để hiểu, và để làm tay khi lệnh đó tắc.
+
+**Đã biết chắc** (đọc mã nguồn plugin `@openclaw/zalouser` 2026.9.4): plugin
+**không** vẽ QR ra terminal. Nó lấy ảnh mã từ máy chủ Zalo, ghi thành file
+`openclaw-zalouser-qr-<profile>.png` (chỉ chủ file đọc được) trong thư mục tạm
+của OpenClaw, và in dòng `Scan QR image: <đường dẫn>`. Mã hết hạn thì plugin tự
+xin mã mới, ghi đè file cũ.
 
 ---
 
@@ -62,22 +69,22 @@ tmux new -s zalo
 SSH rớt giữa lúc đang chờ quét mã là mất phiên login, phải làm lại từ đầu.
 Vào lại: `tmux attach -t zalo`.
 
-### B2. Xem OpenClaw in mã kiểu gì
+### B2. Quét mã
 
 ```bash
-openclaw plugins install @openclaw/zalouser
-openclaw channels login --channel zalouser
+python3 scripts/quet_ma.py
 ```
 
-Nhìn cái nó in ra, rồi theo đúng một trong ba nhánh dưới.
+Script chạy lệnh đăng nhập, bắt dòng `Scan QR image:`, đọc file ảnh và **vẽ mã
+QR ngay trong cửa sổ SSH** (ép nền trắng chữ đen — quét được cả khi terminal
+đang nền tối). Mã đổi thì vẽ lại. Giơ điện thoại (đang đăng nhập **nick bot**)
+quét thẳng màn hình.
 
-**(a) Mã QR vẽ bằng ký tự ngay trong terminal** — dễ nhất. Phóng to cửa sổ
-terminal, giơ điện thoại (đang đăng nhập nick bot) quét thẳng màn hình. Xong.
+Không quét được: phóng to cửa sổ terminal, giảm cỡ chữ, hoặc chụp màn hình gửi
+cho chủ quét từ ảnh. Đã kiểm: hình vẽ đọc lại bằng một bộ giải mã QR độc lập ra
+đúng nội dung; **chưa xác minh** bằng camera điện thoại thật (`docs/04` dòng 78).
 
-Mã hiện méo / mất nét: phóng to cửa sổ, giảm cỡ chữ, đổi terminal sang nền
-trắng chữ đen. Mã QR cần tương phản, không cần màu.
-
-**(b) Nó ghi ra một file ảnh** — kéo file về máy mình:
+**Dự phòng — kéo file ảnh về máy mình** (đường dẫn script in sẵn):
 
 ```bash
 # chạy ở MÁY MÌNH, không phải trên VPS
@@ -96,8 +103,6 @@ python3 -m http.server 8899 --bind 127.0.0.1
 Rồi từ máy mình mở đường hầm SSH: `ssh -L 8899:127.0.0.1:8899 user@vps`, vào
 `http://127.0.0.1:8899`. **`--bind 127.0.0.1` là bắt buộc** — không có nó là mã
 đăng nhập nick Zalo của khách phơi ra Internet. Quét xong `Ctrl+C` ngay.
-
-**(c) Nó in một đường link** — mở link đó trên máy mình.
 
 ### B3. Kiểm đã vào chưa
 

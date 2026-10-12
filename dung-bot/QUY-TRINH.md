@@ -131,6 +131,32 @@ Giọng nền đã có. Chỉ thêm xưng hô + tin thật vào `SOUL.md`. Đừ
 
 ## B4 — Config (sau khi sổ đã có chữ)
 
+**Đường ngắn — một lệnh lo hết B4, B6, B7 (Linux / Mac):**
+
+```bash
+python3 scripts/bat_dau.py
+```
+
+Nó cài máy (Node, OpenClaw, plugin đúng bản ghim), điền config, vẽ mã QR ngay
+trên terminal, cài gateway chạy 24/7, lấy senderId chủ, soi cả máy. Mỗi bước tự
+kiểm "xong chưa" — **đứt giữa chừng thì gõ lại đúng lệnh đó**, nó chạy tiếp.
+
+Nó chỉ dừng ở **bốn việc của người** — coding agent đọc output, chuyển đúng câu
+đó cho chủ shop, chờ họ làm xong:
+
+| | Người làm | Ai |
+|---|---|---|
+| ① | Dán mã AI (đã nạp tiền) | chủ / người giữ tài khoản AI |
+| ② | Giơ điện thoại nick **bot** quét hình trên terminal | chủ |
+| ③ | Từ nick **chủ**, nhắn mã `NAMI-xxxx` hiện trên màn hình | chủ |
+| ④ | Từ một nick **khác**, nhắn thử năm câu | chủ hoặc người dựng |
+
+`python3 scripts/bat_dau.py --xem` — chỉ xem bước nào xong. `--bo-qua chu` — để
+bước nick chủ làm sau. Từng bước cũng chạy riêng được: `scripts/cai_dat.sh`,
+`dien_config.py`, `quet_ma.py`, `lay_sender_id.py`, `kiem_tra_may.py`.
+
+**Làm tay** — chỉ khi lệnh trên tắc, hoặc máy Windows:
+
 Chi tiết bấm: `docs/05-thiet-lap.md`. Mẫu gộp một file:
 `docs/10-openclaw-config-mau.md`. Nói với họ từng nút, ít tên phần mềm.
 
@@ -221,10 +247,15 @@ Mở khách: `docs/04-kich-ban-thu.md` trên nick thật + `docs/06-tieu-chuan.m
 
 ## B6 — Nối nick (cùng họ)
 
+`bat_dau.py` bước 4 làm việc này. Làm riêng:
+
 ```bash
-openclaw plugins install @openclaw/zalouser
-openclaw channels login --channel zalouser
+python3 scripts/quet_ma.py
 ```
+
+Plugin Zalo **không** in mã ra terminal — nó ghi một file ảnh trên máy (đã đọc
+trong mã nguồn plugin 2026.9.4). `quet_ma.py` vẽ ảnh đó thành mã QR ngay trong
+cửa sổ SSH; mã đổi thì vẽ lại. Hết phải `scp` ảnh về.
 
 Họ quét mã bằng **app nick nhân viên**. Đừng nhận ảnh mã/cookie về chat.
 
@@ -236,6 +267,9 @@ không cần mã pairing.
 ---
 
 ## B7 — Sống 24/7
+
+`bat_dau.py` bước 5 cài gateway làm dịch vụ (tự lên khi máy khởi động lại), bước
+7 soi cả máy. Soi lại bất cứ lúc nào: `python3 scripts/kiem_tra_may.py`.
 
 **Máy chủ thuê ngoài không màn hình → `docs/14-vps-headless.md`.** Bước quét mã
 làm khác, và phải bàn giao cho chủ shop quy trình **quét lại** khi phiên chết —

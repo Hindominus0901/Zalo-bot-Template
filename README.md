@@ -17,6 +17,11 @@ Dựng được cho **bán hàng, coaching, đào tạo, tư vấn, dịch vụ 
    Agent sẽ tự tìm [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md) và phỏng vấn
    chủ shop 10 chủ đề.
 
+   Phần máy (Linux / Mac) là **một lệnh**, chạy lại được khi đứt giữa chừng:
+   `python3 scripts/bat_dau.py` (Windows: làm tay theo `docs/05`). Nó chỉ dừng ở
+   **bốn việc của người**: dán mã AI · quét mã Zalo hiện ngay trên màn hình ·
+   nhắn một mã ngắn từ nick chủ · nhắn thử từ nick khác.
+
    Dùng cái nào cũng được — **Claude Code, Cursor, Codex, Antigravity, Copilot**.
    Repo đã để sẵn cửa vào cho từng cái, không phải cài thêm gì
    (bảng cửa: [`HUONG-DAN-AGENT.md`](HUONG-DAN-AGENT.md)).

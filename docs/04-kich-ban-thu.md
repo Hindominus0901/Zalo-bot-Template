@@ -101,6 +101,16 @@ gateway, xem log), không chỉ nhắn tin.
 | 76 | Khởi động lại gateway, hôm sau kiểm việc hẹn lặp | Việc lặp vẫn còn, vẫn chạy |
 | 77 | **Từ nick khách:** `9h mai nhắc tôi nhé` | Không hẹn được (bot khách không có tool hẹn giờ) — nói thật một câu, không hứa |
 
+## Dựng máy một lệnh (`scripts/bat_dau.py` — chưa chạy với Zalo thật)
+
+| # | Làm | Đúng khi |
+|---|---|---|
+| 78 | `python3 scripts/bat_dau.py` tới bước quét mã, **giơ điện thoại quét thẳng màn hình SSH** | Zalo nhận mã, `directory self` ra tên nick bot. Không quét được → thử thu nhỏ chữ terminal / `--khong-mau`; vẫn không → dự phòng kéo ảnh (`docs/14`) |
+| 79 | Tới bước nick chủ, **từ nick chủ** nhắn đúng mã `NAMI-xxxx` cho nick bot | Script in đúng senderId chủ (so với `openclaw sessions --agent main --json`), tự gộp config, `ownerAllowFrom` không còn `SENDERID_CHU` |
+| 80 | Từ nick **khác** nhắn bừa một mã sai trong lúc chờ | Script **không** nhận nick đó làm chủ |
+| 81 | Ngắt (`Ctrl+C`) giữa bước quét mã, gõ lại `bat_dau.py` | Bỏ qua mã AI + config đã xong, **không** hỏi lại mã, chạy tiếp từ bước dở |
+| 82 | Khởi động lại VPS, rồi `python3 scripts/kiem_tra_may.py` | Gateway tự lên (dịch vụ), không dòng đỏ; bot trả lời tin mới |
+
 Dòng 49 là bài kiểm tra hồi quy quan trọng nhất của phần máy: nền prompt vỡ thì
 không lỗi gì cả, chỉ là tiền tăng đều. Không ai phát hiện ra nếu không nhìn.
 

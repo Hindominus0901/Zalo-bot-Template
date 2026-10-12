@@ -5,6 +5,47 @@
 Bản nào đổi thứ shop đang phụ thuộc — tên trường phiếu, tên tool, tên tờ wiki,
 tên file — **phải ghi ở đây**. Không ghi = coi như không đổi.
 
+## 0.4.2 — dựng máy một lệnh, chỉ dừng ở bốn việc của người
+
+Người dựng gõ **một** lệnh `python3 scripts/bat_dau.py` (tự gọi `scripts/cai_dat.sh`). Máy
+làm hết phần máy; chỉ dừng ở **① dán mã AI · ② quét mã · ③ nhắn mã `NAMI-xxxx`
+từ nick chủ · ④ nhắn thử**. Đứt giữa chừng → gõ lại đúng lệnh đó, chạy tiếp.
+Tiến độ ở `~/.openclaw/zalo-cskh-tien-do.json` (ngoài repo).
+
+Script mới (chạy riêng được khi chỉ cần sửa một bước):
+
+- `scripts/cai_dat.sh` — Node v24.21.0 (kiểm SHA256 trước khi giải nén),
+  OpenClaw + plugin ghim 2026.9.4, Python ≥ 3.9, swap 2 GB cho máy ≤ 1 GB,
+  giờ Việt Nam. Hỏi trước khi đụng swap / múi giờ; không có người ngồi trước
+  máy thì không tự làm. npm 11 bỏ qua script cài của gói → `--allow-scripts=openclaw`.
+- `scripts/quet_ma.py` — plugin **không** in QR ra terminal: nó ghi ảnh
+  `openclaw-zalouser-qr-<profile>.png` (quyền 0600) và log `Scan QR image: <path>`
+  (đọc mã nguồn plugin). Script đọc ảnh đó (giải PNG bằng stdlib), vẽ QR ngay
+  trong cửa sổ SSH. Hết `scp`. `docs/14` gỡ mục *chưa xác minh*.
+- `scripts/lay_sender_id.py` — senderId chủ không đọc log: chủ nhắn một mã
+  ngẫu nhiên, script tìm đúng cuộc trò chuyện riêng có mã đó trong sổ phiên,
+  tự gộp config.
+- `scripts/kiem_tra_may.py` — soi cả máy xanh / đỏ, dòng đỏ kèm cách sửa. Bắt
+  được cả cảnh báo `all DMs will be dropped` mà `config validate` vẫn exit 0.
+
+Sửa:
+
+- **Báo nhầm ở 0.4.0:** khách *không* dùng chung một cuộc trò chuyện. Lõi
+  OpenClaw mặc định `dmScope: "main"`, nhưng plugin `zalouser` ép
+  `per-channel-peer`. Đã sửa lại config mẫu, `QUY-TRINH`, `docs/10`, `docs/16`.
+  Vẫn ghi `dmScope` rõ trong config cho chắc.
+- `dien_config.py --chi-xem` in câu hỏi lẫn vào stdout → JSON hỏng. Câu hỏi nay
+  ra stderr.
+
+Đã chạy thật trong container: `cai_dat.sh` trên máy có Node 22 sai bản (cài
+đúng bản, chạy lại không hại); QR thật giải đúng từng ô, bản vẽ terminal chụp
+lại quét ra đúng nội dung; `lay_sender_id` nhặt đúng người từ sổ phiên thật;
+`bat_dau` lần 2 bỏ qua bước đã xong, không hỏi lại mã.
+
+**Chưa chạy thật:** điện thoại quét màn hình terminal; tin Zalo thật vào
+`lay_sender_id`; gateway làm dịch vụ systemd; giọng bot với Claude thật.
+Kịch bản thử: `docs/04` dòng 78–82.
+
 ## 0.4.1 — chạy lượt bot thật (model giả), bịt hai chỗ hở
 
 OpenClaw 2026.9.4 chạy **lượt bot thật** (`openclaw agent --local`), model thay
