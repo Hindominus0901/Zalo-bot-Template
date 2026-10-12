@@ -19,9 +19,11 @@
 // kể cả chủ, đều được đối xử như khách. Đóng an toàn, không mở.
 
 {
-  // Mỗi khách một cuộc hội thoại riêng. Mặc định của OpenClaw là "main" = MỌI
-  // tin riêng dùng CHUNG một phiên: bot trả khách B mà còn nhớ tên, SĐT, đơn
-  // của khách A. Đừng bỏ dòng này.
+  // Mỗi khách một cuộc hội thoại riêng. Mặc định lõi OpenClaw là "main" = mọi
+  // tin riêng chung một phiên. Plugin zalouser 2026.9.4 TỰ đổi "main"/trống
+  // thành per-channel-peer cho tin Zalo (đã đọc trong mã plugin) — nên Zalo
+  // không bị. Vẫn ghi rõ ở đây: không trông vào việc plugin tự sửa, và các
+  // kênh khác (nếu sau này thêm) không có bước đó.
   session: { dmScope: "per-channel-peer" },
 
   // Tự học của OpenClaw mặc định "auto": câu "từ giờ luôn…" của BẤT KỲ AI —

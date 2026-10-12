@@ -34,7 +34,7 @@ File đó có những khối này — đọc để hiểu, không phải để c
 
 | Khối | Làm gì | Bỏ đi thì |
 |---|---|---|
-| `session.dmScope: "per-channel-peer"` | Mỗi khách một cuộc hội thoại | Mọi khách **chung một phiên** — bot trả khách B mà nhớ SĐT, đơn của khách A |
+| `session.dmScope: "per-channel-peer"` | Mỗi khách một cuộc hội thoại | Với Zalo thì plugin vẫn tự tách phiên; kênh khác (nếu thêm) sẽ **chung một phiên** |
 | `skills.workshop.autonomous.mode: "off"` | Tắt tự học | Ai gõ *“từ giờ luôn…”* — kể cả khách — cũng thành skill |
 | `commands.ownerAllowFrom` | Ai là chủ, **code** kiểm | Không ai là chủ → không dạy bot, không giao việc được |
 | `tools` (toàn cục) | Cấm shell, cấm đổi gateway, cấm ghi ra ngoài repo | Bot có `exec` trên VPS giữ cookie Zalo |

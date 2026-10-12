@@ -41,10 +41,9 @@ docs và sai.
 
 ### Lỗi đang chạy ngoài kia — bản cũ có hết
 
-- **Mọi khách nhắn riêng dùng CHUNG một phiên.** Mặc định OpenClaw
-  `session.dmScope: "main"`. Hàm định tuyến cho config cũ: chủ, khách A, khách B
-  đều vào `agent:main:main`. Bot trả khách B mà còn nhớ tên, SĐT, đơn của khách
-  A. Nay `per-channel-peer`.
+- ~~**Mọi khách nhắn riêng dùng CHUNG một phiên.**~~ **Báo nhầm — xem 0.4.2.**
+  Lõi OpenClaw mặc định `dmScope: "main"` thật, nhưng plugin zalouser tự đổi
+  thành `per-channel-peer` cho tin Zalo. Nay vẫn ghi rõ `per-channel-peer`.
 - **Bot trả khách có `exec` trên VPS.** Template không đặt `tools` → OpenClaw
   dùng profile `coding`: shell, `apply_patch`, web, hẹn giờ, đổi gateway, đọc
   phiên người khác. `security audit` cho config cũ: **4 critical**. Nay bot khách

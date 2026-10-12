@@ -165,7 +165,7 @@ Script không chạy được (không có `openclaw` trên máy này) thì nó g
 script làm hết, đây để biết khi đọc lỗi (`docs/10` có bảng đủ):
 
 - `dmPolicy: "open"` **và** `allowFrom: ["*"]` — thiếu `"*"` là rơi hết tin khách
-- `session.dmScope: "per-channel-peer"` — thiếu là mọi khách **chung một phiên**
+- `session.dmScope: "per-channel-peer"` — mỗi khách một phiên (plugin Zalo cũng tự làm vậy; ghi rõ cho chắc)
 - `identity` ở `agents.entries.<id>`, không ở `defaults`; tên khớp `IDENTITY.md`
 - `workspace` ở **từng agent** — thiếu là agent chạy trong thư mục con rỗng
 - Bot khách `tools.profile: "minimal"` — không shell, không web

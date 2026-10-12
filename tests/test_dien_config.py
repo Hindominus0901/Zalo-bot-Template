@@ -88,6 +88,23 @@ class ChanNhapSai(unittest.TestCase):
             dc.kiem_ten('Nami "xịn"')
 
 
+class ChiXemRaDungConfig(unittest.TestCase):
+    """Chạy thật bắt được: --chi-xem với --ten mà không --chu thì script hỏi
+    senderId và in câu hỏi ra STDOUT — lẫn vào config, OpenClaw báo
+    "JSON5 parse failed" ngay ký tự đầu."""
+
+    def test_stdout_chi_co_config(self):
+        import subprocess
+        import sys
+        r = subprocess.run([sys.executable, str(ROOT / "scripts" / "dien_config.py"),
+                            "--ten", "Nami", "--chi-xem", "--workspace", "/srv/shop"],
+                           capture_output=True, text=True, stdin=subprocess.DEVNULL, timeout=30)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertTrue(r.stdout.lstrip().startswith("//"), r.stdout[:80])
+        self.assertNotIn("senderId Zalo của CHỦ —", r.stdout)
+        self.assertIn('id: "SENDERID_CHU"', r.stdout)   # bỏ trống = đóng an toàn
+
+
 class DichCanhBao(unittest.TestCase):
     def test_canh_bao_rot_tin_duoc_dich(self):
         """Đúng chữ OpenClaw 2026.9.4 in ra khi thiếu allowFrom "*"."""

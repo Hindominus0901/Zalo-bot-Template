@@ -121,7 +121,9 @@ Trên OpenClaw **2026.9.4** + plugin `@openclaw/zalouser` 2026.9.4, Node v24.21.
   không warning.
 - Hàm định tuyến của chính OpenClaw (`resolveAgentRoute`): chủ nhắn riêng →
   `admin`; khách A, khách B → `main`, **mỗi người một phiên**; chủ nhắn trong
-  nhóm → `main`. Config template cũ: chủ, A, B **chung một phiên** `agent:main:main`.
+  nhóm → `main`. (Hàm lõi với config cũ ra `agent:main:main` chung — nhưng plugin
+  zalouser tự đổi `dmScope` trống thành `per-channel-peer` trước khi gọi hàm đó,
+  nên tin Zalo thật **không** bị chung. Bản 0.4.0 báo nhầm điểm này.)
 - `openclaw skills list --agent`: `main` thấy 16/18 skill, không có `day-bot`,
   `giao-viec`; `admin` thấy 18/18; cả hai chạy đúng thư mục repo.
 - `openclaw security audit`: config cũ **4 critical** — bot khách có `exec`,

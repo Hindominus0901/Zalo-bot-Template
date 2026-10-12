@@ -167,8 +167,9 @@ class SmokeConfig(unittest.TestCase):
                              str(path.relative_to(ROOT)))
 
     def test_moi_khach_mot_phien(self):
-        """Máy thật (hàm định tuyến OpenClaw): thiếu dòng này thì chủ, khách A,
-        khách B đều vào CHUNG phiên agent:main:main — lộ thông tin khách cho nhau."""
+        """Lõi OpenClaw mặc định "main" = mọi tin riêng chung một phiên. Plugin
+        zalouser tự sửa thành per-channel-peer cho Zalo; ghi rõ để không trông
+        vào bước tự sửa đó (và cho kênh khác nếu sau này thêm)."""
         cfg = _bo_comment(_read("config/openclaw.zalouser.example.json5"))
         self.assertRegex(cfg, r'session:\s*\{\s*dmScope:\s*"per-channel-peer"')
 

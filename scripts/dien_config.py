@@ -116,9 +116,13 @@ def sua_ten_trong_repo(ten: str) -> bool:
 
 
 def hoi(cau: str, mac_dinh: str = "") -> str:
+    """Câu hỏi in ra stderr — stdout dành cho file config (--chi-xem). In câu hỏi
+    ra stdout là nó lẫn vào config, OpenClaw đọc hỏng ngay ký tự đầu."""
     goi_y = f" [{mac_dinh}]" if mac_dinh else ""
+    sys.stderr.write(f"{cau}{goi_y}: ")
+    sys.stderr.flush()
     try:
-        tl = input(f"{cau}{goi_y}: ").strip()
+        tl = input().strip()
     except EOFError:
         tl = ""
     return tl or mac_dinh
@@ -148,9 +152,11 @@ def main(argv: list[str] | None = None) -> int:
                        hoi("1. Tên bot (khách gọi tên này trong nhóm)", ten_hien_tai()))
         if a.chu is not None:
             chu = kiem_sender(a.chu)
+        elif not hoi_tuong_tac:
+            chu = ""   # gọi từ máy (đã có --ten): không hỏi, bỏ trống = chưa bật dạy bot
         else:
-            print("2. senderId Zalo của CHỦ — để chủ dạy bot và giao việc qua Zalo.")
-            print("   Chưa có thì Enter bỏ qua: bot vẫn chạy, chỉ là chưa dạy được.")
+            print("2. senderId Zalo của CHỦ — để chủ dạy bot và giao việc qua Zalo.", file=sys.stderr)
+            print("   Chưa có thì Enter bỏ qua: bot vẫn chạy, chỉ là chưa dạy được.", file=sys.stderr)
             chu = kiem_sender(hoi("   senderId"))
         tiet_kiem = a.tiet_kiem
         if hoi_tuong_tac and not tiet_kiem:
