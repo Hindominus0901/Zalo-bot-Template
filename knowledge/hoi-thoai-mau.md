@@ -77,7 +77,7 @@ Khách: *tặng sinh nhật bạn, tầm 500*
 
 > Lấy A nhé — đúng tầm 500, mang đi làm được, không vướng cái anh/chị vừa nói.
 > Hay mang lâu thì lấy B, lệch một chút.
-> Anh/chị muốn em giữ giúp một suất, hay xem A khác B chỗ nào?
+> Anh/chị chốt A luôn, hay muốn xem A khác B chỗ nào?
 
 ---
 

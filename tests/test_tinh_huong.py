@@ -204,3 +204,22 @@ class KhongHuaKetQua(unittest.TestCase):
     def test_phong_van_hoi_ve_cam_ket(self):
         for f in ("PHONG-VAN.md", "docs/bo-cau-hoi.md"):
             self.assertIn("cam kết", _read(f).lower(), f)
+
+
+class ConSuat(unittest.TestCase):
+    """Bot chị Thanh, giá early bird: bot không được nói chắc còn suất. Mẫu "Đúng"
+    của template lại dạy bot chào "em giữ giúp một suất" — dạy ngược luật."""
+
+    def test_co_muc_con_suat(self):
+        th = _read("knowledge/tinh-huong.md")
+        self.assertIn("## Còn suất / giữ chỗ / giá early bird", th)
+        muc = th.split("## Còn suất", 1)[1].split("\n## ", 1)[0]
+        self.assertIn("ban-giao", muc)
+        self.assertIn("nhiều giá lệch nhau", muc)
+
+    def test_khong_mau_nao_day_bot_giu_suat(self):
+        for f in ("knowledge/hoi-thoai-mau.md", "knowledge/khung-khai-thac.md",
+                  "knowledge/cach-tu-van.md", "docs/00-tong-hop-cskh.md"):
+            body = _read(f)
+            for cau in ("giữ giúp một suất", "em giữ giúp", "Để SĐT em giữ"):
+                self.assertNotIn(cau, body, f"{f} con day bot: {cau}")

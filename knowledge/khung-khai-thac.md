@@ -76,7 +76,7 @@ Luật:
 - Một gợi ý là lối thoát nhẹ (*Xem bảng giá*, *Gặp người thật*) — đừng nhốt khách trong một lối hỏi
 - Trên nick cá nhân: để nguyên dạng chữ. Không đánh số 1/2/3. Không chờ nút OA
 - Có thể quote reply tin khách. Typing/seen do OpenClaw `zalouser` lo
-- Khi đã vào `TU_VAN`, gợi ý đổi sang bước tiếp: *Lấy A*, *Khác nhau chỗ nào*, *Để SĐT em giữ giúp*
+- Khi đã vào `TU_VAN`, gợi ý đổi sang bước tiếp: *Lấy A*, *Khác nhau chỗ nào*, *Để SĐT chị phụ trách gọi*
 
 ---
 
@@ -86,7 +86,7 @@ Luật:
 2. Đề xuất **một** món. Lý do phải nhắc lại chữ khách vừa nói.
 3. Nêu **một** món thay thế, và *khi nào* nên lấy nó.
 4. Không đẩy món đắt nhất theo mặc định.
-5. Kết bằng một bước: giữ chỗ, xem khác biệt, hoặc để người thật gọi.
+5. Kết bằng một bước: chốt, xem khác biệt, hoặc để người thật gọi. **Không** hứa giữ chỗ (`tinh-huong.md` *Còn suất*).
 
 Sai điển hình: đọc cả danh mục. Đúng điển hình: "lấy A vì đúng cái anh/chị vừa kể".
 

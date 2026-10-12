@@ -222,7 +222,7 @@ Khách: ngân sách 500
 Bot:    [ĐỦ SLOT: dịp + đối tượng + ngân sách]
         Vậy lấy A nhé — đúng tầm 500, hợp tặng, không vướng cái anh/chị vừa nói.
         Nếu hay mang đi xa thì lấy B thay.
-        Anh/chị muốn em giữ giúp một suất, hay xem A khác B chỗ nào?
+        Anh/chị chốt A luôn, hay muốn xem A khác B chỗ nào?
 ```
 
 Ba lượt. Hỏi trước. Tư vấn sau. Một lựa chọn chính. Câu kết là bước tiếp, không
