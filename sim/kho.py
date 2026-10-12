@@ -15,6 +15,13 @@ GOC = Path(__file__).resolve().parent.parent
 CHO = "CHỜ CHỦ SHOP"
 
 
+def ten_bot(duong: Path | None = None) -> str:
+    """Tên bot trong IDENTITY.md (dòng **Name:**). Shop đổi tên thì giả lập theo."""
+    t = (duong or GOC / "IDENTITY.md").read_text(encoding="utf-8")
+    m = re.search(r"\*\*Name:\*\*\s*(.+)", t)
+    return m.group(1).strip() if m else ""
+
+
 def _gia_tri(dong: str) -> str:
     """`- **Tên:** giá trị` → `giá trị`."""
     return dong.split(":**", 1)[1].strip() if ":**" in dong else ""

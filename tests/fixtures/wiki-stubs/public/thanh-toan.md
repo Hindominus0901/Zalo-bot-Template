@@ -1,0 +1,18 @@
+---
+title: Thanh toán
+summary: "[CHỜ CHỦ SHOP] CK, COD, không nhận tiền mặt… Không dùng tờ này để nói số."
+updated: ""
+sources: []
+---
+
+# Thanh toán
+
+**[CHỜ CHỦ SHOP]** — tờ chờ. **Không nói số** từ tờ này. **Không** hiểu là shop không làm việc trên tờ. Điền lúc tách câu 3 (`PHONG-VAN.md`). Có số thì xóa banner này.
+
+Cách trả:
+
+- [CHỜ CHỦ SHOP: hình thức thôi — CK / COD / trả trước hay nhận rồi trả]
+
+**Đừng điền số tài khoản vào tờ này.** Bot đọc được tờ này nên sẽ đọc luôn số cho
+khách, mà sai một chữ số là khách mất tiền. Số để người thật gửi — xem
+`knowledge/tinh-huong.md` mục *Khách xin số tài khoản*.

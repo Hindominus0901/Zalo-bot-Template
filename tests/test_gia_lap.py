@@ -10,7 +10,7 @@ import unittest
 from datetime import datetime, time, timedelta
 
 from sim.kenh import Tin, chia_tin, duoc_tra_loi, gop_tin_don, phieu_id, session_key
-from sim.kho import Chu, Phieu, _gio, _ngay_nghi
+from sim.kho import GOC, Chu, Phieu, _gio, _ngay_nghi, ten_bot
 from sim.nen import Nen, luot
 from sim.nhip import ban_giao_con_treo, boot_tin_no, im_sau_gia, sau_don
 
@@ -42,8 +42,11 @@ class DocUserMd(unittest.TestCase):
         self.assertFalse(c.dang_nghi(datetime(2026, 6, 1).date()))
 
     def test_template_giao_di_la_tat_het(self):
-        """USER.md như lúc giao khách: mọi nhánh follow-up phải tắt."""
-        c = Chu.doc()
+        """USER.md như lúc giao khách: mọi nhánh follow-up phải tắt.
+
+        Đọc bản chụp, không đọc USER.md sống — shop bật follow-up là đúng việc,
+        không phải lỗi. (Bot chị Thanh phải lách đúng chỗ này.)"""
+        c = Chu.doc(GOC / "tests/fixtures/USER.template.md")
         self.assertIsNone(c.im_sau_gia_gio)
         self.assertIsNone(c.sau_don_gio)
         self.assertEqual(c.cau_mau_sau_don, "")
@@ -160,8 +163,9 @@ class NhomPhaiGoiTen(unittest.TestCase):
         self.assertFalse(duoc_tra_loi(Tin("1", "hôm nay đẹp trời", T, nhom="g")))
 
     def test_nhom_goi_ten_thi_tra(self):
-        self.assertTrue(duoc_tra_loi(Tin("1", "Nami ơi còn hàng không", T, nhom="g")))
-        self.assertTrue(duoc_tra_loi(Tin("1", "nami oi", T, nhom="g")))
+        ten = ten_bot()
+        self.assertTrue(duoc_tra_loi(Tin("1", f"{ten} ơi còn hàng không", T, nhom="g")))
+        self.assertTrue(duoc_tra_loi(Tin("1", f"{ten.lower()} oi", T, nhom="g")))
 
     def test_reply_tin_bot_thi_tra(self):
         self.assertTrue(duoc_tra_loi(Tin("1", "ừ", T, nhom="g"), reply_tin_bot=True))

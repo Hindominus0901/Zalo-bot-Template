@@ -61,13 +61,19 @@ def gop_tin_don(tins: list[Tin], cua_so_ms: int = DEBOUNCE_MS) -> list[list[Tin]
     return cum
 
 
-def duoc_tra_loi(tin: Tin, ten: str = "Nami", biet_hieu: tuple[str, ...] = (),
+def duoc_tra_loi(tin: Tin, ten: str | None = None, biet_hieu: tuple[str, ...] = (),
                  reply_tin_bot: bool = False) -> bool:
-    """Inbox luôn trả. Nhóm chỉ khi gọi tên / @ / reply tin mình."""
+    """Inbox luôn trả. Nhóm chỉ khi gọi tên / @ / reply tin mình.
+
+    `ten` mặc định đọc từ IDENTITY.md — không cắm cứng tên template.
+    """
     if not tin.la_nhom:
         return True
     if reply_tin_bot:
         return True
+    if ten is None:
+        from .kho import ten_bot
+        ten = ten_bot()
     chu = tin.chu.lower()
     return any(t.lower() in chu for t in (ten, *biet_hieu) if t)
 

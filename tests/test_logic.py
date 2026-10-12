@@ -209,30 +209,34 @@ class LogicToolsAndPrompt(unittest.TestCase):
         self.assertIn("Bước máy", honest)
 
     def test_wiki_cho_pages_are_stubs(self):
-        expected = [
-            "knowledge/wiki/public/ban-gi.md",
-            "knowledge/wiki/public/gia.md",
-            "knowledge/wiki/public/ship.md",
-            "knowledge/wiki/public/thanh-toan.md",
-            "knowledge/wiki/public/doi-tra.md",
-            "knowledge/wiki/public/bao-hanh.md",
-            "knowledge/wiki/public/con-hang.md",
-            "knowledge/wiki/public/gio-truc.md",
-            "knowledge/wiki/public/dia-chi.md",
-            "knowledge/wiki/public/kiem-hang.md",
-            "knowledge/wiki/public/dat-lich.md",
-            "knowledge/wiki/public/si-ctv.md",
-            "knowledge/wiki/public/hoa-don-vat.md",
-            "knowledge/wiki/internal/gia-von-hoa-hong.md",
-            "knowledge/wiki/internal/xu-khach-kho.md",
-        ]
-        for rel in expected:
-            text = _read(rel)
+        """Tờ chờ lúc giao: kiểm trên bản chụp tests/fixtures/wiki-stubs/.
+
+        Trước đây test đọc wiki sống → shop điền giá thật là đỏ, xoá tờ không
+        dùng (ship, kiểm hàng với shop coaching) cũng đỏ. Bot chị Thanh phải giữ
+        tám tờ thừa trên đĩa chỉ để test xanh."""
+        goc = ROOT / "tests/fixtures/wiki-stubs"
+        tos = sorted(goc.rglob("*.md"))
+        self.assertGreaterEqual(len(tos), 15)
+        for to in tos:
+            rel = str(to.relative_to(goc))
+            text = to.read_text(encoding="utf-8")
             self.assertIn("CHỜ CHỦ SHOP", text, msg=rel)
             self.assertIn("Không nói số", text, msg=rel)
             low = text.lower()
             self.assertNotIn("150000", low, msg=rel)
             self.assertNotIn("giá tham khảo", low, msg=rel)
+
+    def test_wiki_song_con_cho_thi_con_rao(self):
+        """Wiki sống: điền, xoá thoải mái. Nhưng tờ nào CÒN chờ thì phải còn câu
+        Không nói số — gỡ rào mà chưa điền là bot đẻ số."""
+        for to in (ROOT / "knowledge/wiki").rglob("*.md"):
+            if to.name in ("INDEX.md", "TRANG-MAU.md"):
+                continue
+            text = to.read_text(encoding="utf-8")
+            rel = str(to.relative_to(ROOT))
+            self.assertNotIn("giá tham khảo", text.lower(), msg=rel)
+            if "CHỜ CHỦ SHOP" in text and "Không nói số" not in text:
+                self.fail(f"{rel}: con [CHỜ CHỦ SHOP] ma mat cau Khong noi so")
 
     def test_opener_locked_and_chin_nhom(self):
         locked = "tìm cho mình dùng hay để tặng"

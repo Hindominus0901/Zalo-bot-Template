@@ -15,6 +15,15 @@ def _read(rel: str) -> str:
     return (ROOT / rel).read_text(encoding="utf-8")
 
 
+def _to_mau_xoa_duoc(rel: str) -> bool:
+    """Tờ wiki có trong bản chụp lúc giao → shop được xoá nếu không dùng
+    (TRANG-MAU.md dạy đúng thế). Đường dẫn gõ sai thì không có trong bản chụp."""
+    for goc in ("knowledge/wiki/public/", "knowledge/wiki/internal/"):
+        if rel.startswith(goc):
+            return (ROOT / "tests/fixtures/wiki-stubs" / rel[len("knowledge/wiki/"):]).is_file()
+    return False
+
+
 class CuaVao(unittest.TestCase):
     """Không biết trước khách dùng agent nào — cửa nào cũng phải tới nguồn."""
 
@@ -168,6 +177,8 @@ class FileCuaShop(unittest.TestCase):
     def test_moi_file_trong_danh_sach_ton_tai_va_co_dau(self):
         for f in self._danh_sach():
             p = ROOT / f
+            if not p.is_file() and _to_mau_xoa_duoc(f):
+                continue   # shop đã xoá tờ không dùng — đúng việc
             self.assertTrue(p.is_file(), f"docs/15 liet {f} nhung khong co file")
             self.assertTrue(p.read_text(encoding="utf-8").startswith(self.MARK),
                             f"{f} thieu dau FILE CUA SHOP")
@@ -195,7 +206,12 @@ class ChiMucVanDocDuocFrontmatter(unittest.TestCase):
         index = _read("knowledge/wiki/INDEX.md")
         self.assertNotIn("(chưa có mô tả)", index,
                          "INDEX mat summary — bo doc frontmatter dang hong")
-        self.assertIn("Phí ship", index + _read("knowledge/wiki/public/ship.md"))
+        # Mọi tờ public còn trên đĩa phải hiện bằng title thật, không bằng tên file.
+        # (Không đòi tờ nào cụ thể — shop coaching xoá ship.md là đúng.)
+        for to in (ROOT / "knowledge/wiki/public").glob("*.md"):
+            m = re.search(r"(?m)^title:\s*(.+)$", to.read_text(encoding="utf-8"))
+            if m:
+                self.assertIn(m.group(1).strip(), index, f"{to.name}: title khong vao INDEX")
 
 
 class GhimVersion(unittest.TestCase):
@@ -243,7 +259,7 @@ class LienKetNoiBo(unittest.TestCase):
             if ".git" in md.parts:
                 continue
             for dich in set(mau.findall(md.read_text(encoding="utf-8"))):
-                if not (ROOT / dich).exists():
+                if not (ROOT / dich).exists() and not _to_mau_xoa_duoc(dich):
                     hong.append(f"{md.relative_to(ROOT)} -> {dich}")
         self.assertEqual(hong, [], f"duong dan sai: {hong}")
 
