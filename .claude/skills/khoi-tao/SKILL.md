@@ -5,7 +5,9 @@ description: Dựng bot CSKH Zalo cho một shop từ template. Dùng khi ngư�
 
 # Khởi tạo — dựng bot cho một shop
 
-Làm theo **[`dung-bot/QUY-TRINH.md`](../../../dung-bot/QUY-TRINH.md)** — B0→B7.
+Làm theo **[`dung-bot/QUY-TRINH.md`](../../../dung-bot/QUY-TRINH.md)** — B0 → NỐI
+(máy trước) → phỏng vấn → đẩy sổ. Người không rành máy: bạn chạy mọi lệnh, họ
+chụp màn hình khi kẹt.
 Đó là nguồn duy nhất; file này chỉ để Claude Code tìm ra nó.
 
 Bốn thứ đừng quên, kể cả khi đọc lướt quy trình:

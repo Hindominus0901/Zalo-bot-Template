@@ -13,8 +13,19 @@ Câu hỏi đọc cho chủ: `PHONG-VAN.md` (nguồn) / `docs/bo-cau-hoi.md` (b�
 `docs/08-luong-chu-shop.md`, `docs/09-kho-va-du-lieu.md`. Đã khóa, đừng hỏi lại:
 `docs/quyet-dinh.md`. Bản đồ repo: [`../HUONG-DAN-AGENT.md`](../HUONG-DAN-AGENT.md).
 
-Làm **đúng thứ tự B0→B7**. Không nhảy QR trước phỏng vấn. Không tóm tắt rồi hỏi
-“anh/chị sẵn sàng chưa” — hỏi câu B0 ngay.
+**Thứ tự: nối máy trước, phỏng vấn sau.**
+
+1. **B0** — ba câu chuẩn bị.
+2. **NỐI** — nick Zalo của bot + VPS + bot chạy được (B4, B6, B7 làm ở đây, bằng
+   `scripts/vps.py`).
+3. **B1–B3** — phỏng vấn, viết sổ. **B5** — thử.
+4. **ĐẨY SỔ** — đưa sổ lên VPS, nhắn thử, mở khách.
+
+Lý do: người không rành máy kẹt ở phần máy, không kẹt ở phần kể chuyện shop. Làm
+phần khó khi họ còn sức, và lúc phỏng vấn thì bot đã sống — viết xong tờ nào là
+thử được tờ đó ngay trên Zalo.
+
+Không tóm tắt rồi hỏi “anh/chị sẵn sàng chưa” — hỏi câu B0 ngay.
 
 Nói với chủ: skill `giao-tiep-chu`. File/Drive/MCP: skill `lam-viec-dung` +
 `docs/11-mcp-ung-dung.md`.
@@ -38,6 +49,38 @@ Bot lúc chạy: `AGENTS.md` (OpenClaw nạp). Đừng sửa `AGENTS.md` / `TOOL
 4. **Không** tự mở web/Facebook shop rồi chép giá. **Không** copy số
    `docs/vi-du-file-da-dien.md` (Tiệm Mây = giả).
 5. Câu 2 (khách ngại) và câu 3 (tài liệu) mỏng = buổi hỏng. Đào từng câu.
+
+---
+
+## Luật — người dựng không rành máy
+
+Coi như người ngồi trước máy **chưa từng mở PowerShell / Terminal**. Đừng bắt
+họ học.
+
+1. **Bạn chạy mọi lệnh.** Không bao giờ bảo người gõ lệnh, mở PowerShell, mở
+   Terminal, sửa file. Lệnh nào cũng là việc của bạn.
+2. **Mỗi lần một việc**, tối đa ba dòng ngắn, gọi nút theo **đúng chữ trên màn
+   hình** họ thấy (*bấm nút "Tạo VPS" màu xanh*), không theo tên kỹ thuật.
+3. **Sau mỗi việc người làm trên màn hình:** *"Xong chưa ạ? Chỗ nào không thấy
+   hay lạ thì chụp màn hình gửi vào đây, em xem giúp."* Dạy cách chụp ngay lần
+   đầu:
+   - Windows: bấm **Windows + Shift + S**, kéo chọn vùng, rồi bấm **Ctrl + V**
+     vào ô chat này.
+   - Mac: bấm **Cmd + Shift + 4**, kéo chọn vùng; ảnh ra ngoài màn hình nền, kéo
+     ảnh đó vào ô chat.
+   - Điện thoại: chụp màn hình, gửi vào **Cloud của tôi** trên Zalo, mở Zalo
+     trên máy tính, lưu ảnh, kéo vào ô chat.
+4. **Đọc ảnh rồi chỉ đúng một nút tiếp.** Ảnh mờ, thiếu thì xin chụp lại cả màn
+   hình. Đừng đoán.
+5. **Ảnh có mã AI (sk-ant-…), mật khẩu, mã QR đăng nhập** → bảo họ xoá ảnh đó.
+   Với mã AI: vào console.anthropic.com **xoá mã đó, tạo mã mới**, vì ảnh chat
+   đã lưu lại. Không bao giờ xin họ chụp mấy thứ này.
+6. Kẹt hai lần cùng một chỗ → nói thật đang kẹt ở đâu, đề nghị nhờ người khác
+   rành hơn làm riêng bước đó. Đừng vòng vòng.
+
+Máy của người dựng chưa có Python thì bạn cài, không bảo họ cài:
+Windows `winget install -e --id Python.Python.3.12` rồi gọi `py`; Mac thường đã
+có `python3` (lần đầu máy hỏi cài công cụ dòng lệnh thì bảo họ bấm **Cài đặt**).
 
 ---
 
@@ -76,12 +119,76 @@ Máy chủ thuê ngoài không màn hình → bước quét mã làm khác, xem
 
 | Họ nói | Bạn làm |
 |---|---|
-| Windows / Mac / Linux | Ghi nhớ. Cài chỗ bot ngồi **sau B3**, lệnh trong `docs/05-thiet-lap.md` |
-| Chưa có nick nhân viên | Tạo nick Zalo mới **cùng họ** (số riêng). Đừng lấy nick chính, đừng gắn ngân hàng |
-| Đã có nick | Ghi. QR sau B3, **họ** quét bằng app nick đó |
+| Windows / Mac / Linux | Máy này là chỗ **bạn** ngồi điều khiển. Bot sống trên VPS (phần NỐI). Không có VPS mà muốn chạy trên chính máy này → làm tay `docs/05-thiet-lap.md` |
+| Chưa có nick nhân viên | Tạo nick Zalo mới **cùng họ** ở phần NỐI (số riêng). Đừng lấy nick chính, đừng gắn ngân hàng |
+| Đã có nick | Ghi. Quét mã ở phần NỐI, **họ** quét bằng app nick đó |
 | Đã có OpenClaw trên máy | B4 merge, đừng cài đè. Workspace = thư mục repo shop |
 
-Chưa quét mã lúc này. Nick: `docs/02-kenh-zalouser.md` (bạn đọc, họ không).
+Nick: `docs/02-kenh-zalouser.md` (bạn đọc, họ không). Xong ba câu → **NỐI** ngay.
+
+---
+
+## NỐI — nick Zalo + VPS + bot chạy, trước khi phỏng vấn
+
+Bạn chạy `scripts/vps.py` **trên máy này** (Windows dùng `py scripts\vps.py`). Nó
+SSH vào VPS thay người, người không gõ lệnh nào. Đọc docstring đầu file một lần.
+
+### N1. Nick Zalo của bot (người làm, bạn dẫn)
+
+- SIM / số điện thoại **riêng** cho bot, không phải số chủ.
+- Trên điện thoại: Zalo → đăng ký nick mới bằng số đó (Zalo cho một điện thoại
+  giữ nhiều nick — *Cá nhân → Chuyển tài khoản → Thêm tài khoản*). Đặt tên và ảnh
+  như nhân viên shop. **Không** gắn ngân hàng / ví.
+- Xong: chụp màn hình trang cá nhân nick đó gửi vào để bạn chắc là nick mới,
+  không phải nick chính.
+
+### N2. Mã AI (người làm, bạn dẫn)
+
+console.anthropic.com → đăng ký → **Billing**: nạp tiền → **API Keys → Create
+Key**. Mã **chỉ hiện một lần**: bảo họ bấm Copy, **đừng** dán vào chat. Lát nữa
+nó đi thẳng vào Notepad bạn mở (bước N4). Chụp màn hình các trang khác thì được.
+Trang mã thì không.
+
+### N3. VPS (người làm, bạn dẫn)
+
+1. Chạy `vps.py khoa`. Giữ dòng `ssh-ed25519 …` nó in (an toàn để lộ).
+2. Người thuê VPS ở nhà nào cũng được. Cần: **Ubuntu 22.04 hoặc 24.04**, **2 GB
+   RAM** (1 GB vẫn chạy, máy sẽ tự thêm swap), đặt ở **Việt Nam hoặc
+   Singapore**, đăng nhập **root**. Đọc ảnh họ chụp trang đăng ký để chỉ nút.
+3. Trang tạo VPS có ô **SSH key / Khoá SSH** → dán dòng `ssh-ed25519 …` vào đó
+   (gửi cho họ qua chat để họ copy). Không có ô đó → tạo xong mở **Console /
+   VNC / Terminal** trên trang quản lý VPS, dán dòng `mkdir -p ~/.ssh && echo …`
+   mà `vps.py khoa` in (đây là lần duy nhất người dán một dòng vào máy, và là
+   dán, không phải gõ).
+4. Xin họ chụp trang thông tin VPS → bạn đọc **địa chỉ IP**.
+
+### N4. Bot chạy (bạn làm; người chỉ làm khi bạn gọi)
+
+```
+vps.py noi <IP>          # lưu địa chỉ, thử nối
+vps.py day-len           # đẩy thư mục bot lên VPS
+vps.py bat-dau           # chạy được bao nhiêu chạy bấy nhiêu
+```
+
+Bước cài máy chạy vài phút. Cho lệnh timeout dài hoặc chạy nền. `bat-dau` thoát
+mã **3** = tới việc của người; dòng cuối `TRANG-THAI: {...}`:
+
+| `can_nguoi` | Bạn làm | Người làm |
+|---|---|---|
+| `ma_ai` | `vps.py gui-ma-ai --mo` (mở Notepad) → chờ → `gui-ma-ai --gui` | Dán mã đã Copy ở N2 vào Notepad, bấm Lưu, đóng |
+| `quet` | `vps.py lay-qr` — mã hiện lên màn hình máy này | Mở Zalo **nick bot** trên điện thoại → quét mã → quét hình trên màn hình → bấm đăng nhập |
+| `chu` | Đọc mã `NAMI-xxxx` trong TRANG-THAI cho họ | Từ **nick chủ** nhắn đúng mã đó cho nick bot |
+| `thu` | Đọc 5 câu trong TRANG-THAI | Từ một nick **khác** nhắn thử. Sổ chưa điền nên bot nói *chưa có số* — đúng |
+
+Người làm xong → `vps.py bat-dau` lại. Ổn bước thử → `vps.py bat-dau --da-thu`.
+Mã QR hết hạn → `lay-qr` lại. Bước `chu` không đọc được tin mà có đúng một
+người vừa nhắn → hỏi chủ có phải họ không, rồi `bat-dau --chu-id <số>`.
+
+`bat-dau` thoát **0** = máy xong: bot sống 24/7, chủ dạy được qua Zalo. Báo họ
+một câu: *"Bot đã chạy, giờ mình kể về shop để bot biết nói gì."* → **B1**.
+
+Lỗi lạ: `vps.py chay -- python3 scripts/kiem_tra_may.py`, đọc dòng đỏ, sửa.
+Đừng đọc lỗi kỹ thuật cho người.
 
 ---
 
@@ -142,7 +249,7 @@ cách ở `docs/17-dung-bang-app-chat.md`.
 
 ---
 
-## B4 — Config (sau khi sổ đã có chữ)
+## B4 — Config + máy (đã làm ở phần NỐI — đây là chi tiết và cách làm tay)
 
 **Đường ngắn — một lệnh lo hết B4, B6, B7 (Linux / Mac):**
 
@@ -256,6 +363,17 @@ sống trên nick. Fail → đọc tên test, sửa file, chạy lại. Đừng 
 
 Mở khách: `docs/04-kich-ban-thu.md` trên nick thật + `docs/06-tieu-chuan.md`.
 
+### Đẩy sổ lên VPS
+
+```
+vps.py day-so
+```
+
+Sổ vừa viết lên bot thật, bot dùng ngay tin sau. Nó **từ chối** nếu sổ trên VPS
+đã đổi sau lần đẩy trước (chủ dạy bot qua Zalo trong lúc phỏng vấn) → chạy
+`vps.py keo-so` trước, xem lại, rồi `day-so`. Phỏng vấn dài thì đẩy giữa chừng
+cũng được, cứ xong vài chủ đề là đẩy, để chủ nhắn thử từng phần.
+
 ---
 
 ## B6 — Nối nick (cùng họ)
@@ -295,7 +413,8 @@ Nói thẳng: tắt máy / ngủ = **mất tin lúc đó**. Khách thật cần 
 
 ## Xong khi (tick hết mới được nói ổn)
 
-- [ ] Mã kết nối AI đã có và đã vào config (không nằm trong repo)
+- [ ] Mã kết nối AI đã có và đã vào config (không nằm trong repo, không nằm trong chat)
+- [ ] `vps.py bat-dau` thoát 0; sổ đã `vps.py day-so`
 - [ ] `IDENTITY.md` có tên; `identity.name` khớp
 - [ ] `persona.md` hết `[CHỜ CHỦ SHOP]` bắt buộc (câu 1–2, 4, 5, 10)
 - [ ] Câu 3: có `raw/` **hoặc** chủ nói không có tài liệu

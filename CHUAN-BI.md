@@ -7,18 +7,23 @@ Người dựng (coding agent) đọc thêm: [`dung-bot/QUY-TRINH.md`](dung-bot/
 
 ## Cả quá trình, anh/chị chỉ phải làm bốn việc
 
-Phần máy — cài đặt, cấu hình, chạy 24/7 — người dựng gõ **một lệnh**
-(`python3 scripts/bat_dau.py`) là máy tự làm. Nó chỉ dừng lại nhờ anh/chị:
+Phần máy — cài đặt, cấu hình, chạy 24/7 — trợ lý AI tự làm (nó chạy
+`scripts/vps.py` và `scripts/bat_dau.py`, anh/chị không gõ lệnh nào). Làm
+**trước** phỏng vấn. Nó chỉ dừng lại nhờ anh/chị:
 
-1. **Dán mã AI** — mã kết nối của tài khoản AI đã nạp tiền (mục 1 dưới).
+1. **Dán mã AI** — mã kết nối của tài khoản AI đã nạp tiền (mục 1 dưới), dán
+   vào ô Notepad trợ lý mở sẵn. Không dán vào chat.
 2. **Quét mã** — cầm điện thoại đang đăng nhập **nick bot**, quét hình hiện
-   trên màn hình người dựng.
+   trên màn hình máy tính.
 3. **Nhắn một mã ngắn** — từ **nick Zalo của anh/chị**, nhắn cho nick bot đúng
    mã kiểu `NAMI-4821` hiện trên màn hình. Để máy biết anh/chị là chủ — sau đó
    anh/chị dạy bot, giao việc qua Zalo được.
 4. **Nhắn thử** — từ một nick khác, nhắn bot năm câu, xem trả lời có ổn không.
 
-Còn lại là trả lời câu hỏi về shop (phỏng vấn) và gửi tài liệu. Muốn bốn việc
+Trước bốn việc đó là ba việc chuẩn bị có trợ lý dẫn: tạo nick Zalo cho bot,
+mở tài khoản AI, thuê VPS. Kẹt chỗ nào thì **chụp màn hình gửi trợ lý**
+([`BAT-DAU.md`](BAT-DAU.md) có cách chụp). Sau cùng là trả lời câu hỏi về shop
+(phỏng vấn) và gửi tài liệu. Muốn bốn việc
 trên trôi chảy thì chuẩn bị đủ những thứ dưới đây **trước**.
 
 ---

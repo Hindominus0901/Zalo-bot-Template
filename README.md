@@ -11,16 +11,19 @@ Dựng được cho **bán hàng, coaching, đào tạo, tư vấn, dịch vụ 
 
 1. **Bấm `Use this template`** ở đầu trang GitHub → tạo repo riêng cho shop mình.
    (Đừng fork, đừng clone chung — mỗi shop một repo.)
+   Nhận bản **zip**? Đọc [`BAT-DAU.md`](BAT-DAU.md): giải nén, mở bằng Claude
+   Code hoặc Codex, gõ *bắt đầu dựng bot*.
 2. **Đọc [`CHUAN-BI.md`](CHUAN-BI.md)** — thứ phải có trước: tài khoản AI đã nạp
    tiền, nick Zalo riêng + số riêng, máy chạy 24/7. Thiếu là dựng nửa chừng tắc.
 3. **Mở repo bằng coding agent của mình**, bảo nó *dựng bot cho shop mình*.
    Agent sẽ tự tìm [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md) và phỏng vấn
    chủ shop 10 chủ đề.
 
-   Phần máy (Linux / Mac) là **một lệnh**, chạy lại được khi đứt giữa chừng:
-   `python3 scripts/bat_dau.py` (Windows: làm tay theo `docs/05`). Nó chỉ dừng ở
-   **bốn việc của người**: dán mã AI · quét mã Zalo hiện ngay trên màn hình ·
-   nhắn một mã ngắn từ nick chủ · nhắn thử từ nick khác.
+   **Máy trước, phỏng vấn sau.** Agent tự SSH vào VPS bằng `scripts/vps.py`
+   (Windows / Mac / Linux), người không gõ lệnh nào. Nó chỉ nhờ người **bốn việc**:
+   dán mã AI vào Notepad nó mở · quét mã Zalo hiện trên màn hình · nhắn một mã
+   ngắn từ nick chủ · nhắn thử từ nick khác. Kẹt chỗ nào thì chụp màn hình gửi
+   agent.
 
    Dùng cái nào cũng được — **Claude Code, Cursor, Codex, Antigravity, Copilot**.
    Repo đã để sẵn cửa vào cho từng cái, không phải cài thêm gì

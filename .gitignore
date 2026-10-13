@@ -26,3 +26,5 @@ memory/nhat-ky-sua/*
 # Config đã điền bởi scripts/dien_config.py — có senderId chủ, đừng commit.
 config/openclaw.da-dien.json5
 .ban-cu/
+.vps.json
+dist/

@@ -66,8 +66,12 @@ Không OA, không Bot Creator. Nick riêng + quét mã `zalouser`. Chi tiết b�
 
 ## Thứ tự (chi tiết trong `dung-bot/QUY-TRINH.md`)
 
-B0 máy + nick → B1 đọc khung, giữ ba rào `AGENTS.md` → B2 hỏi / B3 viết ngay →
-B4 merge config → B5 đóng vai + chỉ mục + unittest **kho chữ** → B6 quét mã → B7 máy mở.
+B0 ba câu → **NỐI** (nick Zalo bot + VPS + bot chạy, bằng `scripts/vps.py`; B4/B6/B7
+làm ở đây) → B1 đọc khung, giữ ba rào `AGENTS.md` → B2 hỏi / B3 viết ngay →
+B5 đóng vai + chỉ mục + unittest **kho chữ** → `vps.py day-so` → thử trên nick thật.
+
+Người dựng không rành máy: **bạn** chạy mọi lệnh, họ chụp màn hình khi kẹt —
+`dung-bot/QUY-TRINH.md` mục *Luật — người dựng không rành máy*.
 
 Viết file sau mỗi câu: bảng trong `dung-bot/QUY-TRINH.md`. Wiki: `knowledge/CLAUDE.md`. **Cấm**
 tự mở web shop lấy giá; **cấm** copy `docs/vi-du-file-da-dien.md`.

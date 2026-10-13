@@ -205,6 +205,44 @@ class Cloudflare(unittest.TestCase):
             self.assertIn(chu, doc)
 
 
+class NguoiKhongRanhMay(unittest.TestCase):
+    """Người dựng chưa từng mở PowerShell — agent chạy hết, người chụp màn hình khi kẹt."""
+
+    def test_may_truoc_phong_van_sau(self):
+        doc = _read(NGUON)
+        self.assertLess(doc.index("## NỐI"), doc.index("## B1"))
+        self.assertLess(doc.index("## B5"), doc.index("vps.py day-so"))
+        self.assertNotIn("Không nhảy QR trước phỏng vấn", doc)
+
+    def test_agent_chay_lenh_nguoi_khong_go(self):
+        doc = _read(NGUON)
+        self.assertIn("Bạn chạy mọi lệnh", doc)
+        for f in (NGUON, "BAT-DAU.md"):
+            self.assertIn("Windows + Shift + S", _read(f), f)
+            self.assertIn("Cmd + Shift + 4", _read(f), f)
+
+    def test_khong_xin_chup_ma_ai(self):
+        """Ảnh chat lưu lại — mã AI lộ qua ảnh thì phải tạo mã mới."""
+        self.assertIn("xoá mã đó, tạo mã mới", _read(NGUON))
+        self.assertIn("**Đừng** chụp gửi: mã AI", _read("BAT-DAU.md"))
+        self.assertIn("Không dán vào chat", _read("CHUAN-BI.md"))
+
+    def test_moi_trang_thai_deu_co_cach_xu(self):
+        """bat_dau --tu-dong dừng ở việc nào thì QUY-TRINH phải nói agent làm gì."""
+        doc = _read(NGUON)
+        for viec in ("ma_ai", "quet", "chu", "thu"):
+            self.assertIn(f"| `{viec}` |", doc, viec)
+        src = _read("scripts/bat_dau.py")
+        for viec in ("ma_ai", "quet", "chu", "thu"):
+            self.assertIn(f'CanNguoi("{viec}"', src, viec)
+
+    def test_ban_zip_co_cua_vao(self):
+        doc = _read("BAT-DAU.md")
+        self.assertIn(NGUON, doc)
+        self.assertIn("không phải hướng dẫn cho bạn", doc)
+        self.assertIn("BAT-DAU.md", _read("README.md"))
+
+
 class DongBoHaiBanPhongVan(unittest.TestCase):
     """PHONG-VAN.md và docs/bo-cau-hoi.md cố ý là hai bản của cùng nội dung."""
 

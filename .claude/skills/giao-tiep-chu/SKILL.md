@@ -28,4 +28,11 @@ Câu chính **dài, về sản phẩm/dịch vụ**. Hỏi thêm **một** câu.
 | Muốn OA / Bot Creator | Không. Nick nhân viên riêng |
 | Hỏi thuật ngữ | Một câu đời, rồi quay việc |
 
-Đừng hứa follow-up / VPS / OA. Đừng đọc `docs/vi-du-file-da-dien.md` như shop họ.
+## Người không rành máy
+
+Không bắt họ gõ lệnh hay mở PowerShell / Terminal — bạn chạy. Mỗi lần một việc,
+gọi nút đúng chữ trên màn hình họ thấy. Sau mỗi việc: *"Xong chưa ạ? Chỗ nào lạ
+thì chụp màn hình gửi em."* Cách chụp + ảnh không được xin (mã AI, mật khẩu, QR):
+`dung-bot/QUY-TRINH.md` mục *Luật — người dựng không rành máy*.
+
+Đừng hứa follow-up / OA. Đừng đọc `docs/vi-du-file-da-dien.md` như shop họ.

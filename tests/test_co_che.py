@@ -175,7 +175,15 @@ class SoNoKhach(unittest.TestCase):
         self.assertIn("quét lại mã", boot)
 
     def test_file_no_that_bi_ignore(self):
-        """File thật chứa chữ khách — phải bị git ignore."""
+        """File thật chứa chữ khách — phải bị git ignore.
+
+        Bản giao bằng zip không có `.git` — vẫn kiểm luật trong `.gitignore`, để
+        lúc shop `git init` sau này phiếu khách không lọt vào commit."""
+        if not (ROOT / ".git").exists():
+            luat = (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines()
+            self.assertIn("memory/*", luat)
+            self.assertNotIn("!memory/no-tra-loi.md", luat)
+            return
         r = subprocess.run(
             ["git", "check-ignore", "-q", "memory/no-tra-loi.md"],
             cwd=ROOT, capture_output=True,

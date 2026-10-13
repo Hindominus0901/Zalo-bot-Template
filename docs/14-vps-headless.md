@@ -221,9 +221,9 @@ Dán bốn bước này vào chỗ chủ shop tìm được — nhóm nội bộ
 - **Ổ đĩa đầy.** `memory/` lớn dần theo ngày. Ngó `df -h` thỉnh thoảng.
 - **Máy giữ phiên Zalo và mã AI.** Đăng nhập SSH bằng **khoá**, tắt đăng nhập
   root bằng mật khẩu. Một VPS lộ mật khẩu là lộ cả nick Zalo shop.
-- **Deploy bằng zip, không có `.git`:** `git pull` không dùng được, đường quay
-  lại bằng `git` cũng mất, và test `test_file_no_that_bi_ignore` đỏ — đỏ đó là
-  đúng, không phải lỗi shop.
+- **Giao bằng zip, không có `.git`:** `git pull` không dùng được, đường quay
+  lại bằng `git` cũng mất. Đẩy code / sổ lên VPS bằng `scripts/vps.py`
+  (`day-len`, `day-so`, `keo-so`) — không cần git.
 
 ### Máy nhỏ (≤ 1 GB RAM)
 

@@ -5,6 +5,44 @@
 Bản nào đổi thứ shop đang phụ thuộc — tên trường phiếu, tên tool, tên tờ wiki,
 tên file — **phải ghi ở đây**. Không ghi = coi như không đổi.
 
+## 0.4.5 — người không rành máy tự dựng được: máy trước, phỏng vấn sau
+
+Người dựng không cần biết PowerShell / Terminal. Nhận zip → mở bằng Claude Code
+hoặc Codex → gõ *bắt đầu dựng bot*. Agent chạy mọi lệnh; người chỉ bấm nút theo
+lời dẫn, kẹt thì **chụp màn hình gửi agent**.
+
+- **Đổi thứ tự** (`QUY-TRINH`): B0 → **NỐI** (nick Zalo bot, mã AI, VPS, bot
+  chạy) → phỏng vấn → `vps.py day-so` → thử. Lúc phỏng vấn bot đã sống, viết
+  xong tờ nào thử được ngay.
+- **Luật mới cho agent:** không bắt người gõ lệnh; mỗi lần một việc, gọi nút
+  đúng chữ trên màn hình; dạy cách chụp màn hình (Windows / Mac / điện thoại);
+  ảnh có mã AI thì bảo xoá ảnh + tạo mã mới.
+- `scripts/vps.py` (mới) — agent trên máy người dựng điều khiển VPS qua SSH:
+  - `khoa` tạo chìa khoá và in dòng để dán vào trang tạo VPS.
+  - `noi`, `day-len` đẩy code (VPS đã chạy thì **không** đè sổ).
+  - `bat-dau` chạy cả quy trình trên VPS.
+  - `gui-ma-ai --mo/--gui`: mã AI đi qua Notepad, không qua chat, không in ra.
+  - `lay-qr` kéo ảnh mã đăng nhập về **mở trên màn hình**.
+  - `day-so` / `keo-so`: từ chối đè khi chủ vừa dạy bot qua Zalo.
+  - `chay` chạy một lệnh bất kỳ trên VPS.
+- `bat_dau.py --tu-dong` — không hỏi gì. Tới việc người thì thoát mã 3, kèm
+  dòng `TRANG-THAI: {json}` (ma_ai / quet / chu / thu). Đăng nhập Zalo chạy
+  nền, sống qua lúc SSH đóng. Mã `NAMI-xxxx` giữ nguyên giữa các lần gọi.
+- `BAT-DAU.md` (mới) — trang đầu cho người mua bản zip.
+  `scripts/lam_ban_zip.py` — người bán đóng zip từ `git archive`, chặn lọt bí mật.
+- Test `test_file_no_that_bi_ignore` không còn đỏ oan khi giao bằng zip (không có `.git`).
+
+Đã chạy thật trong container: `sshd` làm "VPS", user riêng.
+- Chạy đủ chuỗi: khoa → dán dòng vào console → noi → day-len → bat-dau (cài máy
+  thật, dừng ở mã AI) → gui-ma-ai → bat-dau (onboard + config thật, file mã đã
+  xoá ở cả hai đầu).
+- Dừng ở quét mã vì container không vào được máy chủ Zalo.
+- lay-qr: ảnh khớp từng byte. day-so → chủ sửa trên VPS → day-so từ chối → keo-so.
+
+**Chưa chạy thật:** Windows thật (Notepad, `os.startfile`, `py`); VPS thật ở
+nhà cung cấp; điện thoại quét ảnh mã trên màn hình; nhắn mã chủ qua Zalo thật;
+gateway làm dịch vụ khi đăng nhập root. Kịch bản: `docs/04` dòng 85–88.
+
 ## 0.4.4 — Cloudflare: vào VPS bằng trình duyệt; tra kỹ dots
 
 - `docs/18-cloudflare.md` mới.

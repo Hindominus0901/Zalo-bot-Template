@@ -112,6 +112,10 @@ gateway, xem log), không chỉ nhắn tin.
 | 82 | Khởi động lại VPS, rồi `python3 scripts/kiem_tra_may.py` | Gateway tự lên (dịch vụ), không dòng đỏ; bot trả lời tin mới |
 | 83 | Mở repo bằng Claude Cowork / ChatGPT Work / dots, dán câu mở đầu `docs/17` | Agent đọc `QUY-TRINH`, **không** nhận là Nami, dừng ở B4, chạy `dong_goi.py` |
 | 84 | Dán khối `dong_goi.py` vào `mo_goi.py` qua cửa sổ SSH thật | Mã kiểm khớp, sổ VPS giống sổ trong app; soi máy có dòng *Sổ shop đã có chữ* |
+| 85 | Máy Windows sạch, người chưa từng mở PowerShell: giải nén zip, mở bằng Claude Code / Codex, gõ *bắt đầu dựng bot* | Agent tự cài Python nếu thiếu, tự chạy `vps.py`; người **không** gõ lệnh nào trừ dán một dòng vào console VPS (nếu trang tạo VPS không có ô SSH key) |
+| 86 | Ở bước `ma_ai`, `vps.py gui-ma-ai --mo` | Notepad mở thật trên Windows / TextEdit trên Mac; mã không xuất hiện trong chat |
+| 87 | Ở bước `quet`, `vps.py lay-qr` | Ảnh mã mở trên màn hình máy tính, điện thoại nick bot quét được, `bat-dau` lại qua bước 4 |
+| 88 | Người gửi ảnh chụp có mã `sk-ant-…` | Agent bảo xoá ảnh, xoá mã trên console, tạo mã mới |
 
 Dòng 49 là bài kiểm tra hồi quy quan trọng nhất của phần máy: nền prompt vỡ thì
 không lỗi gì cả, chỉ là tiền tăng đều. Không ai phát hiện ra nếu không nhìn.

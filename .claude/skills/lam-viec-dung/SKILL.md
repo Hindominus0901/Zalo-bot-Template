@@ -16,7 +16,7 @@ Dựng: `dung-bot/QUY-TRINH.md` B0→B7. Nói với chủ: `giao-tiep-chu`. Bus:
    đúng thư mục. Chưa bật = xin file tay.
 3. Cất nguyên `knowledge/raw/` + dòng `NGUON.md`.
 4. Cắt tờ `wiki/` — không đẻ số.
-5. Config / quét mã / thử nick = B4–B6, sau khi sổ có chữ.
+5. Config / quét mã / thử nick: phần NỐI, **trước** phỏng vấn (`vps.py`). Sổ viết xong → `vps.py day-so`.
 
 ## MCP
 

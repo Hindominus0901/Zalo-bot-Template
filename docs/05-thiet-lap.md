@@ -1,8 +1,9 @@
 # Thiết lập — cho người chưa từng cài
 
 Chủ shop **không cần đọc file này** — họ đọc [`08-luong-chu-shop.md`](08-luong-chu-shop.md).
-Coding agent đọc file này, rồi **bấm cùng họ**, nói chữ thường. Kịch bản phỏng
-vấn xong mới tới đây (`HUONG-DAN-AGENT.md` B4–B7).
+Coding agent đọc file này, rồi **bấm cùng họ**, nói chữ thường. Đường chính là
+VPS + `scripts/vps.py` (`dung-bot/QUY-TRINH.md` phần NỐI, làm trước phỏng vấn).
+File này cho ai chạy bot trên chính máy mình.
 
 Còn `[CHỜ CHỦ SHOP]` trên persona / giá thì **chưa bật khách thật**.
 
