@@ -52,6 +52,10 @@ shell trên VPS): làm B0–B3, B5 nếu chạy được python, rồi **dừng 
 `python3 scripts/dong_goi.py`, đưa người dựng `docs/17-dung-bang-app-chat.md` để
 chuyển sổ sang VPS. Đừng cài OpenClaw trong app, đừng nói đã làm B4–B7.
 
+Máy chủ thuê ngoài mà người dựng chỉ có trình duyệt (không app SSH) →
+`docs/18-cloudflare.md` phần 1. Đừng đề nghị cho bot sống trên Cloudflare
+(phần 2 — chưa hỗ trợ).
+
 Tự biết OS. Với họ hỏi **ba câu** (M1/M2/M3 trong `PHONG-VAN.md`):
 
 > Mình làm trên máy tính anh/chị đang mở đó luôn nhé — Windows, Mac hay máy chủ

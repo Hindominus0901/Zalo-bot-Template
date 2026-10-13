@@ -18,6 +18,9 @@ python3 scripts/bat_dau.py
 Lo hết phần dưới — cài máy, quét mã ngay trên terminal, gateway 24/7, nick chủ,
 soi máy. Phần dưới để hiểu, và để làm tay khi lệnh đó tắc.
 
+Không có app SSH, hoặc muốn VPS đóng hẳn cổng SSH? Vào VPS ngay trên trình
+duyệt qua Cloudflare Tunnel: `docs/18-cloudflare.md` phần 1.
+
 **Đã biết chắc** (đọc mã nguồn plugin `@openclaw/zalouser` 2026.9.4): plugin
 **không** vẽ QR ra terminal. Nó lấy ảnh mã từ máy chủ Zalo, ghi thành file
 `openclaw-zalouser-qr-<profile>.png` (chỉ chủ file đọc được) trong thư mục tạm

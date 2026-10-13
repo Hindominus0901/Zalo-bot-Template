@@ -5,6 +5,27 @@
 Bản nào đổi thứ shop đang phụ thuộc — tên trường phiếu, tên tool, tên tờ wiki,
 tên file — **phải ghi ở đây**. Không ghi = coi như không đổi.
 
+## 0.4.4 — Cloudflare: vào VPS bằng trình duyệt; tra kỹ dots
+
+- `docs/18-cloudflare.md` mới.
+  - **Phần 1** — Cloudflare Tunnel + Access, terminal ngay trong trình duyệt:
+    người dựng không cần app SSH, VPS đóng được cổng 22. Đóng cổng chỉ **sau
+    khi** đã vào được, luôn giữ console nhà cung cấp làm dự phòng. Đã kiểm lệnh
+    `cloudflared service install` (bản 2026.10.0).
+  - **Phần 2** — cho bot sống trên Cloudflare (`cloudflare/moltworker`): **chưa
+    hỗ trợ**. Đọc mã nguồn thấy dự án ghi *experimental*, ghim OpenClaw
+    2026.3.23 + Node 22 (template cần 2026.9.4 + Node 24), tốn ≈ $34,5/tháng.
+    Bản chụp lưu phiên lên R2 chỉ chạy khi **bấm tay**, nên container khởi động
+    lại là mất phiên Zalo. Các bài hướng dẫn nói "tự sao lưu mỗi 5 phút" là
+    viết theo bản cũ.
+- `docs/17` thêm mục **dots — đã tra kỹ**: máy cloud không có sudo / Docker,
+  không có Zalo, không nối được VPS không màn hình (cần app desktop), gói Pro /
+  Business Premium, chưa xác nhận có ở Việt Nam, tuần đầu nhiều lỗi. Dùng làm
+  người dựng phần chữ được; làm chỗ bot sống thì không.
+
+**Chưa chạy thật:** tunnel + terminal trình duyệt + quét QR trong tab;
+moltworker với Zalo; dots.
+
 ## 0.4.3 — dựng bằng app chat (Cowork, ChatGPT Work, dots), chuyển sổ sang VPS
 
 **App chat làm được phần chữ, không làm được chỗ bot sống.** Claude Cowork,

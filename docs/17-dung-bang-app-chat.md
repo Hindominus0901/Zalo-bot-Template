@@ -30,6 +30,37 @@ VPS** bằng một lệnh `python3 scripts/bat_dau.py`.
 
 ---
 
+## dots — đã tra kỹ
+
+> Tra 13/10/2026. Gần hết là bài của bên thứ ba và trang hỗ trợ OpenAI, ra mắt
+> mới hai tuần — **chưa thử thật**, số liệu còn đổi.
+
+| | Tin |
+|---|---|
+| Là gì | Agent luôn bật trong ChatGPT (OpenAI ra mắt 29/9/2026). Mỗi dot có máy cloud riêng + trình duyệt riêng, làm tiếp khi mình tắt máy. Nói chuyện qua ChatGPT, Slack, Teams, SMS (Mỹ, thử nghiệm) |
+| Máy cloud của dot | Người dùng đo được: Debian, 9 vCPU, ~10 GB RAM, ~32 GB đĩa, **không có sudo, không Docker**. Mở máy ra chỉ xem, muốn điều khiển phải bấm *Take over* (chuột, phím). Không có cửa sổ dòng lệnh cho mình |
+| Máy của mình | Nối được **một** máy, qua app ChatGPT desktop (Mac / Windows). Máy phải bật, app phải mở. Nối rồi thì dot đọc file và chạy lệnh trên đó. **VPS không màn hình không chạy app desktop → không nối được** |
+| Ứng dụng | ~4.000 app qua plugin (dùng chung với ChatGPT, Codex). **Không có Zalo**, chưa có WhatsApp / Telegram chính thức. Có *Secure MCP Tunnel* để dot gọi một máy chủ MCP riêng, không mở cổng |
+| Gói | Pro $100 / $200 / $500 một tháng, có sẵn một dot. Business Premium khoảng $100–125 / người (nguồn vênh nhau). Enterprise phải admin bật. **Không có** ở Free, Go, Plus |
+| Nước | Không có ở EU, Anh, Thuỵ Sĩ. **Chưa nguồn nào xác nhận Việt Nam**. Có lẽ theo danh sách nước ChatGPT hỗ trợ, nhưng chưa chắc |
+| Hạn mức | Chat với dot không trừ hạn mức. Việc dot giao sang Codex / ChatGPT Work thì trừ hạn mức của bên đó. Tháng đầu miễn, sau đó chưa công bố con số |
+| Tuần đầu | Nhiều người báo lỗi: tác vụ hỏng, mất kết nối, dot "biến mất", vướng CAPTCHA, gửi link hỏng, đã tạo việc rồi không xem / huỷ được (The Register 7/10 + các bài thử tay) |
+| An toàn | OpenAI nói giảm được chứ không chặn hết bị lừa qua nội dung web (prompt injection). Việc đã gửi (email, form) không lùi được. Tạm dừng dot **không** dừng các agent nền nó đã chạy |
+
+**Với bot Zalo này, dots dùng được vào đâu:**
+
+| | Việc | Được? |
+|---|---|---|
+| a | Người dựng phần chữ (hỏi chủ, điền sổ) | **Được** — như ba app trên, dùng câu mở đầu dưới |
+| b | Chỗ bot sống 24/7 | **Không** — không sudo, không dịch vụ nền, không có Zalo |
+| c | Trợ lý riêng của chủ, đứng ngoài bot (tóm tắt, nhắc việc qua Slack / ChatGPT) | Được, nhưng không chạm vào Zalo hay bot |
+| d | Nối dot vào bot qua Secure MCP Tunnel | Làm được về kỹ thuật, nhưng mở cửa cho một agent bên ngoài vào **máy giữ phiên Zalo + phiếu khách**. Template **không** làm việc này |
+
+Chủ muốn giao việc cho bot thì đã có sẵn đường an toàn: nhắn riêng cho bot qua
+Zalo (`docs/16-day-bot.md`).
+
+---
+
 ## Nửa chữ — trong app
 
 1. Gắn **thư mục repo** của shop vào app (repo tạo bằng *Use this template*).

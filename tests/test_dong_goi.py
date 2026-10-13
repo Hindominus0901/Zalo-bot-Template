@@ -173,6 +173,38 @@ class AppChat(unittest.TestCase):
             self.assertIn("17-dung-bang-app-chat", _read(f), f)
 
 
+class Cloudflare(unittest.TestCase):
+    DOC = "docs/18-cloudflare.md"
+
+    def test_noi_that(self):
+        doc = _read(self.DOC)
+        self.assertIn("chưa thử", doc.lower())
+        self.assertIn("Experimental", doc)
+        self.assertIn("Chưa hỗ trợ", doc)
+
+    def test_dong_cong_22_sau_khi_vao_duoc(self):
+        """Đóng cổng trước khi vào được bằng trình duyệt = tự khoá mình ngoài."""
+        doc = _read(self.DOC)
+        self.assertIn("Chỉ khi bước 6 đã chạy", doc)
+        self.assertLess(doc.index("Browser rendering → SSH"), doc.index("ufw deny 22"))
+        self.assertIn("console", doc)
+
+    def test_khong_de_everyone(self):
+        self.assertIn("Đừng** để *Everyone*", _read(self.DOC))
+
+    def test_ma_tunnel_khong_vao_repo(self):
+        self.assertIn("không ghi vào repo", _read(self.DOC))
+
+    def test_duoc_tro_toi(self):
+        for f in ("README.md", "CHUAN-BI.md", "docs/14-vps-headless.md", NGUON):
+            self.assertIn("18-cloudflare", _read(f), f)
+
+    def test_dots_tra_ky(self):
+        doc = _read("docs/17-dung-bang-app-chat.md")
+        for chu in ("Không có Zalo", "không có sudo", "không nối được", "Chưa nguồn nào xác nhận Việt Nam"):
+            self.assertIn(chu, doc)
+
+
 class DongBoHaiBanPhongVan(unittest.TestCase):
     """PHONG-VAN.md và docs/bo-cau-hoi.md cố ý là hai bản của cùng nội dung."""
 

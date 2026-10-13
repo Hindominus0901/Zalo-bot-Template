@@ -71,6 +71,10 @@ nhân không gửi bù tin lúc bot ngủ.
 Máy không màn hình (VPS) thì bước quét mã làm khác — người dựng xem
 [`docs/14-vps-headless.md`](docs/14-vps-headless.md).
 
+Người dựng không có app SSH? Vào VPS ngay trên trình duyệt (cần một tên miền):
+[`docs/18-cloudflare.md`](docs/18-cloudflare.md). Bot thì vẫn sống trên VPS —
+chưa cho sống trên Cloudflare được.
+
 ### 6. Trên máy đó: `git`, Python 3, và **Node đúng bản**
 
 Node phải là **24.16 trở lên nhưng dưới 25**, hoặc **26.1 trở lên**. Node 22, 23

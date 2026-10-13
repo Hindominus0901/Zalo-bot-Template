@@ -96,6 +96,7 @@ Chủ shop không cần biết ba chữ đó. Coding agent phỏng vấn theo `P
 | [`docs/15-cap-nhat.md`](docs/15-cap-nhat.md) | Kéo bản template mới mà giữ phần shop đã điền |
 | [`docs/16-day-bot.md`](docs/16-day-bot.md) | Chủ dạy bot + giao việc qua Zalo; khoá ở tầng máy thế nào, giới hạn thật |
 | [`docs/17-dung-bang-app-chat.md`](docs/17-dung-bang-app-chat.md) | Dựng bằng Claude Cowork / ChatGPT Work / dots + sáu cách chuyển sổ sang VPS |
+| [`docs/18-cloudflare.md`](docs/18-cloudflare.md) | Vào VPS bằng trình duyệt qua Cloudflare Tunnel; vì sao chưa cho bot sống trên Cloudflare |
 | [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md) | Coding agent dựng shop: B0→B7 chi tiết — **nguồn duy nhất** |
 | [`docs/04-kich-ban-thu.md`](docs/04-kich-ban-thu.md) | Tin thử: tình huống + giọng + ảnh + follow-up |
 | [`docs/vi-du-file-da-dien.md`](docs/vi-du-file-da-dien.md) | Shop **giả** — đừng copy số vào wiki thật |
