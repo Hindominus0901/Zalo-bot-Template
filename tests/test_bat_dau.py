@@ -117,6 +117,25 @@ esac
     return str(p)
 
 
+class NhaAi(unittest.TestCase):
+    """Template mặc định GPT; mã Claude vẫn chạy. Nhận theo tiền tố mã."""
+
+    def test_nhan_dang_ma(self):
+        self.assertEqual(bd.nha_ai_cua_ma("sk-proj-AbCdEfGhIjKlMnOpQrStUv_12"), "openai")
+        self.assertEqual(bd.nha_ai_cua_ma("sk-svcacct-AbCdEfGhIjKlMnOpQrStUv"), "openai")
+        self.assertEqual(bd.nha_ai_cua_ma("sk-ant-api03-AbCdEfGhIjKl"), "anthropic")
+        for rac in ("", "sk-", "ma cua toi", "sk-proj-ngan", "sk-proj-AbCd Ef GhIjKlMnOpQrStUv"):
+            self.assertIsNone(bd.nha_ai_cua_ma(rac), rac)
+
+    def test_lenh_onboard_dung_nha(self):
+        o = bd.lenh_onboard("oc", "sk-proj-x", "openai")
+        self.assertIn("--openai-api-key", o)
+        self.assertEqual(o[o.index("--auth-choice") + 1], "openai-api-key")
+        a = bd.lenh_onboard("oc", "sk-ant-x", "anthropic")
+        self.assertIn("--anthropic-api-key", a)
+        self.assertNotIn("--openai-api-key", a)
+
+
 class TuDong(unittest.TestCase):
     """--tu-dong: agent chạy qua SSH, không có người gõ. Việc người → CanNguoi (thoát 3)."""
 
@@ -143,6 +162,7 @@ class TuDong(unittest.TestCase):
 
     def test_thieu_ma_ai_thi_can_nguoi(self):
         os.environ.pop("ANTHROPIC_API_KEY", None)
+        os.environ.pop("OPENAI_API_KEY", None)
         with self.assertRaises(bd.CanNguoi) as c:
             bd.lam_ma_ai("openclaw")
         self.assertEqual(c.exception.viec, "ma_ai")
@@ -150,6 +170,7 @@ class TuDong(unittest.TestCase):
     def test_ma_ai_sai_dau_xoa_file_va_bao_lai(self):
         """Đọc file mã một lần rồi xoá — kể cả khi mã sai."""
         os.environ.pop("ANTHROPIC_API_KEY", None)
+        os.environ.pop("OPENAI_API_KEY", None)
         bd.MA_AI_TAM.write_text("khong-phai-ma\n")
         with self.assertRaises(bd.CanNguoi):
             bd.lam_ma_ai("openclaw")
@@ -195,6 +216,7 @@ class TuDong(unittest.TestCase):
         oc = _oc_dang_nhap(self.d)
         env = dict(os.environ, PATH=str(self.d) + os.pathsep + os.environ["PATH"], HOME=str(self.d))
         env.pop("ANTHROPIC_API_KEY", None)
+        env.pop("OPENAI_API_KEY", None)
         r = subprocess.run([sys.executable, str(ROOT / "scripts" / "bat_dau.py"), "--tu-dong",
                             "--bo-qua", "may"], capture_output=True, text=True, env=env,
                            timeout=120, stdin=subprocess.DEVNULL)

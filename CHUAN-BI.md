@@ -32,14 +32,26 @@ trên trôi chảy thì chuẩn bị đủ những thứ dưới đây **trướ
 
 ### 1. Tài khoản AI có nạp tiền, và mã kết nối (API key)
 
-Bot suy nghĩ bằng một mô hình AI thuê ngoài — Claude, GPT-4o, hoặc Gemini.
-Anh/chị mở tài khoản, nạp tiền, lấy mã kết nối, đưa cho người dựng.
+Bot suy nghĩ bằng **GPT của OpenAI** (mặc định GPT-5.6 Terra — trả lời khôn,
+xem được ảnh). Anh/chị mở tài khoản **API** ở platform.openai.com, nạp tiền,
+tạo mã. **Gói ChatGPT Plus không dùng được cho bot** — API nạp tiền riêng.
+
+Giá GPT-5.6 Terra (theo danh mục của bản OpenClaw đang ghim): $2.5 cho 1 triệu
+token đọc vào ($0.25 nếu phần đầu lặp lại được nhớ đệm), $15 cho 1 triệu token
+viết ra. Mỗi lượt bot đọc khoảng 13–15 nghìn token (sổ + luật + lịch sử chat —
+đã đo trên bản thật), một tin khách có thể tốn 1–3 lượt.
+
+**Ước chừng 300–2.000 đồng mỗi tin khách** — tức khoảng **$15–120 một tháng**
+nếu 50 tin khách mỗi ngày. Khoảng rộng vì còn tuỳ tin dài ngắn, có ảnh không,
+bot phải đọc mấy tờ sổ. Đây là ước tính, chưa đo bằng tiền thật: xem *Usage*
+trên platform.openai.com sau tuần đầu. Muốn rẻ hơn khoảng 2,5 lần thì dùng
+bản tiết kiệm (GPT-5.6 Luna), kém tinh tế hơn chút.
 
 **Đây là chi phí chạy hàng tháng, không phải trả một lần.** Tính theo lượng
 tin: khách nhắn càng nhiều thì càng tốn. Bot rảnh thì gần như không tốn.
 
-Chọn loại **nhìn được ảnh** — khách CSKH gửi ảnh suốt (ảnh món, ảnh chuyển
-khoản, ảnh hàng lỗi). Loại chỉ đọc chữ sẽ bắt khách gõ lại, rất mất khách.
+GPT-5.6 Terra **nhìn được ảnh** — khách CSKH gửi ảnh suốt (ảnh món, ảnh chuyển
+khoản, ảnh hàng lỗi). Đã có mã Claude (Anthropic) thì dùng mã đó cũng được.
 
 ### 2. Một nick Zalo riêng cho bot, và một số điện thoại riêng
 

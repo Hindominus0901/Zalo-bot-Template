@@ -115,7 +115,11 @@ gateway, xem log), không chỉ nhắn tin.
 | 85 | Máy Windows sạch, người chưa từng mở PowerShell: giải nén zip, mở bằng Claude Code / Codex, gõ *bắt đầu dựng bot* | Agent tự cài Python nếu thiếu, tự chạy `vps.py`; người **không** gõ lệnh nào trừ dán một dòng vào console VPS (nếu trang tạo VPS không có ô SSH key) |
 | 86 | Ở bước `ma_ai`, `vps.py gui-ma-ai --mo` | Notepad mở thật trên Windows / TextEdit trên Mac; mã không xuất hiện trong chat |
 | 87 | Ở bước `quet`, `vps.py lay-qr` | Ảnh mã mở trên màn hình máy tính, điện thoại nick bot quét được, `bat-dau` lại qua bước 4 |
-| 88 | Người gửi ảnh chụp có mã `sk-ant-…` | Agent bảo xoá ảnh, xoá mã trên console, tạo mã mới |
+| 88 | Người gửi ảnh chụp có mã `sk-…` | Agent bảo xoá ảnh, xoá mã trên platform.openai.com, tạo mã mới |
+| 89 | VPS 123host mới: `vps.py mat-khau --mo` → dán mật khẩu từ email → `noi <IP> --mat-khau` | Nối được, chìa khoá cài xong, file mật khẩu đã xoá; `vps.py thu` chạy không cần mật khẩu |
+| 90 | Mã OpenAI `sk-proj-…` qua `gui-ma-ai` | `bat-dau` qua bước 2; `openclaw models status` thấy provider openai; config `openai/gpt-5.6-terra` |
+| 91 | Nhắn bot một ảnh (ảnh món / ảnh chuyển khoản) | GPT-5.6 Terra đọc được ảnh, trả lời theo ảnh, không bảo khách gõ lại |
+| 92 | Sau một tuần chạy thật | Xem *Usage* trên platform.openai.com — chi phí mỗi tin khớp khoảng ghi ở `CHUAN-BI.md`, không thì sửa con số |
 
 Dòng 49 là bài kiểm tra hồi quy quan trọng nhất của phần máy: nền prompt vỡ thì
 không lỗi gì cả, chỉ là tiền tăng đều. Không ai phát hiện ra nếu không nhìn.

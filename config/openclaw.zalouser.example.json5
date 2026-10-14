@@ -89,14 +89,14 @@
       // sổ, phiếu, skill. (Đã kiểm trên 2026.9.4.) Nên đặt workspace ở TỪNG
       // agent dưới, cùng một đường dẫn. Dòng này chỉ để dự phòng.
       workspace: ".", // ĐƯỜNG DẪN TUYỆT ĐỐI tới repo shop.
-      // Model: mạnh nhất mà OpenClaw 2026.9.4 hỗ trợ cho chat, có xem ảnh.
-      // GHIM tên đầy đủ — đừng viết "opus": bí danh đó tự trượt sang đời mới
-      // khi nâng cấp OpenClaw, không ai hay. Sonnet 5 đỡ khi Opus quá tải.
-      // Opus 5.5 (mới hơn, rẻ hơn) CHƯA chạy được trên 2026.9.4 — OpenClaw giấu
-      // model đời mới tới khi có bản hỗ trợ. Xem docs/15-cap-nhat.md.
+      // Model: GPT-5.6 Terra — xem ảnh, có suy luận, $2.5 / $15 mỗi triệu token
+      // (danh mục OpenClaw 2026.9.4). GPT-5.4 đỡ khi Terra lỗi / quá tải.
+      // GHIM tên đầy đủ — đừng dùng bí danh: nó tự trượt sang đời mới khi nâng
+      // OpenClaw, không ai hay. Dùng mã Claude thay GPT: scripts/dien_config.py
+      // --nha-ai anthropic (Opus 5 + Sonnet 5). Xem docs/15-cap-nhat.md.
       model: {
-        primary: "anthropic/claude-opus-5",
-        fallbacks: ["anthropic/claude-sonnet-5"],
+        primary: "openai/gpt-5.6-terra",
+        fallbacks: ["openai/gpt-5.4"],
       },
       heartbeat: { agentId: "main" },
       compaction: { memoryFlush: { enabled: false } },

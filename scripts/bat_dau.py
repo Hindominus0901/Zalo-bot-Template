@@ -137,12 +137,35 @@ def lam_may(_oc):
     return chay_tuong_tac("bash", str(SCRIPTS / "cai_dat.sh"), *them) == 0
 
 
-def xong_ma_ai(oc):
+NHA_AI = ("openai", "anthropic")      # GPT là mặc định của template
+
+
+def nha_ai_cua_ma(ma: str) -> str | None:
+    """Mã Anthropic bắt đầu sk-ant-; mã OpenAI bắt đầu sk- (sk-proj-…, sk-svcacct-…)."""
+    if re.fullmatch(r"sk-ant-[A-Za-z0-9_\-]{10,}", ma):
+        return "anthropic"
+    if re.fullmatch(r"sk-[A-Za-z0-9_\-]{20,}", ma):
+        return "openai"
+    return None
+
+
+def nha_ai_da_co(oc) -> str | None:
     d = json_cua(chay(oc, "models", "status", "--agent", "main", "--json")[1]) or {}
     for p in (d.get("auth") or {}).get("providers", []):
-        if p.get("provider") == "anthropic" and ((p.get("profiles") or {}).get("count") or 0) > 0:
-            return True
-    return False
+        if p.get("provider") in NHA_AI and ((p.get("profiles") or {}).get("count") or 0) > 0:
+            return p["provider"]
+    return None
+
+
+def xong_ma_ai(oc):
+    return nha_ai_da_co(oc) is not None
+
+
+def lenh_onboard(oc: str, ma: str, nha: str) -> list[str]:
+    mo = ["--auth-choice", "openai-api-key", "--openai-api-key", ma] if nha == "openai" else \
+         ["--auth-choice", "apiKey", "--anthropic-api-key", ma]
+    return [oc, "onboard", "--non-interactive", "--accept-risk", "--mode", "local", "--flow",
+            "quickstart", *mo, "--gateway-auth", "token", "--skip-health"]
 
 
 def lam_ma_ai(oc):
@@ -153,34 +176,38 @@ def lam_ma_ai(oc):
 
 def _loi_ma_ai():
     viec_nguoi("①", """
-Dán MÃ KẾT NỐI AI (API key) của Anthropic.
-  • Lấy ở console.anthropic.com → API Keys → Create Key.
-  • Tài khoản PHẢI ĐÃ NẠP TIỀN — chưa nạp thì bot không trả lời được ai.
-  • Mã bắt đầu bằng "sk-ant-". Gõ / dán vào sẽ không hiện chữ — bình thường.
+Dán MÃ KẾT NỐI AI (API key) của OpenAI.
+  • Lấy ở platform.openai.com → API keys → Create new secret key.
+  • Tài khoản API PHẢI ĐÃ NẠP TIỀN (Billing) — gói ChatGPT Plus KHÔNG tính.
+  • Mã bắt đầu bằng "sk-". Gõ / dán vào sẽ không hiện chữ — bình thường.
+  (Dùng mã Claude của Anthropic, bắt đầu "sk-ant-", cũng được.)
 """)
 
 
 def _nhan_ma_ai(oc):
-    ma = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    ma = (os.environ.get("OPENAI_API_KEY") or os.environ.get("ANTHROPIC_API_KEY") or "").strip()
     if not ma and MA_AI_TAM.exists():
         ma = MA_AI_TAM.read_text(encoding="utf-8", errors="replace").strip()
         MA_AI_TAM.unlink()                     # đọc một lần, không để mã nằm lại trên đĩa
     if not ma and TU_DONG:
-        raise CanNguoi("ma_ai", "Cần mã AI. Agent: chạy `vps.py gui-ma-ai --mo`, nhờ người "
-                       "dán mã vào file vừa mở, lưu, rồi `vps.py gui-ma-ai --gui`.")
+        raise CanNguoi("ma_ai", "Cần mã AI (OpenAI, bắt đầu bằng sk-). Agent: chạy `vps.py "
+                       "gui-ma-ai --mo`, nhờ người dán mã vào file vừa mở, lưu, rồi `vps.py "
+                       "gui-ma-ai --gui`.")
     ma = ma or getpass.getpass("Mã AI: ").strip()
-    if not ma.startswith("sk-ant-"):
-        print("✗ Mã không bắt đầu bằng sk-ant- — có thể chép nhầm. Chạy lại lệnh này.")
+    nha = nha_ai_cua_ma(ma)
+    if not nha:
+        print("✗ Mã không giống mã API (phải bắt đầu bằng sk-) — có thể chép nhầm. Chạy lại lệnh này.")
         if TU_DONG:
-            raise CanNguoi("ma_ai", "Mã vừa gửi không bắt đầu bằng sk-ant- — nhờ người chép lại "
-                           "đúng mã ở console.anthropic.com → API Keys.")
+            raise CanNguoi("ma_ai", "Mã vừa gửi không giống mã API (bắt đầu bằng sk-). Nhờ người tạo "
+                           "lại ở platform.openai.com → API keys → Create new secret key, bấm Copy.")
         return False
-    ma_thoat, ra = chay(oc, "onboard", "--non-interactive", "--accept-risk", "--mode", "local",
-                        "--flow", "quickstart", "--auth-choice", "apiKey", "--anthropic-api-key", ma,
-                        "--gateway-auth", "token", "--skip-health", timeout=300)
+    ma_thoat, ra = chay(*lenh_onboard(oc, ma, nha), timeout=300)
     if ma_thoat != 0 or not xong_ma_ai(oc):
-        print("✗ OpenClaw chưa nhận mã:\n" + ra[-800:])
+        print("✗ OpenClaw chưa nhận mã:\n" + ra.replace(ma, "sk-…")[-800:])
         return False
+    d = doc_tien_do()
+    d["nha_ai"] = nha
+    ghi_tien_do(d)
     return True
 
 
@@ -199,8 +226,9 @@ def lam_config(oc):
             ten = input(f"Tên bot — khách gọi tên này trong nhóm [{mac_dinh}]: ").strip() or mac_dinh
         except EOFError:
             ten = mac_dinh
+    nha = doc_tien_do().get("nha_ai") or nha_ai_da_co(oc) or NHA_AI[0]
     return chay_tuong_tac(sys.executable, str(SCRIPTS / "dien_config.py"),
-                          "--ten", ten, "--openclaw", oc) == 0
+                          "--ten", ten, "--nha-ai", nha, "--openclaw", oc) == 0
 
 
 def xong_quet(oc):

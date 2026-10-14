@@ -20,7 +20,7 @@ Dưới đây là bản cho người dựng.
 1. Một **máy để mở suốt** (thử thì laptop; khách thật thì VPS). Tắt máy = mất tin.
 2. Nick Zalo **riêng** cho nhân viên (Nami). Không cầm nick chính, không gắn ngân hàng.
 3. Thư mục bot = repo này (đã phỏng vấn / đã điền).
-4. Model **nhìn được ảnh** (Claude / GPT-4o / Gemini…). Chỉ chữ thì xem ảnh kém.
+4. Model **nhìn được ảnh** — mặc định GPT-5.6 Terra (OpenAI). Chỉ chữ thì xem ảnh kém.
 5. **API key của model** — chủ shop tự mở tài khoản và nạp tiền. Chưa có key là
    chưa dựng được; đừng hứa dựng xong rồi tính sau.
 6. Trên máy đó: `git`, Python 3. Windows: cài Python nhớ tick **Add to PATH**;

@@ -16,7 +16,7 @@ Không nói wiki, harness, token, QR. File nào điền đâu: ở `PHONG-VAN.md
 
 **M2.** Bot sẽ nhắn khách bằng một nick Zalo như nhân viên của shop, không dùng nick Zalo chính của anh/chị — để nick chính khỏi rối. Nick nhân viên đó anh/chị đã có sẵn chưa, hay lát nữa mình tạo cùng nhau?
 
-**M3.** Bot suy nghĩ bằng AI thuê ngoài, nên cần một **mã kết nối** anh/chị đăng ký. Anh/chị có tài khoản Claude, ChatGPT hay Gemini loại có nạp tiền chưa ạ? Chưa có thì mình mở cùng nhau trước — thiếu cái đó là lát dựng xong bot không nói được. Đây là tiền trả hàng tháng theo lượng tin.
+**M3.** Bot suy nghĩ bằng AI thuê ngoài, nên cần một **mã kết nối** anh/chị đăng ký. Anh/chị có tài khoản OpenAI loại **API** có nạp tiền chưa ạ (khác gói ChatGPT Plus)? Chưa có thì mình mở cùng nhau trước — thiếu cái đó là lát dựng xong bot không nói được. Đây là tiền trả hàng tháng theo lượng tin.
 
 ---
 

@@ -96,7 +96,7 @@ class MaAi(unittest.TestCase):
         self._t.cleanup()
 
     def test_gui_ma_khong_in_va_xoa_file(self):
-        ma = "sk-ant-api03-ABCDEFGHIJKLMNOP_qrstu-123"
+        ma = "sk-proj-ABCDEFGHIJKLMNOP_qrstu-123"
         vps.FILE_MA.write_text("Dán mã…\n\n   " + ma + "  \n")
         gui = {}
 
@@ -108,13 +108,96 @@ class MaAi(unittest.TestCase):
         with mock.patch.object(vps, "tu_xa", gia), redirect_stdout(out):
             self.assertEqual(vps.cmd_gui_ma_ai(vps.argparse.Namespace(mo=False, gui=True)), 0)
         self.assertEqual(gui["vao"], (ma + "\n").encode())
-        self.assertNotIn("sk-ant", out.getvalue())
+        self.assertNotIn("sk-proj", out.getvalue())
         self.assertFalse(vps.FILE_MA.exists())
 
     def test_chua_dan_ma(self):
-        vps.FILE_MA.write_text("Dán mã AI (bắt đầu bằng sk-ant-) vào dòng dưới…\n\n")
+        vps.FILE_MA.write_text("Dán mã OpenAI (bắt đầu bằng sk-) vào dòng dưới…\n\n")
         with self.assertRaises(vps.Loi):
             vps.cmd_gui_ma_ai(vps.argparse.Namespace(mo=False, gui=True))
+
+
+class _PmGia:
+    """paramiko giả: ghi lại lệnh chạy, nhận đúng một mật khẩu."""
+    class AuthenticationException(Exception):
+        pass
+
+    class AutoAddPolicy:
+        pass
+
+    def __init__(self, dung):
+        self.dung, self.lenh, self.mk = dung, [], []
+        pm = self
+
+        class Client:
+            def set_missing_host_key_policy(self, _p):
+                pass
+
+            def connect(self, ip, port, username, password, **kw):
+                pm.mk.append(password)
+                if password != pm.dung:
+                    raise _PmGia.AuthenticationException()
+
+            def exec_command(self, lenh, timeout=None):
+                pm.lenh.append(lenh)
+                return None, io.BytesIO(b"OK\n"), None
+
+            def close(self):
+                pass
+
+        self.SSHClient = Client
+
+
+class MatKhau(unittest.TestCase):
+    """123host gửi mật khẩu root — người dán vào Notepad, agent nối một lần, cài chìa khoá."""
+
+    def setUp(self):
+        import tempfile
+        self._t = tempfile.TemporaryDirectory()
+        self.cu = vps.FILE_MK, vps.KHOA
+        vps.FILE_MK = Path(self._t.name) / "mk.txt"
+        vps.KHOA = Path(self._t.name) / "khoa"
+        vps.KHOA.write_text("bi-mat")
+        Path(str(vps.KHOA) + ".pub").write_text("ssh-ed25519 AAAAthu zalo-bot\n")
+
+    def tearDown(self):
+        vps.FILE_MK, vps.KHOA = self.cu
+        self._t.cleanup()
+
+    def test_dung_mat_khau_cai_khoa_xoa_file(self):
+        vps.FILE_MK.write_text(vps.DAU_MK + "\n\n  MatKhau!123  \n")
+        pm = _PmGia("MatKhau!123")
+        out = io.StringIO()
+        with mock.patch.object(vps, "_paramiko", return_value=pm), redirect_stdout(out):
+            vps.cai_khoa_bang_mat_khau("1.2.3.4", "root", 22)
+        self.assertEqual(pm.mk, ["MatKhau!123"])
+        self.assertIn("ssh-ed25519 AAAAthu zalo-bot", pm.lenh[0])
+        self.assertIn("authorized_keys", pm.lenh[0])
+        self.assertNotIn("MatKhau", out.getvalue())
+        self.assertFalse(vps.FILE_MK.exists())
+
+    def test_sai_mat_khau_noi_chu_thuong_giu_file(self):
+        vps.FILE_MK.write_text(vps.DAU_MK + "\n\nsai\n")
+        with mock.patch.object(vps, "_paramiko", return_value=_PmGia("dung")):
+            with self.assertRaises(vps.Loi) as c:
+                vps.cai_khoa_bang_mat_khau("1.2.3.4", "root", 22)
+        self.assertIn("Mật khẩu chưa đúng", str(c.exception))
+        self.assertTrue(vps.FILE_MK.exists(), "giữ file để người sửa lại")
+
+    def test_file_trong(self):
+        vps.FILE_MK.write_text(vps.DAU_MK + "\n\n")
+        with self.assertRaises(vps.Loi):
+            vps.cai_khoa_bang_mat_khau("1.2.3.4", "root", 22)
+
+
+class MaApi(unittest.TestCase):
+    def test_nhan_ca_openai_va_anthropic(self):
+        for ma in ("sk-proj-AbCdEfGhIjKlMnOpQrStUv_123-xyz", "sk-ant-api03-ABCDEFGHIJKLMNOPQRSTUV"):
+            self.assertEqual(vps.MA_API.search(f"  {ma}  ").group(0), ma)
+
+    def test_tu_choi_chu_rac(self):
+        for rac in ("sk-ngan", "Dán mã OpenAI (bắt đầu bằng sk-) vào dòng dưới", "ask-proj-AbCdEfGhIjKlMnOpQrStUv"):
+            self.assertIsNone(vps.MA_API.search(rac), rac)
 
 
 class Noi(unittest.TestCase):

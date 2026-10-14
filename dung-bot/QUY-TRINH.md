@@ -72,11 +72,15 @@ họ học.
      trên máy tính, lưu ảnh, kéo vào ô chat.
 4. **Đọc ảnh rồi chỉ đúng một nút tiếp.** Ảnh mờ, thiếu thì xin chụp lại cả màn
    hình. Đừng đoán.
-5. **Ảnh có mã AI (sk-ant-…), mật khẩu, mã QR đăng nhập** → bảo họ xoá ảnh đó.
-   Với mã AI: vào console.anthropic.com **xoá mã đó, tạo mã mới**, vì ảnh chat
-   đã lưu lại. Không bao giờ xin họ chụp mấy thứ này.
+5. **Ảnh có mã AI (sk-…), mật khẩu VPS, mã QR đăng nhập** → bảo họ xoá ảnh đó.
+   Với mã AI: vào platform.openai.com → API keys **xoá mã đó, tạo mã mới**, vì
+   ảnh chat đã lưu lại. Với mật khẩu VPS: đổi mật khẩu trên trang quản lý 123host. Không bao giờ xin họ chụp mấy thứ này.
 6. Kẹt hai lần cùng một chỗ → nói thật đang kẹt ở đâu, đề nghị nhờ người khác
    rành hơn làm riêng bước đó. Đừng vòng vòng.
+
+**Agent nên dùng:** **Codex app** (Windows / Mac) — mở thư mục là chạy, không
+cần cài thêm gì. Claude desktop (tab Code) cũng được nhưng Windows phải cài
+**Git for Windows** trước — bạn cài hộ nếu họ chọn cái này.
 
 Máy của người dựng chưa có Python thì bạn cài, không bảo họ cài:
 Windows `winget install -e --id Python.Python.3.12` rồi gọi `py`; Mac thường đã
@@ -108,7 +112,7 @@ Tự biết OS. Với họ hỏi **ba câu** (M1/M2/M3 trong `PHONG-VAN.md`):
 > chưa, hay lát mình tạo cùng nhau?
 
 > Bot suy nghĩ bằng AI thuê ngoài nên cần một mã kết nối anh/chị đăng ký — tài
-> khoản Claude, ChatGPT hay Gemini loại có nạp tiền. Anh/chị có chưa ạ?
+> khoản OpenAI loại API có nạp tiền (khác gói ChatGPT Plus). Anh/chị có chưa ạ?
 
 **Chưa có mã kết nối → dừng ở đây.** Mở tài khoản cùng họ trước. Dựng xong mà
 không có key thì bot không nói được câu nào, và họ sẽ nghĩ mình làm hỏng.
@@ -142,30 +146,46 @@ SSH vào VPS thay người, người không gõ lệnh nào. Đọc docstring đ
 - Xong: chụp màn hình trang cá nhân nick đó gửi vào để bạn chắc là nick mới,
   không phải nick chính.
 
-### N2. Mã AI (người làm, bạn dẫn)
+### N2. Mã AI — OpenAI (người làm, bạn dẫn)
 
-console.anthropic.com → đăng ký → **Billing**: nạp tiền → **API Keys → Create
-Key**. Mã **chỉ hiện một lần**: bảo họ bấm Copy, **đừng** dán vào chat. Lát nữa
-nó đi thẳng vào Notepad bạn mở (bước N4). Chụp màn hình các trang khác thì được.
-Trang mã thì không.
+Bot nói bằng **GPT-5.6 Terra** (thông minh, xem được ảnh). Cần mã **API** của
+OpenAI — **khác** gói ChatGPT Plus, nạp tiền riêng:
 
-### N3. VPS (người làm, bạn dẫn)
+1. platform.openai.com → đăng nhập (tài khoản ChatGPT dùng được).
+2. **Settings → Billing** → nạp tiền (thẻ Visa / Mastercard). Gợi ý nạp $10–20
+   lúc đầu, bật *auto recharge* nếu muốn khỏi lo hết tiền giữa chừng.
+3. **API keys → Create new secret key** → đặt tên `zalo-bot` → **Copy**.
 
-1. Chạy `vps.py khoa`. Giữ dòng `ssh-ed25519 …` nó in (an toàn để lộ).
-2. Người thuê VPS ở nhà nào cũng được. Cần: **Ubuntu 22.04 hoặc 24.04**, **2 GB
-   RAM** (1 GB vẫn chạy, máy sẽ tự thêm swap), đặt ở **Việt Nam hoặc
-   Singapore**, đăng nhập **root**. Đọc ảnh họ chụp trang đăng ký để chỉ nút.
-3. Trang tạo VPS có ô **SSH key / Khoá SSH** → dán dòng `ssh-ed25519 …` vào đó
-   (gửi cho họ qua chat để họ copy). Không có ô đó → tạo xong mở **Console /
-   VNC / Terminal** trên trang quản lý VPS, dán dòng `mkdir -p ~/.ssh && echo …`
-   mà `vps.py khoa` in (đây là lần duy nhất người dán một dòng vào máy, và là
-   dán, không phải gõ).
-4. Xin họ chụp trang thông tin VPS → bạn đọc **địa chỉ IP**.
+Mã **chỉ hiện một lần**: bảo họ bấm Copy, **đừng** dán vào chat. Lát nữa nó đi
+thẳng vào Notepad bạn mở (bước N4). Chụp màn hình các trang khác thì được, trang
+mã thì không. (Mã Claude `sk-ant-…` cũng dùng được — script tự nhận.)
+
+### N3. VPS ở 123host (người làm, bạn dẫn)
+
+1. 123host.vn → **Cloud VPS** (Linux) → gói **2 GB RAM** trở lên → hệ điều
+   hành **Ubuntu 22.04 hoặc 24.04** → đặt ở **Việt Nam** → thanh toán. Đọc ảnh
+   họ chụp từng trang để chỉ nút; tên gói / menu 123host hay đổi, tin ảnh hơn
+   tin trí nhớ.
+2. 123host gửi **email thông tin VPS** (cũng có trên trang quản lý dịch vụ):
+   **địa chỉ IP**, tài khoản **root**, **mật khẩu**.
+   - Xin họ chụp **phần IP** (che mật khẩu), hoặc đọc IP cho bạn.
+   - Chạy `vps.py mat-khau --mo` → Notepad mở → họ copy **mật khẩu** từ email,
+     dán vào, Lưu, đóng.
+3. `vps.py noi <IP> --mat-khau` — nối **một lần** bằng mật khẩu, tự cài chìa
+   khoá, xoá file mật khẩu. Từ đó không cần mật khẩu nữa.
+   - Lần đầu nó tự cài thư viện `paramiko` (cần mạng).
+   - Báo *mật khẩu chưa đúng* → `mat-khau --mo` lại, nhờ họ copy lại cho đủ
+     (hay sót ký tự cuối).
+   - **Không cần** VNC console, **không cần** ô SSH key.
+
+Dự phòng (VPS chặn đăng nhập bằng mật khẩu): `vps.py khoa` → dán dòng
+`ssh-ed25519 …` vào ô SSH key của nhà cung cấp, hoặc dòng `mkdir -p ~/.ssh …`
+vào console của họ → `vps.py noi <IP>`.
 
 ### N4. Bot chạy (bạn làm; người chỉ làm khi bạn gọi)
 
 ```
-vps.py noi <IP>          # lưu địa chỉ, thử nối
+vps.py noi <IP>          # (đã nối ở N3 thì bỏ qua)
 vps.py day-len           # đẩy thư mục bot lên VPS
 vps.py bat-dau           # chạy được bao nhiêu chạy bấy nhiêu
 ```
@@ -175,7 +195,7 @@ mã **3** = tới việc của người; dòng cuối `TRANG-THAI: {...}`:
 
 | `can_nguoi` | Bạn làm | Người làm |
 |---|---|---|
-| `ma_ai` | `vps.py gui-ma-ai --mo` (mở Notepad) → chờ → `gui-ma-ai --gui` | Dán mã đã Copy ở N2 vào Notepad, bấm Lưu, đóng |
+| `ma_ai` | `vps.py gui-ma-ai --mo` (mở Notepad) → chờ → `gui-ma-ai --gui` | Dán mã OpenAI đã Copy ở N2 vào Notepad, bấm Lưu, đóng |
 | `quet` | `vps.py lay-qr` — mã hiện lên màn hình máy này | Mở Zalo **nick bot** trên điện thoại → quét mã → quét hình trên màn hình → bấm đăng nhập |
 | `chu` | Đọc mã `NAMI-xxxx` trong TRANG-THAI cho họ | Từ **nick chủ** nhắn đúng mã đó cho nick bot |
 | `thu` | Đọc 5 câu trong TRANG-THAI | Từ một nick **khác** nhắn thử. Sổ chưa điền nên bot nói *chưa có số* — đúng |
@@ -316,7 +336,7 @@ script làm hết, đây để biết khi đọc lỗi (`docs/10` có bảng đ�
 - `workspace` ở **từng agent** — thiếu là agent chạy trong thư mục con rỗng
 - Bot khách `tools.profile: "minimal"` — không shell, không web
 - `openclaw config validate` → **đọc cả warning**. *Valid* mà có warning = chưa xong
-- Model mặc định `anthropic/claude-opus-5` (có xem ảnh). Tiết kiệm: `claude-sonnet-5`
+- Model mặc định `openai/gpt-5.6-terra` (xem ảnh, có suy luận), dự phòng `openai/gpt-5.4`. Tiết kiệm (`--tiet-kiem`): `openai/gpt-5.6-luna`. Mã Claude: `dien_config.py --nha-ai anthropic` (Opus 5 + Sonnet 5)
 
 Biệt hiệu (*shop ơi*): `mentionPatterns` gồm **tên gốc + biệt hiệu**.
 

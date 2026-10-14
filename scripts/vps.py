@@ -4,7 +4,9 @@
 Chạy trên máy người dựng (Windows / Mac / Linux), không phải trên VPS. Cần Python
 3.9+ và `ssh` (Windows 10/11, Mac, Linux đều có sẵn). Chỉ dùng thư viện chuẩn.
 
-    python scripts/vps.py khoa                 # tạo chìa khoá SSH, in phần dán vào VPS
+    python scripts/vps.py mat-khau --mo        # mở Notepad cho người dán mật khẩu root VPS
+    python scripts/vps.py noi 203.0.113.5 --mat-khau   # nối lần đầu bằng mật khẩu (123host…)
+    python scripts/vps.py khoa                 # (dự phòng) in chìa khoá để dán vào ô SSH key
     python scripts/vps.py noi 203.0.113.5      # lưu địa chỉ VPS + thử nối
     python scripts/vps.py thu                  # thử nối lại, xem máy
     python scripts/vps.py day-len              # đẩy template lên VPS (~/zalo-bot)
@@ -47,6 +49,8 @@ KHOA = Path.home() / ".ssh" / "zalo_bot_ed25519"
 TAM = Path(tempfile.gettempdir())
 FILE_MA = TAM / "zalo-bot-ma-ai.txt"
 FILE_QR = TAM / "zalo-bot-ma-dang-nhap.png"
+FILE_MK = TAM / "zalo-bot-mat-khau-vps.txt"
+DAU_MK = "Dán MẬT KHẨU VPS (trong email / trang quản lý 123host) vào dòng dưới, Lưu (Ctrl+S), đóng:"
 THU_MUC_VPS = "zalo-bot"
 
 # Không bao giờ đẩy lên: bí mật, dữ liệu sống trên máy kia, rác.
@@ -54,6 +58,8 @@ BO_THU_MUC = {".git", "__pycache__", ".ban-cu", "node_modules", ".venv", ".pytes
 BO_FILE = re.compile(r"(?:^|/)(?:\.env|\.vps\.json|secrets[^/]*|[^/]*\.(?:key|pem|pyc))$"
                      r"|^config/openclaw\.da-dien\.json5$")
 GIU_TRONG_MEMORY = {"README.md", ".gitkeep", "MAU.md"}
+# Mã OpenAI (sk-proj-…, sk-…) hoặc Anthropic (sk-ant-…). Mã thật dài hơn 20 ký tự.
+MA_API = re.compile(r"(?<![A-Za-z0-9_\-])sk-[A-Za-z0-9_\-]{20,}")
 
 
 class Loi(Exception):
@@ -133,7 +139,8 @@ def mo_file(p: Path) -> bool:
 
 # ── Các lệnh ─────────────────────────────────────────────────────────────────
 
-def cmd_khoa(_a) -> int:
+def tao_khoa() -> str:
+    """Tạo chìa khoá nếu chưa có; trả khoá công khai."""
     if not KHOA.exists():
         KHOA.parent.mkdir(parents=True, exist_ok=True)
         r = subprocess.run(["ssh-keygen", "-t", "ed25519", "-N", "", "-C", "zalo-bot",
@@ -141,7 +148,11 @@ def cmd_khoa(_a) -> int:
         if r.returncode != 0:
             raise Loi("Không tạo được chìa khoá (ssh-keygen lỗi).")
         print(f"✓ Đã tạo chìa khoá: {KHOA}")
-    pub = Path(str(KHOA) + ".pub").read_text().strip()
+    return Path(str(KHOA) + ".pub").read_text().strip()
+
+
+def cmd_khoa(_a) -> int:
+    pub = tao_khoa()
     print(f"""
 CHÌA KHOÁ CÔNG KHAI (dán đi đâu cũng an toàn — phần bí mật nằm lại máy này):
 
@@ -156,9 +167,72 @@ mkdir -p ~/.ssh && echo '{pub}' >> ~/.ssh/authorized_keys && chmod 700 ~/.ssh &&
     return 0
 
 
+def cmd_mat_khau(_a) -> int:
+    FILE_MK.write_text(DAU_MK + "\n\n", encoding="utf-8")
+    cach = "Đã mở" if mo_file(FILE_MK) else "Không tự mở được — nhờ người mở tay"
+    print(f"✓ {cach} file {FILE_MK}. Người dán mật khẩu, lưu, đóng — rồi chạy: "
+          "vps.py noi <IP> --mat-khau")
+    return 0
+
+
+def _paramiko():
+    try:
+        import paramiko  # type: ignore
+        return paramiko
+    except ImportError:
+        print("• Cài thư viện nối SSH bằng mật khẩu (paramiko) — một lần…")
+        r = subprocess.run([sys.executable, "-m", "pip", "install", "--user", "-q", "paramiko"])
+        if r.returncode != 0:
+            raise Loi(f"Không cài được paramiko. Agent chạy: {sys.executable} -m pip install --user paramiko")
+        import importlib
+        import site
+        importlib.invalidate_caches()
+        sys.path.append(site.getusersitepackages())
+        import paramiko  # type: ignore
+        return paramiko
+
+
+def cai_khoa_bang_mat_khau(ip: str, user: str, cong: int) -> None:
+    """Nối MỘT lần bằng mật khẩu, thêm chìa khoá máy này vào VPS. Mật khẩu không in ra,
+    file mật khẩu bị xoá khi xong. Từ đó mọi lệnh đi bằng chìa khoá."""
+    if not FILE_MK.exists():
+        raise Loi("Chưa có file mật khẩu — chạy vps.py mat-khau --mo trước.")
+    dong = [x.strip() for x in FILE_MK.read_text(encoding="utf-8", errors="replace").splitlines()]
+    mk = next((x for x in dong if x and x != DAU_MK), "")
+    if not mk:
+        raise Loi("File mật khẩu còn trống — người chưa dán, hoặc chưa bấm Lưu.")
+    pub = tao_khoa()
+    pm = _paramiko()
+    c = pm.SSHClient()
+    c.set_missing_host_key_policy(pm.AutoAddPolicy())
+    try:
+        c.connect(ip, port=cong, username=user, password=mk, timeout=20,
+                  allow_agent=False, look_for_keys=False)
+    except pm.AuthenticationException:
+        raise Loi("Mật khẩu chưa đúng (hoặc VPS không cho đăng nhập bằng mật khẩu). Chép lại "
+                  "đúng mật khẩu trong email / trang quản lý 123host: vps.py mat-khau --mo")
+    except Exception as e:  # mạng, sai IP, cổng
+        raise Loi(_giai_thich_ssh(str(e)) if "timed out" in str(e).lower() or "refused" in str(e).lower()
+                  else f"Không nối được {ip}: {e}")
+    try:
+        lenh = ("umask 077; mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && "
+                f"(grep -qxF '{pub}' ~/.ssh/authorized_keys || echo '{pub}' >> ~/.ssh/authorized_keys) && "
+                "chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys && echo OK")
+        _, out, _ = c.exec_command(lenh, timeout=30)
+        if "OK" not in out.read().decode("utf-8", "replace"):
+            raise Loi("Nối được bằng mật khẩu nhưng chưa cài được chìa khoá lên VPS.")
+    finally:
+        c.close()
+    FILE_MK.write_text("", encoding="utf-8")
+    FILE_MK.unlink()
+    print("✓ Đã cài chìa khoá lên VPS, đã xoá file mật khẩu trên máy này. Từ giờ không cần mật khẩu.")
+
+
 def cmd_noi(a) -> int:
     if not re.fullmatch(r"[A-Za-z0-9.:\-]+", a.ip):
         raise Loi("Địa chỉ VPS lạ — dạng đúng như 203.0.113.5")
+    if getattr(a, "mat_khau", False):
+        cai_khoa_bang_mat_khau(a.ip, a.user, a.cong)
     ghi_cau_hinh({"ip": a.ip, "user": a.user, "cong": a.cong, "thu_muc": THU_MUC_VPS})
     return cmd_thu(a)
 
@@ -229,16 +303,16 @@ def cmd_bat_dau(a) -> int:
 
 def cmd_gui_ma_ai(a) -> int:
     if a.mo:
-        FILE_MA.write_text("Dán mã AI (bắt đầu bằng sk-ant-) vào dòng dưới, rồi Lưu (Ctrl+S) và đóng:\n\n",
+        FILE_MA.write_text("Dán mã OpenAI (bắt đầu bằng sk-) vào dòng dưới, rồi Lưu (Ctrl+S) và đóng:\n\n",
                            encoding="utf-8")
         cach = "Đã mở" if mo_file(FILE_MA) else "Không tự mở được — nhờ người mở tay"
         print(f"✓ {cach} file {FILE_MA}. Người dán mã, lưu, đóng — rồi chạy: vps.py gui-ma-ai --gui")
         return 0
     if not FILE_MA.exists():
         raise Loi("Chưa có file mã — chạy gui-ma-ai --mo trước.")
-    m = re.search(r"sk-ant-[A-Za-z0-9_\-]{10,}", FILE_MA.read_text(encoding="utf-8", errors="replace"))
+    m = MA_API.search(FILE_MA.read_text(encoding="utf-8", errors="replace"))
     if not m:
-        raise Loi("Trong file chưa có mã bắt đầu bằng sk-ant- — người chưa dán, hoặc chưa bấm Lưu.")
+        raise Loi("Trong file chưa có mã bắt đầu bằng sk- — người chưa dán, hoặc chưa bấm Lưu.")
     ch = doc_cau_hinh()
     ma, ra = tu_xa(ch, "umask 077; mkdir -p ~/.openclaw && cat > ~/.openclaw/.ma-ai-tam && echo OK",
                    vao=(m.group(0) + "\n").encode(), timeout=60)
@@ -331,7 +405,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("ip")
     p.add_argument("--user", default="root")
     p.add_argument("--cong", type=int, default=22)
+    p.add_argument("--mat-khau", action="store_true", help="nối lần đầu bằng mật khẩu (vps.py mat-khau --mo)")
     p.set_defaults(f=cmd_noi)
+    sp.add_parser("mat-khau").add_argument("--mo", action="store_true", required=True)
+    sp.choices["mat-khau"].set_defaults(f=cmd_mat_khau)
     sp.add_parser("thu").set_defaults(f=cmd_thu)
     sp.add_parser("day-len").set_defaults(f=cmd_day_len)
     p = sp.add_parser("bat-dau")

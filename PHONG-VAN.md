@@ -42,7 +42,7 @@ Từng câu, đợi trả lời.
 **M3 — mã kết nối AI**
 
 > Bot suy nghĩ bằng AI thuê ngoài, nên cần một **mã kết nối** anh/chị đăng ký.
-> Anh/chị có tài khoản Claude, ChatGPT hay Gemini loại có nạp tiền chưa ạ? Chưa
+> Anh/chị có tài khoản OpenAI loại **API** có nạp tiền chưa ạ (khác gói ChatGPT Plus)? Chưa
 > có thì mình mở cùng nhau trước, vì thiếu cái đó là lát dựng xong bot không nói
 > được. Đây là tiền trả hàng tháng theo lượng tin, không phải trả một lần.
 

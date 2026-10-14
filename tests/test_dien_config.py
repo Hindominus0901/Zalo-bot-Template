@@ -64,7 +64,18 @@ class DienDungCho(unittest.TestCase):
 
     def test_model_ghim_ten_day_du(self):
         """Bí danh "opus" tự trượt sang đời mới khi nâng OpenClaw — không dùng."""
-        self.assertRegex(self.code, r'primary:\s*"anthropic/claude-[a-z]+-\d')
+        self.assertRegex(self.code, r'primary:\s*"openai/gpt-\d+(\.\d+)?-[a-z]+"')
+
+    def test_mac_dinh_gpt_terra(self):
+        ra = _khong_comment(dc.dien(MAU, "Nami", ID, "/x", dc.MODEL_MANH))
+        self.assertIn('primary: "openai/gpt-5.6-terra"', ra)
+        self.assertIn('fallbacks: ["openai/gpt-5.4"]', ra)
+
+    def test_ma_claude_van_chay(self):
+        manh, dp, _ = dc.MO_HINH["anthropic"]
+        ra = _khong_comment(dc.dien(MAU, "Nami", ID, "/x", manh, dp))
+        self.assertIn('primary: "anthropic/claude-opus-5"', ra)
+        self.assertNotIn("openai/", ra.split("model:")[1].split("}")[0])
 
 
 class ChanNhapSai(unittest.TestCase):

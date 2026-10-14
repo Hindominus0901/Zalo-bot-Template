@@ -5,6 +5,42 @@
 Bản nào đổi thứ shop đang phụ thuộc — tên trường phiếu, tên tool, tên tờ wiki,
 tên file — **phải ghi ở đây**. Không ghi = coi như không đổi.
 
+## 0.4.6 — 123host + GPT-5.6 Terra, nối VPS bằng mật khẩu, Codex app
+
+Mặc định mới: VPS **123host**, AI **GPT-5.6 Terra** (mã OpenAI API), agent
+**Codex app**. Không VNC, không ô SSH key, không PowerShell.
+
+- **Nối VPS bằng mật khẩu root** mà 123host gửi qua email:
+  - `vps.py mat-khau --mo` mở Notepad, người dán mật khẩu vào.
+  - `vps.py noi <IP> --mat-khau` nối **một lần** (paramiko — tự cài nếu
+    thiếu), cài chìa khoá, xoá file mật khẩu.
+  - Mật khẩu không in ra màn hình. Sai mật khẩu thì báo chữ thường, giữ file để
+    sửa.
+- **GPT thay Claude, vẫn nhận cả hai:**
+  - `bat_dau.py` nhận mã theo tiền tố: `sk-ant-` → Anthropic, `sk-…` →
+    OpenAI.
+  - `dien_config.py --nha-ai openai|anthropic`, mặc định openai.
+  - Model `openai/gpt-5.6-terra`, dự phòng `openai/gpt-5.4`. Tiết kiệm:
+    `openai/gpt-5.6-luna`.
+- **Đã chạy thật với OpenClaw 2026.9.4 + máy giả OpenAI API:**
+  - onboard bằng `--openai-api-key`, config hợp lệ, `models status` thấy
+    openai.
+  - Một lượt bot khách đi `/v1/responses`, model `gpt-5.6-terra`, suy luận
+    `high`. Công cụ: `read / write / edit / message / view_image /
+    session_status`, **không** có quyền chạy lệnh.
+  - Bot của chủ có `write / edit / automations / message` khi đúng nick chủ;
+    khi không phải nick chủ thì bị lớp `toolsBySender` cắt đúng như thiết kế.
+- **Chi phí ghi thật hơn:** một lượt bot khách ≈ 46 nghìn ký tự (đã đo). Ước
+  chừng 300–2.000 đồng mỗi tin khách — `CHUAN-BI.md`. Chưa đo bằng tiền thật.
+- Docs:
+  - `BAT-DAU`: Codex app trước, Claude desktop (cần Git for Windows) sau.
+  - `QUY-TRINH` N2 (platform.openai.com, Billing, API keys — khác ChatGPT
+    Plus), N3 (123host, mật khẩu, không VNC).
+  - `CHUAN-BI`, `PHONG-VAN` M3, `docs/05`, `docs/04` dòng 89–92.
+
+**Chưa chạy thật:** VPS 123host thật (email, có cho đăng nhập mật khẩu không);
+mã GPT thật (giọng, độ khôn, tiền thật); Codex app trên Windows thật.
+
 ## 0.4.5 — người không rành máy tự dựng được: máy trước, phỏng vấn sau
 
 Người dựng không cần biết PowerShell / Terminal. Nhận zip → mở bằng Claude Code

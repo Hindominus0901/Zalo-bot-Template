@@ -19,6 +19,9 @@ Dựng được cho **bán hàng, coaching, đào tạo, tư vấn, dịch vụ 
    Agent sẽ tự tìm [`dung-bot/QUY-TRINH.md`](dung-bot/QUY-TRINH.md) và phỏng vấn
    chủ shop 10 chủ đề.
 
+   Mặc định: VPS **123host**, AI **GPT-5.6 Terra** (mã OpenAI API), agent **Codex
+   app** — không ai phải mở PowerShell hay console VPS.
+
    **Máy trước, phỏng vấn sau.** Agent tự SSH vào VPS bằng `scripts/vps.py`
    (Windows / Mac / Linux), người không gõ lệnh nào. Nó chỉ nhờ người **bốn việc**:
    dán mã AI vào Notepad nó mở · quét mã Zalo hiện trên màn hình · nhắn một mã

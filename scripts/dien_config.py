@@ -34,8 +34,14 @@ ROOT = Path(__file__).resolve().parent.parent
 MAU = ROOT / "config" / "openclaw.zalouser.example.json5"
 IDENTITY = ROOT / "IDENTITY.md"
 CHO = "SENDERID_CHU"
-MODEL_MANH = "anthropic/claude-opus-5"
-MODEL_TIET_KIEM = "anthropic/claude-sonnet-5"
+# (chính, dự phòng, tiết kiệm) theo nhà AI. Tên ghim đủ — đừng dùng bí danh.
+# Danh mục + giá: extensions/openai|anthropic/openclaw.plugin.json của OpenClaw 2026.9.4.
+MO_HINH = {
+    "openai": ("openai/gpt-5.6-terra", ["openai/gpt-5.4"], "openai/gpt-5.6-luna"),
+    "anthropic": ("anthropic/claude-opus-5", ["anthropic/claude-sonnet-5"], "anthropic/claude-sonnet-5"),
+}
+NHA_AI_MAC_DINH = "openai"
+MODEL_MANH, _DU_PHONG, MODEL_TIET_KIEM = MO_HINH[NHA_AI_MAC_DINH]
 
 # Warning của `config validate` mà người không rành sẽ bỏ qua — dịch ra chữ thường.
 CANH_BAO = [
@@ -76,7 +82,8 @@ def kiem_ten(s: str) -> str:
     return s
 
 
-def dien(mau: str, ten: str, chu: str, workspace: str, model: str) -> str:
+def dien(mau: str, ten: str, chu: str, workspace: str, model: str,
+         du_phong: list[str] | None = None) -> str:
     """Thay chỗ trống trong bản mẫu. Hàm thuần — test gọi thẳng."""
     out = mau
     if chu:
@@ -86,8 +93,10 @@ def dien(mau: str, ten: str, chu: str, workspace: str, model: str) -> str:
     # <gốc>/<tên agent>: thư mục rỗng, bot không thấy sổ.
     out = out.replace('workspace: ".",', f'workspace: "{workspace}",')
     out = re.sub(r'primary:\s*"[^"]*"', f'primary: "{model}"', out, count=1)
-    if model == MODEL_TIET_KIEM:
-        out = re.sub(r'fallbacks:\s*\[[^\]]*\]', 'fallbacks: []', out, count=1)
+    if du_phong is None:
+        du_phong = next((dp for m, dp, _ in MO_HINH.values() if m == model), [])
+    ds = ", ".join(f'"{x}"' for x in du_phong if x != model)
+    out = re.sub(r'fallbacks:\s*\[[^\]]*\]', f'fallbacks: [{ds}]', out, count=1)
     return out
 
 
@@ -141,7 +150,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--ten")
     ap.add_argument("--chu", help="senderId Zalo của chủ (bỏ trống = chưa bật dạy bot)")
     ap.add_argument("--workspace", default=str(ROOT))
-    ap.add_argument("--tiet-kiem", action="store_true", help=f"dùng {MODEL_TIET_KIEM}")
+    ap.add_argument("--tiet-kiem", action="store_true", help="dùng model rẻ hơn của cùng nhà AI")
+    ap.add_argument("--nha-ai", choices=sorted(MO_HINH), default=NHA_AI_MAC_DINH,
+                    help="nhà AI của mã đã nhập (mặc định openai — GPT)")
     ap.add_argument("--chi-xem", action="store_true", help="in file đã điền, không gộp")
     ap.add_argument("--openclaw", default=shutil.which("openclaw") or "")
     a = ap.parse_args(argv)
@@ -160,14 +171,16 @@ def main(argv: list[str] | None = None) -> int:
             chu = kiem_sender(hoi("   senderId"))
         tiet_kiem = a.tiet_kiem
         if hoi_tuong_tac and not tiet_kiem:
-            tiet_kiem = hoi("3. Dùng bản tiết kiệm (rẻ ~2,5 lần, kém thông minh hơn)? c/k", "k").lower().startswith("c")
+            tiet_kiem = hoi("3. Dùng bản tiết kiệm (rẻ ~2,5 lần, kém tinh tế hơn)? c/k", "k").lower().startswith("c")
     except Loi as e:
         print(f"\n✗ {e}", file=sys.stderr)
         return 2
 
-    model = MODEL_TIET_KIEM if tiet_kiem else MODEL_MANH
+    manh, du_phong, re_ = MO_HINH[a.nha_ai]
+    model = re_ if tiet_kiem else manh
+    du_phong = [] if tiet_kiem else du_phong
     ws = str(Path(a.workspace).resolve())
-    filled = dien(MAU.read_text(encoding="utf-8"), ten, chu, ws, model)
+    filled = dien(MAU.read_text(encoding="utf-8"), ten, chu, ws, model, du_phong)
 
     if a.chi_xem:
         print(filled)
