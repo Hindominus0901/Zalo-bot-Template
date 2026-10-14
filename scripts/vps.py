@@ -16,6 +16,7 @@ Chạy trên máy người dựng (Windows / Mac / Linux), không phải trên V
     python scripts/vps.py lay-qr               # kéo ảnh mã đăng nhập về, mở lên màn hình
     python scripts/vps.py day-so               # đẩy sổ shop (đã phỏng vấn) lên VPS
     python scripts/vps.py keo-so               # kéo sổ trên VPS (chủ đã dạy qua Zalo) về
+    python scripts/vps.py thu-giong            # bot thật trả các tình huống của shop (chủ chấm giọng)
     python scripts/vps.py chay -- <lệnh>       # chạy một lệnh trong thư mục bot trên VPS
 
 `bat-dau` thoát mã 3 khi tới việc của người. Dòng cuối `TRANG-THAI: {json}` nói
@@ -386,6 +387,11 @@ def _ghi_moc(ch: dict, van: str) -> None:
     ghi_cau_hinh(ch)
 
 
+def cmd_thu_giong(a) -> int:
+    them = " ".join("--cau '" + c.replace("'", "'\\''") + "'" for c in a.cau)
+    return tu_xa(doc_cau_hinh(), f"python3 scripts/thu_giong.py {them}", hien=True, timeout=None)[0]
+
+
 def cmd_chay(a) -> int:
     if not a.lenh:
         raise Loi("Thiếu lệnh. Ví dụ: vps.py chay -- python3 scripts/kiem_tra_may.py")
@@ -427,6 +433,9 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--ep", action="store_true")
     p.set_defaults(f=cmd_day_so)
     sp.add_parser("keo-so").set_defaults(f=cmd_keo_so)
+    p = sp.add_parser("thu-giong")
+    p.add_argument("--cau", action="append", default=[])
+    p.set_defaults(f=cmd_thu_giong)
     p = sp.add_parser("chay")
     p.add_argument("lenh", nargs=argparse.REMAINDER)
     p.set_defaults(f=cmd_chay)

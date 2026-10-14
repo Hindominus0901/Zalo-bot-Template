@@ -235,7 +235,7 @@ câu “Hỏi thêm” nếu họ chưa phủ. Đừng đọc cả khối Hỏi 
 | 1b Kiểu shop | **Xóa tờ wiki không dùng** rồi chạy lại `scripts/lam_chi_muc.py` — bảng trong `knowledge/wiki/TRANG-MAU.md` | Bán hàng thì xóa `lo-trinh`/`ai-phu-hop`/`sau-khi-xong`; dịch vụ thì xóa `ship`/`kiem-hang` |
 | 2 Khách ngại gì | `persona.md` → Khách và điều họ lo | `[CHỜ CHỦ SHOP]` |
 | 3 Tài liệu | Cất `knowledge/raw/` nguyên. Một dòng `raw/NGUON.md`. Tách wiki (thuật toán dưới). Link Drive → skill `lam-viec-dung` + `mcp_drive` **chỉ nếu** MCP `enabled` | Chủ nói không có file → FAQ miệng câu 6; vẫn được |
-| 4 Giọng, tên gọi, **mức lầy** | `IDENTITY.md` + `SOUL.md` đoạn cuối (xưng hô + 2–3 tin thật). Mỗi ảnh chat thật → một tình huống sai / đúng trong `knowledge/hoi-thoai-shop.md`. Chủ muốn nghiêm hơn mặc định → ghi một dòng vào `persona.md` → Ranh giới. Config `identity.name` khớp lúc B4 | Tên mặc định **Nami**, giọng mặc định **vui và lầy** (`vui-va-ngoai-le.md`). Biệt hiệu nhóm: ghi `Gọi thêm` |
+| 4 Giọng, tên gọi, **mức lầy** | `IDENTITY.md` + **tám ô** `SOUL.md` mục *Shop này — giọng của chủ* (hình: `docs/vi-du-file-da-dien.md`). Nguồn giọng: ảnh chat thật + video / livestream / tin thoại — **trang bán lấy số, nói chuyện thật lấy giọng**. Mỗi ảnh chat → một tình huống sai / đúng trong `knowledge/hoi-thoai-shop.md`. Chủ muốn nghiêm hơn mặc định → ghi một dòng vào `persona.md` → Ranh giới. Config `identity.name` khớp lúc B4 | Tên mặc định **Nami**, giọng mặc định **vui và lầy** (`vui-va-ngoai-le.md`). Biệt hiệu nhóm: ghi `Gọi thêm` |
 | 5 Không được tự ý + cam kết | `persona.md` → Ranh giới. Cam kết/không cam kết → `wiki/public/ai-phu-hop.md` + `lo-trinh.md` | Chủ muốn bot **đưa số tài khoản** → ghi rõ; mặc định **không đưa**. Bot **không bao giờ** hứa kết quả, kể cả chủ hay hứa ngoài đời |
 | 6 FAQ miệng | Mỗi câu một tờ `wiki/public/` hoặc gom cùng chủ đề | Không đẻ số |
 | 7 Bước đặt | `skills/ghi-don/SKILL.md` — chỉ bước shop này, giữ “không tự chốt” | — |
@@ -396,6 +396,29 @@ Sổ vừa viết lên bot thật, bot dùng ngay tin sau. Nó **từ chối** n
 `vps.py keo-so` trước, xem lại, rồi `day-so`. Phỏng vấn dài thì đẩy giữa chừng
 cũng được, cứ xong vài chủ đề là đẩy, để chủ nhắn thử từng phần.
 
+### Thử giọng với chủ — cổng trước khi mở khách
+
+Kho chữ đúng chưa đủ: **chủ phải nghe chính con bot của mình** nói. Sau `day-so`:
+
+```
+vps.py thu-giong
+```
+
+Bot thật trả từng tình huống trong `hoi-thoai-shop.md` (mỗi dòng `**Khách:**`
+một câu), in cạnh câu **chủ từng trả**. Mỗi câu một phiên riêng, **không** gửi
+lên Zalo. Tốn tiền GPT cỡ một tin khách mỗi câu — báo chủ một câu trước.
+
+1. Đọc cho chủ **từng cặp**, mỗi lần một cặp: *"câu này giống anh/chị nói
+   chưa? chưa thì anh/chị sẽ nói sao?"*
+2. Chủ chê → sửa đúng chỗ, tự hỏi lỗi nằm ở đâu:
+   - sai **giọng** (xưng hô, đuôi câu, dài ngắn, đùa) → ô tương ứng trong
+     `SOUL.md` mục *Shop này — giọng của chủ*;
+   - sai **cách xử một tình huống** → sửa / thêm tình huống đó trong
+     `hoi-thoai-shop.md`, chữ *Đúng* là chữ chủ vừa nói;
+   - sai **số / chính sách** → tờ `wiki/public/`.
+3. `vps.py day-so` → `vps.py thu-giong` lại. Câu lẻ: `vps.py thu-giong --cau "…"`.
+4. **Xong khi chủ nói "giống" ít nhất 8 trên 10 câu.** Chưa tới thì chưa mở khách.
+
 ---
 
 ## B6 — Nối nick (cùng họ)
@@ -444,6 +467,9 @@ Nói thẳng: tắt máy / ngủ = **mất tin lúc đó**. Khách thật cần 
 - [ ] `USER.md` có tên + nick nhận bàn giao + giờ gọi lại + **ngày nghỉ**
 - [ ] Follow-up: đã hỏi; chưa nói = tắt
 - [ ] Sinh lại chỉ mục rồi chạy test — xanh (kho chữ, không phải nick)
+- [ ] `SOUL.md` mục *Shop này — giọng của chủ*: ô 1–5 hết `[CHỜ CHỦ SHOP]`
+- [ ] `hoi-thoai-shop.md` ≥ 20 tình huống, nhóm A, B, C, G, I mỗi nhóm ≥ 2
+- [ ] **Thử giọng với chủ** (`vps.py thu-giong`): chủ nói "giống" ≥ 8/10
 - [ ] `docs/04-kich-ban-thu.md` trên nick thật (sau QR) — **cửa mở khách**
 - [ ] Họ nhắn thử được từ nick khác
 - [ ] Khớp `docs/06-tieu-chuan.md`

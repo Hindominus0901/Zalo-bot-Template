@@ -51,7 +51,7 @@ tờ mẫu `knowledge/wiki/TRANG-MAU.md` nếu cần thêm tờ mới.
 
 | File | Phần của shop |
 |---|---|
-| `SOUL.md` | Mục cuối *"Shop này — điền lúc phỏng vấn"*. Phần trên là giọng nền, **nên lấy bản mới** |
+| `SOUL.md` | Mục cuối *"Shop này — giọng của chủ"* (tám ô; bản cũ hơn 0.4.8 tên là *"Shop này — điền lúc phỏng vấn"*, hai dòng — chép nội dung cũ vào ô 1 và ô 5). Phần trên là giọng nền, **nên lấy bản mới** |
 | `skills/khai-thac/SKILL.md` | Khối câu hỏi khai thác của shop. Phần còn lại là luật chung |
 | `skills/ghi-don/SKILL.md` | Bước đặt riêng của shop, nếu có |
 

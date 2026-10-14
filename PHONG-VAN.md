@@ -161,6 +161,18 @@ Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
 > (Một ảnh trước. Có rồi xin tiếp — 5 tới 10 đoạn là đủ. Không có ảnh thì paste
 > một tin mình đã trả, nguyên văn.)
 >
+> Anh/chị có **video, livestream, buổi Zoom, hay tin thoại** mình nói chuyện với
+> khách không? Gửi em link hoặc file — em nghe giọng thật của anh/chị từ đó.
+> (Trang bán / fanpage em lấy **số và chính sách**; nói chuyện thật em lấy
+> **giọng**. Hai thứ khác nhau.)
+>
+> Anh/chị hay **kết câu** bằng gì khi nhắn khách? Có câu cửa miệng nào không?
+>
+> Khi giải thích cho khách, anh/chị hay **ví với cái gì** đời thường?
+>
+> Khách hỏi giá, anh/chị nói thế nào — nói thẳng luôn, hay hỏi nhu cầu trước?
+> Có bao giờ anh/chị bảo khách *"chưa cần mua đâu"* không?
+>
 > Trong ngành mình, có chữ nào **không được nói** với khách không? Ví dụ chê
 > chỗ khác, hứa khỏi bệnh, hứa số liệu…
 >
@@ -170,7 +182,7 @@ Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
 > với khách. Shop mình có hợp kiểu đó không, hay anh/chị muốn nghiêm hơn?
 > (Nghề nào trang trọng — tang lễ, y tế, luật — thì mình hạ xuống.)
 
-→ `IDENTITY.md` (tên + gọi thêm) + `identity.name` / `mentionPatterns` trên config máy + xưng hô và 2–3 **tin mẫu** ngắn dán vào cuối `SOUL.md`. Mỗi đoạn chat thật → một tình huống **sai / đúng** trong `knowledge/hoi-thoai-shop.md` (khuôn ở cuối file đó): đúng = chữ chủ, sai = câu bot hay nói hỏng ở chỗ đó. Đây là thứ làm bot nghe như người của shop — đừng bỏ.
+→ `IDENTITY.md` (tên + gọi thêm) + `identity.name` / `mentionPatterns` trên config máy + **tám ô** `SOUL.md` mục *Shop này — giọng của chủ* (hình đã điền: `docs/vi-du-file-da-dien.md`). Video / livestream: lấy chữ (phụ đề, hoặc nhờ chủ dán), rút câu thật + đuôi câu + ví dụ đời thường — không tóm tắt nội dung. Mỗi đoạn chat thật → một tình huống **sai / đúng** trong `knowledge/hoi-thoai-shop.md` (khuôn ở cuối file đó): đúng = chữ chủ, sai = câu bot hay nói hỏng ở chỗ đó. Đây là thứ làm bot nghe như người của shop — đừng bỏ.
 Giọng nền (hạt giống, cách hỏi, cấm tổng đài) nằm ở `knowledge/giong-noi.md` và
 `knowledge/cach-tu-van.md` — **đừng xóa / đừng thay bằng kịch bản OA**. Tin mẫu
 của chủ thắng khi lệch với ví dụ generic.

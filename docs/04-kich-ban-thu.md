@@ -127,6 +127,9 @@ gateway, xem log), không chỉ nhắn tin.
 | 97 | Bật nhịp nhóm nhưng sổ không có lịch | Không gửi gì; có một dòng trong `memory/` ngày báo chủ lịch trống |
 | 98 | Chủ: *em vừa trả lời sai rồi, khách hỏi X thì nói Y* | Bot đọc lại, chờ gật, thêm một tình huống sai / đúng vào `knowledge/hoi-thoai-shop.md`; khách khác hỏi X ngay sau → nói Y |
 | 99 | (Shop bật chấm bài) Học viên gửi ảnh bài | Ba phần: làm được (trích chữ trong bài) · còn thiếu · một việc tiếp. Không tự cho điểm khi khung không cho |
+| 100 | `vps.py thu-giong` sau khi điền xong `hoi-thoai-shop.md` | Mỗi tình huống ra một cặp *Bot vừa trả / Chủ từng trả*; không tin nào lên Zalo; phiên khách thật không đổi |
+| 101 | Đưa chủ chấm 10 cặp | Chủ nói "giống" ≥ 8. Chưa thì sửa theo bảng *Thử giọng với chủ* rồi chạy lại — ghi lại số câu "giống" mỗi vòng |
+| 102 | Hỏi bot *"chị chủ học trường nào / quê đâu"* | Bot **không** kể đời tư của chủ như của mình; nói mình là nhân viên trực chat |
 
 Dòng 49 là bài kiểm tra hồi quy quan trọng nhất của phần máy: nền prompt vỡ thì
 không lỗi gì cả, chỉ là tiền tăng đều. Không ai phát hiện ra nếu không nhìn.

@@ -5,6 +5,45 @@
 Bản nào đổi thứ shop đang phụ thuộc — tên trường phiếu, tên tool, tên tờ wiki,
 tên file — **phải ghi ở đây**. Không ghi = coi như không đổi.
 
+## 0.4.8 — đúc giọng của chủ như bot chị Thanh, và chủ chấm giọng bot thật
+
+So lại lớp giao tiếp với bot chị Thanh: **nền giọng giống hệt**. Bot chị nói
+hay hơn nhờ **phần giọng riêng của chủ** — template có nhưng mỏng (mục shop
+trong `SOUL.md` chỉ có 2 dòng chờ, bot chị có ~50 dòng). Mang về **cách đúc
+giọng**, không mang chữ của chị.
+
+- **`SOUL.md` mục *Shop này — giọng của chủ*: tám ô** —
+  1. xưng hô;
+  2. câu cửa miệng (một cái mỗi tin);
+  3. nét giọng + cách làm;
+  4. ví dụ đời thường chủ hay ví;
+  5. câu thật của chủ (nghe nhịp, đừng thuộc);
+  6. chữ của nghề được / không được nói;
+  7. mức đùa + khi nào tắt;
+  8. có thúc khách không.
+
+  Thêm luật **mượn giọng, không mượn đời tư**. Hình đã điền:
+  `docs/vi-du-file-da-dien.md`.
+- **Phỏng vấn lấy giọng thật:**
+  - xin video / livestream / Zoom / tin thoại của chủ — *trang bán lấy số, nói
+    chuyện thật lấy giọng*;
+  - hỏi thêm câu cửa miệng, ví dụ chủ hay ví, cách nói chuyện giá, có bảo khách
+    *chưa cần mua* không.
+- **`hoi-thoai-shop.md` có danh mục 9 nhóm** — mở đầu · chọn · tiền · chuyên
+  môn · sau mua · nhóm · khó · bot nói trước · kết.
+  - Rút gọn từ 54 tình huống của bot chị Thanh.
+  - Tối thiểu 20 tình huống, nhóm A, B, C, G, I mỗi nhóm ≥ 2.
+- **Thử giọng với chủ** — cổng mới trước khi mở khách:
+  - `scripts/thu_giong.py` / `vps.py thu-giong` cho **bot thật** trả từng tình
+    huống, in cạnh câu chủ từng trả;
+  - mỗi câu một phiên riêng, không lên Zalo;
+  - chủ chấm, sửa đúng chỗ, chạy lại — **xong khi chủ nói "giống" ≥ 8/10**.
+  - Đã chạy thật với OpenClaw + máy giả GPT: ba câu, ba phiên riêng, phiên cũ
+    không đổi.
+
+**Chưa chạy thật:** giọng thật với GPT thật; chủ thật chấm. Kịch bản: `docs/04`
+dòng 100–102.
+
 ## 0.4.7 — nhanh hơn, và học thêm từ bot chị Thanh
 
 Đọc lại kỹ repo chị Thanh: so từng file khác nhau, đọc hết 3 skill riêng và các
