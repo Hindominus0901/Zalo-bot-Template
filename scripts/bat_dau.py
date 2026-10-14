@@ -451,6 +451,12 @@ BUOC = [
 
 
 def main(argv: list[str] | None = None) -> int:
+    # Qua SSH không có terminal → Python gom chữ lại mới in, dòng "▶ bước" ra sau
+    # phần cài. In từng dòng cho đúng thứ tự (đã gặp thật khi chạy qua vps.py).
+    try:
+        sys.stdout.reconfigure(line_buffering=True)  # type: ignore[attr-defined]
+    except (AttributeError, ValueError):
+        pass
     ap = argparse.ArgumentParser(description="Dựng bot Zalo một lệnh.")
     ap.add_argument("--xem", action="store_true", help="chỉ xem bước nào xong")
     ap.add_argument("--bo-qua", default="", help="các bước để sau, cách nhau dấu phẩy: " +

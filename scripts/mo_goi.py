@@ -144,7 +144,7 @@ def main(argv: list[str] | None = None) -> int:
     cm = goc / "scripts" / "lam_chi_muc.py"
     if not a.khong_chi_muc and cm.exists():
         subprocess.run([sys.executable, str(cm)], cwd=goc, check=False)
-    print("\n✓ Đã nhận sổ. Bước tiếp: python3 scripts/bat_dau.py")
+    print("\n✓ Đã nhận sổ. Bot dùng ngay từ tin sau — không cần khởi động lại.")
     return 0
 
 

@@ -182,9 +182,12 @@ def _paramiko():
         return paramiko
     except ImportError:
         print("• Cài thư viện nối SSH bằng mật khẩu (paramiko) — một lần…")
-        r = subprocess.run([sys.executable, "-m", "pip", "install", "--user", "-q", "paramiko"])
+        r = subprocess.run([sys.executable, "-m", "pip", "install", "--user", "-q",
+                            "--no-warn-script-location", "--disable-pip-version-check", "paramiko"],
+                           stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
         if r.returncode != 0:
-            raise Loi(f"Không cài được paramiko. Agent chạy: {sys.executable} -m pip install --user paramiko")
+            raise Loi(f"Không cài được paramiko ({(r.stderr or '').strip()[-200:]}). "
+                      f"Agent chạy: {sys.executable} -m pip install --user paramiko")
         import importlib
         import site
         importlib.invalidate_caches()
@@ -383,7 +386,9 @@ def cmd_keo_so(_a) -> int:
 
 def _ghi_moc(ch: dict, van: str) -> None:
     so = re.findall(r"^(\d{9,11})\s*$", van, re.M)
-    ch["dong_bo_luc"] = int(so[-1]) if so else int(time.time())
+    # +1 giây: tờ vừa ghi trong CHÍNH giây đồng bộ không được tính là "chủ sửa sau đó"
+    # (find -newermt so tới phần lẻ của giây — đã gặp thật: day-so lần hai bị chặn oan).
+    ch["dong_bo_luc"] = (int(so[-1]) if so else int(time.time())) + 1
     ghi_cau_hinh(ch)
 
 

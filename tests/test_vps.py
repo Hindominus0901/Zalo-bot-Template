@@ -200,6 +200,22 @@ class MaApi(unittest.TestCase):
             self.assertIsNone(vps.MA_API.search(rac), rac)
 
 
+class MocDongBo(unittest.TestCase):
+    def test_moc_cong_mot_giay(self):
+        """Tờ vừa ghi trong chính giây đồng bộ không được tính là chủ sửa sau đó —
+        lần chạy thật đầu cuối, day-so lần hai bị chặn oan vì thiếu chỗ này."""
+        import tempfile
+        cu = vps.CAU_HINH
+        with tempfile.TemporaryDirectory() as d:
+            vps.CAU_HINH = Path(d) / ".vps.json"
+            try:
+                ch = {"ip": "1.2.3.4"}
+                vps._ghi_moc(ch, "✓ Đã nhận sổ.\n1791879370\n")
+                self.assertEqual(ch["dong_bo_luc"], 1791879371)
+            finally:
+                vps.CAU_HINH = cu
+
+
 class Noi(unittest.TestCase):
     def test_dia_chi_la_bi_chan(self):
         """Địa chỉ đi thẳng vào lệnh ssh — chặn mọi thứ không phải IP / tên máy."""

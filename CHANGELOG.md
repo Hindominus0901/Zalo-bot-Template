@@ -5,6 +5,36 @@
 Bản nào đổi thứ shop đang phụ thuộc — tên trường phiếu, tên tool, tên tờ wiki,
 tên file — **phải ghi ở đây**. Không ghi = coi như không đổi.
 
+## 0.4.9 — chạy thử đầu cuối như người mua, sửa ba lỗi lòi ra
+
+Chạy **trọn quy trình người mua** trong container:
+- "máy người dựng" là bản zip giải nén, HOME mới tinh;
+- "VPS" là `sshd` với một user mới có mật khẩu, chưa cài gì;
+- GPT là máy giả API.
+
+**Chạy được:** test trong bản zip · `mat-khau` → `noi --mat-khau` (tự cài
+paramiko, cài chìa khoá, xoá file mật khẩu) · `day-len` · `bat-dau` cài máy từ
+con số không (Node 24.21 có kiểm SHA256, OpenClaw 2026.9.4, plugin Zalo) →
+dừng ở mã AI · `gui-ma-ai` mã `sk-proj-…` → onboard OpenAI + config
+`gpt-5.6-terra` (file mã tạm xoá ở cả hai đầu) · `day-so` · `thu-giong` qua SSH
+(10 câu tới GPT, bảng đúng) · chủ sửa trên VPS → `day-so` từ chối → `keo-so` ·
+`lay-qr` khi chưa có mã báo chữ thường · `kiem_tra_may` · `bat-dau --xem`.
+
+**Ba lỗi đã sửa:**
+- **`day-so` lần hai bị chặn oan** — báo "sổ trên VPS đã đổi" với chính các tờ
+  mình vừa đẩy. Mốc đồng bộ tính tới giây, file ghi trong cùng giây bị coi là
+  mới hơn. Nay mốc +1 giây, có test.
+- Cài paramiko in hai dòng cảnh báo pip tiếng Anh → nay im, chỉ in khi lỗi.
+- Qua SSH, dòng `▶ bước` in sau phần cài (Python gom chữ) → nay in từng dòng.
+  Sau `day-so`, VPS in "Bước tiếp: bat_dau.py" dễ làm agent hiểu nhầm → nay in
+  "bot dùng ngay từ tin sau".
+
+**Không chạy được ở đây** (giới hạn của container, không phải lỗi bot):
+- quét mã Zalo — container không vào được máy chủ Zalo;
+- gateway làm dịch vụ — không có systemd;
+- đổi múi giờ — không có timedatectl;
+- giọng thật — không có mã GPT thật.
+
 ## 0.4.8 — đúc giọng của chủ như bot chị Thanh, và chủ chấm giọng bot thật
 
 So lại lớp giao tiếp với bot chị Thanh: **nền giọng giống hệt**. Bot chị nói
