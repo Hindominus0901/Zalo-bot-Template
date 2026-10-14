@@ -108,15 +108,17 @@
       main: {
         identity: { name: "Nami" },
         workspace: ".", // CÙNG đường dẫn tuyệt đối như trên — hai agent chung một sổ.
-        // "high" = mặc định của Opus 5: nghĩ kỹ, đúng luật nhiều tầng của shop.
-        // Khách chê chậm thì hạ "medium" — nhanh hơn, vẫn ổn với tin thường.
-        thinkingDefault: "high",
+        // Bot trả khách: "low" — trả NHANH. Mức suy nghĩ cao bắt model nghĩ lâu
+        // trước mỗi tin; khách chờ. Luật của shop đã nằm sẵn trong nền nên nghĩ
+        // ít vẫn đúng luật. Thấy bot trả hời hợt ở ca khó → "medium".
+        thinkingDefault: "low",
         // Skill bot khách được thấy. KHÔNG có day-bot, giao-viec — hai skill đó
         // chỉ agent admin nạp. Thêm skill mới cho khách thì thêm tên vào đây.
         skills: ["ban-giao", "bao-gia", "cham-khach-cu", "doc-anh", "doc-wiki",
                  "follow-up", "ghi-don", "giao-tiep", "hoc-lai", "khai-thac",
-                 "lam-viec", "phieu", "theo-don", "thu-lead", "xu-ly-phan-nan",
-                 "xu-ly-tu-choi"],
+                 "lam-viec", "nhip-nhom", "phieu", "theo-don", "thu-lead",
+                 "xu-ly-phan-nan", "xu-ly-tu-choi"],
+        // Shop dạy học / coaching: thêm "cham-bai" (scripts/dien_config.py --cham-bai).
         tools: {
           // Nền tối thiểu rồi cấp đúng thứ bot khách cần. KHÔNG đặt profile
           // thì OpenClaw dùng "coding": có exec (chạy lệnh shell trên VPS giữ

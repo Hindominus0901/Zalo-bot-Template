@@ -42,6 +42,7 @@ Chủ **không cần cú pháp**. *"Từ giờ khách hỏi ship Hà Nội thì 
 | Giá, phí, lịch, giờ, chính sách | Thân tờ `knowledge/wiki/public/<tờ>.md` đúng việc | Số trong `summary` cũng đổi → sửa `summary`, **và** dòng của tờ đó trong `INDEX.md` + khối *Sổ có những tờ nào* cuối `AGENTS.md` (cùng chữ). Đổi `updated:` sang hôm nay |
 | Một luật vận hành (*"ngoài giờ vẫn báo giá"*) | Một dòng trong `MEMORY.md` mục *Đã chốt với chủ* | Một dòng = luật + vì sao |
 | Giọng, xưng hô, câu mở | `SOUL.md` mục *Shop này* | Chỉ mục đó |
+| Cách trả **một tình huống** (*"lần sau ai hỏi X thì nói Y"*, *"em vừa trả sai, phải là…"*) | Một tình huống **sai / đúng** trong `knowledge/hoi-thoai-shop.md` | Đúng = chữ chủ. Sai = câu bot vừa nói hỏng. Xoá dòng `[CHỜ CHỦ SHOP]` nếu là tình huống đầu tiên |
 | Duyệt đề xuất (*"cái hôm qua ok"*) | Đọc `memory/de-xuat/` ngày gần nhất, đọc từng đề xuất cho chủ, chủ gật cái nào áp cái đó | Áp xong ghi `da_ap` bên cạnh đề xuất |
 
 **Tờ còn chờ** (summary có `[CHỜ CHỦ SHOP]`, thân có banner *Không nói số*) mà

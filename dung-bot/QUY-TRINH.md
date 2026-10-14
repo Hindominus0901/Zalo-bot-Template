@@ -235,12 +235,14 @@ câu “Hỏi thêm” nếu họ chưa phủ. Đừng đọc cả khối Hỏi 
 | 1b Kiểu shop | **Xóa tờ wiki không dùng** rồi chạy lại `scripts/lam_chi_muc.py` — bảng trong `knowledge/wiki/TRANG-MAU.md` | Bán hàng thì xóa `lo-trinh`/`ai-phu-hop`/`sau-khi-xong`; dịch vụ thì xóa `ship`/`kiem-hang` |
 | 2 Khách ngại gì | `persona.md` → Khách và điều họ lo | `[CHỜ CHỦ SHOP]` |
 | 3 Tài liệu | Cất `knowledge/raw/` nguyên. Một dòng `raw/NGUON.md`. Tách wiki (thuật toán dưới). Link Drive → skill `lam-viec-dung` + `mcp_drive` **chỉ nếu** MCP `enabled` | Chủ nói không có file → FAQ miệng câu 6; vẫn được |
-| 4 Giọng, tên gọi, **mức lầy** | `IDENTITY.md` + `SOUL.md` đoạn cuối (xưng hô + 2–3 tin thật). Chủ muốn nghiêm hơn mặc định → ghi một dòng vào `persona.md` → Ranh giới. Config `identity.name` khớp lúc B4 | Tên mặc định **Nami**, giọng mặc định **vui và lầy** (`vui-va-ngoai-le.md`). Biệt hiệu nhóm: ghi `Gọi thêm` |
+| 4 Giọng, tên gọi, **mức lầy** | `IDENTITY.md` + `SOUL.md` đoạn cuối (xưng hô + 2–3 tin thật). Mỗi ảnh chat thật → một tình huống sai / đúng trong `knowledge/hoi-thoai-shop.md`. Chủ muốn nghiêm hơn mặc định → ghi một dòng vào `persona.md` → Ranh giới. Config `identity.name` khớp lúc B4 | Tên mặc định **Nami**, giọng mặc định **vui và lầy** (`vui-va-ngoai-le.md`). Biệt hiệu nhóm: ghi `Gọi thêm` |
 | 5 Không được tự ý + cam kết | `persona.md` → Ranh giới. Cam kết/không cam kết → `wiki/public/ai-phu-hop.md` + `lo-trinh.md` | Chủ muốn bot **đưa số tài khoản** → ghi rõ; mặc định **không đưa**. Bot **không bao giờ** hứa kết quả, kể cả chủ hay hứa ngoài đời |
 | 6 FAQ miệng | Mỗi câu một tờ `wiki/public/` hoặc gom cùng chủ đề | Không đẻ số |
 | 7 Bước đặt | `skills/ghi-don/SKILL.md` — chỉ bước shop này, giữ “không tự chốt” | — |
 | 7b Sổ đơn | Có phần mềm + API → bật `sodon` trong `config/mcp.example.json5`; không có → để `enabled: false` | để tắt |
 | 8 Kêu ai + follow-up | `USER.md`: tên, nick bàn giao, giờ gọi lại, **ngày nghỉ / Tết**, SĐT, ảnh, nhóm, **Follow-up** (tắt / giờ / câu mẫu). Ngày nghỉ chép luôn sang `wiki/public/gio-truc.md` | Follow-up chưa nói = **để CHỜ / tắt**. Ngày nghỉ chưa nói = để CHỜ, heartbeat không rào được |
+| 8b Nhóm Zalo | Shop có nhóm khách / nhóm lớp: `USER.md` mục *Nhóm* — giờ được nhắn nhóm, nhắc trước sự kiện bao lâu, bảng nhóm (`groupId` lấy **sau** khi nick bot vào nhóm). Lịch / sự kiện phải nằm trong một tờ `wiki/public/` thì bot mới nhắc được | Mặc định **tắt** — bot vẫn trả lời trong nhóm khi được gọi tên, chỉ không tự nhắc |
+| 8c Chấm bài | Shop **dạy học / coaching**, học viên nộp bài: `python3 scripts/dien_config.py --cham-bai` (qua `vps.py chay`) + một khung chấm mỗi loại bài ở `wiki/internal/khung-cham-<loại>.md` (mẫu `knowledge/khung-cham-mau.md`). Hỏi chủ: bot được kết luận *đạt* không | Shop khác: bỏ qua, skill tắt sẵn |
 | 9 Phân vân | `skills/khai-thac/SKILL.md` — đúng câu họ hay hỏi, 2–3 slot | — |
 | 10 Câu đầu | `persona.md` → Tin mở | Không viết *hỗ trợ gì ạ* |
 

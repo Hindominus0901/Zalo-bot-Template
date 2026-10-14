@@ -23,6 +23,9 @@ Skill = cách hay, không phải cổng. Khách đi tắt thì đi tắt. Não c
 | `hoc-lai` | Heartbeat cuối ngày: đề xuất bài học + vá sổ cho chủ |
 | `day-bot` | **Chỉ chủ, nhắn riêng:** dạy bot — sửa sổ, thêm luật, đổi giọng, duyệt đề xuất của `hoc-lai` |
 | `giao-viec` | **Chỉ chủ, nhắn riêng:** hẹn giờ — nhắc chủ, nhắn một khách, nhắn nhóm định kỳ |
+| `thong-bao-lich` | **Chỉ chủ, nhắn riêng:** gửi một thông báo vào một nhóm **ngay** — đọc lại, chờ gật |
+| `nhip-nhom` | Heartbeat: nhắc lịch / sự kiện trong sổ vào nhóm, một tin một nhóm một ngày. Mặc định tắt |
+| `cham-bai` | **Tuỳ chọn** (shop dạy học): nhận xét bài theo khung. Mặc định tắt — `dien_config.py --cham-bai` |
 
 Hai skill cuối **bot khách không nạp** (`agents.entries.main.skills` trong config
 không có tên chúng) và không có tool để làm (không `automations`, ghi bị giới

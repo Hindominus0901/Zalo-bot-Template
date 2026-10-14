@@ -94,7 +94,11 @@ class Skill(unittest.TestCase):
 
     def test_bot_chu_du(self):
         with tempfile.TemporaryDirectory() as d:
-            self.assertEqual(km.kiem_skill("admin", self._js(d, ["doc-wiki", "day-bot", "giao-viec"]), Path(d)).muc, "ok")
+            self.assertEqual(km.kiem_skill("admin", self._js(d, ["doc-wiki", "day-bot", "giao-viec", "thong-bao-lich"]), Path(d)).muc, "ok")
+
+    def test_bot_chu_thieu_thong_bao(self):
+        with tempfile.TemporaryDirectory() as d:
+            self.assertEqual(km.kiem_skill("admin", self._js(d, ["doc-wiki", "day-bot", "giao-viec"]), Path(d)).muc, "loi")
 
 
 class Gateway(unittest.TestCase):

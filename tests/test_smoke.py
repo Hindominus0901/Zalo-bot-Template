@@ -220,9 +220,11 @@ class SmokeConfig(unittest.TestCase):
         self.assertTrue(m, "main thieu danh sach skills")
         khai = set(re.findall(r'"([a-z0-9-]+)"', m.group(1)))
         co = {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")}
-        CHI_CHU = {"day-bot", "giao-viec"}
+        CHI_CHU = {"day-bot", "giao-viec", "thong-bao-lich"}
+        TUY_CHON = {"cham-bai"}    # shop bật bằng dien_config.py --cham-bai
         self.assertEqual(khai & CHI_CHU, set(), "bot khach nap duoc skill chi-chu")
-        self.assertEqual(co - CHI_CHU - khai, set(), "skill khach chua khai cho main")
+        self.assertEqual(khai & TUY_CHON, set(), "skill tuy chon phai tat san")
+        self.assertEqual(co - CHI_CHU - TUY_CHON - khai, set(), "skill khach chua khai cho main")
         self.assertEqual(khai - co, set(), "khai skill khong ton tai")
 
     def test_moi_agent_co_workspace_rieng(self):

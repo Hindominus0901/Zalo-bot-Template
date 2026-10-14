@@ -23,6 +23,7 @@ Mỗi file này mang một dòng đánh dấu ở đầu:
 - `USER.md`
 - `MEMORY.md`
 - `knowledge/persona.md`
+- `knowledge/hoi-thoai-shop.md`
 - `knowledge/wiki/INDEX.md`
 - `knowledge/wiki/public/ai-phu-hop.md`
 - `knowledge/wiki/public/ban-gi.md`

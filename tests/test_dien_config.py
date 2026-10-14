@@ -71,6 +71,12 @@ class DienDungCho(unittest.TestCase):
         self.assertIn('primary: "openai/gpt-5.6-terra"', ra)
         self.assertIn('fallbacks: ["openai/gpt-5.4"]', ra)
 
+    def test_cham_bai_tat_san_bat_duoc(self):
+        tat = _khong_comment(dc.dien(MAU, "Nami", ID, "/x", dc.MODEL_MANH))
+        bat = _khong_comment(dc.dien(MAU, "Nami", ID, "/x", dc.MODEL_MANH, cham_bai=True))
+        self.assertNotIn('"cham-bai"', tat)
+        self.assertIn('skills: ["cham-bai", "ban-giao"', bat)
+
     def test_ma_claude_van_chay(self):
         manh, dp, _ = dc.MO_HINH["anthropic"]
         ra = _khong_comment(dc.dien(MAU, "Nami", ID, "/x", manh, dp))

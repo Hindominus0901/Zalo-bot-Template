@@ -156,8 +156,10 @@ Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
 > Ngoài tên đó, khách hay **gọi tắt** thế nào không? Ví dụ shop ơi, tên shop…
 > (Không có thì thôi. Có thì em gắn để lúc nhóm có người gọi, em vào.)
 >
-> Anh/chị paste giúp **một tin** mình đã trả khách — nguyên văn. (Có rồi hỏi tin
-> thứ hai, rồi thứ ba. Đừng đòi ba tin cùng lúc.)
+> Anh/chị chụp giúp em **vài đoạn chat thật** với khách — đoạn mình trả ưng ý
+> nhất, và nếu có, một đoạn khách bỏ đi hay bực. Che số điện thoại là được.
+> (Một ảnh trước. Có rồi xin tiếp — 5 tới 10 đoạn là đủ. Không có ảnh thì paste
+> một tin mình đã trả, nguyên văn.)
 >
 > Trong ngành mình, có chữ nào **không được nói** với khách không? Ví dụ chê
 > chỗ khác, hứa khỏi bệnh, hứa số liệu…
@@ -168,7 +170,7 @@ Một hơi **chỉ một việc**. Việc còn lại để “hỏi thêm”.
 > với khách. Shop mình có hợp kiểu đó không, hay anh/chị muốn nghiêm hơn?
 > (Nghề nào trang trọng — tang lễ, y tế, luật — thì mình hạ xuống.)
 
-→ `IDENTITY.md` (tên + gọi thêm) + `identity.name` / `mentionPatterns` trên config máy + xưng hô và **tin mẫu** dán vào cuối `SOUL.md`.
+→ `IDENTITY.md` (tên + gọi thêm) + `identity.name` / `mentionPatterns` trên config máy + xưng hô và 2–3 **tin mẫu** ngắn dán vào cuối `SOUL.md`. Mỗi đoạn chat thật → một tình huống **sai / đúng** trong `knowledge/hoi-thoai-shop.md` (khuôn ở cuối file đó): đúng = chữ chủ, sai = câu bot hay nói hỏng ở chỗ đó. Đây là thứ làm bot nghe như người của shop — đừng bỏ.
 Giọng nền (hạt giống, cách hỏi, cấm tổng đài) nằm ở `knowledge/giong-noi.md` và
 `knowledge/cach-tu-van.md` — **đừng xóa / đừng thay bằng kịch bản OA**. Tin mẫu
 của chủ thắng khi lệch với ví dụ generic.

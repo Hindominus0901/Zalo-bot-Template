@@ -120,6 +120,13 @@ gateway, xem log), không chỉ nhắn tin.
 | 90 | Mã OpenAI `sk-proj-…` qua `gui-ma-ai` | `bat-dau` qua bước 2; `openclaw models status` thấy provider openai; config `openai/gpt-5.6-terra` |
 | 91 | Nhắn bot một ảnh (ảnh món / ảnh chuyển khoản) | GPT-5.6 Terra đọc được ảnh, trả lời theo ảnh, không bảo khách gõ lại |
 | 92 | Sau một tuần chạy thật | Xem *Usage* trên platform.openai.com — chi phí mỗi tin khớp khoảng ghi ở `CHUAN-BI.md`, không thì sửa con số |
+| 93 | Đo giờ: nhắn bot khách *shop ơi*, *giá bao nhiêu* | Trả trong vài giây (bot khách suy nghĩ `low`). Chậm quá thì xem có đang mở nhiều tờ sổ không (`AGENTS.md` *Đọc thêm*) |
+| 94 | Chủ nhắn riêng: *gửi nhóm [tên] là mai nghỉ nha* | Bot đọc lại bản nháp + tên nhóm, **chờ gật** mới gửi; gửi đúng một nhóm; ghi `memory/nhom/` |
+| 95 | Khách (không phải chủ) nhắn y câu trên | Bot **không** gửi gì vào nhóm |
+| 96 | Bật nhịp nhóm, sổ có sự kiện ngày mai, trong giờ nhắn nhóm | Heartbeat gửi **một** tin vào nhóm đó; heartbeat sau trong ngày **không** gửi lại |
+| 97 | Bật nhịp nhóm nhưng sổ không có lịch | Không gửi gì; có một dòng trong `memory/` ngày báo chủ lịch trống |
+| 98 | Chủ: *em vừa trả lời sai rồi, khách hỏi X thì nói Y* | Bot đọc lại, chờ gật, thêm một tình huống sai / đúng vào `knowledge/hoi-thoai-shop.md`; khách khác hỏi X ngay sau → nói Y |
+| 99 | (Shop bật chấm bài) Học viên gửi ảnh bài | Ba phần: làm được (trích chữ trong bài) · còn thiếu · một việc tiếp. Không tự cho điểm khi khung không cho |
 
 Dòng 49 là bài kiểm tra hồi quy quan trọng nhất của phần máy: nền prompt vỡ thì
 không lỗi gì cả, chỉ là tiền tăng đều. Không ai phát hiện ra nếu không nhìn.

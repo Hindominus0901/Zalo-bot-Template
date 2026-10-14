@@ -18,7 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CAM = re.compile(r"(?:^|/)(?:\.env|\.vps\.json|openclaw\.json|secrets[^/]*|[^/]*\.(?:key|pem))$"
-                 r"|/memory/(?!(?:phieu/|de-xuat/|nhat-ky-sua/)?(?:README\.md|MAU\.md|\.gitkeep)$)")
+                 r"|/memory/(?!(?:phieu/|de-xuat/|nhat-ky-sua/|nhom/)?(?:README\.md|MAU\.md|\.gitkeep)$)")
 
 
 def main() -> int:

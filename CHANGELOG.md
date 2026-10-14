@@ -5,6 +5,51 @@
 Bản nào đổi thứ shop đang phụ thuộc — tên trường phiếu, tên tool, tên tờ wiki,
 tên file — **phải ghi ở đây**. Không ghi = coi như không đổi.
 
+## 0.4.7 — nhanh hơn, và học thêm từ bot chị Thanh
+
+Đọc lại kỹ repo chị Thanh: so từng file khác nhau, đọc hết 3 skill riêng và các
+file nhóm, hội thoại, VPS. Lấy về những gì dùng được cho mọi shop.
+
+- **Trả nhanh hơn:** bot trả khách suy nghĩ `low` (trước `high` — model nghĩ
+  lâu trước mỗi tin). Bot của chủ giữ `high`, vì sửa sổ sai một chữ là sai cho
+  mọi khách. Đã đo bằng OpenClaw thật + máy giả GPT: request bot khách gửi
+  `reasoning.effort: low`, bot chủ `high`. Nhanh hơn bao nhiêu giây thì chưa đo
+  — cần mã GPT thật.
+- **Bản đồ hội thoại của shop** — `knowledge/hoi-thoai-shop.md` (mới, của shop):
+  - mỗi tình huống thật có **sai / đúng** theo đúng chữ chủ;
+  - phỏng vấn chủ đề 4 giờ xin **ảnh chụp đoạn chat thật** (5–10 đoạn), không
+    chỉ một tin;
+  - chủ dạy qua Zalo *"lần sau ai hỏi X thì nói Y"* thì `day-bot` ghi thêm
+    tình huống vào đây;
+  - `AGENTS.md` đọc file này trước mẫu chung. Đây là cái làm bot chị Thanh nghe
+    như người của chị.
+- **Phán đoán trong nhóm** — `knowledge/trong-nhom.md` (mới):
+  - đọc nhóm trước khi gõ; nhiều người hỏi dồn; một tin ba câu hỏi;
+  - có người trả lời sai thì bổ sung, không bẻ mặt;
+  - chặn cháy (tài khoản lạ, lộ thông tin riêng, link giả);
+  - việc phải kéo ra khỏi nhóm.
+- **Skill mới:**
+  - `nhip-nhom` — heartbeat nhắc lịch / sự kiện trong sổ vào nhóm, một tin một
+    nhóm một ngày, mặc định tắt. Cấu hình ở `USER.md` mục *Nhóm*, ghi lại ở
+    `memory/nhom/`.
+  - `thong-bao-lich` — chỉ bot của chủ: gửi một thông báo vào nhóm **ngay**,
+    đọc lại, chờ gật. Gửi lúc khác / định kỳ vẫn là `giao-viec`.
+  - `cham-bai` — **tuỳ chọn** cho shop dạy học. Tắt sẵn, bật bằng
+    `dien_config.py --cham-bai`; khung chấm mẫu `knowledge/khung-cham-mau.md`.
+  - Đã kiểm bằng OpenClaw thật: bot khách thấy `nhip-nhom`, không thấy
+    `thong-bao-lich` / `cham-bai`; bot của chủ thấy cả.
+- **Sửa một chỗ sai của chính repo chị Thanh khi mang về:**
+  - Bản của chị cho bot tự "chặn cháy" trong nhóm **khi chưa ai gọi**. Nhưng
+    plugin Zalo không cho bot thấy tin chưa gọi tên (`requireMention`), nên luật
+    đó không chạy được.
+  - Bản của mình ghi đúng: chỉ chặn cháy khi đã được gọi vào cuộc. Bot không
+    "canh nhóm" được.
+- Chưa mang về: **phân tầng khách** (nhóm VIP / thường trả sâu khác nhau) và
+  **nhóm điều khiển của chủ**. Riêng của chị Thanh, cần chủ chọn.
+
+**Chưa chạy thật:** nhịp nhóm và thông báo nhóm trên Zalo thật; tốc độ với GPT
+thật; chấm bài với bài thật. Kịch bản: `docs/04` dòng 93–99.
+
 ## 0.4.6 — 123host + GPT-5.6 Terra, nối VPS bằng mật khẩu, Codex app
 
 Mặc định mới: VPS **123host**, AI **GPT-5.6 Terra** (mã OpenAI API), agent

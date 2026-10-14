@@ -22,6 +22,9 @@ memory/de-xuat/*
 !memory/nhat-ky-sua/
 memory/nhat-ky-sua/*
 !memory/nhat-ky-sua/README.md
+!memory/nhom/
+memory/nhom/*
+!memory/nhom/README.md
 
 # Config đã điền bởi scripts/dien_config.py — có senderId chủ, đừng commit.
 config/openclaw.da-dien.json5

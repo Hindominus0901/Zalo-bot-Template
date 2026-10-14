@@ -69,7 +69,7 @@ Lúc tư vấn sản phẩm hay dịch vụ trên Zalo, anh/chị nói chuyện 
 
 - Nick nhân viên trên Zalo anh/chị muốn đặt tên gì? Bản mẫu đang để **Nami** — khách gọi *Nami ơi* là em biết phải trả. Anh/chị giữ Nami hay đổi? Đổi thì lấy tên hai tiếng hoặc tên lạ, đừng lấy Mai / An / Nam — dễ lẫn câu khách.
 - Ngoài tên đó, khách hay gọi tắt thế nào không? Ví dụ shop ơi, tên shop… (Không có thì thôi.)
-- Anh/chị paste giúp **một tin** mình đã trả khách — nguyên văn. (Có rồi hỏi tin thứ hai, rồi thứ ba.)
+- Anh/chị chụp giúp em **vài đoạn chat thật** với khách — đoạn trả ưng ý nhất, và một đoạn khách bỏ đi hay bực nếu có. Che số điện thoại. (Một ảnh trước, rồi xin tiếp — 5 tới 10 đoạn. Không có ảnh thì paste một tin đã trả, nguyên văn.)
 - Trong ngành mình, có chữ nào **không được nói** với khách không? Ví dụ chê chỗ khác, hứa khỏi bệnh, hứa số liệu…
 - Nếu khách hỏi “có phải máy nhắn không”, anh/chị muốn trả lời ra sao?
 - Bot mặc định **vui và lầy** — dám đùa lại, tự giễu, tán chuyện ngoài shop với khách. Shop mình có hợp kiểu đó không, hay anh/chị muốn nghiêm hơn? (Nghề trang trọng — tang lễ, y tế, luật — thì hạ xuống.)

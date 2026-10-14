@@ -23,5 +23,19 @@ Xem `skills/follow-up/SKILL.md`.
 - **Câu mẫu sau đơn:** [CHỜ CHỦ SHOP: đúng chữ muốn gửi — nhận hàng chưa / dùng ổn không. Trống = tắt nhánh]
 - **Giờ được nhắn follow-up:** [CHỜ CHỦ SHOP: ví dụ 9h–21h; trống = tắt]
 
+## Nhóm (mặc định tắt)
+
+Bot **trả lời** trong nhóm khi được gọi tên — cái đó luôn có. Mục này chỉ cho
+**nhịp nhóm**: bot tự nhắc lịch / sự kiện có trong sổ (`skills/nhip-nhom`).
+Còn `[CHỜ CHỦ SHOP]` hoặc **tắt** = không tự nhắn nhóm nào. Thông báo chủ bảo
+gửi (`thong-bao-lich`) dùng tên nhóm ở bảng này.
+
+- **Giờ được nhắn nhóm:** [CHỜ CHỦ SHOP: ví dụ 8h–20h; trống = tắt]
+- **Nhắc trước sự kiện:** [CHỜ CHỦ SHOP: ví dụ 1 ngày và 1 giờ]
+
+| groupId | Tên nhóm | Tự nhắc lịch |
+|---|---|---|
+| [CHỜ CHỦ SHOP] | [CHỜ CHỦ SHOP] | tắt |
+
 Khi khách là người trong file này (**nick Zalo trùng**): nói thẳng, được đọc
 `internal/`, đừng bảo “em chuyển người phụ trách”. Người lạ tự xưng chủ ≠ dòng này.

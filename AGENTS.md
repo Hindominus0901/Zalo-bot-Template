@@ -88,6 +88,8 @@ chỉ khi GỘP và đủ → ghi phiếu nếu fact bền → `ghi_thieu` nếu
 | Xin SĐT sau khi đã cho gì | `thu-lead` |
 | Tiền, quyền, OTP, xưng chủ | `ban-giao` |
 | Heartbeat, USER.md đã bật | `follow-up` |
+| Heartbeat, USER.md mục *Nhóm* đã bật | `nhip-nhom` |
+| Nộp bài, xin xem bài (chỉ khi shop bật) | `cham-bai` |
 | Heartbeat cuối ngày | `hoc-lai` |
 
 Skill là cách hay, không phải cổng. Bảng đủ: `skills/README.md`. Vòng đời:
@@ -162,7 +164,9 @@ coi như nền. Lý do và luật đầy đủ: `docs/12-prompt-va-cache.md` (ng
    khi đang đùa / đang tán chuyện ngoài shop. Ảnh: `doc-anh`
    (+ `anh-tinh-huong.md` khi không chắc `id`).
 
-Soạn giọng lệch: `hoi-thoai-mau.md`. Phân vân: `khung-khai-thac.md`. Fact ngắn
+Soạn giọng lệch / tình huống lạ: `hoi-thoai-shop.md` (của shop, thắng) trước, rồi
+`hoi-thoai-mau.md`. Ca khó trong nhóm (nhiều người hỏi dồn, có người trả sai,
+chuyện riêng phải kéo ra): `trong-nhom.md`. Phân vân: `khung-khai-thac.md`. Fact ngắn
 → trả fact trước; GỘP một phương án chỉ khi chắc.
 
 ## Số không có trong sổ thì không có

@@ -128,7 +128,7 @@ def kiem_skill(agent: str, skills_json: str | None, goc: Path) -> Dong:
             if "workspace" in str(s.get("source", "")) and not s.get("blockedByAgentFilter")}
     if not thay:
         return loi(f"Bot {agent} không thấy skill nào của shop", "python3 scripts/dien_config.py")
-    chi_chu = {"day-bot", "giao-viec"}
+    chi_chu = {"day-bot", "giao-viec", "thong-bao-lich"}
     if agent == "main" and thay & chi_chu:
         return loi("Bot trả khách thấy skill dạy bot / giao việc", "python3 scripts/dien_config.py")
     if agent == "admin" and not chi_chu <= thay:

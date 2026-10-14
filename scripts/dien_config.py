@@ -83,7 +83,7 @@ def kiem_ten(s: str) -> str:
 
 
 def dien(mau: str, ten: str, chu: str, workspace: str, model: str,
-         du_phong: list[str] | None = None) -> str:
+         du_phong: list[str] | None = None, cham_bai: bool = False) -> str:
     """Thay chỗ trống trong bản mẫu. Hàm thuần — test gọi thẳng."""
     out = mau
     if chu:
@@ -97,6 +97,9 @@ def dien(mau: str, ten: str, chu: str, workspace: str, model: str,
         du_phong = next((dp for m, dp, _ in MO_HINH.values() if m == model), [])
     ds = ", ".join(f'"{x}"' for x in du_phong if x != model)
     out = re.sub(r'fallbacks:\s*\[[^\]]*\]', f'fallbacks: [{ds}]', out, count=1)
+    if cham_bai and '"cham-bai"' not in out.split("bindings:")[0].split("//")[0]:
+        # Danh sách skill của bot khách là chỗ duy nhất có dạng `skills: [`.
+        out = re.sub(r'skills:\s*\[', 'skills: ["cham-bai", ', out, count=1)
     return out
 
 
@@ -151,6 +154,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--chu", help="senderId Zalo của chủ (bỏ trống = chưa bật dạy bot)")
     ap.add_argument("--workspace", default=str(ROOT))
     ap.add_argument("--tiet-kiem", action="store_true", help="dùng model rẻ hơn của cùng nhà AI")
+    ap.add_argument("--cham-bai", action="store_true",
+                    help="shop dạy học / coaching: bật skill chấm bài cho bot khách")
     ap.add_argument("--nha-ai", choices=sorted(MO_HINH), default=NHA_AI_MAC_DINH,
                     help="nhà AI của mã đã nhập (mặc định openai — GPT)")
     ap.add_argument("--chi-xem", action="store_true", help="in file đã điền, không gộp")
@@ -180,7 +185,7 @@ def main(argv: list[str] | None = None) -> int:
     model = re_ if tiet_kiem else manh
     du_phong = [] if tiet_kiem else du_phong
     ws = str(Path(a.workspace).resolve())
-    filled = dien(MAU.read_text(encoding="utf-8"), ten, chu, ws, model, du_phong)
+    filled = dien(MAU.read_text(encoding="utf-8"), ten, chu, ws, model, du_phong, a.cham_bai)
 
     if a.chi_xem:
         print(filled)
